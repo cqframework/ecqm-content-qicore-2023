@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<TestScript xmlns="http://hl7.org/fhir">
+    <id value="ValueSetScenario-125-Mastectomy-v10"/>
+    <meta>
+        <profile value="http://touchstone.aegis.net/touchstone/fhir/testing/StructureDefinition/testscript"/>
+    </meta>
+    <text>
+        <status value="generated"/>
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            <p>QM Individual Report Scenario</p>
+        </div>
+    </text>
+    <url value="http://wildfhir.aegis.net/fhir4-0-1/TestScript/ValueSetScenario-125-Mastectomy-v10"/>
+    <name value="ValueSetScenario_125_Mastectomy_v10"/>
+    <status value="active"/>
+    <date value="2021-07-15"/>
+    <publisher value="AEGIS.net, Inc."/>
+    <contact>
+        <name value="Touchstone Support"/>
+        <telecom>
+            <system value="email"/>
+            <value value="Touchstone_Support@aegis.net"/>
+            <use value="work"/>
+        </telecom>
+    </contact>
+    <description value="A system uses $expand?url=[valueset]&amp;valueSetVersion=[version]&amp;system-version=[system-version] to request a version-specific valueset expansion from a terminology service"/>
+    <copyright value="(c) AEGIS.net, Inc. 2021"/>
+    <origin>
+        <index value="1"/>
+        <profile>
+            <system value="http://hl7.org/fhir/testscript-profile-origin-types"/>
+            <code value="FHIR-Client"/>
+        </profile>
+    </origin>
+    <destination>
+        <index value="1"/>
+        <profile>
+            <system value="http://hl7.org/fhir/testscript-profile-destination-types"/>
+            <code value="FHIR-Server"/>
+        </profile>
+    </destination>
+    <test id="ValueSet-Expand">
+        <name value="ValueSetExpand"/>
+        <description value="Invoke ValueSet$expand using a ValueSet url, valueSetVersion, and system-version. Expected response is a ValueSet with an expansion element containing the expected codes"/>
+        <action>
+            <operation>
+                <type>
+                    <system value="http://touchstone.com/fhir/testscript-operation-codes-extended"/>
+                    <code value="expand"/>
+                </type>
+                <resource value="ValueSet"/>
+                <description value="Run the $expand operation."/>
+                <accept value="json"/>
+                <contentType value="json"/>
+                <destination value="1"/>
+                <encodeRequestUrl value="true"/>
+                <method value="get"/>
+                <origin value="1"/>
+                <params value="/$expand?url=http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1005&amp;valueSetVersion=20190315&amp;system-version=http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20200901"/>
+                <responseId value="searchResponse"/>
+            </operation>
+        </action>
+        <action>
+            <assert>
+                <extension url="http://touchstone.aegis.net/touchstone/fhir/testing/StructureDefinition/testscript-assert-stopTestOnFail">
+                    <valueBoolean value="false"/>
+                </extension>
+                <description value="Confirm that the request HTTP Header Accept contains 'charset=utf-8'."/>
+                <direction value="request"/>
+                <headerField value="Accept"/>
+                <operator value="contains"/>
+                <value value="charset=utf-8"/>
+                <warningOnly value="true"/>
+            </assert>
+        </action>
+        <action>
+            <assert>
+                <extension url="http://touchstone.aegis.net/touchstone/fhir/testing/StructureDefinition/testscript-assert-stopTestOnFail">
+                    <valueBoolean value="false"/>
+                </extension>
+                <description value="Confirm that the request HTTP Header Content-Type contains 'charset=utf-8'."/>
+                <direction value="request"/>
+                <headerField value="Content-Type"/>
+                <operator value="contains"/>
+                <value value="charset=utf-8"/>
+                <warningOnly value="true"/>
+            </assert>
+        </action>
+        <action>
+            <assert>
+                <description value="Confirm that the returned HTTP status is 200 (OK)."/>
+                <direction value="response"/>
+                <operator value="in"/>
+                <responseCode value="200"/>
+                <warningOnly value="false"/>
+            </assert>
+        </action>
+        <action>
+            <assert>
+                <extension url="http://touchstone.aegis.net/touchstone/fhir/testing/StructureDefinition/testscript-assert-stopTestOnFail">
+                    <valueBoolean value="false"/>
+                </extension>
+                <description value="Confirm that the response HTTP Header Content-Type contains 'charset=utf-8'."/>
+                <direction value="response"/>
+                <headerField value="Content-Type"/>
+                <operator value="contains"/>
+                <value value="charset=utf-8"/>
+                <warningOnly value="true"/>
+            </assert>
+        </action>
+        <action>
+            <assert>
+                <extension url="http://touchstone.aegis.net/touchstone/fhir/testing/StructureDefinition/testscript-assert-stopTestOnFail">
+                    <valueBoolean value="false"/>
+                </extension>
+                <description value="Validate the response version matches the requested version."/>
+                <direction value="response"/>
+                <operator value="equals"/>
+                <path value="version"/>
+                <value value="20190315"/>
+                <warningOnly value="false"/>
+            </assert>
+        </action>
+        <action>
+            <assert>
+                <extension url="http://touchstone.aegis.net/touchstone/fhir/testing/StructureDefinition/testscript-assert-stopTestOnFail">
+                    <valueBoolean value="false"/>
+                </extension>
+                <description value="Validate the response contains code 836436008: Simple mastectomy of bilateral breasts using robotic assistance (procedure)."/>
+                <direction value="response"/>
+                <expression value="ValueSet.expansion.contains.where(code = '836436008').exists()"/>
+                <warningOnly value="false"/>
+            </assert>
+        </action>
+        <action>
+            <assert>
+                <extension url="http://touchstone.aegis.net/touchstone/fhir/testing/StructureDefinition/testscript-assert-stopTestOnFail">
+                    <valueBoolean value="false"/>
+                </extension>
+                <description value="Validate the response contains code 870629001: Bilateral mastectomy for female to male transsexual (procedure)."/>
+                <direction value="response"/>
+                <expression value="ValueSet.expansion.contains.where(code = '870629001').exists()"/>
+                <warningOnly value="false"/>
+            </assert>
+        </action>
+    </test>
+</TestScript>
