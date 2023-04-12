@@ -431,6 +431,9 @@ However it is obtained, if therapeutic duration can be obtained, and the effecti
 period has a start, the result will be
 
     Interval[startDate, startDate + therapeuticDuration - 1 day]
+
+NOTE: Therapeutic duration needs to be established and until a way is implemented to
+do that based on the medication, this logic is incomplete and should not be used.
 */
 define function MedicationAdministrationPeriod(Administration "MedicationAdministration"):
   Administration M
@@ -479,13 +482,11 @@ types:
 
 define function MedicationPeriod(
   medication Choice<"MedicationRequest",
-    "MedicationDispense",
-    "MedicationAdministration"
+    "MedicationDispense"
   >):
   case
     when medication is MedicationRequest then MedicationRequestPeriod(medication)
     when medication is MedicationDispense then MedicationDispensePeriod(medication)
-    when medication is MedicationAdministration then MedicationAdministrationPeriod(medication)
     else null
   end
 
@@ -505,8 +506,7 @@ or Average MME) require further consideration.
 
 define function CumulativeMedicationDuration(
   Medications List<Choice<"MedicationRequest",
-    "MedicationDispense",
-    "MedicationAdministration"
+    "MedicationDispense"
   >>):
   CumulativeDuration((
       Medications M
@@ -516,8 +516,8 @@ define function CumulativeMedicationDuration(
       union (
         RolloutIntervals(
           Medications M
-            where M is MedicationDispense or M is MedicationAdministration
-            return MedicationPeriod(M)
+            where M is MedicationDispense
+            return MedicationDispensePeriod(M)
         )
       )
   )
