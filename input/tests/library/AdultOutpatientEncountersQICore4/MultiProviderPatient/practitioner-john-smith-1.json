@@ -13,6 +13,12 @@
         "system": "urn:oid:2.16.840.1.113883.4.4",
         "use": "usual",
         "value": "00XXX"
+      },
+      {
+        "type": { "text": "EIN" },
+        "system": "urn:oid:2.16.840.1.113883.4.4",
+        "use": "usual",
+        "value": "00ZZZ"
       }
     ],
     "name": [

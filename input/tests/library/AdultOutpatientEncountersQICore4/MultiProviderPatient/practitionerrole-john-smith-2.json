@@ -11,6 +11,12 @@
         "use": "temp",
         "system": "http://www.acme.org/practitionerroles",
         "value": "john-smith-2"
+      },
+      {
+        "type": { "text": "EIN" },
+        "system": "urn:oid:2.16.840.1.113883.4.4",
+        "use": "usual",
+        "value": "00ZZZ"
       }
     ],
     "active": true,
@@ -18,7 +24,7 @@
       "start": "1995"
     },
     "practitioner": {
-      "reference": "Practitioner/john-smith-2",
+      "reference": "Practitioner/john-smith-1",
       "display": "Dr John Smith"
     },
     "organization": {

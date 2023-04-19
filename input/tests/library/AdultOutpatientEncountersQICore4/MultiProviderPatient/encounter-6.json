@@ -28,15 +28,12 @@
         "reference": "Patient/MultiProviderPatient"
     },
     "participant": [{
-        "individual": { "reference": "Practitioner/john-smith-2" }
+        "individual": { "reference": "Practitioner/john-smith-1" }
     }, {
         "individual": { "reference": "Practitioner/kelly-smith-1" }
     }],
     "period": {
         "start": "2019-06-01T01:00:00.0",
         "end": "2019-06-02T01:00:00.0"
-    },
-    "serviceProvider": {
-        "reference": "Organization/organization-B"
     }
 }
