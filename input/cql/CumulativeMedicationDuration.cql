@@ -288,7 +288,7 @@ define function MedicationRequestPeriod(Request "MedicationRequest"):
           date from R.authoredOn,
           date from start of R.dispenseRequest.validityPeriod
         ),
-      totalDaysSupplied: Coalesce(daysSupply, quantity.value / (dose.value * dosesPerDay)) * (1 + refills)
+      totalDaysSupplied: Coalesce(quantity.value / (dose.value * dosesPerDay), daysSupply) * (1 + refills)
     return
       if startDate is not null and boundsPeriod."high" is not null then
         Interval[startDate, end of boundsPeriod]
@@ -397,7 +397,7 @@ define function MedicationDispensePeriod(Dispense "MedicationDispense"):
           date from D.whenHandedOver,
           date from D.whenPrepared
         ),
-      totalDaysSupplied: Coalesce(daysSupply, D.quantity.value / (dose.value * dosesPerDay))
+      totalDaysSupplied: Coalesce(D.quantity.value / (dose.value * dosesPerDay, daysSupply)
     return
       if startDate is not null and totalDaysSupplied is not null then
         Interval[startDate, startDate + Quantity(totalDaysSupplied - 1, 'day')]
@@ -459,21 +459,26 @@ First, we define a function that simply calculates CumulativeDuration of a set o
 intervals:
 */
 define function CumulativeDuration(Intervals List<Interval<DateTime>>):
-  Sum((collapse Intervals per day) X return all (difference in days between start of X and end of X) + 1)
+   if Intervals is not null then ( Sum((collapse Intervals per day)X
+        return all(difference in days between start of X and 
+          end of X
+        )+ 1
+    )
+  ) 
+    else null
 
 /*
 Next, we define a function that rolls out intervals:
 */
 define function RolloutIntervals(intervals List<Interval<DateTime>>):
-  intervals I
-    aggregate R starting (null as List<Interval<DateTime>>):
-      R union ({
-        I X
-          let
-            S: Max({ end of Last(R) + 1 day, start of X }),
-            E: S + Quantity(Coalesce(duration in days of X, 0), 'day')
-          return Interval[S, E]
-      })
+ intervals I aggregate all R starting ( null as List<Interval<Date>>): R
+    union ( { I X
+        let S: Max({ 
+          end of Last(R)+ 1 day, start of X }
+        ),
+        E: S + Quantity { value: Coalesce(duration in days of X, 0), unit: 'day' }
+        return Interval[S, E]}
+    )
 
 /*
 Then, we define a function that allows us to calculate based on the various medication
