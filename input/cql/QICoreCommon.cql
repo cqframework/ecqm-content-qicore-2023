@@ -21,9 +21,9 @@ codesystem "ConditionVerificationStatusCodes": 'http://terminology.hl7.org/CodeS
 codesystem "AllergyIntoleranceClinicalStatusCodes": 'http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical'
 codesystem "AllergyIntoleranceVerificationStatusCodes": 'http://terminology.hl7.org/CodeSystem/allergyintolerance-verification'
 codesystem "ObservationCategoryCodes": 'http://terminology.hl7.org/CodeSystem/observation-category'
-codesystem "USCoreObservationCategory": 'http://hl7.org/fhir/us/core/CodeSystem/us-core-observation-category'
+codesystem "USCoreObservationCategoryExtensionCodes": 'http://hl7.org/fhir/us/core/CodeSystem/us-core-observation-category'
 codesystem "ConditionCategory": 'http://terminology.hl7.org/CodeSystem/condition-category'
-codesystem "USCoreConditionCategory": 'http://hl7.org/fhir/us/core/CodeSystem/condition-category'
+codesystem "USCoreConditionCategoryExtensionCodes": 'http://hl7.org/fhir/us/core/CodeSystem/condition-category'
 
 code "Birthdate": '21112-8' from "LOINC" display 'Birth date'
 code "Dead": '419099009' from "SNOMEDCT" display 'Dead'
@@ -47,7 +47,7 @@ code "virtual": 'VR' from ActCode display 'VR'
 // Condition Category Codes
 code "problem-list-item": 'problem-list-item' from "ConditionCategory" display 'Problem List Item'
 code "encounter-diagnosis": 'encounter-diagnosis' from "ConditionCategory" display 'Encounter Diagnosis'
-code "health-concern": 'health-concern' from "USCoreConditionCategory" display 'Health Concern'
+code "health-concern": 'health-concern' from "USCoreConditionCategoryExtensionCodes" display 'Health Concern'
 
 // Condition Clinical Status Codes - Consider value sets for these
 code "active": 'active' from "ConditionClinicalStatusCodes"
@@ -99,7 +99,7 @@ code "survey": 'survey' from "ObservationCategoryCodes" display 'Survey'
 code "exam": 'exam' from "ObservationCategoryCodes" display 'Exam'
 code "therapy": 'therapy' from "ObservationCategoryCodes" display 'Therapy'
 code "activity": 'activity' from "ObservationCategoryCodes" display 'Activity'
-code "clinical-test": 'clinical-test' from "USCoreObservationCategory" display 'Clinical Test'
+code "clinical-test": 'clinical-test' from "USCoreObservationCategoryExtensionCodes" display 'Clinical Test'
 
 context Patient
 
@@ -308,6 +308,8 @@ define function ToInterval(choice Choice<DateTime, Quantity, Interval<DateTime>,
 		when choice is Interval<Quantity> then
 		  Interval[Patient.birthDate + (choice.low as Quantity),
 			  Patient.birthDate + (choice.high as Quantity) + 1 year)
+		when choice is QICore.Timing then
+            		null as Interval<DateTime>
 		else
 			null as Interval<DateTime>
 	end
