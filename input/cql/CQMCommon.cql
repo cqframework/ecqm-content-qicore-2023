@@ -19,9 +19,9 @@ context Patient
 
 define "Inpatient Encounter":
   [Encounter: "Encounter Inpatient"] EncounterInpatient
-		where EncounterInpatient.status = 'finished'
-	    and "LengthInDays"(EncounterInpatient.period) <= 120
-			and EncounterInpatient.period ends during day of "Measurement Period"
+    where EncounterInpatient.status = 'finished'
+      and EncounterInpatient.period.lengthInDays() <= 120
+      and EncounterInpatient.period ends during day of "Measurement Period"
 
 /*
 @description: Returns an interval of date values extracted from the input interval of date-time values
