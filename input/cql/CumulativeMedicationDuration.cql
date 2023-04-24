@@ -1,4 +1,4 @@
-/*
+/* 
 @description: This library provides cumulative medication duration calculation
 logic for use with FHIR medication prescription, administration, and dispensing
 resources. The logic here follows the guidance provided as part of the 5.6
@@ -16,8 +16,10 @@ Refactored to use QICoreCommon
 v2.0.001
 Fixed invalid unit error evaluating RolloutIntervals
 Fixed RolloutIntervals incorrectly eliminating duplicates
+v3.1.000
+updated to reflect changes from AU2022 QDM library changes _JKR
 */
-library CumulativeMedicationDuration version '3.0.000'
+library CumulativeMedicationDuration version '3.1.000'
 
 using QICore version '4.1.1'
 
@@ -288,7 +290,7 @@ define function MedicationRequestPeriod(Request "MedicationRequest"):
           date from R.authoredOn,
           date from start of R.dispenseRequest.validityPeriod
         ),
-      totalDaysSupplied: Coalesce(quantity.value / (dose.value * dosesPerDay), daysSupply) * (1 + refills)
+      totalDaysSupplied: Coalesce(daysSupply, quantity.value / (dose.value * dosesPerDay)) * (1 + refills)
     return
       if startDate is not null and boundsPeriod."high" is not null then
         Interval[startDate, end of boundsPeriod]
@@ -397,7 +399,7 @@ define function MedicationDispensePeriod(Dispense "MedicationDispense"):
           date from D.whenHandedOver,
           date from D.whenPrepared
         ),
-      totalDaysSupplied: Coalesce(D.quantity.value / (dose.value * dosesPerDay), daysSupply)
+      totalDaysSupplied: Coalesce(daysSupply, D.quantity.value / (dose.value * dosesPerDay))
     return
       if startDate is not null and totalDaysSupplied is not null then
         Interval[startDate, startDate + Quantity(totalDaysSupplied - 1, 'day')]
@@ -476,7 +478,7 @@ define function RolloutIntervals(intervals List<Interval<DateTime>>):
         let S: Max({ 
           end of Last(R)+ 1 day, start of X }
         ),
-        E: S + Quantity { value: Coalesce(duration in days of X, 0), unit: 'day' }
+        E: S + Quantity(Coalesce(duration in days of X, 0), 'day')
         return Interval[S, E]}
     )
 
