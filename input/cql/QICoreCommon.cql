@@ -234,6 +234,22 @@ define fluent function isClinicalTest(observation Observation):
   )
 
 /*
+@description: Returns true if the given MedicationRequest has a category of Inpatient
+*/
+define fluent function isInpatient(medicationRequest MedicationRequest):
+  exists (medicationRequest.category C
+    where C ~ Inpatient
+  )
+
+/*
+@description: Returns true if the given MedicationNotRequested has a category of Inpatient
+*/
+define fluent function isInpatient(medicationRequest MedicationNotRequested):
+  exists (medicationRequest.category C
+    where C ~ Inpatient
+  )
+
+/*
 @description: Returns true if the given MedicationRequest has a category of Community
 */
 define fluent function isCommunity(medicationRequest MedicationRequest):
