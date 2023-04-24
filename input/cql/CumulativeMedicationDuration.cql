@@ -397,7 +397,7 @@ define function MedicationDispensePeriod(Dispense "MedicationDispense"):
           date from D.whenHandedOver,
           date from D.whenPrepared
         ),
-      totalDaysSupplied: Coalesce(D.quantity.value / (dose.value * dosesPerDay, daysSupply)
+      totalDaysSupplied: Coalesce(D.quantity.value / (dose.value * dosesPerDay), daysSupply)
     return
       if startDate is not null and totalDaysSupplied is not null then
         Interval[startDate, startDate + Quantity(totalDaysSupplied - 1, 'day')]
