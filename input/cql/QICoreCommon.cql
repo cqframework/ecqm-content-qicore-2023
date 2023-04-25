@@ -7,7 +7,7 @@ library QICoreCommon version '1.3.000'
 
 using QICore version '4.1.1'
 
-include FHIRHelpers version '4.1.000'
+include FHIRHelpers version '4.2.000'
 
 codesystem "LOINC": 'http://loinc.org'
 codesystem "SNOMEDCT": 'http://snomed.info/sct'

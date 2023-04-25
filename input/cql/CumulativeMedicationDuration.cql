@@ -23,7 +23,7 @@ library CumulativeMedicationDuration version '3.1.000'
 
 using QICore version '4.1.1'
 
-include FHIRHelpers version '4.1.000'
+include FHIRHelpers version '4.2.000'
 include QICoreCommon version '1.3.000'
 
 // These code systems are not known to the MAT environment yet, request to have them added submitted
@@ -226,10 +226,6 @@ for each element:
 * dosageInstruction.doseAndRate.doseQuantity
 * dosageInstruction.doseAndRate.doseRange
 
-If the boundsPeriod is present (and completely specified), we can use that directly
-
-    dosage.timing.repeat.boundsPeriod
-
 If expectedSupplyDuration is present, then the duration is
 
     expectedSupplyDuration * (1 + numberOfRepeatsAllowed)
@@ -241,6 +237,10 @@ If expectedSupplyDuration is not present, then it must be calculated based on th
     dosage: Coalesce(end of doseAndRate.doseRange, doseAndRate.doseQuantity)
     frequency: Coalesce(frequencyMax, frequency)
     period: Quantity(period, periodUnit)
+
+If expectedSupplyDuration is not present and cannot be calculated, and the boundsPeriod is present (and completely specified), we can use that directly
+
+    dosage.timing.repeat.boundsPeriod
 
 This calculation results in a number of days, which can then be turned into a period by anchoring that to the
 start of the validityPeriod or the authoredOn:
@@ -292,10 +292,10 @@ define function MedicationRequestPeriod(Request "MedicationRequest"):
         ),
       totalDaysSupplied: Coalesce(daysSupply, quantity.value / (dose.value * dosesPerDay)) * (1 + refills)
     return
-      if startDate is not null and boundsPeriod."high" is not null then
-        Interval[startDate, end of boundsPeriod]
-      else if startDate is not null and totalDaysSupplied is not null then
+      if startDate is not null and totalDaysSupplied is not null then
         Interval[startDate, startDate + Quantity(totalDaysSupplied - 1, 'day') ]
+      else if startDate is not null and boundsPeriod."high" is not null then
+        Interval[startDate, end of boundsPeriod]
       else
         null
 

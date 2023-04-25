@@ -2,7 +2,7 @@ library CQMCommon version '1.1.000'
 
 using QICore version '4.1.1'
 
-include FHIRHelpers version '4.1.000' called FHIRHelpers
+include FHIRHelpers version '4.2.000' called FHIRHelpers
 include QICoreCommon version '1.3.000' called QICoreCommon
 
 valueset "Emergency Department Visit": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.292'
@@ -13,7 +13,7 @@ valueset "Outpatient Surgery Service": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.1
 valueset "Present on Admission or Clinically Undetermined": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1147.197'
 
 parameter "Measurement Period" Interval<DateTime>
-  default Interval[@2022-01-01T00:00:00.0, @2023-01-01T00:00:00.0)
+  default Interval[@2023-01-01T00:00:00.0, @2024-01-01T00:00:00.0)
 
 context Patient
 
