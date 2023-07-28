@@ -267,6 +267,8 @@ profile, which expects:
 Note that MedicationRequest status is not considered by this calculation, as the
 list of MedicationRequest instances provided to this function should already have
 considered appropriate statuses, depending on the use case, typically `completed`.
+
+NOTE: Updated return to use "date from end of boundsPeriod" to ensure result is Interval<Date>
 */
 define function MedicationRequestPeriod(Request "MedicationRequest"):
   Request R
@@ -295,7 +297,7 @@ define function MedicationRequestPeriod(Request "MedicationRequest"):
       if startDate is not null and totalDaysSupplied is not null then
         Interval[startDate, startDate + Quantity(totalDaysSupplied - 1, 'day') ]
       else if startDate is not null and boundsPeriod."high" is not null then
-        Interval[startDate, end of boundsPeriod]
+        Interval[startDate, date from end of boundsPeriod]
       else
         null
 
@@ -459,8 +461,10 @@ overlapping intervals so that the durations are laid end-to-end.
 
 First, we define a function that simply calculates CumulativeDuration of a set of
 intervals:
+
+NOTE: Updated argument to List<Interval<Date>> instead of List<Interval<DateTime>>
 */
-define function CumulativeDuration(Intervals List<Interval<DateTime>>):
+define function CumulativeDuration(Intervals List<Interval<Date>>):
    if Intervals is not null then ( Sum((collapse Intervals per day)X
         return all(difference in days between start of X and 
           end of X
@@ -471,8 +475,10 @@ define function CumulativeDuration(Intervals List<Interval<DateTime>>):
 
 /*
 Next, we define a function that rolls out intervals:
+
+NOTE: Updated argument to List<Interval<Date>> instead of List<Interval<DateTime>>
 */
-define function RolloutIntervals(intervals List<Interval<DateTime>>):
+define function RolloutIntervals(intervals List<Interval<Date>>):
  intervals I aggregate all R starting ( null as List<Interval<Date>>): R
     union ( { I X
         let S: Max({ 
