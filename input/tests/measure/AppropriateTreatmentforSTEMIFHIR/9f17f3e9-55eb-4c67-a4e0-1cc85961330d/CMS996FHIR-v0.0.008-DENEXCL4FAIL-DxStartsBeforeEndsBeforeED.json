@@ -1,0 +1,255 @@
+{
+  "resourceType": "Bundle",
+  "id": "617b0d8f513b5d1ee28b7572",
+  "type": "collection",
+  "entry": [ {
+    "fullUrl": "https://madie.cms.gov/Patient/9f17f3e9-55eb-4c67-a4e0-1cc85961330d",
+    "resource": {
+      "resourceType": "Patient",
+      "id": "9f17f3e9-55eb-4c67-a4e0-1cc85961330d",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ]
+      },
+      "extension": [ {
+        "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+        "extension": [ {
+          "url": "ombCategory",
+          "valueCoding": {
+            "system": "urn:oid:2.16.840.1.113883.6.238",
+            "code": "2076-8",
+            "display": "Native Hawaiian or Other Pacific Islander",
+            "userSelected": true
+          }
+        }, {
+          "url": "text",
+          "valueString": "Native Hawaiian or Other Pacific Islander"
+        } ]
+      }, {
+        "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+        "extension": [ {
+          "url": "ombCategory",
+          "valueCoding": {
+            "system": "urn:oid:2.16.840.1.113883.6.238",
+            "code": "2186-5",
+            "display": "Not Hispanic or Latino",
+            "userSelected": true
+          }
+        }, {
+          "url": "text",
+          "valueString": "Not Hispanic or Latino"
+        } ]
+      } ],
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MR"
+          } ]
+        },
+        "system": "https://bonnie-fhir.healthit.gov/",
+        "value": "617b0d8f513b5d1ee28b7572"
+      } ],
+      "name": [ {
+        "family": "DenExcl4Fail",
+        "given": [ "DxStartsBeforeEndsBeforeED" ]
+      } ],
+      "gender": "female",
+      "birthDate": "1984-12-02"
+    }
+  }, {
+    "fullUrl": "emergency-department-visit-330a",
+    "resource": {
+      "resourceType": "Encounter",
+      "id": "emergency-department-visit-330a",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ]
+      },
+      "status": "finished",
+      "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "EMER",
+        "display": "emergency",
+        "userSelected": true
+      },
+      "type": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "2020-09",
+          "code": "4525004",
+          "display": "Emergency department patient visit (procedure)",
+          "userSelected": true
+        } ]
+      } ],
+      "subject": {
+        "reference": "Patient/617b0d8f513b5d1ee28b7572"
+      },
+      "period": {
+        "start": "2024-10-09T08:05:00.000+00:00",
+        "end": "2024-10-10T07:15:00.000+00:00"
+      }
+    }
+  }, {
+    "fullUrl": "stemi-330b",
+    "resource": {
+      "resourceType": "Condition",
+      "id": "stemi-330b",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition" ]
+      },
+      "clinicalStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "code": "active",
+          "display": "active",
+          "userSelected": true
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+          "code": "encounter-diagnosis",
+          "display": "Encounter Diagnosis",
+          "userSelected": true
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "2020-09",
+          "code": "401303003",
+          "display": "Acute ST segment elevation myocardial infarction (disorder)",
+          "userSelected": true
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/617b0d8f513b5d1ee28b7572"
+      },
+      "onsetDateTime": "2024-10-09T08:30:00.000+00:00"
+    }
+  }, {
+    "fullUrl": "active-bleeding-or-bleeding-diathesis-excluding-menses-7573",
+    "resource": {
+      "resourceType": "Condition",
+      "id": "active-bleeding-or-bleeding-diathesis-excluding-menses-7573",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition" ]
+      },
+      "clinicalStatus": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+          "version": "4.0.1",
+          "code": "inactive",
+          "display": "Inactive",
+          "userSelected": true
+        } ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+          "code": "encounter-diagnosis",
+          "display": "Encounter Diagnosis",
+          "userSelected": true
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "2020-09",
+          "code": "105604006",
+          "display": "Deficiency of naturally occurring coagulation factor inhibitor (disorder)",
+          "userSelected": true
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/617b0d8f513b5d1ee28b7572"
+      },
+      "onsetDateTime": "2024-10-01T08:00:00.000+00:00",
+      "abatementDateTime": "2024-10-08T08:15:00.000+00:00"
+    }
+  }, {
+    "fullUrl": "https://madie.cms.gov/MeasureReport/6384fdb64ba3d47c885c02a7/9f17f3e9-55eb-4c67-a4e0-1cc85961330d",
+    "resource": {
+      "resourceType": "MeasureReport",
+      "id": "aca9a920-33ec-4af9-98cd-15bc43483d67",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/test-case-cqfm" ]
+      },
+      "contained": [ {
+        "resourceType": "Parameters",
+        "id": "DxStartsBeforeEndsBeforeED-parameters",
+        "parameter": [ {
+          "name": "subject",
+          "valueString": "9f17f3e9-55eb-4c67-a4e0-1cc85961330d"
+        } ]
+      } ],
+      "extension": [ {
+        "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-inputParameters",
+        "valueReference": {
+          "reference": "#DxStartsBeforeEndsBeforeED-parameters"
+        }
+      }, {
+        "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-testCaseDescription",
+        "valueMarkdown": "Patient has active bleeding (exclusion dx) starts before ED and ends before ED"
+      } ],
+      "modifierExtension": [ {
+        "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-isTestCase",
+        "valueBoolean": true
+      } ],
+      "status": "complete",
+      "type": "individual",
+      "measure": "http://ecqi.healthit.gov/ecqms/Measure/AppropriateTreatmentforSTEMIFHIR",
+      "period": {
+        "start": "2024-01-01",
+        "end": "2024-12-31"
+      },
+      "group": [ {
+        "population": [ {
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+              "code": "initial-population",
+              "display": "Initial Population"
+            } ]
+          },
+          "count": 1
+        }, {
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+              "code": "denominator",
+              "display": "Denominator"
+            } ]
+          },
+          "count": 1
+        }, {
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+              "code": "denominator-exclusion",
+              "display": "Denominator Exclusion"
+            } ]
+          },
+          "count": 0
+        }, {
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+              "code": "numerator",
+              "display": "Numerator"
+            } ]
+          },
+          "count": 0
+        } ]
+      } ],
+      "evaluatedResource": [ {
+        "reference": "https://madie.cms.gov/Patient/9f17f3e9-55eb-4c67-a4e0-1cc85961330d"
+      }, {
+        "reference": "Encounter/emergency-department-visit-330a"
+      }, {
+        "reference": "Condition/stemi-330b"
+      }, {
+        "reference": "Condition/active-bleeding-or-bleeding-diathesis-excluding-menses-7573"
+      } ]
+    }
+  } ]
+}
