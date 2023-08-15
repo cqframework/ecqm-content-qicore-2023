@@ -2,7 +2,6 @@ The purpose of this file is to allow users to view the mapping of test case name
 
 f48ef2d5-b690-4068-9268-b06a7558bb68 = IPFail EncOnAug29ofMP
 a98409bd-26b7-499a-bdff-f4c0118e0934 = IPFail HIVDxJan1WithEncOnAug28ofMP
-15d3fb71-37d0-4d5c-b504-4fd1c8b5b942 = IPFail HIVDxinDecofMP
 061ab97e-4e5d-4c1d-91dc-21e34b415b5b = IPFail HIVDxonApr1ofMP
 920a15ae-3bc9-4e7b-9f0f-e1554b78157a = IPFail HIVDxonMarch31ofMP
 2a83ceb0-b652-479c-8b3f-69209286ca86 = IPFail HIVDxAndEnconApr1ofMP
@@ -38,6 +37,7 @@ c3a81338-d107-4762-84a8-3a8ce88b781a = NumPass 2TestsduringMP1Over1Less
 b5df1024-993a-42aa-8afd-a1a83c32c95a = NumPass TestDuringMPResultUnderRelevantdateTime
 9df5bcfb-2893-42f4-b092-a7d49bc0276e = NumPass TestOnDec31DuringMPResultUnderRelevantdateTime
 7ebb36aa-b8dc-4d22-9c09-3250684e3d30 = NumPass VLTestDec31ofMPResult199
-1fe11eea-dd7a-48f6-84a6-6522de5c1745 = NumPass TestDuringMPResultDRCBelowRelevantPeriod 
 f5ab0931-7298-476d-8529-3e13214e626f = IPPass HIVDxonMarch30ofMP
 fee37cef-a36c-4640-b58f-c7df0743597d = IPPass HIVDxonMarch29ofMPLeapYear
+15d3fb71-37d0-4d5c-b504-4fd1c8b5b942 = IPFail HIVDxinDecofMP
+1fe11eea-dd7a-48f6-84a6-6522de5c1745 = NumPass TestDuringMPResultDRCBelowRelevantPeriod

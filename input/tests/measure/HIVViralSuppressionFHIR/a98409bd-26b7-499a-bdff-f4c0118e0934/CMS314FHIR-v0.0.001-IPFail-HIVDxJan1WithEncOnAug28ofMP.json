@@ -1,12 +1,12 @@
 {
   "resourceType": "Bundle",
-  "id": "6499b99df75cf8dae8f2f3df",
+  "id": "649444c08572d953d016cf72",
   "type": "collection",
   "entry": [ {
-    "fullUrl": "6499b99df75cf8dae8f2f3df",
+    "fullUrl": "https://madie.cms.gov/Patient/a98409bd-26b7-499a-bdff-f4c0118e0934",
     "resource": {
       "resourceType": "Patient",
-      "id": "6499b99df75cf8dae8f2f3df",
+      "id": "a98409bd-26b7-499a-bdff-f4c0118e0934",
       "meta": {
         "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ]
       },
@@ -16,13 +16,13 @@
           "url": "ombCategory",
           "valueCoding": {
             "system": "urn:oid:2.16.840.1.113883.6.238",
-            "code": "2028-9",
-            "display": "Asian",
+            "code": "2076-8",
+            "display": "Native Hawaiian or Other Pacific Islander",
             "userSelected": true
           }
         }, {
           "url": "text",
-          "valueString": "Asian"
+          "valueString": "Native Hawaiian or Other Pacific Islander"
         } ]
       }, {
         "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
@@ -30,13 +30,13 @@
           "url": "ombCategory",
           "valueCoding": {
             "system": "urn:oid:2.16.840.1.113883.6.238",
-            "code": "2135-2",
-            "display": "Hispanic or Latino",
+            "code": "2186-5",
+            "display": "Not Hispanic or Latino",
             "userSelected": true
           }
         }, {
           "url": "text",
-          "valueString": "Hispanic or Latino"
+          "valueString": "Not Hispanic or Latino"
         } ]
       } ],
       "identifier": [ {
@@ -47,20 +47,20 @@
           } ]
         },
         "system": "https://bonnie-fhir.healthit.gov/",
-        "value": "6499b99df75cf8dae8f2f3df"
+        "value": "649444c08572d953d016cf72"
       } ],
       "name": [ {
-        "family": "NumPass",
-        "given": [ "TestDuringMPResultDRCBelowRelevantPeriod" ]
+        "family": "IPFail",
+        "given": [ "HIVDxJan1WithEncOnAug28ofMP" ]
       } ],
       "gender": "male",
       "birthDate": "1986-05-25"
     }
   }, {
-    "fullUrl": "hiv-f3e0",
+    "fullUrl": "hiv-cf73",
     "resource": {
       "resourceType": "Condition",
-      "id": "hiv-f3e0",
+      "id": "hiv-cf73",
       "meta": {
         "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition" ]
       },
@@ -74,27 +74,20 @@
       "code": {
         "coding": [ {
           "system": "http://hl7.org/fhir/sid/icd-9-cm",
-          "version": "2013",
-          "code": "042",
-          "display": "Human immunodeficiency virus [HIV] disease",
-          "userSelected": true
-        }, {
-          "system": "http://snomed.info/sct",
-          "code": "165816005",
+          "code": "079.53",
           "userSelected": true
         } ]
       },
       "subject": {
-        "reference": "Patient/6499b99df75cf8dae8f2f3df"
+        "reference": "Patient/a98409bd-26b7-499a-bdff-f4c0118e0934"
       },
-      "onsetDateTime": "2019-12-02T12:00:00.000+00:00",
-      "recordedDate": "2019-12-02T12:00:00.000+00:00"
+      "recordedDate": "2024-01-01T12:00:00.000+00:00"
     }
   }, {
-    "fullUrl": "preventive-care-services-initial-office-visit-18-and-up-f3e1",
+    "fullUrl": "preventive-care-services-initial-office-visit-18-and-up-cf74",
     "resource": {
       "resourceType": "Encounter",
-      "id": "preventive-care-services-initial-office-visit-18-and-up-f3e1",
+      "id": "preventive-care-services-initial-office-visit-18-and-up-cf74",
       "meta": {
         "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ]
       },
@@ -112,48 +105,11 @@
         } ]
       } ],
       "subject": {
-        "reference": "Patient/6499b99df75cf8dae8f2f3df"
+        "reference": "Patient/a98409bd-26b7-499a-bdff-f4c0118e0934"
       },
       "period": {
-        "start": "2024-08-27T15:02:00.000+00:00",
-        "end": "2024-08-27T15:55:00.000+00:00"
-      }
-    }
-  }, {
-    "fullUrl": "hiv-viral-load-f3e2",
-    "resource": {
-      "resourceType": "Observation",
-      "id": "hiv-viral-load-f3e2",
-      "meta": {
-        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observation" ]
-      },
-      "status": "final",
-      "category": [ {
-        "coding": [ {
-          "system": "http://terminology.hl7.org/CodeSystem/observation-category"
-        } ]
-      } ],
-      "code": {
-        "coding": [ {
-          "system": "http://loinc.org",
-          "version": "2.73",
-          "code": "10351-5",
-          "display": "HIV 1 RNA [Units/volume] (viral load) in Serum or Plasma by Probe with amplification",
-          "userSelected": true
-        } ]
-      },
-      "subject": {
-        "reference": "Patient/6499b99df75cf8dae8f2f3df"
-      },
-      "effectiveDateTime": "2024-08-07T09:02:00.000+00:00",
-      "issued": "2024-08-07T09:02:00.000+00:00",
-      "valueCodeableConcept": {
-        "coding": [ {
-          "system": "http://snomed.info/sct",
-          "code": "260988000",
-          "display": "Below threshold level (qualifier value)",
-          "userSelected": true
-        } ]
+        "start": "2024-08-29T15:02:00.000+00:00",
+        "end": "2024-08-29T15:55:00.000+00:00"
       }
     }
   }, {
@@ -166,7 +122,7 @@
       },
       "status": "active",
       "beneficiary": {
-        "reference": "Patient/6499b99df75cf8dae8f2f3df"
+        "reference": "Patient/a98409bd-26b7-499a-bdff-f4c0118e0934"
       },
       "payor": [ {
         "reference": "Organization/123456"
@@ -226,28 +182,29 @@
       } ]
     }
   }, {
+    "fullUrl": "https://madie.cms.gov/MeasureReport/64873a03be23a058642d5817/a98409bd-26b7-499a-bdff-f4c0118e0934",
     "resource": {
       "resourceType": "MeasureReport",
-      "id": "c23bca9c-3366-45c9-b000-2a1b19a1e00d",
+      "id": "16615db9-05c5-4417-8a1c-9d320dff8f98",
       "meta": {
         "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/test-case-cqfm" ]
       },
       "contained": [ {
         "resourceType": "Parameters",
-        "id": "TestDuringMPResultDRCBelowRelevantPeriod -parameters",
+        "id": "HIVDxJan1WithEncOnAug28ofMP-parameters",
         "parameter": [ {
           "name": "subject",
-          "valueString": "6499b99df75cf8dae8f2f3df"
+          "valueString": "a98409bd-26b7-499a-bdff-f4c0118e0934"
         } ]
       } ],
       "extension": [ {
         "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-inputParameters",
         "valueReference": {
-          "reference": "#TestDuringMPResultDRCBelowRelevantPeriod -parameters"
+          "reference": "#HIVDxJan1WithEncOnAug28ofMP-parameters"
         }
       }, {
         "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-testCaseDescription",
-        "valueMarkdown": "Patient with a diagnosis of HIV 5 years ago and a qualifying encounter on Aug 27 during the measurement period  AND a viral load test during the MP with a result using DRC Below Threshold - using relevant period"
+        "valueMarkdown": "Patient with a diagnosis of HIV on Jan 1 and a qualifying encounter on Aug 28 (241 days) during the measurement period "
       } ],
       "modifierExtension": [ {
         "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-isTestCase",
@@ -269,7 +226,7 @@
               "display": "Initial Population"
             } ]
           },
-          "count": 1
+          "count": 0
         }, {
           "code": {
             "coding": [ {
@@ -278,7 +235,7 @@
               "display": "Denominator"
             } ]
           },
-          "count": 1
+          "count": 0
         }, {
           "code": {
             "coding": [ {
@@ -287,17 +244,15 @@
               "display": "Numerator"
             } ]
           },
-          "count": 1
+          "count": 0
         } ]
       } ],
       "evaluatedResource": [ {
-        "reference": "Patient/6499b99df75cf8dae8f2f3df"
+        "reference": "https://madie.cms.gov/Patient/a98409bd-26b7-499a-bdff-f4c0118e0934"
       }, {
-        "reference": "Condition/hiv-f3e0"
+        "reference": "Condition/hiv-cf73"
       }, {
-        "reference": "Encounter/preventive-care-services-initial-office-visit-18-and-up-f3e1"
-      }, {
-        "reference": "Observation/hiv-viral-load-f3e2"
+        "reference": "Encounter/preventive-care-services-initial-office-visit-18-and-up-cf74"
       }, {
         "reference": "Coverage/1"
       }, {
