@@ -1,0 +1,1696 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+      body {
+        background-color: #ffffff;;
+        margin: 0px;
+        padding: 10px;
+        height: 100%;
+        font-size: 1em;
+      }
+
+      p, li {
+        font-size: 12px;
+        line-height: 1.4em;
+        font-family: verdana;
+        margin: 0 0 20px 0;
+        font-weight: normal;
+      }
+
+      td {
+        font-size: 12px;
+        line-height: 1.4em;
+        font-family: verdana;
+        font-weight: normal;
+        padding: 3px;
+        vertical-align: top;
+      }
+
+      tr {
+        font-size: 12px;
+        line-height: 1.4em;
+        font-family: verdana;
+        font-weight: normal;
+        padding: 3px;
+        vertical-align: top;
+        text-align: left;
+      }
+
+      table.colstu td {
+        border: 1px grey solid;
+        border-spacing: 0;
+        padding: 5px;
+        border-collapse: collapse;
+        background-color: #fff5e6;
+      }
+
+      table.colsd td {
+        border: 1px grey solid;
+        border-spacing: 0;
+        padding: 5px;
+        border-collapse: collapse;
+        background-color: #efefef;
+      }
+
+      table.colsn td {
+        border: 1px grey solid;
+        border-spacing: 0;
+        padding: 5px;
+        border-collapse: collapse;
+        background-color: #e6ffe6;
+      }
+
+      table.colse td {
+        border: 1px grey solid;
+        border-spacing: 0;
+        padding: 5px;
+        border-collapse: collapse;
+        background-color: #e6e6e6;
+      }
+
+      table.colsi td {
+        border: 1px grey solid;
+        border-spacing: 0;
+        padding: 5px;
+        border-collapse: collapse;
+        background-color: #ffffe6;
+      }
+
+      table.list td {
+        border-top: 1px silver solid;
+        border-spacing: 0;
+      }
+
+      table.bare td {
+        border-spacing: 0;
+      }
+
+      ul.dict li {
+        font-size: 11px;
+        line-height: 1.2em;
+        font-family: verdana;
+        font-weight: normal;
+        padding: 3px;
+      }
+
+      table.dict td {
+        padding: 3px 7px 2px 7px;
+        font-size: 11px;
+        line-height: 1.2em;
+        font-family: verdana;
+        font-weight: normal;
+        padding: 3px;
+        vertical-align: top;
+      }
+
+      table.dict p {
+        font-size: 11px;
+      }
+
+      table {
+        margin-bottom: 10px;
+        border-collapse: collapse;
+      }
+
+      table.codes td {
+        border: 1px solid silver;
+        padding: 3px 7px 2px 7px;
+        font-size: 12px;
+        line-height: 1.4em;
+        font-family: verdana;
+        font-weight: normal;
+        padding: 3px;
+        vertical-align: top;
+      }
+
+      table.grid {
+        margin-bottom: 10px;
+        border: 1px black solid;
+        margin-right: auto;
+
+      }
+
+      table.grid th {
+        border: 1px solid silver;
+        padding: 3px 7px 2px 7px;
+        font-size: 12px;
+        line-height: 1.4em;
+        font-family: verdana;
+        font-weight: bold;
+        padding: 3px;
+        vertical-align: top;
+      }
+
+      table.grid td {
+        border: 1px solid silver;
+        padding: 3px 7px 2px 7px;
+        font-size: 12px;
+        line-height: 1.4em;
+        font-family: verdana;
+        font-weight: normal;
+        padding: 3px;
+        vertical-align: top;
+      }
+
+      ul {
+        margin: 10px 0;
+        padding: 0 0 0 25px;
+      }
+
+      .dense li {
+        margin: 0 0 0 0;
+      }
+
+      li {
+        margin: 0 0 5px 0;
+      }
+
+      h1 {
+        font-size: 16px;
+        margin: 0 0 4px 0;
+        font-family: verdana;
+        border-bottom: 1px solid #7e7e7e;
+        padding-bottom: 2px;
+      }
+
+      h2 {
+        font-family: verdana;
+        line-height: 1.2em;
+        font-size: 14px;
+        margin: 0 0 3px 0;
+        margin-top: 15px;
+        border-bottom: 1px solid #dcdcdc;
+        padding-bottom: 2px;
+      }
+
+      h3 {
+        font-family: verdana;
+        line-height: 1.2em;
+        font-size: 12px;
+        margin: 0 0 3px 0;
+        margin-top: 10px;
+      }
+
+      h4 {
+        font-family: verdana;
+        line-height: 1.2em;
+        font-size: 11px;
+        margin: 0 0 3px 0;
+        margin-top: 10px;
+      }
+
+      div.sidebar h2 {
+        border-bottom: 1px solid #dcdcdc;
+        padding-bottom: 2px;
+        padding-top: 0px;
+        margin-top: 0px;
+        font-weight: normal;
+        margin-left: 8px;
+        margin-bottom: 0px;
+        font-size: 12px;
+      }
+
+      div.sidebar p {
+        padding-bottom: 0px;
+        padding-top: 10px;
+        font-weight: normal;
+        margin-left: 8px;
+        font-size: 12px;
+        margin-bottom: 8px;
+      }
+
+      div.sidebar ul {
+        list-style: none;
+        padding: 0px;
+        margin-left: 6px;
+        font-size: 11px;
+        line-height: 2.125em;
+      }
+
+      div.sidebar li {
+        margin: 0px 0px 0px 6px;
+        padding: 0px;
+        font-size: 11px;
+        line-height: 2.125em;
+      }
+
+      a {
+        color: #428bca;
+        text-decoration: none;
+      }
+
+      a.xmltag :visited {
+        color: Navy;
+      }
+
+      a.xmltag :hover {
+        color: Blue;
+      }
+
+      pre {
+        display: block;
+        border: 1px solid #cccccc;
+        border-radius: 4px;
+      }
+
+      pre a {
+        color: darkgreen;
+        text-decoration: none;
+        border: 0;
+
+      }
+
+      /* PrismJS 1.21.0
+      https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript+abap+abnf+actionscript+ada+agda+al+antlr4+apacheconf+apl+applescript+aql+arduino+arff+asciidoc+aspnet+asm6502+autohotkey+autoit+bash+basic+batch+bbcode+birb+bison+bnf+brainfuck+brightscript+bro+bsl+c+csharp+cpp+cil+clojure+cmake+coffeescript+concurnas+csp+crystal+css-extras+cypher+d+dart+dax+dhall+diff+django+dns-zone-file+docker+ebnf+editorconfig+eiffel+ejs+elixir+elm+etlua+erb+erlang+excel-formula+fsharp+factor+firestore-security-rules+flow+fortran+ftl+gml+gcode+gdscript+gedcom+gherkin+git+glsl+go+graphql+groovy+haml+handlebars+haskell+haxe+hcl+hlsl+http+hpkp+hsts+ichigojam+icon+ignore+inform7+ini+io+j+java+javadoc+javadoclike+javastacktrace+jolie+jq+jsdoc+js-extras+json+json5+jsonp+jsstacktrace+js-templates+julia+keyman+kotlin+latex+latte+less+lilypond+liquid+lisp+livescript+llvm+lolcode+lua+makefile+markdown+markup-templating+matlab+mel+mizar+mongodb+monkey+moonscript+n1ql+n4js+nand2tetris-hdl+naniscript+nasm+neon+nginx+nim+nix+nsis+objectivec+ocaml+opencl+oz+parigp+parser+pascal+pascaligo+pcaxis+peoplecode+perl+php+phpdoc+php-extras+plsql+powerquery+powershell+processing+prolog+properties+protobuf+pug+puppet+pure+purebasic+purescript+python+q+qml+qore+r+racket+jsx+tsx+reason+regex+renpy+rest+rip+roboconf+robotframework+ruby+rust+sas+sass+scss+scala+scheme+shell-session+smali+smalltalk+smarty+sml+solidity+solution-file+soy+sparql+splunk-spl+sqf+sql+stan+iecst+stylus+swift+t4-templating+t4-cs+t4-vb+tap+tcl+tt2+textile+toml+turtle+twig+typescript+typoscript+unrealscript+vala+vbnet+velocity+verilog+vhdl+vim+visual-basic+warpscript+wasm+wiki+xeora+xml-doc+xojo+xquery+yaml+yang+zig&plugins=keep-markup */
+      /**
+       * prism.js default theme for JavaScript, CSS and HTML
+       * Based on dabblet (http://dabblet.com)
+       * @author Lea Verou
+       */
+
+      code[class*="language-"],
+      pre[class*="language-"] {
+        color: black;
+        background: none;
+        text-shadow: 0 1px white;
+        font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+        font-size: 0.95em;
+        text-align: left;
+        white-space: pre;
+        word-spacing: normal;
+        word-break: normal;
+        word-wrap: normal;
+        line-height: 1.5;
+
+        -moz-tab-size: 4;
+        -o-tab-size: 4;
+        tab-size: 4;
+
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+      }
+
+      pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+      code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+        text-shadow: none;
+        background: #b3d4fc;
+      }
+
+      pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+      code[class*="language-"]::selection, code[class*="language-"] ::selection {
+        text-shadow: none;
+        background: #b3d4fc;
+      }
+
+      @media print {
+        code[class*="language-"],
+        pre[class*="language-"] {
+          text-shadow: none;
+        }
+      }
+
+      /* Code blocks */
+      pre[class*="language-"] {
+        padding: 1em;
+        margin: .5em 0;
+        overflow: auto;
+      }
+
+      :not(pre) > code[class*="language-"],
+      pre[class*="language-"] {
+        background: #f5f2f0;
+      }
+
+      /* Inline code */
+      :not(pre) > code[class*="language-"] {
+        padding: .1em;
+        border-radius: .3em;
+        white-space: normal;
+      }
+    </style>
+</head>
+<body>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    <table class="grid dict">
+        
+        
+            <tr>
+                <th scope="row"><b>Url: </b></th>
+                <td style="padding-left: 4px;">http://ecqi.healthit.gov/ecqms/Measure/KidneyHealthEvaluationFHIR</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Version: </b></th>
+                <td style="padding-left: 4px;">0.0.005</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Identifier: </b></th>
+                <td style="padding-left: 4px;">
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>type: </b> <span></span>
+                        </p>
+                    
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>value: </b> <span>CMS951FHIR</span>
+                        </p>
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <th scope="row"><b>Identifier: </b></th>
+                <td style="padding-left: 4px;">
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>type: </b> <span></span>
+                        </p>
+                    
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>value: </b> <span>urn:uuid:e66e345d-d892-4fe2-84a7-748433b6e0a6</span>
+                        </p>
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <th scope="row"><b>Identifier: </b></th>
+                <td style="padding-left: 4px;">
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>type: </b> <span></span>
+                        </p>
+                    
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>value: </b> <span>urn:uuid:2c928085806c39a2018085f3251705e4</span>
+                        </p>
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <th scope="row"><b>Identifier: </b></th>
+                <td style="padding-left: 4px;">
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>type: </b> <span></span>
+                        </p>
+                    
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>value: </b> <span>951FHIR</span>
+                        </p>
+                    
+                </td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Name: </b></th>
+                <td style="padding-left: 4px;">KidneyHealthEvaluationFHIR</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Title: </b></th>
+                <td style="padding-left: 4px;">Kidney Health EvaluationFHIR</td>
+            </tr>
+        
+        
+        
+            <tr>
+                <th scope="row"><b>Status: </b></th>
+                <td style="padding-left: 4px;">draft</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Experimental: </b></th>
+                <td style="padding-left: 4px;">false</td>
+            </tr>
+        
+        
+        
+        
+        
+        
+            <tr>
+                <th scope="row"><b>Date: </b></th>
+                <td style="padding-left: 4px;">2023-08-14T15:19:15+00:00</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Publisher: </b></th>
+                <td style="padding-left: 4px;">National Kidney Foundation</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Description: </b></th>
+                <td style="padding-left: 4px;">Percentage of patients aged 18-75 years with a diagnosis of diabetes who received a kidney health evaluation defined by an Estimated Glomerular Filtration Rate (eGFR) AND Urine Albumin-Creatinine Ratio (uACR) within the measurement period</td>
+            </tr>
+        
+        
+        
+        
+        
+        
+        
+            <tr>
+                <th scope="row"><b>Purpose: </b></th>
+                <td style="padding-left: 4px;">UNKNOWN</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Guidance (Usage): </b></th>
+                <td style="padding-left: 4px;">This measure assesses performance of a comprehensive kidney evaluation in adults aged 18-75. This measure does not preclude or discourage the use of regular laboratory testing for CKD in patients outside of the age range (patients under 18 years and those over 75 years of age).  
+
+This eCQM is a patient-based measure.
+
+This FHIR-based measure has been derived from the QDM-based measure: CMS951v1.
+
+Please refer to the HL7 QI-Core Implementation Guide (http://hl7.org/fhir/us/qicore/index.html) for more information on QI-Core and mapping recommendations from QDM to QI-Core 4.1.1 (http://hl7.org/fhir/us/qicore/qdm-to-qicore.html).</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Copyright: </b></th>
+                <td style="padding-left: 25px;">Copyright 2022 National Kidney Foundation. All Rights Reserved.</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Disclaimer: </b></th>
+                <td style="padding-left: 25px;">Physician Performance Measures (Measures) and related data specifications developed by the National Kidney Foundation (NKF) are intended to facilitate quality improvement activities by health care professionals.
+
+These Measures are intended to assist health care professionals in enhancing quality of care. These Measures are not clinical guidelines and do not establish a standard of medical care and have not been tested for all potential applications. NKF encourages testing and evaluation of its Measures.
+
+Measures are subject to review and may be revised or rescinded at any time by NKF. The measures may not be altered without prior written approval from NKF. The measures, while copyrighted, can be reproduced and distributed, without modification, for noncommercial purposes. Commercial use is defined as the sale, license, or distribution of the measures for commercial gain, or incorporation of the measures into a product or service that is sold, licensed, or distributed for commercial gain. Commercial uses of the measures require a license agreement between the user and NKF. Neither NKF nor its members shall be responsible for any use of the measures.
+
+THESE MEASURES AND SPECIFICATIONS ARE PROVIDED &quot;AS IS&quot; WITHOUT WARRANTY OF ANY KIND.
+
+Limited proprietary coding is contained in the Measure specifications for convenience. Users of the proprietary code sets should obtain all necessary licenses from the owners of these code sets. 
+
+CPT(R) contained in the Measure specifications is copyright 2004-2021 American Medical Association. LOINC(R) is copyright 2004-2021 Regenstrief Institute, Inc. This material contains SNOMED Clinical Terms(R) (SNOMED CT[R]) copyright 2004-2021 International Health Terminology Standards Development Organisation. ICD-10 is copyright 2021 World Health Organization. All Rights Reserved.
+
+The PCPI’s and AMA’s significant past efforts and contributions to the development and updating of the measure are acknowledged.
+
+Due to technical limitations, registered trademarks are indicated by (R) or [R].</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Approval Date: </b></th>
+                <td style="padding-left: 4px;">2023-08-14</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Last Review Date: </b></th>
+                <td style="padding-left: 4px;">2023-08-14</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Effective Period: </b></th>
+                <td style="padding-left: 4px;">2024-01-01..2024-12-31</td>
+            </tr>
+        
+        
+            
+                <tr>
+                    <th scope="row"><b>Population Criteria: </b></th>
+                    <td style="padding-left: 4px;">
+                        
+                            <table class="grid-dict">
+                                
+                                    <tr>
+                                        <th><b>638500824ba3d47c885c02a8</b></th>
+                                    </tr>
+                                
+                                
+                                    <tr>
+                                        <td>Initial Population: </td>
+                                        <td>All patients aged 18-75 years with a diagnosis of diabetes at the start of the measurement period with a visit during the measurement period</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Denominator: </td>
+                                        <td>Equals Initial Population</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Denominator Exclusion: </td>
+                                        <td>Patients with a diagnosis of End Stage Renal Disease (ESRD); Patients with a diagnosis of Chronic Kidney Disease (CKD) Stage 5; Patients who have an order for or are receiving hospice or palliative care</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Denominator Exception: </td>
+                                        <td></td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Numerator: </td>
+                                        <td>Patients who received a kidney health evaluation defined by an Estimated Glomerular Filtration Rate (eGFR) AND Urine Albumin-Creatinine Ratio (uACR) within the measurement period</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Numerator Exclusion: </td>
+                                        <td></td>
+                                    </tr>
+                                
+                            </table>
+                        
+                    </td>
+                </tr>
+            
+        
+        
+        
+        
+        
+        
+            <tr>
+                <th scope="row"><b>Libraries: </b></th>
+                <td style="padding-left: 4px;">
+                    <table class="grid-dict">
+                        
+                            <tr><td>http://ecqi.healthit.gov/ecqms/Library/KidneyHealthEvaluationFHIR</td></tr>
+                        
+                    </table>
+                </td>
+            </tr>
+        
+        
+            
+                <tr>
+                    <th scope="row"><b>Related Artifact Dependencies: </b></th>
+                    <td style="padding-left: 4px;">
+                        
+                            <li>Library/QICoreCommon|1.5.000</li>
+                        
+                            <li>Library/FHIRHelpers|4.3.000</li>
+                        
+                            <li>Library/Hospice|6.7.000</li>
+                        
+                            <li>Library/Status|1.6.000</li>
+                        
+                            <li>Library/FHIRHelpers|4.3.000</li>
+                        
+                            <li>Library/QICoreCommon|1.5.000</li>
+                        
+                            <li>Library/FHIRHelpers|4.3.000</li>
+                        
+                            <li>Library/PalliativeCare|1.7.000</li>
+                        
+                            <li>http://terminology.hl7.org/CodeSystem/condition-clinical</li>
+                        
+                            <li>http://terminology.hl7.org/CodeSystem/v3-ActCode</li>
+                        
+                            <li>http://snomed.info/sct</li>
+                        
+                            <li>http://terminology.hl7.org/CodeSystem/observation-category</li>
+                        
+                            <li>http://loinc.org</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.6929.3.1000</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.6929.3.1007</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.103.12.1001</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1240</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1016</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1001</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1008</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1025</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1023</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1080</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1002</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.353</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1003</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1584</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1165</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1167</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1090</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1135</li>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><b>Parameters:</b></th>
+                    <td style="padding-left: 4px;">
+                        <table class="grid-dict">
+                            <tr><th><b>name</b></th><th><b>use</b></th><th><b>min</b></th><th><b>max</b></th><th><b>type</b></th></tr>
+                            
+                                <tr>
+                                    <td>Measurement Period</td>
+                                    <td>in</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>Period</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Numerator</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>boolean</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Denominator</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>boolean</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Initial Population</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>boolean</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Denominator Exclusions</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>boolean</td>
+                                </tr>
+                            
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><b>DataRequirements:</b></th>
+                    <td style="padding-left: 4px;">
+                        <table class="grid-dict">
+                            <tr><th><b>Type</b></th><th><b>Must Support</b></th><th><b>Valueset Name</b></th><th><b>Valueset</b></th></tr>
+                            
+                                <tr>
+                                    <td>Patient</td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Patient</td>
+                                    <td>
+                                        
+                                            birthDate
+                                        
+                                            birthDate.value
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Observation</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                            effective
+                                        
+                                            value
+                                        
+                                            status
+                                        
+                                            status.value
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Estimated Glomerular Filtration Rate
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.6929.3.1000</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Observation</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                            effective
+                                        
+                                            value
+                                        
+                                            status
+                                        
+                                            status.value
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Urine Albumin Creatinine Ratio
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.6929.3.1007</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Patient</td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Condition</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                            clinicalStatus
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Diabetes
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.103.12.1001</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Annual Wellness Visit
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1240</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Home Healthcare Services
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1016</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Office Visit
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1001</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Outpatient Consultation
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1008</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Preventive Care Services Established Office Visit, 18 and Up
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1025</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Preventive Care Services Initial Office Visit, 18 and Up
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1023</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Telephone Visits
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1080</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Condition</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Chronic Kidney Disease, Stage 5
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1002</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Condition</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 End Stage Renal Disease
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.353</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Encounter Inpatient
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                            hospitalization
+                                        
+                                            hospitalization.dischargeDisposition
+                                        
+                                            period
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Encounter Inpatient
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Hospice Encounter
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1003</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                            period
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Hospice Encounter
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1003</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Observation</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Observation</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                            value
+                                        
+                                            effective
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>ServiceRequest</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Hospice Care Ambulatory
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1584</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>ServiceRequest</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                            authoredOn
+                                        
+                                            authoredOn.value
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Hospice Care Ambulatory
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1584</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Procedure</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Hospice Care Ambulatory
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1584</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Procedure</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                            performed
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Hospice Care Ambulatory
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1584</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Condition</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Hospice Diagnosis
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1165</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Observation</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Observation</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                            effective
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Condition</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Palliative Care Diagnosis
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1167</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Palliative Care Encounter
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1090</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                            period
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Palliative Care Encounter
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1090</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Procedure</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Palliative Care Intervention
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1135</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Procedure</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                            performed
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Palliative Care Intervention
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1135</td>
+                                </tr>
+                            
+                        </table>
+                    </td>
+                </tr>
+                
+                    <tr>
+                        <th scope="row"><b>Direct Reference Codes:</b></th>
+                        <td style="padding-left: 4px;">
+                            <table class="grid-dict">
+                                <tr><th><b>display</b></th><th><b>code</b></th><th><b>system</b></th></tr>
+                                
+                                    <tr>
+                                        <td></td>
+                                        <td>active</td>
+                                        <td>http://terminology.hl7.org/CodeSystem/condition-clinical</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Ambulatory</td>
+                                        <td>AMB</td>
+                                        <td>http://terminology.hl7.org/CodeSystem/v3-ActCode</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Discharge to home for hospice care (procedure)</td>
+                                        <td>428361000124107</td>
+                                        <td>http://snomed.info/sct</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Discharge to healthcare facility for hospice care (procedure)</td>
+                                        <td>428371000124100</td>
+                                        <td>http://snomed.info/sct</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>survey</td>
+                                        <td>survey</td>
+                                        <td>http://terminology.hl7.org/CodeSystem/observation-category</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Hospice care [Minimum Data Set]</td>
+                                        <td>45755-6</td>
+                                        <td>http://loinc.org</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Yes (qualifier value)</td>
+                                        <td>373066001</td>
+                                        <td>http://snomed.info/sct</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Functional Assessment of Chronic Illness Therapy - Palliative Care Questionnaire (FACIT-Pal)</td>
+                                        <td>71007-9</td>
+                                        <td>http://loinc.org</td>
+                                    </tr>
+                                
+                            </table>
+                        </td>
+                    </tr>
+                
+                
+                    <tr>
+                        <th scope="row"><b>Logic Definitions:</b></th>
+                        <td style="padding-left: 4px;">
+                            
+                                <table class="grid-dict">
+                                    <tr>
+                                        <th><b>Group</b></th><th><b>Scoring</b></th><th><b>Population Criteria</b></th><th><b>Expression</b></th>
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td> 638500824ba3d47c885c02a8 </td>
+                                            <td>
+                                                
+                                                    <b>Group scoring:</b>
+                                                    
+                                                    <span>  proportion </span>
+                                                    
+                                                
+                                                
+                                            </td>
+                                            
+                                                <tr>
+                                                    <td/>
+                                                    <td/>
+                                                    <td>Initial Population</td>
+                                                    <td>
+                                                        
+                                                        <pre><code class="language-cql">define &quot;Initial Population&quot;:
+  AgeInYearsAt(date from start of &quot;Measurement Period&quot;) in Interval[18, 75]
+    and &quot;Has Active Diabetes Overlaps Measurement Period&quot;
+    and &quot;Has Outpatient Visit During Measurement Period&quot;</code></pre>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            
+                                                <tr>
+                                                    <td/>
+                                                    <td/>
+                                                    <td>Denominator</td>
+                                                    <td>
+                                                        
+                                                        <pre><code class="language-cql">define &quot;Denominator&quot;:
+  &quot;Initial Population&quot;</code></pre>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            
+                                                <tr>
+                                                    <td/>
+                                                    <td/>
+                                                    <td>Denominator Exclusion</td>
+                                                    <td>
+                                                        
+                                                        <pre><code class="language-cql">define &quot;Denominator Exclusions&quot;:
+  exists &quot;Has CKD Stage 5 or ESRD Diagnosis Overlaps Measurement Period&quot;
+    or Hospice.&quot;Has Hospice Services&quot;
+    or PalliativeCare.&quot;Has Palliative Care in the Measurement Period&quot;</code></pre>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            
+                                                <tr>
+                                                    <td/>
+                                                    <td/>
+                                                    <td>Denominator Exception</td>
+                                                    <td>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            
+                                                <tr>
+                                                    <td/>
+                                                    <td/>
+                                                    <td>Numerator</td>
+                                                    <td>
+                                                        
+                                                        <pre><code class="language-cql">define &quot;Numerator&quot;:
+  &quot;Has Kidney Panel Performed During Measurement Period&quot;</code></pre>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            
+                                                <tr>
+                                                    <td/>
+                                                    <td/>
+                                                    <td>Numerator Exclusion</td>
+                                                    <td>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            
+
+                                    
+                                    </tr>
+                                </table>
+                            
+                            <table class="grid-dict">
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>KidneyHealthEvaluationFHIR</td>
+                                        
+                                        
+                                            <td>Has Kidney Panel Performed During Measurement Period</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Has Kidney Panel Performed During Measurement Period&quot;:
+  exists ( [&quot;Observation&quot;: &quot;Estimated Glomerular Filtration Rate&quot;] eGFRTest
+      where QICoreCommon.&quot;ToInterval&quot; ( eGFRTest.effective ) during &quot;Measurement Period&quot;
+        and eGFRTest.value is not null
+        and eGFRTest.status in { 'final', 'amended', 'corrected' }
+  )
+    and exists ( [&quot;Observation&quot;: &quot;Urine Albumin Creatinine Ratio&quot;] uACRTest
+        where QICoreCommon.&quot;ToInterval&quot; ( uACRTest.effective ) during &quot;Measurement Period&quot;
+          and uACRTest.value is not null
+          and uACRTest.status in { 'final', 'amended', 'corrected' }
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>KidneyHealthEvaluationFHIR</td>
+                                        
+                                        
+                                            <td>Numerator</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Numerator&quot;:
+  &quot;Has Kidney Panel Performed During Measurement Period&quot;</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>KidneyHealthEvaluationFHIR</td>
+                                        
+                                        
+                                            <td>Has Active Diabetes Overlaps Measurement Period</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Has Active Diabetes Overlaps Measurement Period&quot;:
+  exists ( [&quot;Condition&quot;: &quot;Diabetes&quot;] Diabetes
+      where QICoreCommon.&quot;ToPrevalenceInterval&quot; ( Diabetes ) overlaps &quot;Measurement Period&quot;
+        and Diabetes.clinicalStatus ~ &quot;active&quot;
+  )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>KidneyHealthEvaluationFHIR</td>
+                                        
+                                        
+                                            <td>Has Outpatient Visit During Measurement Period</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Has Outpatient Visit During Measurement Period&quot;:
+  exists ( ( [&quot;Encounter&quot;: &quot;Annual Wellness Visit&quot;]
+      union [&quot;Encounter&quot;: &quot;Home Healthcare Services&quot;]
+      union [&quot;Encounter&quot;: &quot;Office Visit&quot;]
+      union [&quot;Encounter&quot;: &quot;Outpatient Consultation&quot;]
+      union [&quot;Encounter&quot;: &quot;Preventive Care Services Established Office Visit, 18 and Up&quot;]
+      union [&quot;Encounter&quot;: &quot;Preventive Care Services Initial Office Visit, 18 and Up&quot;]
+      union [&quot;Encounter&quot;: &quot;Telephone Visits&quot;] ) ValidEncounter
+      where ValidEncounter.period during &quot;Measurement Period&quot;
+        and ValidEncounter.class ~ &quot;AMB&quot;
+        and ValidEncounter.status = 'finished'
+  )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>KidneyHealthEvaluationFHIR</td>
+                                        
+                                        
+                                            <td>Initial Population</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Initial Population&quot;:
+  AgeInYearsAt(date from start of &quot;Measurement Period&quot;) in Interval[18, 75]
+    and &quot;Has Active Diabetes Overlaps Measurement Period&quot;
+    and &quot;Has Outpatient Visit During Measurement Period&quot;</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>KidneyHealthEvaluationFHIR</td>
+                                        
+                                        
+                                            <td>Denominator</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Denominator&quot;:
+  &quot;Initial Population&quot;</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>KidneyHealthEvaluationFHIR</td>
+                                        
+                                        
+                                            <td>Has CKD Stage 5 or ESRD Diagnosis Overlaps Measurement Period</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Has CKD Stage 5 or ESRD Diagnosis Overlaps Measurement Period&quot;:
+  ( [&quot;Condition&quot;: &quot;Chronic Kidney Disease, Stage 5&quot;]
+    union [&quot;Condition&quot;: &quot;End Stage Renal Disease&quot;] ) CKDOrESRD
+    where QICoreCommon.&quot;ToPrevalenceInterval&quot; ( CKDOrESRD ) overlaps &quot;Measurement Period&quot;
+      and CKDOrESRD.clinicalStatus ~ &quot;active&quot;</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>Hospice</td>
+                                        
+                                        
+                                            <td>Has Hospice Services</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Has Hospice Services&quot;:
+  exists ((([Encounter: &quot;Encounter Inpatient&quot;]).isEncounterPerformed()) InpatientEncounter
+      where (InpatientEncounter.hospitalization.dischargeDisposition ~ &quot;Discharge to home for hospice care (procedure)&quot;
+          or InpatientEncounter.hospitalization.dischargeDisposition ~ &quot;Discharge to healthcare facility for hospice care (procedure)&quot;
+      )
+        and InpatientEncounter.period.toInterval() ends during day of &quot;Measurement Period&quot;
+  )
+    or exists ((([Encounter: &quot;Hospice Encounter&quot;]).isEncounterPerformed()) HospiceEncounter
+        where HospiceEncounter.period.toInterval() overlaps day of &quot;Measurement Period&quot;
+    )
+    or exists ((([Observation: &quot;Hospice care [Minimum Data Set]&quot;]).isAssessmentPerformed()) HospiceAssessment
+        where HospiceAssessment.value ~ &quot;Yes (qualifier value)&quot;
+          and HospiceAssessment.effective.toInterval() overlaps day of &quot;Measurement Period&quot;
+    )
+    or exists ((([ServiceRequest: &quot;Hospice Care Ambulatory&quot;]).isInterventionOrder()) HospiceOrder
+        where HospiceOrder.authoredOn.toInterval() during day of &quot;Measurement Period&quot;
+    )
+    or exists ((([Procedure: &quot;Hospice Care Ambulatory&quot;]).isInterventionPerformed()) HospicePerformed
+        where HospicePerformed.performed.toInterval() overlaps day of &quot;Measurement Period&quot;
+    )
+    or exists (([Condition: &quot;Hospice Diagnosis&quot;]) HospiceCareDiagnosis
+        where HospiceCareDiagnosis.prevalenceInterval() overlaps day of &quot;Measurement Period&quot;
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>PalliativeCare</td>
+                                        
+                                        
+                                            <td>Has Palliative Care in the Measurement Period</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Has Palliative Care in the Measurement Period&quot;:
+  exists ((([Observation: &quot;Functional Assessment of Chronic Illness Therapy - Palliative Care Questionnaire (FACIT-Pal)&quot;]).isAssessmentPerformed()) PalliativeAssessment
+      where PalliativeAssessment.effective.toInterval() overlaps day of &quot;Measurement Period&quot;
+  )
+    or exists ([Condition: &quot;Palliative Care Diagnosis&quot;] PalliativeDiagnosis
+        where PalliativeDiagnosis.prevalenceInterval() overlaps day of &quot;Measurement Period&quot;
+    )
+    or exists ((([Encounter: &quot;Palliative Care Encounter&quot;]).isEncounterPerformed()) PalliativeEncounter
+        where PalliativeEncounter.period.toInterval() overlaps day of &quot;Measurement Period&quot;
+    )
+    or exists ((([Procedure: &quot;Palliative Care Intervention&quot;]).isInterventionPerformed()) PalliativeIntervention
+        where PalliativeIntervention.performed.toInterval() overlaps day of &quot;Measurement Period&quot;
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>KidneyHealthEvaluationFHIR</td>
+                                        
+                                        
+                                            <td>Denominator Exclusions</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Denominator Exclusions&quot;:
+  exists &quot;Has CKD Stage 5 or ESRD Diagnosis Overlaps Measurement Period&quot;
+    or Hospice.&quot;Has Hospice Services&quot;
+    or PalliativeCare.&quot;Has Palliative Care in the Measurement Period&quot;</code></pre></td>
+                                        
+                                    </tr>
+                                
+                            </table>
+                        </td>
+                    </tr>
+                
+            
+        
+    </table>
+</div>
+</body>
+</html>
