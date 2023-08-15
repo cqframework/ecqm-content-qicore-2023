@@ -1,0 +1,565 @@
+{
+  "resourceType": "Measure",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-measure-cqfm", "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/publishable-measure-cqfm", "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-measure-cqfm" ]
+  },
+  "contained": [ {
+    "resourceType": "Library",
+    "id": "effective-data-requirements",
+    "extension": [ {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "HIVSTITestingFHIR"
+      }, {
+        "url": "name",
+        "valueString": "Has Chlamydia Testing"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Has Chlamydia Testing\":\n  exists [\"Observation\": \"Chlamydia Screening\"] ChlamydiaTest\n    where ChlamydiaTest.value is not null\n      and QICoreCommon.\"Latest\" ( ChlamydiaTest.effective ) during day of \"Measurement Period\""
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 0
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "HIVSTITestingFHIR"
+      }, {
+        "url": "name",
+        "valueString": "Has Gonorrhea Testing"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Has Gonorrhea Testing\":\n  exists [\"Observation\": \"Gonorrhea Screening\"] GonorrheaTest\n    where GonorrheaTest.value is not null\n      and QICoreCommon.\"Latest\" ( GonorrheaTest.effective ) during day of \"Measurement Period\""
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 1
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "HIVSTITestingFHIR"
+      }, {
+        "url": "name",
+        "valueString": "Has Syphilis Testing"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Has Syphilis Testing\":\n  exists [\"Observation\": \"Syphilis Tests\"] SyphilisTest\n    where SyphilisTest.value is not null\n      and QICoreCommon.\"Latest\" ( SyphilisTest.effective ) during day of \"Measurement Period\""
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 2
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "HIVSTITestingFHIR"
+      }, {
+        "url": "name",
+        "valueString": "Numerator"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Numerator\":\n  \"Has Chlamydia Testing\"\n    and \"Has Gonorrhea Testing\"\n    and \"Has Syphilis Testing\""
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 3
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "HIVSTITestingFHIR"
+      }, {
+        "url": "name",
+        "valueString": "Has Qualifying Encounter During Measurement Period"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Has Qualifying Encounter During Measurement Period\":\n  exists ( ( [\"Encounter\": \"Office Visit\"]\n      union [\"Encounter\": \"Outpatient Consultation\"]\n      union [\"Encounter\": \"Annual Wellness Visit\"]\n      union [\"Encounter\": \"Face-to-Face Interaction\"]\n      union [\"Encounter\": \"Home Healthcare Services\"]\n      union [\"Encounter\": \"Preventive Care Services Established Office Visit, 18 and Up\"]\n      union [\"Encounter\": \"Preventive Care Services Initial Office Visit, 18 and Up\"]\n      union [\"Encounter\": \"Preventive Care Services, Initial Office Visit, 0 to 17\"]\n      union [\"Encounter\": \"Preventive Care, Established Office Visit, 0 to 17\"]\n      union [\"Encounter\": \"Telephone Visits\"]\n      union [\"Encounter\": \"Preventive Care Services - Other\"] ) QualifyingEncounter\n      where QualifyingEncounter.period during day of \"Measurement Period\"\n  )"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 4
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "HIVSTITestingFHIR"
+      }, {
+        "url": "name",
+        "valueString": "Has HIV Diagnosis Before End of Measurement Period"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Has HIV Diagnosis Before End of Measurement Period\":\n  exists [\"Condition\": \"HIV\"] HIVDx\n    where QICoreCommon.\"ToPrevalenceInterval\" ( HIVDx ) starts on or before day of end of \"Measurement Period\""
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 5
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "HIVSTITestingFHIR"
+      }, {
+        "url": "name",
+        "valueString": "Initial Population"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Initial Population\":\n  AgeInYearsAt(date from start of \"Measurement Period\") >= 13\n    and \"Has Qualifying Encounter During Measurement Period\"\n    and \"Has HIV Diagnosis Before End of Measurement Period\""
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 6
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "HIVSTITestingFHIR"
+      }, {
+        "url": "name",
+        "valueString": "Denominator"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Denominator\":\n  \"Initial Population\""
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 7
+      } ]
+    } ],
+    "status": "active",
+    "type": {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/library-type",
+        "code": "module-definition"
+      } ]
+    },
+    "relatedArtifact": [ {
+      "type": "depends-on",
+      "display": "Library FHIRHelpers",
+      "resource": "Library/FHIRHelpers|4.3.000"
+    }, {
+      "type": "depends-on",
+      "display": "Library QICoreCommon",
+      "resource": "Library/QICoreCommon|1.5.000"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Chlamydia Screening",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.110.12.1052"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Gonorrhea Screening",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1258.1"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Syphilis Tests",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1166.117"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Office Visit",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1001"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Outpatient Consultation",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1008"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Annual Wellness Visit",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1240"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Face-to-Face Interaction",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1048"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Home Healthcare Services",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1016"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Preventive Care Services Established Office Visit, 18 and Up",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1025"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Preventive Care Services Initial Office Visit, 18 and Up",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1023"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Preventive Care Services, Initial Office Visit, 0 to 17",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1022"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Preventive Care, Established Office Visit, 0 to 17",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1024"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Telephone Visits",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1080"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Preventive Care Services - Other",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.11.1150"
+    }, {
+      "type": "depends-on",
+      "display": "Value set HIV",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.120.12.1003"
+    } ],
+    "parameter": [ {
+      "name": "Measurement Period",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "Period"
+    }, {
+      "name": "Numerator",
+      "use": "out",
+      "min": 0,
+      "max": "1",
+      "type": "boolean"
+    }, {
+      "name": "Denominator",
+      "use": "out",
+      "min": 0,
+      "max": "1",
+      "type": "boolean"
+    }, {
+      "name": "Initial Population",
+      "use": "out",
+      "min": 0,
+      "max": "1",
+      "type": "boolean"
+    } ],
+    "dataRequirement": [ {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ]
+    }, {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/Patient" ],
+      "mustSupport": [ "birthDate", "birthDate.value" ]
+    }, {
+      "type": "Observation",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observation" ],
+      "mustSupport": [ "code", "value", "effective" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.110.12.1052"
+      } ]
+    }, {
+      "type": "Observation",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observation" ],
+      "mustSupport": [ "code", "value", "effective" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1258.1"
+      } ]
+    }, {
+      "type": "Observation",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observation" ],
+      "mustSupport": [ "code", "value", "effective" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1166.117"
+      } ]
+    }, {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1001"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1008"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1240"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1048"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1016"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1025"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1023"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1022"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1024"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1080"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.11.1150"
+      } ]
+    }, {
+      "type": "Condition",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition" ],
+      "mustSupport": [ "code" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.120.12.1003"
+      } ]
+    } ]
+  } ],
+  "extension": [ {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-effectiveDataRequirements",
+    "valueReference": {
+      "reference": "#effective-data-requirements"
+    }
+  } ],
+  "url": "http://ecqi.healthit.gov/ecqms/Measure/HIVSTITestingFHIR",
+  "identifier": [ {
+    "use": "usual",
+    "type": {
+      "coding": [ {
+        "system": "http://hl7.org/fhir/us/cqfmeasures/CodeSystem/identifier-type",
+        "code": "short-name"
+      } ]
+    },
+    "system": "https://madie.cms.gov/measure/shortName",
+    "value": "CMS1188FHIR"
+  }, {
+    "use": "official",
+    "type": {
+      "coding": [ {
+        "system": "http://hl7.org/fhir/us/cqfmeasures/CodeSystem/identifier-type",
+        "code": "version-independent"
+      } ]
+    },
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:uuid:6f66ca77-1a2c-489c-b0d8-730da6e5a763"
+  }, {
+    "use": "official",
+    "type": {
+      "coding": [ {
+        "system": "http://hl7.org/fhir/us/cqfmeasures/CodeSystem/identifier-type",
+        "code": "version-specific"
+      } ]
+    },
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:uuid:2c92808287dd6f640188b07c4a8a1f35"
+  }, {
+    "use": "official",
+    "type": {
+      "coding": [ {
+        "system": "http://hl7.org/fhir/us/cqfmeasures/CodeSystem/identifier-type",
+        "code": "publisher"
+      } ]
+    },
+    "system": "https://madie.cms.gov/measure/cmsId",
+    "value": "1188FHIR",
+    "assigner": {
+      "display": "CMS"
+    }
+  } ],
+  "version": "0.1.000",
+  "name": "HIVSTITestingFHIR",
+  "title": "Sexually Transmitted Infection (STI) Testing for People with HIVFHIR",
+  "status": "draft",
+  "experimental": false,
+  "date": "2023-08-10T16:02:10+00:00",
+  "publisher": "Health Resources & Services Administration",
+  "contact": [ {
+    "telecom": [ {
+      "system": "url",
+      "value": " https://www.hrsa.gov/"
+    } ]
+  } ],
+  "description": "Percentage of patients 13 years of age and older with a diagnosis of HIV who had tests for syphilis, gonorrhea, and chlamydia performed within the measurement period",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "program"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://hl7.org/fhir/us/cqfmeasures/CodeSystem/quality-programs",
+        "code": "ep-ec",
+        "display": "EP/EC"
+      } ]
+    }
+  } ],
+  "purpose": "UNKNOWN",
+  "usage": "This eCQM is a patient-based measure.\n\nThis FHIR-based measure has been derived from the QDM-based measure: CMS1188v1.\n\nPlease refer to the HL7 QI-Core Implementation Guide (http://hl7.org/fhir/us/qicore/index.html) for more information on QI-Core and mapping recommendations from QDM to QI-Core 4.1.1 (http://hl7.org/fhir/us/qicore/qdm-to-qicore.html).",
+  "copyright": "This measure was developed by the Health Resources & Services Administration (HRSA) of the U.S. Department of Health & Human Services (HHS). It is in the public domain.\n \nCitation of HRSA as the source of the original measure is appreciated. Any modified versions may not be represented as approved, endorsed, or authorized by HRSA or HHS. 42 U.S.C. Section 1320b-10. Users of modified versions should clearly explain how they deviate from HRSA's original measure.\n\nLimited proprietary coding is contained in the Measure specifications for user convenience. Users of proprietary code sets should obtain all necessary licenses from the owners of the code sets. \n\nCPT(R) contained in the Measure specifications is copyright 2004-2022 American Medical Association. LOINC(R) is copyright 2004-2022 Regenstrief Institute, Inc. This material contains SNOMED Clinical Terms(R) (SNOMED CT[R]) copyright 2004-2022 International Health Terminology Standards Development Organisation. ICD-10 is copyright 2022 World Health Organization. All Rights Reserved.\n\nDue to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM].",
+  "approvalDate": "2023-08-11",
+  "lastReviewDate": "2023-08-11",
+  "effectivePeriod": {
+    "start": "2024-01-01",
+    "end": "2024-12-31"
+  },
+  "author": [ {
+    "name": "Health Resources & Services Administration",
+    "telecom": [ {
+      "system": "url",
+      "value": " https://www.hrsa.gov/"
+    } ]
+  } ],
+  "library": [ "http://ecqi.healthit.gov/ecqms/Library/HIVSTITestingFHIR" ],
+  "disclaimer": "These performance measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications.\n\nTHE MEASURES AND SPECIFICATIONS ARE PROVIDED \"AS IS\" WITHOUT WARRANTY OF ANY KIND.\n\nDue to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM].",
+  "rationale": "The rates of syphilis, gonorrhea, and chlamydia cases per 100,000 in the United States have steadily risen over the last decade and increased 11.2%, 5.9%, and 2.8%, respectively, from 2018 to 2019 (DHHS, 2021). People with HIV are at an increased risk of bacterial sexually transmitted infections (STIs), including chlamydia, gonorrhea, and syphilis (CDC, 2004). However, early detection and treatment of bacterial STIs in people with HIV can lead to a reduction in HIV transmission (CDC, 2004). Despite guidelines for at least annual screening among sexually active persons with HIV, only an estimated 55% received a syphilis test in the past year, 23% received a gonorrhea test in the past year, and 24% received a chlamydia test in the past year based on a nationally-representative survey of adults with HIV receiving medical care in the United States (Flagg et al., 2015). This measure will help providers focus their attention and quality improvement efforts towards testing and treating sexually transmitted infections in patients with HIV, thus reducing the complications to long-term syphilis infection and reducing STI incidence (Patel et al., 2012).",
+  "clinicalRecommendationStatement": "\"Routine serologic screening for syphilis is recommended at least annually for all persons with HIV infection who are sexually active, with more frequent screening (i.e., every 3-6 months) for those who have multiple or anonymous partners\" (Panel on Opportunistic Infections in Adults and Adolescents with HIV, 2022, p. Y-3).\n\n\"Patients undergoing screening or treatment for syphilis also should be evaluated for other sexually transmitted diseases such as chlamydia and gonorrhea at anatomic sites of exposure in men and for chlamydia, gonorrhea, and trichomonas in women\" (Panel on Opportunistic Infections in Adults and Adolescents with HIV, 2022, p. Y-3).\n\n\"The USPSTF recommends screening for syphilis in persons who are at increased risk for infection. When deciding which persons to screen for syphilis, clinicians should consider the prevalence of infection in the communities they serve, as well as other sociodemographic and behavioral factors that may be associated with increased risk of syphilis infection. For example, prevalence of syphilis is higher in men, men who have sex with men, persons with HIV infection, young adults, and persons with a history of incarceration, sex work, or military service…. Optimal screening frequency for persons who are at increased risk for syphilis infection is not well established. Men who have sex with men or persons with HIV infection may benefit from screening at least annually or more frequently (e.g., every 3 to 6 months) if they continue to be at high risk\" (USPSTF, 2022, p. 1244-1246).\n\n\"At the initial HIV care visit, providers should screen all sexually active persons for syphilis, gonorrhea, and chlamydia, and perform screening for these infections at least annually during the course of HIV care. Specific testing includes syphilis serology and [a nucleic acid amplification test] NAAT for N. gonorrhoeae and C. trachomatis at the anatomic site of exposure\" (Workowski et al., 2021, p. 26).",
+  "group": [ {
+    "id": "64998bd84c79454c026f7483",
+    "extension": [ {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-scoring",
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+          "code": "proportion",
+          "display": "Proportion"
+        } ]
+      }
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis",
+      "valueCode": "boolean"
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-type",
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/measure-type",
+          "code": "process",
+          "display": "Process"
+        } ]
+      }
+    } ],
+    "population": [ {
+      "id": "250DDEF3-2C5A-44DA-BFB9-69734554ACF4",
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code": "initial-population",
+          "display": "Initial Population"
+        } ]
+      },
+      "description": "All patients 13 years of age and older at the start of the measurement period with a diagnosis of HIV before the end of the measurement period with an eligible encounter during the measurement period",
+      "criteria": {
+        "language": "text/cql-identifier",
+        "expression": "Initial Population"
+      }
+    }, {
+      "id": "10249168-FCAB-4E5C-AE8E-3D94C9E5BEE7",
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code": "denominator",
+          "display": "Denominator"
+        } ]
+      },
+      "description": "Equals Initial Population",
+      "criteria": {
+        "language": "text/cql-identifier",
+        "expression": "Denominator"
+      }
+    }, {
+      "id": "5e85b046-832f-4cea-9d3c-f7d35dda4faf",
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code": "denominator-exclusion",
+          "display": "Denominator Exclusion"
+        } ]
+      },
+      "criteria": {
+        "language": "text/cql-identifier"
+      }
+    }, {
+      "id": "3C47B2A0-999A-43F1-AF6E-359AC843FD67",
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code": "numerator",
+          "display": "Numerator"
+        } ]
+      },
+      "description": "Patients who were tested for each of the following at least once during the measurement period: syphilis, gonorrhea, and chlamydia",
+      "criteria": {
+        "language": "text/cql-identifier",
+        "expression": "Numerator"
+      }
+    }, {
+      "id": "192f31c2-58e6-4192-8d4d-eb0dc07a1cfd",
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code": "numerator-exclusion",
+          "display": "Numerator Exclusion"
+        } ]
+      },
+      "criteria": {
+        "language": "text/cql-identifier"
+      }
+    }, {
+      "id": "3e946d98-08c5-4a41-a3fc-cba39eaabda7",
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code": "denominator-exception",
+          "display": "Denominator Exception"
+        } ]
+      },
+      "criteria": {
+        "language": "text/cql-identifier"
+      }
+    } ]
+  } ]
+}
