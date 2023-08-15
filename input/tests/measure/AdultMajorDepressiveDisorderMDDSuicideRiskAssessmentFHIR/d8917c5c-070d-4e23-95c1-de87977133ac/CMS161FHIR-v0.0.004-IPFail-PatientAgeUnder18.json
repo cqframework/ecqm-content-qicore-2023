@@ -1,0 +1,287 @@
+{
+  "resourceType": "Bundle",
+  "id": "6109654b98086b538055ad1e",
+  "type": "collection",
+  "entry": [ {
+    "fullUrl": "https://madie.cms.gov/Patient/d8917c5c-070d-4e23-95c1-de87977133ac",
+    "resource": {
+      "resourceType": "Patient",
+      "id": "d8917c5c-070d-4e23-95c1-de87977133ac",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div class=\"hapiHeaderText\">PatientAge&lt;18 <b>IPPFAIL </b></div><table class=\"hapiPropertyTable\"><tbody><tr><td>Identifier</td><td>fb3e6d8b8261497c446a4a08409b506c</td></tr><tr><td>Date of birth</td><td><span>01 January 2005</span></td></tr></tbody></table></div>"
+      },
+      "extension": [ {
+        "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+        "extension": [ {
+          "url": "ombCategory",
+          "valueCoding": {
+            "system": "urn:oid:2.16.840.1.113883.6.238",
+            "code": "2106-3",
+            "display": "White"
+          }
+        }, {
+          "url": "text",
+          "valueString": "White"
+        } ]
+      }, {
+        "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+        "extension": [ {
+          "url": "ombCategory",
+          "valueCoding": {
+            "system": "urn:oid:2.16.840.1.113883.6.238",
+            "code": "2186-5",
+            "display": "Not Hispanic or Latino",
+            "userSelected": true
+          }
+        }, {
+          "url": "text",
+          "valueString": "Not Hispanic or Latino"
+        } ]
+      } ],
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MR"
+          } ]
+        },
+        "system": "https://bonnie-fhir.healthit.gov/",
+        "value": "6109654b98086b538055ad1e"
+      } ],
+      "active": true,
+      "name": [ {
+        "use": "usual",
+        "family": "IPFail",
+        "given": [ "PatientAgeUnder18" ]
+      } ],
+      "gender": "female",
+      "birthDate": "2008-01-01"
+    }
+  }, {
+    "fullUrl": "5c98fd74b848464ed33ea05c",
+    "resource": {
+      "resourceType": "Encounter",
+      "id": "5c98fd74b848464ed33ea05c",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ]
+      },
+      "status": "finished",
+      "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "AMB",
+        "display": "ambulatory",
+        "userSelected": true
+      },
+      "type": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "185463005"
+        }, {
+          "system": "http://www.ama-assn.org/go/cpt",
+          "code": "99201"
+        } ]
+      } ],
+      "subject": {
+        "reference": "Patient/d8917c5c-070d-4e23-95c1-de87977133ac"
+      },
+      "period": {
+        "start": "2024-12-03T08:00:00.000+00:00",
+        "end": "2024-12-03T08:30:00.000+00:00"
+      },
+      "diagnosis": [ {
+        "condition": {
+          "reference": "Condition/major-depressive-disorder-active-b537"
+        },
+        "use": {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "10811161000119107",
+            "display": "Major Depressive Disorder-Active"
+          } ]
+        }
+      } ]
+    }
+  }, {
+    "fullUrl": "major-depressive-disorder-active-b537",
+    "resource": {
+      "resourceType": "Condition",
+      "id": "major-depressive-disorder-active-b537",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition" ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+          "code": "encounter-diagnosis",
+          "display": "Encounter Diagnosis"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "2020-09",
+          "code": "10811121000119102",
+          "display": "Major depressive disorder in mother complicating childbirth (disorder)",
+          "userSelected": true
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/d8917c5c-070d-4e23-95c1-de87977133ac"
+      },
+      "recordedDate": "2012-08-10T08:00:00.000+00:00"
+    }
+  }, {
+    "fullUrl": "http://coverage/1",
+    "resource": {
+      "resourceType": "Coverage",
+      "id": "1",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-coverage" ]
+      },
+      "status": "active",
+      "beneficiary": {
+        "reference": "Patient/d8917c5c-070d-4e23-95c1-de87977133ac"
+      },
+      "payor": [ {
+        "reference": "Organization/123456"
+      } ]
+    }
+  }, {
+    "fullUrl": "http://Organization/123456",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "123456",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-organization" ]
+      },
+      "identifier": [ {
+        "use": "temp",
+        "system": "urn:oid:2.16.840.1.113883.4.4",
+        "value": "21-3259825"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "pay",
+          "display": "Payer"
+        } ]
+      } ],
+      "name": "Blue Cross Blue Shield of Texas",
+      "telecom": [ {
+        "system": "phone",
+        "value": "(+1) 972-766-6900"
+      } ],
+      "address": [ {
+        "use": "billing",
+        "type": "postal",
+        "line": [ "P.O. Box 660044" ],
+        "city": "Dallas",
+        "state": "TX",
+        "postalCode": "75266-0044",
+        "country": "USA"
+      } ]
+    }
+  }, {
+    "fullUrl": "http://Practitioner/123456",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "practitioner-123456",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-practitioner" ]
+      },
+      "identifier": [ {
+        "system": "http://hl7.org/fhir/sid/us-npi",
+        "value": "123456"
+      } ],
+      "name": [ {
+        "family": "Evil",
+        "prefix": [ "Dr" ]
+      } ]
+    }
+  }, {
+    "fullUrl": "https://madie.cms.gov/MeasureReport/6385047a4ba3d47c885c02c5/d8917c5c-070d-4e23-95c1-de87977133ac",
+    "resource": {
+      "resourceType": "MeasureReport",
+      "id": "299685c5-b8e3-4557-80ef-355847195611",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/test-case-cqfm" ]
+      },
+      "contained": [ {
+        "resourceType": "Parameters",
+        "id": "PatientAgeUnder18-parameters",
+        "parameter": [ {
+          "name": "subject",
+          "valueString": "d8917c5c-070d-4e23-95c1-de87977133ac"
+        } ]
+      } ],
+      "extension": [ {
+        "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-inputParameters",
+        "valueReference": {
+          "reference": "#PatientAgeUnder18-parameters"
+        }
+      }, {
+        "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-testCaseDescription",
+        "valueMarkdown": "Patient age <18.  Encounter Performed: Office Visit"
+      } ],
+      "modifierExtension": [ {
+        "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-isTestCase",
+        "valueBoolean": true
+      } ],
+      "status": "complete",
+      "type": "individual",
+      "measure": "http://ecqi.healthit.gov/ecqms/Measure/AdultMajorDepressiveDisorderMDDSuicideRiskAssessmentFHIR",
+      "period": {
+        "start": "2024-01-01",
+        "end": "2024-12-31"
+      },
+      "group": [ {
+        "population": [ {
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+              "code": "initial-population",
+              "display": "Initial Population"
+            } ]
+          },
+          "count": 0
+        }, {
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+              "code": "denominator",
+              "display": "Denominator"
+            } ]
+          },
+          "count": 0
+        }, {
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+              "code": "numerator",
+              "display": "Numerator"
+            } ]
+          },
+          "count": 0
+        } ]
+      } ],
+      "evaluatedResource": [ {
+        "reference": "https://madie.cms.gov/Patient/d8917c5c-070d-4e23-95c1-de87977133ac"
+      }, {
+        "reference": "Encounter/5c98fd74b848464ed33ea05c"
+      }, {
+        "reference": "Condition/major-depressive-disorder-active-b537"
+      }, {
+        "reference": "Coverage/1"
+      }, {
+        "reference": "Organization/123456"
+      }, {
+        "reference": "Practitioner/practitioner-123456"
+      } ]
+    }
+  } ]
+}
