@@ -1,5 +1,6 @@
 {
   "resourceType": "Measure",
+  "id": "DementiaCognitiveAssessmentFHIR",
   "meta": {
     "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-measure-cqfm", "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/publishable-measure-cqfm", "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-measure-cqfm" ]
   },
@@ -112,7 +113,7 @@
         "valueString": "Assessment of Cognition Using Standardized Tools or Alternate Methods"
       }, {
         "url": "statement",
-        "valueString": "/***Definitions***/\n\n\ndefine \"Assessment of Cognition Using Standardized Tools or Alternate Methods\":\n  ( [\"Observation\": \"Standardized Tools for Assessment of Cognition\"]\n    union [\"Observation\": \"Cognitive Assessment\"] ) CognitiveAssessment\n    with \"Dementia Encounter During Measurement Period\" EncounterDementia\n      such that CognitiveAssessment.issued.toInterval ( ) starts 12 months or less on or before day of end of EncounterDementia.period\n    where CognitiveAssessment.value is not null\n      and CognitiveAssessment.status in { 'final', 'amended', 'corrected', 'preliminary' }"
+        "valueString": "/***Definitions***/\ndefine \"Assessment of Cognition Using Standardized Tools or Alternate Methods\":\n  ( [\"Observation\": \"Standardized Tools for Assessment of Cognition\"]\n    union [\"Observation\": \"Cognitive Assessment\"] ) CognitiveAssessment\n    with \"Dementia Encounter During Measurement Period\" EncounterDementia\n      such that CognitiveAssessment.issued.toInterval ( ) starts 12 months or less on or before day of end of EncounterDementia.period\n    where CognitiveAssessment.value is not null\n      and CognitiveAssessment.status in { 'final', 'amended', 'corrected', 'preliminary' }"
       }, {
         "url": "displaySequence",
         "valueInteger": 4
@@ -157,7 +158,7 @@
         "valueString": "Initial Population"
       }, {
         "url": "statement",
-        "valueString": "/***Population Criteria***/\n\n\ndefine \"Initial Population\":\n  exists \"Dementia Encounter During Measurement Period\"\n    and ( Count(\"Qualifying Encounter During Measurement Period\") >= 2 )"
+        "valueString": "/***Population Criteria***/\ndefine \"Initial Population\":\n  exists \"Dementia Encounter During Measurement Period\"\n    and ( Count(\"Qualifying Encounter During Measurement Period\") >= 2 )"
       }, {
         "url": "displaySequence",
         "valueInteger": 7
@@ -308,23 +309,15 @@
     "relatedArtifact": [ {
       "type": "depends-on",
       "display": "Library SDE",
-      "resource": "Library/SupplementalDataElements|3.4.000"
+      "resource": "http://ecqi.healthit.gov/ecqms/Library/SupplementalDataElements|3.4.000"
     }, {
       "type": "depends-on",
       "display": "Library QICoreCommon",
-      "resource": "Library/QICoreCommon|1.5.000"
+      "resource": "http://ecqi.healthit.gov/ecqms/Library/QICoreCommon|1.5.000"
     }, {
       "type": "depends-on",
       "display": "Library FHIRHelpers",
-      "resource": "Library/FHIRHelpers|4.3.000"
-    }, {
-      "type": "depends-on",
-      "display": "Library FHIRHelpers",
-      "resource": "Library/FHIRHelpers|4.3.000"
-    }, {
-      "type": "depends-on",
-      "display": "Library FHIRHelpers",
-      "resource": "Library/FHIRHelpers|4.3.000"
+      "resource": "http://ecqi.healthit.gov/ecqms/Library/FHIRHelpers|4.3.000"
     }, {
       "type": "depends-on",
       "display": "Code system ConditionClinicalStatusCodes",
@@ -423,7 +416,7 @@
       "use": "out",
       "min": 0,
       "max": "*",
-      "type": "Resource"
+      "type": "Any"
     }, {
       "name": "Initial Population",
       "use": "out",
@@ -435,13 +428,13 @@
       "use": "out",
       "min": 0,
       "max": "1",
-      "type": "Resource"
+      "type": "Any"
     }, {
       "name": "SDE Race",
       "use": "out",
       "min": 0,
       "max": "1",
-      "type": "Resource"
+      "type": "Any"
     }, {
       "name": "Denominator Exceptions",
       "use": "out",
@@ -454,8 +447,24 @@
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ]
     }, {
       "type": "Patient",
-      "profile": [ "http://hl7.org/fhir/Patient" ],
-      "mustSupport": [ "gender", "gender.value", "birthDate", "birthDate.value" ]
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
+      "mustSupport": [ "url", "extension" ],
+      "codeFilter": [ {
+        "path": "url",
+        "code": [ {
+          "code": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity"
+        } ]
+      } ]
+    }, {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
+      "mustSupport": [ "url", "extension" ],
+      "codeFilter": [ {
+        "path": "url",
+        "code": [ {
+          "code": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race"
+        } ]
+      } ]
     }, {
       "type": "Encounter",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
@@ -529,13 +538,6 @@
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1008"
       } ]
     }, {
-      "type": "Patient",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ]
-    }, {
-      "type": "Condition",
-      "profile": [ "http://hl7.org/fhir/Condition" ],
-      "mustSupport": [ "clinicalStatus" ]
-    }, {
       "type": "Condition",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition" ],
       "mustSupport": [ "code", "verificationStatus" ],
@@ -544,30 +546,6 @@
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1005"
       } ]
     }, {
-      "type": "Observation",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observation" ],
-      "mustSupport": [ "code" ],
-      "codeFilter": [ {
-        "path": "code",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1006"
-      } ]
-    }, {
-      "type": "Observation",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observation" ],
-      "mustSupport": [ "code" ],
-      "codeFilter": [ {
-        "path": "code",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1332"
-      } ]
-    }, {
-      "type": "Encounter",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
-      "mustSupport": [ "type" ],
-      "codeFilter": [ {
-        "path": "type",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1012"
-      } ]
-    }, {
       "type": "Coverage",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-coverage" ],
       "mustSupport": [ "type", "period" ],
@@ -575,58 +553,6 @@
         "path": "type",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591"
       } ]
-    }, {
-      "type": "uri",
-      "profile": [ "http://hl7.org/fhir/uri" ],
-      "mustSupport": [ "value" ]
-    }, {
-      "type": "Patient",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
-      "mustSupport": [ "url", "extension" ]
-    }, {
-      "type": "Patient",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
-      "mustSupport": [ "url", "extension" ]
-    }, {
-      "type": "Patient",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
-      "mustSupport": [ "url", "extension" ]
-    }, {
-      "type": "Patient",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
-      "mustSupport": [ "url", "extension" ]
-    }, {
-      "type": "Observation",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observationnotdone" ],
-      "mustSupport": [ "code" ],
-      "codeFilter": [ {
-        "path": "code",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1006"
-      } ]
-    }, {
-      "type": "Observation",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observationnotdone" ],
-      "mustSupport": [ "code" ],
-      "codeFilter": [ {
-        "path": "code",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1332"
-      } ]
-    }, {
-      "type": "Coverage",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-coverage" ],
-      "mustSupport": [ "type", "period" ],
-      "codeFilter": [ {
-        "path": "type",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591"
-      } ]
-    }, {
-      "type": "Patient",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
-      "mustSupport": [ "url", "extension" ]
-    }, {
-      "type": "Patient",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
-      "mustSupport": [ "url", "extension" ]
     } ]
   } ],
   "extension": [ {
@@ -646,6 +572,12 @@
       }
     } ]
   }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
+    "valueReference": {
+      "reference": "Device/cqf-tooling"
+    }
+  }, {
+    "id": "effective-data-requirements",
     "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-effectiveDataRequirements",
     "valueReference": {
       "reference": "#effective-data-requirements"
@@ -714,7 +646,7 @@
   "title": "Dementia: Cognitive AssessmentFHIR",
   "status": "draft",
   "experimental": false,
-  "date": "2023-08-14T15:54:08+00:00",
+  "date": "2023-08-21T16:10:36+00:00",
   "publisher": "American Academy of Neurology",
   "contact": [ {
     "telecom": [ {

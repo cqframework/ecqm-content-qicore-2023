@@ -1032,7 +1032,7 @@
   "title": "Appropriate Treatment for ST-Segment Elevation Myocardial Infarction (STEMI) Patients in the Emergency Department (ED)FHIR",
   "status": "draft",
   "experimental": false,
-  "date": "2023-08-14T19:40:32+00:00",
+  "date": "2023-08-16T14:32:36+00:00",
   "publisher": "Centers for Medicare & Medicaid Services (CMS)",
   "contact": [ {
     "telecom": [ {
@@ -1044,8 +1044,8 @@
   "purpose": "UNKNOWN",
   "usage": "This eCQM is an episode-based measure and should be reported for each instance of an ED encounter during the measurement period for patients with a STEMI.\n\nThis FHIR-based measure has been derived from the QDM-based measure: CMS996v4.\n\nPlease refer to the HL7 QI-Core Implementation Guide (http://hl7.org/fhir/us/qicore/index.html) for more information on QI-Core and mapping recommendations from QDM to QI-Core 4.1.1 (http://hl7.org/fhir/us/qicore/qdm-to-qicore.html).",
   "copyright": "Limited proprietary coding is contained in these specifications for user convenience. Users of proprietary code sets should obtain all necessary licenses from the owners of the code sets.\n\nThis material contains SNOMED Clinical Terms(R) (SNOMED CT[R]) copyright 2004-2022 International Health Terminology Standards Development Organisation. All rights reserved.\n\nLOINC(R) copyright 2004-2022 Regenstrief Institute, Inc.\n\nCPT(R) contained in the Measure specifications is copyright 2004-2022 American Medical Association.\n\nICD-10 is copyright 2022 World Health Organization. All Rights Reserved.",
-  "approvalDate": "2023-08-14",
-  "lastReviewDate": "2023-08-14",
+  "approvalDate": "2023-08-17",
+  "lastReviewDate": "2023-08-17",
   "effectivePeriod": {
     "start": "2024-01-01",
     "end": "2024-12-31"

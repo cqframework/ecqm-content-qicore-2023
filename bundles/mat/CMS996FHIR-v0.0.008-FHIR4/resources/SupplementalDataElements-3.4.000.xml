@@ -80,7 +80,7 @@
                <th scope="row">
                   <b>Date: </b>
                </th> 
-               <td style="padding-left: 4px;">2023-08-14T20:09:35+00:00</td> 
+               <td style="padding-left: 4px;">2023-08-17T17:08:39+00:00</td> 
             </tr>  
             <tr> 
                <th scope="row">
@@ -276,7 +276,7 @@ define "SDE Sex":
          <code value="logic-library"></code>
       </coding>
    </type>
-   <date value="2023-08-14T20:09:35+00:00"></date>
+   <date value="2023-08-17T17:08:39+00:00"></date>
    <publisher value="ICF"></publisher>
    <description value="This is the QI-Core version of the Supplemental Data Elements library containing the CMS SDE definitions for Payer, Race, Ethnicity and Gender"></description>
    <relatedArtifact>

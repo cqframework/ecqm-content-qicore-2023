@@ -1,5 +1,6 @@
 {
   "resourceType": "Measure",
+  "id": "DRCommunicationWithPhysicianManagingDiabetesFHIR",
   "meta": {
     "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-measure-cqfm", "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/publishable-measure-cqfm", "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-measure-cqfm" ]
   },
@@ -329,7 +330,7 @@
         "valueString": "Medical or Patient Reason for Not Communicating Absence of Macular Edema"
       }, {
         "url": "statement",
-        "valueString": "/* Note: \nbelow definition workaround for \nhttps://oncprojectracking.healthit.gov/support/browse/CQLIT-371. Using value set workaround has been applied for now\nbut when QI Core STU 5 gets in the tool, it may be reverted back to a DRC */\n\n\ndefine \"Medical or Patient Reason for Not Communicating Absence of Macular Edema\":\n  [CommunicationNotDone: \"Macular edema absent (situation)\"] MacularEdemaAbsentNotCommunicated\n    with \"Diabetic Retinopathy Encounter\" EncounterDiabeticRetinopathy\n      such that MacularEdemaAbsentNotCommunicated.recorded during EncounterDiabeticRetinopathy.period\n    where ( MacularEdemaAbsentNotCommunicated.statusReason in \"Medical Reason\"\n        or MacularEdemaAbsentNotCommunicated.statusReason in \"Patient Reason\"\n    )"
+        "valueString": "/* Note: \nbelow definition workaround for \nhttps://oncprojectracking.healthit.gov/support/browse/CQLIT-371. Using value set workaround has been applied for now\nbut when QI Core STU 5 gets in the tool, it may be reverted back to a DRC */\ndefine \"Medical or Patient Reason for Not Communicating Absence of Macular Edema\":\n  [CommunicationNotDone: \"Macular edema absent (situation)\"] MacularEdemaAbsentNotCommunicated\n    with \"Diabetic Retinopathy Encounter\" EncounterDiabeticRetinopathy\n      such that MacularEdemaAbsentNotCommunicated.recorded during EncounterDiabeticRetinopathy.period\n    where ( MacularEdemaAbsentNotCommunicated.statusReason in \"Medical Reason\"\n        or MacularEdemaAbsentNotCommunicated.statusReason in \"Patient Reason\"\n    )"
       }, {
         "url": "displaySequence",
         "valueInteger": 18
@@ -375,23 +376,15 @@
     "relatedArtifact": [ {
       "type": "depends-on",
       "display": "Library SDE",
-      "resource": "Library/SupplementalDataElements|3.4.000"
+      "resource": "http://ecqi.healthit.gov/ecqms/Library/SupplementalDataElements|3.4.000"
     }, {
       "type": "depends-on",
       "display": "Library FHIRHelpers",
-      "resource": "Library/FHIRHelpers|4.3.000"
+      "resource": "http://ecqi.healthit.gov/ecqms/Library/FHIRHelpers|4.3.000"
     }, {
       "type": "depends-on",
       "display": "Library QICoreCommon",
-      "resource": "Library/QICoreCommon|1.5.000"
-    }, {
-      "type": "depends-on",
-      "display": "Library FHIRHelpers",
-      "resource": "Library/FHIRHelpers|4.3.000"
-    }, {
-      "type": "depends-on",
-      "display": "Library FHIRHelpers",
-      "resource": "Library/FHIRHelpers|4.3.000"
+      "resource": "http://ecqi.healthit.gov/ecqms/Library/QICoreCommon|1.5.000"
     }, {
       "type": "depends-on",
       "display": "Code system ActCode",
@@ -486,7 +479,7 @@
       "use": "out",
       "min": 0,
       "max": "*",
-      "type": "Resource"
+      "type": "Any"
     }, {
       "name": "Initial Population",
       "use": "out",
@@ -498,13 +491,13 @@
       "use": "out",
       "min": 0,
       "max": "1",
-      "type": "Resource"
+      "type": "Any"
     }, {
       "name": "SDE Race",
       "use": "out",
       "min": 0,
       "max": "1",
-      "type": "Resource"
+      "type": "Any"
     }, {
       "name": "Denominator Exceptions",
       "use": "out",
@@ -517,52 +510,24 @@
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ]
     }, {
       "type": "Patient",
-      "profile": [ "http://hl7.org/fhir/Patient" ],
-      "mustSupport": [ "gender", "gender.value", "birthDate", "birthDate.value" ]
-    }, {
-      "type": "Encounter",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
-      "mustSupport": [ "type" ],
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
+      "mustSupport": [ "url", "extension" ],
       "codeFilter": [ {
-        "path": "type",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1001"
+        "path": "url",
+        "code": [ {
+          "code": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity"
+        } ]
       } ]
     }, {
-      "type": "Encounter",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
-      "mustSupport": [ "type" ],
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
+      "mustSupport": [ "url", "extension" ],
       "codeFilter": [ {
-        "path": "type",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1285"
+        "path": "url",
+        "code": [ {
+          "code": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race"
+        } ]
       } ]
-    }, {
-      "type": "Encounter",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
-      "mustSupport": [ "type" ],
-      "codeFilter": [ {
-        "path": "type",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1008"
-      } ]
-    }, {
-      "type": "Encounter",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
-      "mustSupport": [ "type" ],
-      "codeFilter": [ {
-        "path": "type",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1014"
-      } ]
-    }, {
-      "type": "Encounter",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
-      "mustSupport": [ "type" ],
-      "codeFilter": [ {
-        "path": "type",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1012"
-      } ]
-    }, {
-      "type": "Condition",
-      "profile": [ "http://hl7.org/fhir/Condition" ],
-      "mustSupport": [ "clinicalStatus" ]
     }, {
       "type": "Condition",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition" ],
@@ -578,6 +543,11 @@
       "codeFilter": [ {
         "path": "reasonCode",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1283"
+      }, {
+        "path": "status.value",
+        "code": [ {
+          "code": "completed"
+        } ]
       } ]
     }, {
       "type": "Communication",
@@ -586,6 +556,11 @@
       "codeFilter": [ {
         "path": "reasonCode",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1391"
+      }, {
+        "path": "status.value",
+        "code": [ {
+          "code": "completed"
+        } ]
       } ]
     }, {
       "type": "Communication",
@@ -594,13 +569,12 @@
       "codeFilter": [ {
         "path": "reasonCode",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1320"
+      }, {
+        "path": "status.value",
+        "code": [ {
+          "code": "completed"
+        } ]
       } ]
-    }, {
-      "type": "Patient",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ]
-    }, {
-      "type": "Patient",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ]
     }, {
       "type": "Observation",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observation" ],
@@ -617,90 +591,6 @@
         "path": "type",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591"
       } ]
-    }, {
-      "type": "uri",
-      "profile": [ "http://hl7.org/fhir/uri" ],
-      "mustSupport": [ "value" ]
-    }, {
-      "type": "Patient",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
-      "mustSupport": [ "url", "extension" ]
-    }, {
-      "type": "Patient",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
-      "mustSupport": [ "url", "extension" ]
-    }, {
-      "type": "Patient",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
-      "mustSupport": [ "url", "extension" ]
-    }, {
-      "type": "Patient",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
-      "mustSupport": [ "url", "extension" ]
-    }, {
-      "type": "Communication",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-communicationnotdone" ],
-      "mustSupport": [ "reasonCode" ],
-      "codeFilter": [ {
-        "path": "reasonCode",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1283"
-      } ]
-    }, {
-      "type": "Communication",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-communicationnotdone" ],
-      "mustSupport": [ "reasonCode" ],
-      "codeFilter": [ {
-        "path": "reasonCode",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1283"
-      } ]
-    }, {
-      "type": "Communication",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-communicationnotdone" ],
-      "mustSupport": [ "reasonCode" ],
-      "codeFilter": [ {
-        "path": "reasonCode",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1391"
-      } ]
-    }, {
-      "type": "Communication",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-communicationnotdone" ],
-      "mustSupport": [ "reasonCode" ],
-      "codeFilter": [ {
-        "path": "reasonCode",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1391"
-      } ]
-    }, {
-      "type": "Communication",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-communicationnotdone" ],
-      "mustSupport": [ "reasonCode" ],
-      "codeFilter": [ {
-        "path": "reasonCode",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1320"
-      } ]
-    }, {
-      "type": "Communication",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-communicationnotdone" ],
-      "mustSupport": [ "reasonCode" ],
-      "codeFilter": [ {
-        "path": "reasonCode",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1320"
-      } ]
-    }, {
-      "type": "Coverage",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-coverage" ],
-      "mustSupport": [ "type", "period" ],
-      "codeFilter": [ {
-        "path": "type",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591"
-      } ]
-    }, {
-      "type": "Patient",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
-      "mustSupport": [ "url", "extension" ]
-    }, {
-      "type": "Patient",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
-      "mustSupport": [ "url", "extension" ]
     } ]
   } ],
   "extension": [ {
@@ -720,6 +610,12 @@
       }
     } ]
   }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
+    "valueReference": {
+      "reference": "Device/cqf-tooling"
+    }
+  }, {
+    "id": "effective-data-requirements",
     "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-effectiveDataRequirements",
     "valueReference": {
       "reference": "#effective-data-requirements"
@@ -775,7 +671,7 @@
   "title": "Diabetic Retinopathy: Communication with the Physician Managing Ongoing Diabetes CareFHIR",
   "status": "draft",
   "experimental": false,
-  "date": "2023-08-14T15:01:07+00:00",
+  "date": "2023-08-21T16:10:36+00:00",
   "publisher": "American Academy of Ophthalmology",
   "contact": [ {
     "telecom": [ {

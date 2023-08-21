@@ -80,7 +80,7 @@
                <th scope="row">
                   <b>Date: </b>
                </th> 
-               <td style="padding-left: 4px;">2023-08-14T20:09:36+00:00</td> 
+               <td style="padding-left: 4px;">2023-08-17T17:08:39+00:00</td> 
             </tr>  
             <tr> 
                <th scope="row">
@@ -760,7 +760,7 @@ define fluent function daysInPeriod(Period Interval&lt;DateTime&gt;):
          <code value="logic-library"></code>
       </coding>
    </type>
-   <date value="2023-08-14T20:09:36+00:00"></date>
+   <date value="2023-08-17T17:08:39+00:00"></date>
    <publisher value="ICF"></publisher>
    <description value="Common terminologies and functions used in QI-Core-based CQL artifacts"></description>
    <relatedArtifact>
