@@ -33,6 +33,85 @@ This provides the needed input to the attribution criteria to determine what dat
 
 There are two test measures defined to support this scenario testing, a "hospital" encounter-based measure `MPPEncounterLevel`, and a "clinic" patient-based measure `MPPPatientLevel`.
 
+In addition, there is an `AttributionModel` library that introduces two fluent functions, `isAttributable(Patient)` and `isAttributable(Encounter)`:
+
+```cql
+parameter "Measurement Period" Interval<DateTime> default Interval[@2023-01-01T00:00:00.0Z, @2023-12-31T23:59:59.999Z]
+parameter "Provider" String
+
+context Patient
+
+define fluent function isAttributable(patient Patient):
+  "Provider" is not null implies Patient.managingOrganization.reference.endsWith("Provider")
+
+define fluent function isAttributable(encounter Encounter):
+  encounter.period during "Measurement Period"
+    and "Provider" is not null implies encounter.serviceProvider.reference.endsWith("Provider")
+```
+
+These functions are then referenced in the initial population criteria for each of these measures:
+
+```cql
+define "Initial Population":
+  "Encounter with Principal Diagnosis and Age" Encounter
+    where Encounter.isAttributable()
+```
+
+```cql
+define "Has Qualifying Encounter During First 240 Days of Measurement Period":
+  exists ( ( ["Encounter": "Office Visit"]
+      union ["Encounter": "Outpatient Consultation"]
+      union ["Encounter": "Annual Wellness Visit"]
+      union ["Encounter": "Face-to-Face Interaction"]
+      union ["Encounter": "Home Healthcare Services"]
+      union ["Encounter": "Preventive Care Services Established Office Visit, 18 and Up"]
+      union ["Encounter": "Preventive Care Services Initial Office Visit, 18 and Up"]
+      union ["Encounter": "Preventive Care Services, Initial Office Visit, 0 to 17"]
+      union ["Encounter": "Preventive Care, Established Office Visit, 0 to 17"]
+      union ["Encounter": "Telephone Visits"]
+    ) QualifyingEncounter
+      where QualifyingEncounter.period during day of Interval[start of "Measurement Period", start of "Measurement Period" + 240 days]
+        and QualifyingEncounter.isAttributable()
+  )
+
+define "Initial Population":
+  "Has Qualifying Encounter During First 240 Days of Measurement Period"
+```
+
+The "default" attribution model defined by this library is simply that the Patient's managing organization matches the given Provider, and that the Encounter's serviceProvider matches the given Provider.
+
+Whenever measure intent requires the determination of attribution (usually in the qualifying encounter, but sometimes in partitioning encounters to be considered as part of the measure logic below population criteria), these functions can be used to include attribution consideration, but in a way that keeps the attribution model used isolated from the rest of the measure logic.
+
+Subsequently, different attribution logic can be provided by specifying a different version of the AttributionModel library using an artifact manifest:
+
+```json
+{
+  "resourceType": "Library",
+  "id": "MPPManifest",
+  "contained": [{
+    "resourceType": "Parameters",
+    "id": "expansion-parameters",
+    "parameter": [{
+      "name": "forceCanonicalVersion",
+      "valueCanonical": "http://ecqi.healthit.gov/ecqms/Library/AttributionModel|1.0.0-custom"
+    }]
+  }],
+  "extension": [{
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-expansionParameters",
+    "valueReference": "#expansion-parameters"
+  }],
+  "url": "http://ecqi.healthit.gov/ecqms/Library/MPPManifest",
+  "name": "MPPManifest",
+  ...
+}
+```
+
+> NOTE: May want to keep expansion parameters limited to only those parameters that would be supplied to the $expand operation, and provide a separate set of parameters for "resolutionParameters"?
+
+> NOTE: May want to expand this beyond just version override to actual canonical reference override?
+
+In this way, the measure specification itself can remain unchanged and computable descriptions of different attribution models can be provided.
+
 ### Terminology API Testing
 
 ### Artifact Manifest Testing

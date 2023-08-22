@@ -1,4 +1,4 @@
-library DischargedonAntithromboticTherapyFHIR version '0.8.000'
+library MPPEncounterLevel
 
 using QICore version '4.1.1'
 
@@ -7,6 +7,7 @@ include CQMCommon version '1.4.000' called CQMCommon
 include QICoreCommon version '1.5.000' called QICoreCommon
 include SupplementalDataElements version '3.4.000' called SDE
 include TJCOverall version '8.9.000' called TJC
+include AttributionModel version '0.1.0' called AM
 
 valueset "Antithrombotic Therapy for Ischemic Stroke": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1110.62'
 valueset "Hemorrhagic Stroke": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.212'
@@ -36,4 +37,6 @@ define "Encounter with Principal Diagnosis and Age":
     where AgeInYearsAt(date from start of AllStrokeEncounter.period ) >= 18
 
 define "Initial Population":
-  "Encounter with Principal Diagnosis and Age"
+  "Encounter with Principal Diagnosis and Age" Encounter
+    where Encounter.isAttributable()
+

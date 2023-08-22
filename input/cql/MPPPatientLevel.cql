@@ -6,6 +6,7 @@ include CQMCommon version '1.4.000' called CQMCommon
 include FHIRHelpers version '4.3.000' called FHIRHelpers
 include QICoreCommon version '1.5.000' called QICoreCommon
 include SupplementalDataElements version '3.4.000' called SDE
+include AttributionModel version '0.1.0' called AM
 
 valueset "Annual Wellness Visit": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1240'
 valueset "Face-to-Face Interaction": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1048'
@@ -41,6 +42,7 @@ define "Has Qualifying Encounter During First 240 Days of Measurement Period":
        /* union ["Encounter": "Unlisted preventive medicine service"] */
     ) QualifyingEncounter
       where QualifyingEncounter.period during day of Interval[start of "Measurement Period", start of "Measurement Period" + 240 days]
+        and QualifyingEncounter.isAttributable()
   )
          /*Jira Ticket CQLIT-368 relating to CPT DRC for Unlisted preventive medicine service*/
 
