@@ -1,0 +1,32 @@
+{
+    "resourceType": "Group",
+    "id": "DischargedonAntithromboticTherapyFHIR",
+    "extension": [{
+        "url": "http://hl7.org/fhir/StructureDefinition/artifact-testArtifact",
+        "valueCanonical": "http://ecqi.healthit.gov/ecqms/Measure/DischargedonAntithromboticTherapyFHIR"
+    }],
+    "active": true,
+    "type": "person",
+    "actual": true,
+    "member": [{
+        "entity": { 
+            "reference": "Patient/6129131702c62a011f2e59fa", 
+            "display": "CMS104FHIR-v0.8.000-NUMERPass-2Enc3WithAntithrombotic"
+        }
+    }, {
+        "entity": { 
+            "reference": "Patient/6129131902c62a011f2e5b40", 
+            "display": "CMS104FHIR-v0.8.000-DENEXCEPPass-MedDscPatRsnDTimeEQEncStartTime"
+        }
+    }, {
+        "entity": { 
+            "reference": "Patient/6129133702c62a011f2e66b1", 
+            "display": "CMS104FHIR-v0.8.000-IPPass-age_eq18"
+        }
+    }, {
+        "entity": { 
+            "reference": "Patient/6129135502c62a011f2e752c", 
+            "display": "CMS104FHIR-v0.8.000-DENEXPass-CMOdurDiffEDTestOccur"
+        }
+    }]
+}
