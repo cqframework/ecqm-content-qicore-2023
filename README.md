@@ -7,6 +7,38 @@ Commits to this repository will automatically trigger a build of the continuous 
 
 https://build.fhir.org/ig/cqframework/ecqm-content-qicore-2023
 
+## Connectathon Scenarios
+
+### Measure Testing
+
+This repository is populated with FHIR-based measure specifications developed using the MADiE tool and based on published AU2023 eCQMs. See the [Measure Content Index](https://docs.google.com/spreadsheets/d/1DocNOIX3ZYWCzOxSHw00sl21WHWx5SeazrlSCUcjqqs/edit#gid=1008487491) for a complete listing of available measure content for measure testing.
+
+### Multi-Provider Patient Scenario
+
+For systems that deal house data from multiple providers, it is often the case that individual patients may have encounters with multiple providers. In these cases, there must be a way to support identifying the data that should be reported with an individual based on the provider being reported. This is often referred to as the attribution of a patient (and their associated data for reporting) to a provider. Because attribution models vary based on where and why a measure is being evaluated (i.e. for what reporting program), attribution is not included as part of the measure specification. This means that currently, reporting systems must partition data differently when running the same measure for different programs. To support formal description of the attribution model, this scenario will look at ways to describe the attribution as part of the program, rather than as part of the measure itself.
+
+The testing scenario we are using to support these investigations is as follows:
+
+![Multi-provider patient scenario](input/images/MultiProviderPatient.png)
+
+The patient, Jane Doe, has 9 encounters, one at the beginning of each month. The first four encounters are with practitioners Jane Smith and John Smith, practicing at Organization A with CCN `CCN-123` and TIN `EIN-00123`. The last five encounters are with practitioners Kelly Smith and John Smith, practicing at Organization B with CCN `CCN-999` and TIN `EIN-00999`.
+
+To support identifying the provider being reported, use the `provider` parameter of the R5 [$evaluate-measure](https://hl7.org/fhir/measure-operation-evaluate-measure.html):
+
+```
+GET [base]/Measure/<measure-id>/$evaluate-measure?subject=Patient/MultiProviderPatient&periodStart=2023-01-01&periodEnd=2023-12-31&provider=Organization/organization-a
+```
+
+This provides the needed input to the attribution criteria to determine what data should be attributed to the provider for the given patient.
+
+There are two test measures defined to support this scenario testing, a "hospital" encounter-based measure `MPPEncounterLevel`, and a "clinic" patient-based measure `MPPPatientLevel`.
+
+### Terminology API Testing
+
+### Artifact Manifest Testing
+
+### Measure Narrative Review
+
 ## Authoring
 
 To author content in this implementation guide, you can use the VS Code CQL Plugin. This plugin will enable you to author, validate, and execute FHIR-based eCQM content.
