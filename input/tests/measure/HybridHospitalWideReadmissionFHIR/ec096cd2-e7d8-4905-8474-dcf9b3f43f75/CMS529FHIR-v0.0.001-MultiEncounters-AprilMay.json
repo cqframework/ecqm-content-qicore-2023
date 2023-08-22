@@ -1,0 +1,330 @@
+{
+  "resourceType": "Bundle",
+  "id": "63ec09a1ccb3770120fea637",
+  "type": "collection",
+  "entry": [ {
+    "fullUrl": "https://madie.cms.gov/Patient/ec096cd2-e7d8-4905-8474-dcf9b3f43f75",
+    "resource": {
+      "resourceType": "Patient",
+      "id": "ec096cd2-e7d8-4905-8474-dcf9b3f43f75",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div class=\"hapiHeaderText\">AprilMay <b>MULTIENCOUNTERS </b></div><table class=\"hapiPropertyTable\"><tbody><tr><td>Identifier</td><td>d69abbc179641b9cd673a4a9152886e8e63bc2e0e7b27e1a51505ef2a774679e</td></tr><tr><td>Date of birth</td><td><span>21 June 1941</span></td></tr></tbody></table></div>"
+      },
+      "extension": [ {
+        "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+        "extension": [ {
+          "url": "ombCategory",
+          "valueCoding": {
+            "system": "urn:oid:2.16.840.1.113883.6.238",
+            "code": "1002-5",
+            "display": "American Indian or Alaska Native",
+            "userSelected": true
+          }
+        }, {
+          "url": "text",
+          "valueString": "American Indian or Alaska Native"
+        } ]
+      }, {
+        "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+        "extension": [ {
+          "url": "ombCategory",
+          "valueCoding": {
+            "system": "urn:oid:2.16.840.1.113883.6.238",
+            "code": "2186-5",
+            "display": "Not Hispanic or Latino",
+            "userSelected": true
+          }
+        }, {
+          "url": "text",
+          "valueString": "Not Hispanic or Latino"
+        } ]
+      } ],
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MR"
+          } ]
+        },
+        "system": "https://bonnie-fhir.healthit.gov/",
+        "value": "63ec09a1ccb3770120fea637"
+      } ],
+      "active": true,
+      "name": [ {
+        "use": "usual",
+        "family": "MultiEncounters",
+        "given": [ "AprilMay" ]
+      } ],
+      "gender": "male",
+      "birthDate": "1941-06-21"
+    }
+  }, {
+    "fullUrl": "5dc2cd7fd47b2c00005dfd6d",
+    "resource": {
+      "resourceType": "Encounter",
+      "id": "5dc2cd7fd47b2c00005dfd6d",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ]
+      },
+      "status": "finished",
+      "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "OBSENC",
+        "display": "observation encounter",
+        "userSelected": true
+      },
+      "type": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "183452005"
+        } ]
+      } ],
+      "subject": {
+        "reference": "Patient/ec096cd2-e7d8-4905-8474-dcf9b3f43f75"
+      },
+      "period": {
+        "start": "2024-08-21T08:00:00.000+00:00",
+        "end": "2024-08-22T08:15:00.000+00:00"
+      }
+    }
+  }, {
+    "fullUrl": "5ddc4702aef70c00005ba659",
+    "resource": {
+      "resourceType": "Encounter",
+      "id": "5ddc4702aef70c00005ba659",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ]
+      },
+      "status": "finished",
+      "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "IMP",
+        "display": "inpatient encounter",
+        "userSelected": true
+      },
+      "type": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "183452005"
+        } ]
+      } ],
+      "subject": {
+        "reference": "Patient/ec096cd2-e7d8-4905-8474-dcf9b3f43f75"
+      },
+      "period": {
+        "start": "2024-09-21T08:00:00.000+00:00",
+        "end": "2024-09-22T08:15:00.000+00:00"
+      }
+    }
+  }, {
+    "fullUrl": "5f98f4f2a916680000fb6dae",
+    "resource": {
+      "resourceType": "Coverage",
+      "id": "5f98f4f2a916680000fb6dae",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-coverage" ]
+      },
+      "status": "active",
+      "type": {
+        "coding": [ {
+          "system": "https://nahdo.org/sopt",
+          "version": "1.0.1",
+          "code": "1",
+          "display": "Medicare payer",
+          "userSelected": true
+        } ]
+      },
+      "beneficiary": {
+        "reference": "Patient/ec096cd2-e7d8-4905-8474-dcf9b3f43f75"
+      },
+      "payor": [ {
+        "reference": "Organization/123456"
+      } ]
+    }
+  }, {
+    "fullUrl": "5dc2df6f831f330000d7448f",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "5dc2df6f831f330000d7448f",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observation" ]
+      },
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "laboratory",
+          "userSelected": true
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "8867-4"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/ec096cd2-e7d8-4905-8474-dcf9b3f43f75"
+      },
+      "effectiveDateTime": "2024-08-21T10:00:00.000+00:00",
+      "valueQuantity": {
+        "value": 110.0
+      }
+    }
+  }, {
+    "fullUrl": "5ddc472aaef70c00005ba68c",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "5ddc472aaef70c00005ba68c",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observation" ]
+      },
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "laboratory",
+          "userSelected": true
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "8867-4"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/ec096cd2-e7d8-4905-8474-dcf9b3f43f75"
+      },
+      "effectiveDateTime": "2024-09-21T08:00:00.000+00:00",
+      "valueQuantity": {
+        "value": 120.0
+      }
+    }
+  }, {
+    "fullUrl": "http://Organization/123456",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "123456",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-organization" ]
+      },
+      "identifier": [ {
+        "use": "temp",
+        "system": "urn:oid:2.16.840.1.113883.4.4",
+        "value": "21-3259825"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "pay",
+          "display": "Payer"
+        } ]
+      } ],
+      "name": "Blue Cross Blue Shield of Texas",
+      "telecom": [ {
+        "system": "phone",
+        "value": "(+1) 972-766-6900"
+      } ],
+      "address": [ {
+        "use": "billing",
+        "type": "postal",
+        "line": [ "P.O. Box 660044" ],
+        "city": "Dallas",
+        "state": "TX",
+        "postalCode": "75266-0044",
+        "country": "USA"
+      } ]
+    }
+  }, {
+    "fullUrl": "http://Practitioner/123456",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "practitioner-123456",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-practitioner" ]
+      },
+      "identifier": [ {
+        "system": "http://hl7.org/fhir/sid/us-npi",
+        "value": "123456"
+      } ],
+      "name": [ {
+        "family": "Evil",
+        "prefix": [ "Dr" ]
+      } ]
+    }
+  }, {
+    "fullUrl": "https://madie.cms.gov/MeasureReport/638501714ba3d47c885c02ad/ec096cd2-e7d8-4905-8474-dcf9b3f43f75",
+    "resource": {
+      "resourceType": "MeasureReport",
+      "id": "b467dd03-fa6d-44b4-b906-2ccabb37bd7e",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/test-case-cqfm" ]
+      },
+      "contained": [ {
+        "resourceType": "Parameters",
+        "id": "AprilMay-parameters",
+        "parameter": [ {
+          "name": "subject",
+          "valueString": "ec096cd2-e7d8-4905-8474-dcf9b3f43f75"
+        } ]
+      } ],
+      "extension": [ {
+        "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-inputParameters",
+        "valueReference": {
+          "reference": "#AprilMay-parameters"
+        }
+      }, {
+        "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-testCaseDescription",
+        "valueMarkdown": "2 Encounters after start of Medicare payer. (BT: no date for MCare)\nBoth encounters had heart rate exam within corresponding time frame. \nBoth results in measure results. "
+      } ],
+      "modifierExtension": [ {
+        "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-isTestCase",
+        "valueBoolean": true
+      } ],
+      "status": "complete",
+      "type": "individual",
+      "measure": "http://ecqi.healthit.gov/ecqms/Measure/HybridHospitalWideReadmissionFHIR",
+      "period": {
+        "start": "2024-07-01",
+        "end": "2025-06-30"
+      },
+      "group": [ {
+        "population": [ {
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+              "code": "initial-population",
+              "display": "Initial Population"
+            } ]
+          },
+          "count": 2
+        } ]
+      } ],
+      "evaluatedResource": [ {
+        "reference": "https://madie.cms.gov/Patient/ec096cd2-e7d8-4905-8474-dcf9b3f43f75"
+      }, {
+        "reference": "Encounter/5dc2cd7fd47b2c00005dfd6d"
+      }, {
+        "reference": "Encounter/5ddc4702aef70c00005ba659"
+      }, {
+        "reference": "Coverage/5f98f4f2a916680000fb6dae"
+      }, {
+        "reference": "Observation/5dc2df6f831f330000d7448f"
+      }, {
+        "reference": "Observation/5ddc472aaef70c00005ba68c"
+      }, {
+        "reference": "Organization/123456"
+      }, {
+        "reference": "Practitioner/practitioner-123456"
+      } ]
+    }
+  } ]
+}

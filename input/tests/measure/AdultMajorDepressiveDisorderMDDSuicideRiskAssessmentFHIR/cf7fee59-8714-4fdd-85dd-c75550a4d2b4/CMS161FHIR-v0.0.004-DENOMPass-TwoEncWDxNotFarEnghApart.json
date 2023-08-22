@@ -1,0 +1,368 @@
+{
+  "resourceType": "Bundle",
+  "id": "64caf56804af1067431434ab",
+  "type": "collection",
+  "entry": [ {
+    "fullUrl": "https://madie.cms.gov/Patient/cf7fee59-8714-4fdd-85dd-c75550a4d2b4",
+    "resource": {
+      "resourceType": "Patient",
+      "id": "cf7fee59-8714-4fdd-85dd-c75550a4d2b4",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ]
+      },
+      "extension": [ {
+        "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+        "extension": [ {
+          "url": "ombCategory",
+          "valueCoding": {
+            "system": "urn:oid:2.16.840.1.113883.6.238",
+            "code": "1002-5",
+            "display": "American Indian or Alaska Native",
+            "userSelected": true
+          }
+        }, {
+          "url": "text",
+          "valueString": "American Indian or Alaska Native"
+        } ]
+      }, {
+        "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+        "extension": [ {
+          "url": "ombCategory",
+          "valueCoding": {
+            "system": "urn:oid:2.16.840.1.113883.6.238",
+            "code": "2186-5",
+            "display": "Not Hispanic or Latino",
+            "userSelected": true
+          }
+        }, {
+          "url": "text",
+          "valueString": "Not Hispanic or Latino"
+        } ]
+      } ],
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MR"
+          } ]
+        },
+        "system": "https://bonnie-fhir.healthit.gov/",
+        "value": "64caf56804af1067431434ab"
+      } ],
+      "name": [ {
+        "family": "DENOMPass",
+        "given": [ "TwoEncWDxNotFarEnghApart" ]
+      } ],
+      "gender": "male",
+      "birthDate": "1959-11-20"
+    }
+  }, {
+    "fullUrl": "outpatient-consultation-34ac",
+    "resource": {
+      "resourceType": "Encounter",
+      "id": "outpatient-consultation-34ac",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ]
+      },
+      "status": "finished",
+      "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "AMB",
+        "display": "ambulatory",
+        "userSelected": true
+      },
+      "type": [ {
+        "coding": [ {
+          "system": "http://www.ama-assn.org/go/cpt",
+          "code": "99242",
+          "userSelected": true
+        } ]
+      } ],
+      "subject": {
+        "reference": "Patient/cf7fee59-8714-4fdd-85dd-c75550a4d2b4"
+      },
+      "period": {
+        "start": "2024-02-18T14:00:00.000+00:00",
+        "end": "2024-02-18T14:30:00.000+00:00"
+      },
+      "reasonCode": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "2022-09",
+          "code": "25922000",
+          "display": "Major depressive disorder, single episode with postpartum onset (disorder)",
+          "userSelected": true
+        } ]
+      } ],
+      "diagnosis": [ {
+        "condition": {
+          "reference": "Condition/major-depressive-disorder-active-34ad"
+        },
+        "use": {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "version": "2022-09",
+            "code": "25922000",
+            "display": "Major depressive disorder, single episode with postpartum onset (disorder)",
+            "userSelected": true
+          } ]
+        }
+      } ]
+    }
+  }, {
+    "fullUrl": "major-depressive-disorder-active-34ad",
+    "resource": {
+      "resourceType": "Condition",
+      "id": "major-depressive-disorder-active-34ad",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition" ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+          "code": "encounter-diagnosis",
+          "display": "Encounter Diagnosis"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "2022-09",
+          "code": "10811121000119102",
+          "display": "Major depressive disorder in mother complicating childbirth (disorder)",
+          "userSelected": true
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/cf7fee59-8714-4fdd-85dd-c75550a4d2b4"
+      },
+      "recordedDate": "2024-08-02T08:00:00.000+00:00"
+    }
+  }, {
+    "fullUrl": "psych-visit-diagnostic-evaluation-34ae",
+    "resource": {
+      "resourceType": "Encounter",
+      "id": "psych-visit-diagnostic-evaluation-34ae",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ]
+      },
+      "status": "finished",
+      "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "AMB",
+        "display": "ambulatory",
+        "userSelected": true
+      },
+      "type": [ {
+        "coding": [ {
+          "system": "http://www.ama-assn.org/go/cpt",
+          "code": "90791",
+          "userSelected": true
+        } ]
+      } ],
+      "subject": {
+        "reference": "Patient/cf7fee59-8714-4fdd-85dd-c75550a4d2b4"
+      },
+      "period": {
+        "start": "2024-05-18T14:00:00.000+00:00",
+        "end": "2024-05-18T14:46:00.000+00:00"
+      },
+      "diagnosis": [ {
+        "condition": {
+          "reference": "Condition/major-depressive-disorder-active-a386"
+        },
+        "use": {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "version": "2022-09",
+            "code": "10811161000119107",
+            "display": "Major depressive disorder in mother complicating pregnancy (disorder)",
+            "userSelected": true
+          } ]
+        }
+      } ]
+    }
+  }, {
+    "fullUrl": "major-depressive-disorder-active-a386",
+    "resource": {
+      "resourceType": "Condition",
+      "id": "major-depressive-disorder-active-a386",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition" ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+          "code": "encounter-diagnosis",
+          "display": "Encounter Diagnosis"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "version": "2022-09",
+          "code": "10811121000119102",
+          "display": "Major depressive disorder in mother complicating childbirth (disorder)",
+          "userSelected": true
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/cf7fee59-8714-4fdd-85dd-c75550a4d2b4"
+      },
+      "recordedDate": "2024-05-18T14:00:00.000+00:00"
+    }
+  }, {
+    "fullUrl": "http://coverage/1",
+    "resource": {
+      "resourceType": "Coverage",
+      "id": "1",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-coverage" ]
+      },
+      "status": "active",
+      "beneficiary": {
+        "reference": "Patient/cf7fee59-8714-4fdd-85dd-c75550a4d2b4"
+      },
+      "payor": [ {
+        "reference": "Organization/123456"
+      } ]
+    }
+  }, {
+    "fullUrl": "http://Organization/123456",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "123456",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-organization" ]
+      },
+      "identifier": [ {
+        "use": "temp",
+        "system": "urn:oid:2.16.840.1.113883.4.4",
+        "value": "21-3259825"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "pay",
+          "display": "Payer"
+        } ]
+      } ],
+      "name": "Blue Cross Blue Shield of Texas",
+      "telecom": [ {
+        "system": "phone",
+        "value": "(+1) 972-766-6900"
+      } ],
+      "address": [ {
+        "use": "billing",
+        "type": "postal",
+        "line": [ "P.O. Box 660044" ],
+        "city": "Dallas",
+        "state": "TX",
+        "postalCode": "75266-0044",
+        "country": "USA"
+      } ]
+    }
+  }, {
+    "fullUrl": "http://Practitioner/123456",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "practitioner-123456",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-practitioner" ]
+      },
+      "identifier": [ {
+        "system": "http://hl7.org/fhir/sid/us-npi",
+        "value": "123456"
+      } ],
+      "name": [ {
+        "family": "Evil",
+        "prefix": [ "Dr" ]
+      } ]
+    }
+  }, {
+    "fullUrl": "https://madie.cms.gov/MeasureReport/6385047a4ba3d47c885c02c5/cf7fee59-8714-4fdd-85dd-c75550a4d2b4",
+    "resource": {
+      "resourceType": "MeasureReport",
+      "id": "c562385f-7d92-4346-96dc-fe77c4a8934f",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/test-case-cqfm" ]
+      },
+      "contained": [ {
+        "resourceType": "Parameters",
+        "id": "TwoEncWDxNotFarEnghApart-parameters",
+        "parameter": [ {
+          "name": "subject",
+          "valueString": "cf7fee59-8714-4fdd-85dd-c75550a4d2b4"
+        } ]
+      } ],
+      "extension": [ {
+        "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-inputParameters",
+        "valueReference": {
+          "reference": "#TwoEncWDxNotFarEnghApart-parameters"
+        }
+      }, {
+        "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-testCaseDescription",
+        "valueMarkdown": "Patient with Diagnosis: Major Depressive Disorder-Active during Encounter Performed: Outpatient Consultation and Encounter: Performed: Psych Visit - Diagnostic Evaluation"
+      } ],
+      "modifierExtension": [ {
+        "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-isTestCase",
+        "valueBoolean": true
+      } ],
+      "status": "complete",
+      "type": "individual",
+      "measure": "http://ecqi.healthit.gov/ecqms/Measure/AdultMajorDepressiveDisorderMDDSuicideRiskAssessmentFHIR",
+      "period": {
+        "start": "2024-01-01",
+        "end": "2024-12-31"
+      },
+      "group": [ {
+        "population": [ {
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+              "code": "initial-population",
+              "display": "Initial Population"
+            } ]
+          },
+          "count": 1
+        }, {
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+              "code": "denominator",
+              "display": "Denominator"
+            } ]
+          },
+          "count": 1
+        }, {
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+              "code": "numerator",
+              "display": "Numerator"
+            } ]
+          },
+          "count": 0
+        } ]
+      } ],
+      "evaluatedResource": [ {
+        "reference": "https://madie.cms.gov/Patient/cf7fee59-8714-4fdd-85dd-c75550a4d2b4"
+      }, {
+        "reference": "Encounter/outpatient-consultation-34ac"
+      }, {
+        "reference": "Condition/major-depressive-disorder-active-34ad"
+      }, {
+        "reference": "Encounter/psych-visit-diagnostic-evaluation-34ae"
+      }, {
+        "reference": "Condition/major-depressive-disorder-active-a386"
+      }, {
+        "reference": "Coverage/1"
+      }, {
+        "reference": "Organization/123456"
+      }, {
+        "reference": "Practitioner/practitioner-123456"
+      } ]
+    }
+  } ]
+}

@@ -45,7 +45,7 @@
         "valueString": "Numerator"
       }, {
         "url": "statement",
-        "valueString": "/*Jira Ticket CQLIT-368 relating to CPT DRC for Unlisted preventive medicine service*/\ndefine \"Numerator\":\n  \"Most Recent Viral Load Test During Measurement Period\".value < 200 '{copies}/mL'\n    or \"Most Recent Viral Load Test During Measurement Period\".value ~ \"Below threshold level (qualifier value)\"\n    or \"Most Recent Viral Load Test During Measurement Period\".value ~ \"Not detected (qualifier value)\""
+        "valueString": "define \"Numerator\":\n  \"Most Recent Viral Load Test During Measurement Period\".value < 200 '{copies}/mL'\n    or \"Most Recent Viral Load Test During Measurement Period\".value ~ \"Below threshold level (qualifier value)\"\n    or \"Most Recent Viral Load Test During Measurement Period\".value ~ \"Not detected (qualifier value)\""
       }, {
         "url": "displaySequence",
         "valueInteger": 1
@@ -60,7 +60,7 @@
         "valueString": "Has Active HIV Diagnosis Before or in First 90 Days of Measurement Period"
       }, {
         "url": "statement",
-        "valueString": "define \"Has Active HIV Diagnosis Before or in First 90 Days of Measurement Period\":\n  exists ( [\"Condition\": \"HIV\"] HIVDx\n      where QICoreCommon.\"ToPrevalenceInterval\" ( HIVDx ) starts before day of ( start of \"Measurement Period\" + 90 days )\n  )"
+        "valueString": "define \"Has Active HIV Diagnosis Before or in First 90 Days of Measurement Period\":\n  exists [\"Condition\": \"HIV\"] HIVDx\n    where QICoreCommon.\"ToPrevalenceInterval\" ( HIVDx ) starts before day of ( start of \"Measurement Period\" + 90 days )"
       }, {
         "url": "displaySequence",
         "valueInteger": 2
@@ -75,7 +75,7 @@
         "valueString": "Has Qualifying Encounter During First 240 Days of Measurement Period"
       }, {
         "url": "statement",
-        "valueString": "define \"Has Qualifying Encounter During First 240 Days of Measurement Period\":\n  exists ( ( [\"Encounter\": \"Office Visit\"]\n      union [\"Encounter\": \"Outpatient Consultation\"]\n      union [\"Encounter\": \"Annual Wellness Visit\"]\n      union [\"Encounter\": \"Face-to-Face Interaction\"]\n      union [\"Encounter\": \"Home Healthcare Services\"]\n      union [\"Encounter\": \"Preventive Care Services Established Office Visit, 18 and Up\"]\n      union [\"Encounter\": \"Preventive Care Services Initial Office Visit, 18 and Up\"]\n      union [\"Encounter\": \"Preventive Care Services, Initial Office Visit, 0 to 17\"]\n      union [\"Encounter\": \"Preventive Care, Established Office Visit, 0 to 17\"]\n      union [\"Encounter\": \"Telephone Visits\"]\n       /* union [\"Encounter\": \"Unlisted preventive medicine service\"] */\n    ) QualifyingEncounter\n      where QualifyingEncounter.period during day of Interval[start of \"Measurement Period\", start of \"Measurement Period\" + 240 days]\n  )"
+        "valueString": "define \"Has Qualifying Encounter During First 240 Days of Measurement Period\":\n  exists ( [\"Encounter\": \"Office Visit\"]\n    union [\"Encounter\": \"Outpatient Consultation\"]\n    union [\"Encounter\": \"Annual Wellness Visit\"]\n    union [\"Encounter\": \"Face-to-Face Interaction\"]\n    union [\"Encounter\": \"Home Healthcare Services\"]\n    union [\"Encounter\": \"Preventive Care Services Established Office Visit, 18 and Up\"]\n    union [\"Encounter\": \"Preventive Care Services Initial Office Visit, 18 and Up\"]\n    union [\"Encounter\": \"Preventive Care Services, Initial Office Visit, 0 to 17\"]\n    union [\"Encounter\": \"Preventive Care, Established Office Visit, 0 to 17\"]\n    union [\"Encounter\": \"Telephone Visits\"]\n    union [\"Encounter\": \"Preventive Care Services Other\"] ) QualifyingEncounter\n    where QualifyingEncounter.period during day of Interval[start of \"Measurement Period\", start of \"Measurement Period\" + 240 days]"
       }, {
         "url": "displaySequence",
         "valueInteger": 3
@@ -178,6 +178,10 @@
       "type": "depends-on",
       "display": "Value set Telephone Visits",
       "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1080"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Preventive Care Services Other",
+      "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1030"
     } ],
     "parameter": [ {
       "name": "Measurement Period",
@@ -311,6 +315,14 @@
         "path": "type",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1080"
       } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1030"
+      } ]
     } ]
   } ],
   "extension": [ {
@@ -369,7 +381,7 @@
   "title": "HIV Viral SuppressionFHIR",
   "status": "draft",
   "experimental": false,
-  "date": "2023-07-31T18:02:21+00:00",
+  "date": "2023-08-10T14:00:25+00:00",
   "publisher": "Health Resources & Services Administration",
   "contact": [ {
     "telecom": [ {
@@ -394,8 +406,8 @@
   "purpose": "UNKNOWN",
   "usage": "HIV viral load data should be captured either as a numeric value or as a character/text value, depending on whether a given viral load result falls above or below the lab’s lower limit of detection. For viral loads at or above the lower limit of detection, the viral load should be captured as a numeric value (expressed as the number of copies/mL). For viral loads below the lower limit of detection, the viral load should be populated with a character/text value equivalent to \"Below lower limit of detection.\" The EHR need not record this character value using this exact wording (for example, the character value could be recorded as \"<20 copies/mL\" or \"not detected\"), but values below the lower limit of detection should be documented to allow the submitter to accurately map them to a value of \"Below lower limit of detection\" for reporting purposes.\n\nThis eCQM is a patient-based measure.\n\nThis FHIR-based measure has been derived from the QDM-based measure: CMS314v1. \n\nPlease refer to the HL7 QI-Core Implementation Guide (http://hl7.org/fhir/us/qicore/index.html) for more information on QI-Core and mapping recommendations from QDM to QI-Core 4.1.1 (http://hl7.org/fhir/us/qicore/qdm-to-qicore.html).",
   "copyright": "This measure was developed by the Health Resources & Services Administration (HRSA) of the U.S. Department of Health & Human Services (HHS). It is in the public domain.\n\nCitation of HRSA as the source of the original measure is appreciated. Any modified versions may not be represented as approved, endorsed, or authorized by HRSA or HHS. 42 U.S.C. Section 1320b-10. Users of modified versions should clearly explain how they deviate from HRSA's original measure.\n\nLimited proprietary coding is contained in the Measure specifications for user convenience. Users of proprietary code sets should obtain all necessary licenses from the owners of the code sets. \n\nCPT(R) contained in the Measure specifications is copyright 2004-2022 American Medical Association. LOINC(R) is copyright 2004-2022 Regenstrief Institute, Inc. This material contains SNOMED Clinical Terms(R) (SNOMED CT[R]) copyright 2004-2022 International Health Terminology Standards Development Organisation. ICD-10 is copyright 2022 World Health Organization. All Rights Reserved.\n\nDue to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM].",
-  "approvalDate": "2023-08-01",
-  "lastReviewDate": "2023-08-01",
+  "approvalDate": "2023-08-14",
+  "lastReviewDate": "2023-08-14",
   "effectivePeriod": {
     "start": "2024-01-01",
     "end": "2024-12-31"

@@ -1,0 +1,179 @@
+{
+  "resourceType": "Bundle",
+  "id": "610965b898086b538055c147",
+  "type": "collection",
+  "entry": [ {
+    "fullUrl": "https://madie.cms.gov/Patient/eff43fcb-973d-4222-aedc-f26c51c0faba",
+    "resource": {
+      "resourceType": "Patient",
+      "id": "eff43fcb-973d-4222-aedc-f26c51c0faba",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div class=\"hapiHeaderText\">Patient65StartMP <b>IPPPASS </b></div><table class=\"hapiPropertyTable\"><tbody><tr><td>Identifier</td><td>4ea62120f3865f3430b6456f1259ae03c5efd14d62bd7e26962ff6dfa3b4556e</td></tr><tr><td>Date of birth</td><td><span>02 January 1946</span></td></tr></tbody></table></div>"
+      },
+      "extension": [ {
+        "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+        "extension": [ {
+          "url": "ombCategory",
+          "valueCoding": {
+            "system": "urn:oid:2.16.840.1.113883.6.238",
+            "code": "2076-8",
+            "display": "Native Hawaiian or Other Pacific Islander",
+            "userSelected": true
+          }
+        }, {
+          "url": "text",
+          "valueString": "Native Hawaiian or Other Pacific Islander"
+        } ]
+      }, {
+        "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+        "extension": [ {
+          "url": "ombCategory",
+          "valueCoding": {
+            "system": "urn:oid:2.16.840.1.113883.6.238",
+            "code": "2186-5",
+            "display": "Not Hispanic or Latino",
+            "userSelected": true
+          }
+        }, {
+          "url": "text",
+          "valueString": "Not Hispanic or Latino"
+        } ]
+      } ],
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MR"
+          } ]
+        },
+        "system": "https://bonnie-fhir.healthit.gov/",
+        "value": "610965b898086b538055c147"
+      } ],
+      "active": true,
+      "name": [ {
+        "use": "usual",
+        "family": "IPPPass",
+        "given": [ "Patient65StartMP" ]
+      } ],
+      "gender": "female",
+      "birthDate": "1958-01-02"
+    }
+  }, {
+    "fullUrl": "5c9e578cb8484602c2f9221f",
+    "resource": {
+      "resourceType": "Encounter",
+      "id": "5c9e578cb8484602c2f9221f",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ]
+      },
+      "status": "finished",
+      "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "AMB",
+        "display": "ambulatory",
+        "userSelected": true
+      },
+      "type": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "185463005"
+        }, {
+          "system": "http://www.ama-assn.org/go/cpt",
+          "code": "99212"
+        } ]
+      } ],
+      "subject": {
+        "reference": "Patient/eff43fcb-973d-4222-aedc-f26c51c0faba"
+      },
+      "period": {
+        "start": "2024-10-24T08:00:00.000+00:00",
+        "end": "2024-10-24T08:15:00.000+00:00"
+      }
+    }
+  }, {
+    "fullUrl": "https://madie.cms.gov/MeasureReport/6385057e4ba3d47c885c02cd/eff43fcb-973d-4222-aedc-f26c51c0faba",
+    "resource": {
+      "resourceType": "MeasureReport",
+      "id": "a67949be-d225-4b72-a306-e89fd3ae72ca",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/test-case-cqfm" ]
+      },
+      "contained": [ {
+        "resourceType": "Parameters",
+        "id": "Patient65StartMP-parameters",
+        "parameter": [ {
+          "name": "subject",
+          "valueString": "eff43fcb-973d-4222-aedc-f26c51c0faba"
+        } ]
+      } ],
+      "extension": [ {
+        "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-inputParameters",
+        "valueReference": {
+          "reference": "#Patient65StartMP-parameters"
+        }
+      }, {
+        "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-testCaseDescription",
+        "valueMarkdown": "Patient 65 at start of MP, with qualifying encounter."
+      } ],
+      "modifierExtension": [ {
+        "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-isTestCase",
+        "valueBoolean": true
+      } ],
+      "status": "complete",
+      "type": "individual",
+      "measure": "http://ecqi.healthit.gov/ecqms/Measure/HIVScreeningFHIR",
+      "period": {
+        "start": "2024-01-01",
+        "end": "2024-12-31"
+      },
+      "group": [ {
+        "population": [ {
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+              "code": "initial-population",
+              "display": "Initial Population"
+            } ]
+          },
+          "count": 1
+        }, {
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+              "code": "denominator",
+              "display": "Denominator"
+            } ]
+          },
+          "count": 1
+        }, {
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+              "code": "denominator-exclusion",
+              "display": "Denominator Exclusion"
+            } ]
+          },
+          "count": 0
+        }, {
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+              "code": "numerator",
+              "display": "Numerator"
+            } ]
+          },
+          "count": 0
+        } ]
+      } ],
+      "evaluatedResource": [ {
+        "reference": "https://madie.cms.gov/Patient/eff43fcb-973d-4222-aedc-f26c51c0faba"
+      }, {
+        "reference": "Encounter/5c9e578cb8484602c2f9221f"
+      } ]
+    }
+  } ]
+}

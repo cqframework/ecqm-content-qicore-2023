@@ -1,0 +1,1666 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+      body {
+        background-color: #ffffff;;
+        margin: 0px;
+        padding: 10px;
+        height: 100%;
+        font-size: 1em;
+      }
+
+      p, li {
+        font-size: 12px;
+        line-height: 1.4em;
+        font-family: verdana;
+        margin: 0 0 20px 0;
+        font-weight: normal;
+      }
+
+      td {
+        font-size: 12px;
+        line-height: 1.4em;
+        font-family: verdana;
+        font-weight: normal;
+        padding: 3px;
+        vertical-align: top;
+      }
+
+      tr {
+        font-size: 12px;
+        line-height: 1.4em;
+        font-family: verdana;
+        font-weight: normal;
+        padding: 3px;
+        vertical-align: top;
+        text-align: left;
+      }
+
+      table.colstu td {
+        border: 1px grey solid;
+        border-spacing: 0;
+        padding: 5px;
+        border-collapse: collapse;
+        background-color: #fff5e6;
+      }
+
+      table.colsd td {
+        border: 1px grey solid;
+        border-spacing: 0;
+        padding: 5px;
+        border-collapse: collapse;
+        background-color: #efefef;
+      }
+
+      table.colsn td {
+        border: 1px grey solid;
+        border-spacing: 0;
+        padding: 5px;
+        border-collapse: collapse;
+        background-color: #e6ffe6;
+      }
+
+      table.colse td {
+        border: 1px grey solid;
+        border-spacing: 0;
+        padding: 5px;
+        border-collapse: collapse;
+        background-color: #e6e6e6;
+      }
+
+      table.colsi td {
+        border: 1px grey solid;
+        border-spacing: 0;
+        padding: 5px;
+        border-collapse: collapse;
+        background-color: #ffffe6;
+      }
+
+      table.list td {
+        border-top: 1px silver solid;
+        border-spacing: 0;
+      }
+
+      table.bare td {
+        border-spacing: 0;
+      }
+
+      ul.dict li {
+        font-size: 11px;
+        line-height: 1.2em;
+        font-family: verdana;
+        font-weight: normal;
+        padding: 3px;
+      }
+
+      table.dict td {
+        padding: 3px 7px 2px 7px;
+        font-size: 11px;
+        line-height: 1.2em;
+        font-family: verdana;
+        font-weight: normal;
+        padding: 3px;
+        vertical-align: top;
+      }
+
+      table.dict p {
+        font-size: 11px;
+      }
+
+      table {
+        margin-bottom: 10px;
+        border-collapse: collapse;
+      }
+
+      table.codes td {
+        border: 1px solid silver;
+        padding: 3px 7px 2px 7px;
+        font-size: 12px;
+        line-height: 1.4em;
+        font-family: verdana;
+        font-weight: normal;
+        padding: 3px;
+        vertical-align: top;
+      }
+
+      table.grid {
+        margin-bottom: 10px;
+        border: 1px black solid;
+        margin-right: auto;
+
+      }
+
+      table.grid th {
+        border: 1px solid silver;
+        padding: 3px 7px 2px 7px;
+        font-size: 12px;
+        line-height: 1.4em;
+        font-family: verdana;
+        font-weight: bold;
+        padding: 3px;
+        vertical-align: top;
+      }
+
+      table.grid td {
+        border: 1px solid silver;
+        padding: 3px 7px 2px 7px;
+        font-size: 12px;
+        line-height: 1.4em;
+        font-family: verdana;
+        font-weight: normal;
+        padding: 3px;
+        vertical-align: top;
+      }
+
+      ul {
+        margin: 10px 0;
+        padding: 0 0 0 25px;
+      }
+
+      .dense li {
+        margin: 0 0 0 0;
+      }
+
+      li {
+        margin: 0 0 5px 0;
+      }
+
+      h1 {
+        font-size: 16px;
+        margin: 0 0 4px 0;
+        font-family: verdana;
+        border-bottom: 1px solid #7e7e7e;
+        padding-bottom: 2px;
+      }
+
+      h2 {
+        font-family: verdana;
+        line-height: 1.2em;
+        font-size: 14px;
+        margin: 0 0 3px 0;
+        margin-top: 15px;
+        border-bottom: 1px solid #dcdcdc;
+        padding-bottom: 2px;
+      }
+
+      h3 {
+        font-family: verdana;
+        line-height: 1.2em;
+        font-size: 12px;
+        margin: 0 0 3px 0;
+        margin-top: 10px;
+      }
+
+      h4 {
+        font-family: verdana;
+        line-height: 1.2em;
+        font-size: 11px;
+        margin: 0 0 3px 0;
+        margin-top: 10px;
+      }
+
+      div.sidebar h2 {
+        border-bottom: 1px solid #dcdcdc;
+        padding-bottom: 2px;
+        padding-top: 0px;
+        margin-top: 0px;
+        font-weight: normal;
+        margin-left: 8px;
+        margin-bottom: 0px;
+        font-size: 12px;
+      }
+
+      div.sidebar p {
+        padding-bottom: 0px;
+        padding-top: 10px;
+        font-weight: normal;
+        margin-left: 8px;
+        font-size: 12px;
+        margin-bottom: 8px;
+      }
+
+      div.sidebar ul {
+        list-style: none;
+        padding: 0px;
+        margin-left: 6px;
+        font-size: 11px;
+        line-height: 2.125em;
+      }
+
+      div.sidebar li {
+        margin: 0px 0px 0px 6px;
+        padding: 0px;
+        font-size: 11px;
+        line-height: 2.125em;
+      }
+
+      a {
+        color: #428bca;
+        text-decoration: none;
+      }
+
+      a.xmltag :visited {
+        color: Navy;
+      }
+
+      a.xmltag :hover {
+        color: Blue;
+      }
+
+      pre {
+        display: block;
+        border: 1px solid #cccccc;
+        border-radius: 4px;
+      }
+
+      pre a {
+        color: darkgreen;
+        text-decoration: none;
+        border: 0;
+
+      }
+
+      /* PrismJS 1.21.0
+      https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript+abap+abnf+actionscript+ada+agda+al+antlr4+apacheconf+apl+applescript+aql+arduino+arff+asciidoc+aspnet+asm6502+autohotkey+autoit+bash+basic+batch+bbcode+birb+bison+bnf+brainfuck+brightscript+bro+bsl+c+csharp+cpp+cil+clojure+cmake+coffeescript+concurnas+csp+crystal+css-extras+cypher+d+dart+dax+dhall+diff+django+dns-zone-file+docker+ebnf+editorconfig+eiffel+ejs+elixir+elm+etlua+erb+erlang+excel-formula+fsharp+factor+firestore-security-rules+flow+fortran+ftl+gml+gcode+gdscript+gedcom+gherkin+git+glsl+go+graphql+groovy+haml+handlebars+haskell+haxe+hcl+hlsl+http+hpkp+hsts+ichigojam+icon+ignore+inform7+ini+io+j+java+javadoc+javadoclike+javastacktrace+jolie+jq+jsdoc+js-extras+json+json5+jsonp+jsstacktrace+js-templates+julia+keyman+kotlin+latex+latte+less+lilypond+liquid+lisp+livescript+llvm+lolcode+lua+makefile+markdown+markup-templating+matlab+mel+mizar+mongodb+monkey+moonscript+n1ql+n4js+nand2tetris-hdl+naniscript+nasm+neon+nginx+nim+nix+nsis+objectivec+ocaml+opencl+oz+parigp+parser+pascal+pascaligo+pcaxis+peoplecode+perl+php+phpdoc+php-extras+plsql+powerquery+powershell+processing+prolog+properties+protobuf+pug+puppet+pure+purebasic+purescript+python+q+qml+qore+r+racket+jsx+tsx+reason+regex+renpy+rest+rip+roboconf+robotframework+ruby+rust+sas+sass+scss+scala+scheme+shell-session+smali+smalltalk+smarty+sml+solidity+solution-file+soy+sparql+splunk-spl+sqf+sql+stan+iecst+stylus+swift+t4-templating+t4-cs+t4-vb+tap+tcl+tt2+textile+toml+turtle+twig+typescript+typoscript+unrealscript+vala+vbnet+velocity+verilog+vhdl+vim+visual-basic+warpscript+wasm+wiki+xeora+xml-doc+xojo+xquery+yaml+yang+zig&plugins=keep-markup */
+      /**
+       * prism.js default theme for JavaScript, CSS and HTML
+       * Based on dabblet (http://dabblet.com)
+       * @author Lea Verou
+       */
+
+      code[class*="language-"],
+      pre[class*="language-"] {
+        color: black;
+        background: none;
+        text-shadow: 0 1px white;
+        font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+        font-size: 0.95em;
+        text-align: left;
+        white-space: pre;
+        word-spacing: normal;
+        word-break: normal;
+        word-wrap: normal;
+        line-height: 1.5;
+
+        -moz-tab-size: 4;
+        -o-tab-size: 4;
+        tab-size: 4;
+
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+      }
+
+      pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+      code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+        text-shadow: none;
+        background: #b3d4fc;
+      }
+
+      pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+      code[class*="language-"]::selection, code[class*="language-"] ::selection {
+        text-shadow: none;
+        background: #b3d4fc;
+      }
+
+      @media print {
+        code[class*="language-"],
+        pre[class*="language-"] {
+          text-shadow: none;
+        }
+      }
+
+      /* Code blocks */
+      pre[class*="language-"] {
+        padding: 1em;
+        margin: .5em 0;
+        overflow: auto;
+      }
+
+      :not(pre) > code[class*="language-"],
+      pre[class*="language-"] {
+        background: #f5f2f0;
+      }
+
+      /* Inline code */
+      :not(pre) > code[class*="language-"] {
+        padding: .1em;
+        border-radius: .3em;
+        white-space: normal;
+      }
+    </style>
+</head>
+<body>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    <table class="grid dict">
+        
+        
+            <tr>
+                <th scope="row"><b>Url: </b></th>
+                <td style="padding-left: 4px;">http://ecqi.healthit.gov/ecqms/Measure/HybridHospitalWideReadmissionFHIR</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Version: </b></th>
+                <td style="padding-left: 4px;">0.0.001</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Identifier: </b></th>
+                <td style="padding-left: 4px;">
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>type: </b> <span></span>
+                        </p>
+                    
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>value: </b> <span>CMS529FHIR</span>
+                        </p>
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <th scope="row"><b>Identifier: </b></th>
+                <td style="padding-left: 4px;">
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>type: </b> <span></span>
+                        </p>
+                    
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>value: </b> <span>urn:uuid:66842e26-2256-4a2d-8dac-dd014c425748</span>
+                        </p>
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <th scope="row"><b>Identifier: </b></th>
+                <td style="padding-left: 4px;">
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>type: </b> <span></span>
+                        </p>
+                    
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>value: </b> <span>urn:uuid:2c92808482113ece0182c5d39df62f0e</span>
+                        </p>
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <th scope="row"><b>Identifier: </b></th>
+                <td style="padding-left: 4px;">
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>type: </b> <span></span>
+                        </p>
+                    
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>value: </b> <span>2879</span>
+                        </p>
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <th scope="row"><b>Identifier: </b></th>
+                <td style="padding-left: 4px;">
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>type: </b> <span></span>
+                        </p>
+                    
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>value: </b> <span>529FHIR</span>
+                        </p>
+                    
+                </td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Name: </b></th>
+                <td style="padding-left: 4px;">HybridHospitalWideReadmissionFHIR</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Title: </b></th>
+                <td style="padding-left: 4px;">Core Clinical Data Elements for the Hybrid Hospital-Wide Readmission (HWR) Measure with Claims and Electronic Health Record Data FHIR</td>
+            </tr>
+        
+        
+        
+            <tr>
+                <th scope="row"><b>Status: </b></th>
+                <td style="padding-left: 4px;">draft</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Experimental: </b></th>
+                <td style="padding-left: 4px;">false</td>
+            </tr>
+        
+        
+        
+        
+        
+        
+            <tr>
+                <th scope="row"><b>Date: </b></th>
+                <td style="padding-left: 4px;">2023-08-14T15:22:30+00:00</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Publisher: </b></th>
+                <td style="padding-left: 4px;">Centers for Medicare &amp; Medicaid Services (CMS)</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Description: </b></th>
+                <td style="padding-left: 4px;">This logic is intended to extract electronic clinical data. This is not an electronic clinical quality measure and this logic will not produce measure results. Instead, it will produce a file containing the data that CMS will link with administrative claims to risk adjust the Hybrid HWR outcome measure. It is designed to extract the first resulted set of vital signs and basic laboratory results obtained from encounters for adult Medicare Fee-For-Service patients admitted to acute care short stay hospitals.</td>
+            </tr>
+        
+        
+        
+        
+        
+        
+        
+            <tr>
+                <th scope="row"><b>Purpose: </b></th>
+                <td style="padding-left: 4px;">UNKNOWN</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Guidance (Usage): </b></th>
+                <td style="padding-left: 4px;">This FHIR-based measure has been derived from the QDM-based measure: CMS529v3.1 (QDM 5.6)Please refer to the HL7 QI-Core Implementation Guide (http://hl7.org/fhir/us/qicore/index.html) for more information on QI-Core and mapping recommendations from QDM to QI-Core 4.1.1 (http://hl7.org/fhir/us/qicore/qdm-to-qicore.html). These specifications are for use for data with discharges that occur between July 1, 2023 and June 30, 2024. 
+
+This logic guides the user to extract the FIRST resulted HWR-specific core clinical data elements for all Medicare Fee-For-Service encounters for patients age 65 or older (Initial Population) directly admitted to the hospital or admitted to the same facility after being treated in another area such as the emergency department or hospital outpatient location. 
+
+The logic supports extraction of the FIRST set of HWR-specific core clinical data elements in two different ways depending on if the patient was a direct admission, meaning that the patient was admitted directly to an inpatient unit without first receiving care in the emergency department or other hospital outpatient locations within the same admitting facility: 
+
+1. If the patient was a direct admission, the logic supports extraction of the FIRST resulted vital signs within 2 hours (120 minutes) after the start of the inpatient admission, and the FIRST resulted laboratory tests within 24 hours (1440 minutes) after the start of the inpatient admission. 
+2. If the patient has values captured prior to admission, for example from the emergency department, pre-operative, or other outpatient area within the hospital, the logic supports extraction of the FIRST resulted vital signs and laboratory tests within 24 hours (1440 minutes) PRIOR to the start of the inpatient admission. All clinical systems used in inpatient and outpatient locations within the hospital facility should be queried when looking for core clinical data element values related to a patient who is subsequently admitted.
+
+Value sets for the laboratory tests represent the LOINC codes currently available for these tests. If the institution is using local codes to capture and store relevant laboratory test data, those sites should map that information to the LOINC code for reporting of the core clinical data elements.
+
+NOTE: Do not report ALL values on an encounter during their entire admission. Only report the FIRST resulted value for EACH core clinical data element collected in the appropriate timeframe, if available.
+
+For each core clinical data element, please report values using one of the appropriate units of measurement listed below, which represent valid UCUM codes: 
+
+Core Clinical Data Element                          UCUM Unit
+
+Bicarbonate----------------------------------meq/L 
+                                                             mmol/L 
+
+Creatinine------------------------------------mg/dL 
+                                                             umol/L
+
+Glucose--------------------------------------mg/dL
+                                                            mmol/L
+
+Heart rate------------------------------------{Beats}/min
+
+Hematocrit -----------------------------------%
+
+Oxygen saturation (by pulse oximetry)-----%{Oxygen}
+
+Potassium------------------------------------meq/L 
+                                                             mmol/L
+
+Respiratory rate------------------------------{Breaths}/min
+
+Sodium---------------------------------------meq/L
+                                                             mmol/L
+ 
+Systolic blood pressure----------------------mm[Hg]
+
+Temperature----------------------------------Cel
+                                                              [degF]  
+
+Weight-----------------------------------------kg
+                                                               [lb_av]
+                                                               g
+                                                          
+White blood cell count ----------------------{Cells}/uL
+                                                              10*3/uL
+                                                              10*9/L 
+                                                              /mm3
+ 
+For each encounter please also submit the following Linking Variables: 
+CMS Certification Number,
+Health Insurance Claim Number (HICN) or Medicare Beneficiary Identifier (MBI),
+Date of Birth,
+Sex,
+Inpatient Admission Date, and 
+Discharge Date.
+
+The initial population includes patients with inpatient hospitalizations and patients from Acute Hospital Care at Home programs, who are treated and billed as inpatients but receive care in their home.</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Copyright: </b></th>
+                <td style="padding-left: 25px;">Limited proprietary coding is contained in these specifications for user convenience. Users of proprietary code sets should obtain all necessary licenses from the owners of the code sets.
+
+This material contains SNOMED Clinical Terms(R) (SNOMED CT[R]) copyright 2004-2021 International Health Terminology Standards Development Organisation. All rights reserved.
+
+LOINC(R) copyright 2004-2021 Regenstrief Institute, Inc.</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Disclaimer: </b></th>
+                <td style="padding-left: 25px;">These performance specifications are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications.
+
+THE MEASURES AND SPECIFICATIONS ARE PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND.
+
+Due to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM].</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Approval Date: </b></th>
+                <td style="padding-left: 4px;">2023-08-14</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Last Review Date: </b></th>
+                <td style="padding-left: 4px;">2023-08-14</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Effective Period: </b></th>
+                <td style="padding-left: 4px;">2024-07-01..2025-06-30</td>
+            </tr>
+        
+        
+            
+                <tr>
+                    <th scope="row"><b>Population Criteria: </b></th>
+                    <td style="padding-left: 4px;">
+                        
+                            <table class="grid-dict">
+                                
+                                    <tr>
+                                        <th><b>638501714ba3d47c885c02ac</b></th>
+                                    </tr>
+                                
+                                
+                                    <tr>
+                                        <td>Initial Population: </td>
+                                        <td>All Medicare Fee-For-Service encounters age 65 and older at the start of an inpatient admission, who are discharged during the measurement period (length of stay &lt;365 days).
+
+NOTE: All Medicare Fee-For-Service encounters meeting the above criteria should be included, regardless if Medicare Fee-For-Service is the primary, secondary, or tertiary payer.</td>
+                                    </tr>
+                                
+                            </table>
+                        
+                    </td>
+                </tr>
+            
+        
+        
+        
+            <tr>
+                <th scope="row"><b> Supplemental Data Guidance: </b></th>
+                <td style="padding-left: 4px;">  </td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b> Supplemental Data Elements: </b></th>
+                <td style="padding-left: 4px;">
+                    
+                        
+                            
+                                Results
+                            
+                        
+                    
+                        
+                            
+                                SDE Ethnicity
+                            
+                        
+                    
+                        
+                            
+                                SDE Payer
+                            
+                        
+                    
+                        
+                            
+                                SDE Race
+                            
+                        
+                    
+                        
+                            
+                                SDE Sex
+                            
+                        
+                    
+                </td>
+            </tr>
+        
+        
+        
+            <tr>
+                <th scope="row"><b>Libraries: </b></th>
+                <td style="padding-left: 4px;">
+                    <table class="grid-dict">
+                        
+                            <tr><td>http://ecqi.healthit.gov/ecqms/Library/HybridHospitalWideReadmissionFHIR</td></tr>
+                        
+                    </table>
+                </td>
+            </tr>
+        
+        
+            
+                <tr>
+                    <th scope="row"><b>Related Artifact Dependencies: </b></th>
+                    <td style="padding-left: 4px;">
+                        
+                            <li>Library/SupplementalDataElements|3.4.000</li>
+                        
+                            <li>Library/FHIRHelpers|4.3.000</li>
+                        
+                            <li>Library/CQMCommon|1.4.000</li>
+                        
+                            <li>Library/FHIRHelpers|4.3.000</li>
+                        
+                            <li>Library/QICoreCommon|1.5.000</li>
+                        
+                            <li>Library/FHIRHelpers|4.3.000</li>
+                        
+                            <li>http://terminology.hl7.org/CodeSystem/v3-ActCode</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1104.10</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.143</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.292</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.149</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.163</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.130</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.152</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.151</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.159</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.114</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.129</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.117</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.119</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.139</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.2363</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.134</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591</li>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><b>Parameters:</b></th>
+                    <td style="padding-left: 4px;">
+                        <table class="grid-dict">
+                            <tr><th><b>name</b></th><th><b>use</b></th><th><b>min</b></th><th><b>max</b></th><th><b>type</b></th></tr>
+                            
+                                <tr>
+                                    <td>Measurement Period</td>
+                                    <td>in</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>Period</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>SDE Sex</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>Coding</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Results</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>string</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>SDE Payer</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Initial Population</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>SDE Ethnicity</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>SDE Race</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><b>DataRequirements:</b></th>
+                    <td style="padding-left: 4px;">
+                        <table class="grid-dict">
+                            <tr><th><b>Type</b></th><th><b>Must Support</b></th><th><b>Valueset Name</b></th><th><b>Valueset</b></th></tr>
+                            
+                                <tr>
+                                    <td>Patient</td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Patient</td>
+                                    <td>
+                                        
+                                            gender
+                                        
+                                            gender.value
+                                        
+                                            birthDate
+                                        
+                                            birthDate.value
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                            status
+                                        
+                                            status.value
+                                        
+                                            period
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Observation Services
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.143</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                            status
+                                        
+                                            status.value
+                                        
+                                            period
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Emergency Department Visit
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.292</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                            status
+                                        
+                                            status.value
+                                        
+                                            period
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Observation Services
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.143</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                            status
+                                        
+                                            status.value
+                                        
+                                            period
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Emergency Department Visit
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.292</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Patient</td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                            status
+                                        
+                                            status.value
+                                        
+                                            class
+                                        
+                                            period
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Encounter Inpatient
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Coverage</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Medicare payer
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1104.10</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Patient</td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Observation</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Heart Rate
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.149</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Observation</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Systolic Blood Pressure
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.163</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Observation</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Respiratory Rate
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.130</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Observation</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Body temperature
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.152</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Observation</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Oxygen Saturation by Pulse Oximetry
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.151</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Observation</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Body weight
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.159</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Observation</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Hematocrit lab test
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.114</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Observation</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 White blood cells count lab test
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.129</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Observation</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Potassium lab test
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.117</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Observation</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Sodium lab test
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.119</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Observation</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Bicarbonate lab test
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.139</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Observation</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Creatinine lab test
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.2363</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Observation</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Glucose lab test
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.134</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Coverage</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                            period
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Payer Type
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>uri</td>
+                                    <td>
+                                        
+                                            value
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Patient</td>
+                                    <td>
+                                        
+                                            url
+                                        
+                                            extension
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Patient</td>
+                                    <td>
+                                        
+                                            url
+                                        
+                                            extension
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Patient</td>
+                                    <td>
+                                        
+                                            url
+                                        
+                                            extension
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Patient</td>
+                                    <td>
+                                        
+                                            url
+                                        
+                                            extension
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Coverage</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                            period
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Payer Type
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Patient</td>
+                                    <td>
+                                        
+                                            url
+                                        
+                                            extension
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Patient</td>
+                                    <td>
+                                        
+                                            url
+                                        
+                                            extension
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                        </table>
+                    </td>
+                </tr>
+                
+                    <tr>
+                        <th scope="row"><b>Direct Reference Codes:</b></th>
+                        <td style="padding-left: 4px;">
+                            <table class="grid-dict">
+                                <tr><th><b>display</b></th><th><b>code</b></th><th><b>system</b></th></tr>
+                                
+                                    <tr>
+                                        <td>Inpatient</td>
+                                        <td>IMP</td>
+                                        <td>http://terminology.hl7.org/CodeSystem/v3-ActCode</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Acute</td>
+                                        <td>ACUTE</td>
+                                        <td>http://terminology.hl7.org/CodeSystem/v3-ActCode</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Nonacute</td>
+                                        <td>NONAC</td>
+                                        <td>http://terminology.hl7.org/CodeSystem/v3-ActCode</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Observation Encounter</td>
+                                        <td>OBSENC</td>
+                                        <td>http://terminology.hl7.org/CodeSystem/v3-ActCode</td>
+                                    </tr>
+                                
+                            </table>
+                        </td>
+                    </tr>
+                
+                
+                    <tr>
+                        <th scope="row"><b>Logic Definitions:</b></th>
+                        <td style="padding-left: 4px;">
+                            
+                                <table class="grid-dict">
+                                    <tr>
+                                        <th><b>Group</b></th><th><b>Scoring</b></th><th><b>Population Criteria</b></th><th><b>Expression</b></th>
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td> 638501714ba3d47c885c02ac </td>
+                                            <td>
+                                                
+                                                    <b>Group scoring:</b>
+                                                    
+                                                    <span>  cohort </span>
+                                                    
+                                                
+                                                
+                                            </td>
+                                            
+                                                <tr>
+                                                    <td/>
+                                                    <td/>
+                                                    <td>Initial Population</td>
+                                                    <td>
+                                                        
+                                                        <pre><code class="language-cql">define &quot;Initial Population&quot;:
+  &quot;Inpatient Encounters&quot;</code></pre>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            
+
+                                    
+                                    </tr>
+                                </table>
+                            
+                            <table class="grid-dict">
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SupplementalDataElements</td>
+                                        
+                                        
+                                            <td>SDE Sex</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;SDE Sex&quot;:
+  case
+      when Patient.gender = 'male' then Code { code: 'M', system: 'http://hl7.org/fhir/v3/AdministrativeGender', display: 'Male' }
+      when Patient.gender = 'female' then Code { code: 'F', system: 'http://hl7.org/fhir/v3/AdministrativeGender', display: 'Female' }
+      else null
+    end</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>HybridHospitalWideReadmissionFHIR</td>
+                                        
+                                        
+                                            <td>SDE Sex</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;SDE Sex&quot;:
+  SDE.&quot;SDE Sex&quot;</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>HybridHospitalWideReadmissionFHIR</td>
+                                        
+                                        
+                                            <td>Inpatient Encounters</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Inpatient Encounters&quot;:
+  from
+    [&quot;Encounter&quot;: &quot;Encounter Inpatient&quot;] InpatientEncounter,
+    [&quot;Coverage&quot;: &quot;Medicare payer&quot;] Payer
+    where InpatientEncounter.status = 'finished'
+      and ( InpatientEncounter.class ~ &quot;IMP&quot;
+          or InpatientEncounter.class ~ &quot;ACUTE&quot;
+          or InpatientEncounter.class ~ &quot;NONAC&quot;
+          or InpatientEncounter.class ~ &quot;OBSENC&quot;
+      )
+      and InpatientEncounter.hospitalizationWithObservationLengthofStay ( ) &lt; 365
+      and InpatientEncounter.period ends during &quot;Measurement Period&quot;
+      and AgeInYearsAt(date from start of InpatientEncounter.period) &gt;= 65
+    return InpatientEncounter</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>HybridHospitalWideReadmissionFHIR</td>
+                                        
+                                        
+                                            <td>Results</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Results&quot;:
+  flatten {
+     // First physical exams (vital signs)
+  &quot;FirstPhysicalExamWithEncounterId&quot;([Observation: &quot;Heart Rate&quot;], 'FirstHeartRate'), &quot;FirstPhysicalExamWithEncounterId&quot;([Observation: &quot;Systolic Blood Pressure&quot;], 'FirstSystolicBP'), &quot;FirstPhysicalExamWithEncounterId&quot;([Observation: &quot;Respiratory Rate&quot;], 'FirstRespRate'), &quot;FirstPhysicalExamWithEncounterId&quot;([Observation: &quot;Body temperature&quot;], 'FirstTemperature'), &quot;FirstPhysicalExamWithEncounterId&quot;([Observation: &quot;Oxygen Saturation by Pulse Oximetry&quot;], 'FirstO2Saturation'),
+      // First weight using lab test timing
+  &quot;FirstPhysicalExamWithEncounterIdUsingLabTiming&quot;([Observation: &quot;Body weight&quot;], 'FirstWeight'), 
+       //First lab tests
+  &quot;FirstLabTestWithEncounterId&quot;([Observation: &quot;Hematocrit lab test&quot;], 'FirstHematocrit'), &quot;FirstLabTestWithEncounterId&quot;([Observation: &quot;White blood cells count lab test&quot;], 'FirstWhiteBloodCell'), &quot;FirstLabTestWithEncounterId&quot;([Observation: &quot;Potassium lab test&quot;], 'FirstPotassium'), &quot;FirstLabTestWithEncounterId&quot;([Observation: &quot;Sodium lab test&quot;], 'FirstSodium'), &quot;FirstLabTestWithEncounterId&quot;([Observation: &quot;Bicarbonate lab test&quot;], 'FirstBicarbonate'), &quot;FirstLabTestWithEncounterId&quot;([Observation: &quot;Creatinine lab test&quot;], 'FirstCreatinine'), &quot;FirstLabTestWithEncounterId&quot;([Observation: &quot;Glucose lab test&quot;], 'FirstGlucose') }</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SupplementalDataElements</td>
+                                        
+                                        
+                                            <td>SDE Payer</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;SDE Payer&quot;:
+  [Coverage: type in &quot;Payer Type&quot;] Payer
+    return {
+      code: Payer.type,
+      period: Payer.period
+    }</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>HybridHospitalWideReadmissionFHIR</td>
+                                        
+                                        
+                                            <td>SDE Payer</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;SDE Payer&quot;:
+  SDE.&quot;SDE Payer&quot;</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>HybridHospitalWideReadmissionFHIR</td>
+                                        
+                                        
+                                            <td>Initial Population</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Initial Population&quot;:
+  &quot;Inpatient Encounters&quot;</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SupplementalDataElements</td>
+                                        
+                                        
+                                            <td>SDE Ethnicity</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;SDE Ethnicity&quot;:
+  Patient.ethnicity E
+    return Tuple {
+      codes: { E.ombCategory } union E.detailed,
+      display: E.text
+    }</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>HybridHospitalWideReadmissionFHIR</td>
+                                        
+                                        
+                                            <td>SDE Ethnicity</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;SDE Ethnicity&quot;:
+  SDE.&quot;SDE Ethnicity&quot;</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SupplementalDataElements</td>
+                                        
+                                        
+                                            <td>SDE Race</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;SDE Race&quot;:
+  Patient.race R
+    return Tuple {
+      codes: R.ombCategory union R.detailed,
+      display: R.text
+    }</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>HybridHospitalWideReadmissionFHIR</td>
+                                        
+                                        
+                                            <td>SDE Race</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;SDE Race&quot;:
+  SDE.&quot;SDE Race&quot;</code></pre></td>
+                                        
+                                    </tr>
+                                
+                            </table>
+                        </td>
+                    </tr>
+                
+            
+        
+    </table>
+</div>
+</body>
+</html>

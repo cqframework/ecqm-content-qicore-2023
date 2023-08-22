@@ -1,0 +1,237 @@
+{
+  "resourceType": "Bundle",
+  "id": "63ec09a9ccb3770120fead55",
+  "type": "collection",
+  "entry": [ {
+    "fullUrl": "https://madie.cms.gov/Patient/d015cc73-51e5-4e1f-9db3-9e5b7047fac1",
+    "resource": {
+      "resourceType": "Patient",
+      "id": "d015cc73-51e5-4e1f-9db3-9e5b7047fac1",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div class=\"hapiHeaderText\">LT65Yrs <b>IPFAIL </b></div><table class=\"hapiPropertyTable\"><tbody><tr><td>Identifier</td><td>03c3bdaef06b3f281a8ed34325059b1306340d0e1ed2849915ba5f5a7c4f080a</td></tr><tr><td>Date of birth</td><td><span>22 June 1947</span></td></tr></tbody></table></div>"
+      },
+      "extension": [ {
+        "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+        "extension": [ {
+          "url": "ombCategory",
+          "valueCoding": {
+            "system": "urn:oid:2.16.840.1.113883.6.238",
+            "code": "2106-3",
+            "display": "White",
+            "userSelected": true
+          }
+        }, {
+          "url": "text",
+          "valueString": "White"
+        } ]
+      }, {
+        "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+        "extension": [ {
+          "url": "ombCategory",
+          "valueCoding": {
+            "system": "urn:oid:2.16.840.1.113883.6.238",
+            "code": "2135-2",
+            "display": "Hispanic or Latino",
+            "userSelected": true
+          }
+        }, {
+          "url": "text",
+          "valueString": "Hispanic or Latino"
+        } ]
+      } ],
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MR"
+          } ]
+        },
+        "system": "https://bonnie-fhir.healthit.gov/",
+        "value": "63ec09a9ccb3770120fead55"
+      } ],
+      "active": true,
+      "name": [ {
+        "use": "usual",
+        "family": "IPFail",
+        "given": [ "LT65Yrs" ]
+      } ],
+      "gender": "male",
+      "birthDate": "1960-06-22"
+    }
+  }, {
+    "fullUrl": "5e2f00990b48de0000ab9d0b",
+    "resource": {
+      "resourceType": "Encounter",
+      "id": "5e2f00990b48de0000ab9d0b",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ]
+      },
+      "status": "finished",
+      "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "IMP",
+        "display": "inpatient encounter",
+        "userSelected": true
+      },
+      "type": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "183452005"
+        } ]
+      } ],
+      "subject": {
+        "reference": "Patient/d015cc73-51e5-4e1f-9db3-9e5b7047fac1"
+      },
+      "period": {
+        "start": "2024-07-21T08:00:00.000+00:00",
+        "end": "2024-08-18T08:15:00.000+00:00"
+      },
+      "length": {
+        "value": 27.0,
+        "unit": "days"
+      }
+    }
+  }, {
+    "fullUrl": "5f997429999c28000053a7db",
+    "resource": {
+      "resourceType": "Coverage",
+      "id": "5f997429999c28000053a7db",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-coverage" ]
+      },
+      "status": "active",
+      "type": {
+        "coding": [ {
+          "system": "https://nahdo.org/sopt",
+          "version": "1.0.1",
+          "code": "1",
+          "display": "Medicare payer",
+          "userSelected": true
+        } ]
+      },
+      "beneficiary": {
+        "reference": "Patient/d015cc73-51e5-4e1f-9db3-9e5b7047fac1"
+      },
+      "payor": [ {
+        "reference": "Organization/123456"
+      } ]
+    }
+  }, {
+    "fullUrl": "http://Organization/123456",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "123456",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-organization" ]
+      },
+      "identifier": [ {
+        "use": "temp",
+        "system": "urn:oid:2.16.840.1.113883.4.4",
+        "value": "21-3259825"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "pay",
+          "display": "Payer"
+        } ]
+      } ],
+      "name": "Blue Cross Blue Shield of Texas",
+      "telecom": [ {
+        "system": "phone",
+        "value": "(+1) 972-766-6900"
+      } ],
+      "address": [ {
+        "use": "billing",
+        "type": "postal",
+        "line": [ "P.O. Box 660044" ],
+        "city": "Dallas",
+        "state": "TX",
+        "postalCode": "75266-0044",
+        "country": "USA"
+      } ]
+    }
+  }, {
+    "fullUrl": "http://Practitioner/123456",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "practitioner-123456",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-practitioner" ]
+      },
+      "identifier": [ {
+        "system": "http://hl7.org/fhir/sid/us-npi",
+        "value": "123456"
+      } ],
+      "name": [ {
+        "family": "Evil",
+        "prefix": [ "Dr" ]
+      } ]
+    }
+  }, {
+    "fullUrl": "https://madie.cms.gov/MeasureReport/638501714ba3d47c885c02ad/d015cc73-51e5-4e1f-9db3-9e5b7047fac1",
+    "resource": {
+      "resourceType": "MeasureReport",
+      "id": "e9ee35bd-bec6-4d6d-a85b-0d85cffe0093",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/test-case-cqfm" ]
+      },
+      "contained": [ {
+        "resourceType": "Parameters",
+        "id": "LT65Yrs-parameters",
+        "parameter": [ {
+          "name": "subject",
+          "valueString": "d015cc73-51e5-4e1f-9db3-9e5b7047fac1"
+        } ]
+      } ],
+      "extension": [ {
+        "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-inputParameters",
+        "valueReference": {
+          "reference": "#LT65Yrs-parameters"
+        }
+      }, {
+        "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-testCaseDescription",
+        "valueMarkdown": "Patient in 64 years old at start of encounter. \nNot included in initial population. "
+      } ],
+      "modifierExtension": [ {
+        "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-isTestCase",
+        "valueBoolean": true
+      } ],
+      "status": "complete",
+      "type": "individual",
+      "measure": "http://ecqi.healthit.gov/ecqms/Measure/HybridHospitalWideReadmissionFHIR",
+      "period": {
+        "start": "2024-07-01",
+        "end": "2025-06-30"
+      },
+      "group": [ {
+        "population": [ {
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+              "code": "initial-population",
+              "display": "Initial Population"
+            } ]
+          },
+          "count": 0
+        } ]
+      } ],
+      "evaluatedResource": [ {
+        "reference": "https://madie.cms.gov/Patient/d015cc73-51e5-4e1f-9db3-9e5b7047fac1"
+      }, {
+        "reference": "Encounter/5e2f00990b48de0000ab9d0b"
+      }, {
+        "reference": "Coverage/5f997429999c28000053a7db"
+      }, {
+        "reference": "Organization/123456"
+      }, {
+        "reference": "Practitioner/practitioner-123456"
+      } ]
+    }
+  } ]
+}

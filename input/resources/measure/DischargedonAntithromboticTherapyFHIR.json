@@ -1,5 +1,6 @@
 {
   "resourceType": "Measure",
+  "id": "DischargedonAntithromboticTherapyFHIR",
   "meta": {
     "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-measure-cqfm", "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/publishable-measure-cqfm", "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/executable-measure-cqfm" ]
   },
@@ -725,7 +726,7 @@
   "title": "Discharged on Antithrombotic TherapyFHIR",
   "status": "draft",
   "experimental": false,
-  "date": "2023-08-10T18:26:21+00:00",
+  "date": "2023-08-21T16:10:36+00:00",
   "publisher": "The Joint Commission",
   "contact": [ {
     "telecom": [ {
