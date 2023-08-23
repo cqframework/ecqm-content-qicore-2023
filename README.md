@@ -114,6 +114,97 @@ In this way, the measure specification itself can remain unchanged and computabl
 
 ### Terminology API Testing
 
+To continue verifying terminology service capabilities as described by the Measure Terminology Service in the Quality Measure IG. Specifically, validating that:
+
+1. The service supports read and search for CodeSystem and ValueSet resources
+2. The service supports hosted as well as authored content for ValueSet resources
+3. The service returns resources that conform to the Shareable/Publishable/Computable/Executable profiles for ValueSet resources
+4. The service supports the use of manifest libraries to provide expansion parameters
+5. The service supports the $expand operation with manfiest libraries
+
+The current set of tests is available here:
+
+https://github.com/HL7/cqf-measures/tree/master/thunder-tests
+
+In particular, we are testing the expansion of a grouping value set that requires versions of the component value sets:
+
+[Cancer ValueSet 2.16.840.1.113883.3.526.3.1010 (2020-03-06)](input/tests/terminology/GroupingValueSet/ValueSet-2.16.840.113883.3.526.3.1010-20200306.json)
+
+This version of the value set references two component value sets:
+
+|ValueSet |Name |
+|----|----|
+|2.16.840.1.113883.3.526.2.1078|Cancer (ICD-10) |
+|2.16.840.1.113883.3.526.2.1079|Cancer (SNOMED) |
+
+Each of these value sets has multiple versions as they have changed over time:
+
+|ValueSet |Version |
+|----|----|
+|2.16.840.1.113883.3.526.2.1078 (Cancer ICD-10)|[2019-03-15](input/tests/terminology/GroupingValueSet/ValueSet-2.16.840.113883.3.526.2.1078-20190315.json)|
+| |[2021-02-18](input/tests/terminology/GroupingValueSet/ValueSet-2.16.840.113883.3.526.2.1078-20210218.json)|
+| |[2022-02-18](input/tests/terminology/GroupingValueSet/ValueSet-2.16.840.113883.3.526.2.1078-20220218.json)|
+
+|ValueSet |Version |
+|----|----|
+|2.16.840.1.113883.3.526.2.1079 (Cancer SNOMED)|[2019-03-15](input/tests/terminology/GroupingValueSet/ValueSet-2.16.840.113883.3.526.2.1079-20190315.json)|
+| |[2020-03-06](input/tests/terminology/GroupingValueSet/ValueSet-2.16.840.113883.3.526.2.1079-20200306.json)|
+| |[2021-02-18](input/tests/terminology/GroupingValueSet/ValueSet-2.16.840.113883.3.526.2.1079-20210218.json)|
+| |[2022-02-18](input/tests/terminology/GroupingValueSet/ValueSet-2.16.840.113883.3.526.2.1079-20220218.json)|
+| |[2023-02-17](input/tests/terminology/GroupingValueSet/ValueSet-2.16.840.113883.3.526.2.1079-20230217.json)|
+
+In the `eCQM Update 2022-05-05` release, this value set was expanded with the following binding parameters:
+
+|ValueSet |CodeSystem (Version) |
+|----|----|
+|2.16.840.1.113883.3.526.2.1078 |ICD10CM (2022) |
+|2.16.840.1.113883.3.526.2.1079 |SNOMEDCT (2021-09, 2021-03, 2020-09, 2020-03, 2019-09, 2019-03, 2018-09, 2018-03, 2017-09, 2017-03, 2016-09, 2015-09) |
+
+In the `eCQM Update 2023-05-04` release, this value set was expanded with the following binding parameters:
+
+|ValueSet |CodeSystem (Version) |
+|----|----|
+|2.16.840.1.113883.3.526.2.1078 |ICD10CM (2023) |
+|2.16.840.1.113883.3.526.2.1079 |SNOMEDCT (2022-09, 2022-03, 2021-09, 2021-03, 2020-09, 2020-03, 2019-09, 2019-03, 2018-09, 2018-03, 2017-09, 2017-03, 2016-09, 2015-09) |
+
+If we just request an expansion of the value set as follows:
+
+```
+https://uat-cts.nlm.nih.gov/fhir/res/ValueSet/$expand?url=http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1010&_format=json
+```
+
+The response is an expansion using the latest version of the value set, the latest version of the component value sets, and the latest version of the code systems used:
+
+[2.16.840.1.113883.3.526.3.1010-latest-expansion](input/tests/terminology/GroupingValueSet/ValueSet-2.16.840.113883.3.526.3.1010-latest-expansion.json)
+
+However, if we ask for the expansion with expansion identifier `eCQM Update 2022-05-05`:
+
+```
+https://uat-cts.nlm.nih.gov/fhir/res/ValueSet/$expand?url=http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1010&expansion=eCQM%20Update%202022-05-05&_format=json
+```
+
+The response is an expansion with the expansion profile parameters as established by the `eCQM Update 2022-05-05` release:
+
+[2.16.840.1.113883.3.526.3.1010-eCQM-Update-2022-05-05-expansion](input/tests/terminology/GroupingValueSet/ValueSet-2.16.840.113883.3.526.3.1010-eCQM-Update-2022-05-05-expansion.json)
+
+Similarly, if we ask for the expansion with expansion identifier `eCQM Update 2023-05-04`:
+
+```
+https://uat-cts.nlm.nih.gov/fhir/res/ValueSet/$expand?url=http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1010&expansion=eCQM%20Update%202023-05-04&_format=json
+```
+
+The response is an expansion with the expansion profile parameters as established by the `eCQM Update 2023-05-04` release:
+
+```
+https://uat-cts.nlm.nih.gov/fhir/res/ValueSet/$expand?url=http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1010&expansion=eCQM%20Update%202023-05-04&_format=json
+```
+
+[2.16.840.1.113883.3.526.3.1010-eCQM-Update-2023-05-04-expansion](input/tests/terminology/GroupingValueSet/ValueSet-2.16.840.113883.3.526.3.1010-eCQM-Update-2023-05-04-expansion.json)
+
+https://uat-cts.nlm.nih.gov/fhir/res/Library?url=http://cts.nlm.nih.gov/fhir/Library/eCQM%20Update%202023-05-04
+
+
+
 ### Artifact Manifest Testing
 
 ### Measure Narrative Review

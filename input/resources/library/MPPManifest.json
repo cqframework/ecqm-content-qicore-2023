@@ -1,6 +1,9 @@
 {
   "resourceType": "Library",
   "id": "MPPManifest",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/quality-program-cqfm" ]
+  },
   "contained": [{
     "resourceType": "Parameters",
     "id": "expansion-parameters",
