@@ -98,7 +98,9 @@ Subsequently, different attribution logic can be provided by specifying a differ
   }],
   "extension": [{
     "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-expansionParameters",
-    "valueReference": "#expansion-parameters"
+    "valueReference": {
+      "reference": "#expansion-parameters"
+    }
   }],
   "url": "http://ecqi.healthit.gov/ecqms/Library/MPPManifest",
   "name": "MPPManifest",
