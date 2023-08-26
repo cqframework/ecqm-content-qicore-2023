@@ -203,9 +203,81 @@ https://uat-cts.nlm.nih.gov/fhir/res/ValueSet/$expand?url=http://cts.nlm.nih.gov
 
 [2.16.840.1.113883.3.526.3.1010-eCQM-Update-2023-05-04-expansion](input/tests/terminology/GroupingValueSet/ValueSet-2.16.840.113883.3.526.3.1010-eCQM-Update-2023-05-04-expansion.json)
 
+Note that this expansion includes an expansion parameter that is a reference to a _manifest_:
+
+```json
+{
+  "name": "manifest",
+  "valueString": "http://cts.nlm.nih.gov/fhir/Library/eCQM Update 2023-05-04"
+}
+```
+
+Note that the manifest value here is supposed to be a canonical, and encoding it as such and searching for libraries with that URL gives:
+
+```
 https://uat-cts.nlm.nih.gov/fhir/res/Library?url=http://cts.nlm.nih.gov/fhir/Library/eCQM%20Update%202023-05-04
+```
 
+Although this does result in a library, the returned library does not have a url element. The expected result is a library manifest that provides the appropriate code system and value set versions for use in expanding value sets as part of the release:
 
+[Library/ecqm-update-2023-50-04](input/tests/terminology/GroupingValueSet/Library-ecqm-update-2023-05-04.json)
+
+This library contains an `expansionParameters` extension that references a contained `Parameters` resource with the relevant expansion parameters:
+
+```json
+{
+    "resourceType": "Parameters",
+    "id": "expansion-parameters",
+    "parameter": [{
+        "name": "activeOnly",
+        "valueBoolean": false
+    }, {
+        "name": "system-version",
+        "valueCanonical": "http://hl7.org/fhir/sid/icd-10-cm|2022"
+    }, {
+        "name": "system-version",
+        "valueCanonical": "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20220901"
+    }, {
+        "name": "canonicalVersion",
+        "valueCanonical": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1010|20200306"
+    }, {
+        "name": "canonicalVersion",
+        "valueCanonical": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1078|20220218"
+    }, {
+        "name": "canonicalVersion",
+        "valueCanonical": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1079|20230217"
+    }]
+}
+```
+
+In this case, the expansion parameters indicate:
+
+* activeOnly: false - This means that if codes are listed in the definition of a value set that are no longer active in the version of the code system being used, they should still be included in the resulting expansion.
+* system-version: "http://hl7.org/fhir/sid/icd-10-cm|2022" - This indicates the 2022 version of the ICD-10-CM code system should be used to expand value sets as part of this release
+* system-version: "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20220901" - This indicates the 2022-09-01 release of SNOMED-CT should be used to expand value sets as part of this release
+* canonicalVersion: "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1010|20200306" - This indicates that the 2020-03-06 version of this value set should be used to expand this value set, or when expanding grouper value sets that reference this value set
+* canonicalVersion: "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1078|20220218" - This indicates that the 2022-02-18 version of this value set should be used to expand this value set, or when expanding grouper value sets that reference this value set
+* canonicalVersion: "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1079|20230217" - This indicates that the 2023-02-17 version of this value set should be used to expand this value set, or when expanding grouper value sets that reference this value set
+
+Note that some terminology services use the concept of an _expansion profile_ to establish these parameters for a particular release. The _manifest_ approach described here is making those parameters explicit as part of the definition of a release, rather than relying on a terminology-server-specific construct to provide this capability.
+
+To make this explicit, the CQF Measures IG defines an extension to the ValueSet/$expand operation to support specifying value set versions:
+
+[CQFM ValueSet Expand](http://build.fhir.org/ig/HL7/cqf-measures/OperationDefinition-ValueSet-expand.html)
+
+Using these parameters in the ValueSet/$expand directly would look like:
+
+```
+[GET] https://uat-cts.nlm.nih.gov/fhir/res/ValueSet/$expand?url=http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1010&valueSetVersion=20200306&activeOnly=false&system-version=http%3A%2F%2Fhl7.org%2Ffhir%2Fsid%2Ficd-10-cm%7C2022&system-version=http%3A%2F%2Fsnomed.info%2Fsct%7Chttp%3A%2F%2Fsnomed.info%2Fsct%2F731000124108%2Fversion%2F20220901&canonicalVersion=http%3A%2F%2Fcts.nlm.nih.gov%2Ffhir%2FValueSet%2F2.16.840.1.113883.3.526.2.1078%7C20220218&canonicalVersion=http%3A%2F%2Fcts.nlm.nih.gov%2Ffhir%2FValueSet%2F2.16.840.1.113883.3.526.2.1079%7C20230217&_format=json
+```
+
+Rather than having to encode these parameters directly in the expand, the _manifest_ parameter allows them to be specified by reference to a manifest library:
+
+```
+[GET] https://uat-cts.nlm.nih.gov/fhir/res/ValueSet/$expand?url=http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1010&manifest=http://cts.nlm.nih.gov/fhir/Library/eCQM%20Update%202023-05-04&_format=json
+```
+
+This formulation should result in the same expansion as specifying the parameters directly in the $expand.
 
 ### Artifact Manifest Testing
 
