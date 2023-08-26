@@ -279,6 +279,19 @@ Rather than having to encode these parameters directly in the expand, the _manif
 
 This formulation should result in the same expansion as specifying the parameters directly in the $expand.
 
+### ClaimsData Testing
+
+To support investigation of the use of Administrative/Claims Data for use in quality reporting, we have a real-world de-identified data set of claims data from a national payer:
+
+* [Patient Export (2022)](input/tests/claims/ClaimsData/patient_export_2022.ndjson)
+* [Coverage Export (2022)](input/tests/claims/ClaimsData/coverage_export_2022.ndjson)
+* [Explanation of Benefits Export (2022)](input/tests/claims/ClaimsData/professional_eob_export_2022.ndjson)
+
+There are at least two potential areas of investigation:
+
+1. Make use of the data here directly from CQL
+2. Create synthetic clinical data derived from the information in the claims data
+
 ### Artifact Manifest Testing
 
 ### Measure Narrative Review
