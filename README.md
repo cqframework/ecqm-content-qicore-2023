@@ -281,7 +281,7 @@ This formulation should result in the same expansion as specifying the parameter
 
 ### ClaimsData Testing
 
-To support investigation of the use of Administrative/Claims Data for use in quality reporting, we have a real-world de-identified data set of claims data from a national payer:
+To support investigation of the use of Administrative/Claims Data for use in quality reporting, we have a real-world certified to be HIPAA compliant anonymized data set of claims data from a national payer. The data set has about 740 patients, conforming to the [CARIN BlueButton IG](https://hl7.org/fhir/us/carin-bb/)
 
 * [Patient Export (2022)](input/tests/claims/ClaimsData/patient_export_2022.ndjson)
 * [Coverage Export (2022)](input/tests/claims/ClaimsData/coverage_export_2022.ndjson)
