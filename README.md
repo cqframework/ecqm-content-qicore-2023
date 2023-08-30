@@ -220,7 +220,7 @@ https://uat-cts.nlm.nih.gov/fhir/res/Library?url=http://cts.nlm.nih.gov/fhir/Lib
 
 Although this does result in a library, the returned library does not have a url element. The expected result is a library manifest that provides the appropriate code system and value set versions for use in expanding value sets as part of the release:
 
-[Library/ecqm-update-2023-50-04](input/tests/terminology/GroupingValueSet/Library-ecqm-update-2023-05-04.json)
+[Library/ecqm-update-2023-05-04](input/tests/terminology/GroupingValueSet/Library-ecqm-update-2023-05-04.json)
 
 This library contains an `expansionParameters` extension that references a contained `Parameters` resource with the relevant expansion parameters:
 
