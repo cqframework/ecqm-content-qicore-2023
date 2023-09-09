@@ -115,15 +115,15 @@
     } ]
   } ],
   "extension": [ {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
+    "valueReference": {
+      "reference": "Device/cqf-tooling"
+    }
+  }, {
     "id": "effective-data-requirements",
     "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-effectiveDataRequirements",
     "valueReference": {
       "reference": "#effective-data-requirements"
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
-    "valueReference": {
-      "reference": "Device/cqf-tooling"
     }
   } ],
   "url": "http://ecqi.healthit.gov/ecqms/Measure/MPPPatientLevel",
@@ -132,7 +132,7 @@
   "title": "Multi-provider Patient Patient Level Example",
   "status": "draft",
   "experimental": true,
-  "date": "2023-08-22T19:45:23+00:00",
+  "date": "2023-09-09T16:39:12+00:00",
   "description": "Example measure supporting testing of the multi-provider patient scenario for patient-based measures",
   "useContext": [ {
     "code": {

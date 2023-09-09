@@ -1,0 +1,361 @@
+{
+  "resourceType": "Bundle",
+  "id": "6109654b98086b538055ad09",
+  "type": "collection",
+  "entry": [ {
+    "fullUrl": "https://madie.cms.gov/Patient/9e4def14-e745-416d-aea3-690d4e59e53a",
+    "resource": {
+      "resourceType": "Patient",
+      "id": "9e4def14-e745-416d-aea3-690d4e59e53a",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div class=\"hapiHeaderText\">TwoEncRiskAssessInitEnc <b>NUMERPASS </b></div><table class=\"hapiPropertyTable\"><tbody><tr><td>Identifier</td><td>c09e158d409990aa5d4e7914a37d07a9</td></tr><tr><td>Date of birth</td><td><span>24 March 1922</span></td></tr></tbody></table></div>"
+      },
+      "extension": [ {
+        "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+        "extension": [ {
+          "url": "ombCategory",
+          "valueCoding": {
+            "system": "urn:oid:2.16.840.1.113883.6.238",
+            "code": "2106-3",
+            "display": "White"
+          }
+        }, {
+          "url": "text",
+          "valueString": "White"
+        } ]
+      }, {
+        "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+        "extension": [ {
+          "url": "ombCategory",
+          "valueCoding": {
+            "system": "urn:oid:2.16.840.1.113883.6.238",
+            "code": "2186-5",
+            "display": "Not Hispanic or Latino",
+            "userSelected": true
+          }
+        }, {
+          "url": "text",
+          "valueString": "Not Hispanic or Latino"
+        } ]
+      } ],
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MR"
+          } ]
+        },
+        "system": "https://bonnie-fhir.healthit.gov/",
+        "value": "6109654b98086b538055ad09"
+      } ],
+      "active": true,
+      "name": [ {
+        "use": "usual",
+        "family": "NUMPass",
+        "given": [ "TwoEncRiskAssessInitEnc" ]
+      } ],
+      "gender": "female",
+      "birthDate": "1922-03-24"
+    }
+  }, {
+    "fullUrl": "5c98fd73b848464ed33ea026",
+    "resource": {
+      "resourceType": "Encounter",
+      "id": "5c98fd73b848464ed33ea026",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ]
+      },
+      "status": "finished",
+      "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "AMB",
+        "display": "ambulatory",
+        "userSelected": true
+      },
+      "type": [ {
+        "coding": [ {
+          "system": "http://www.ama-assn.org/go/cpt",
+          "code": "99285"
+        } ]
+      } ],
+      "subject": {
+        "reference": "Patient/9e4def14-e745-416d-aea3-690d4e59e53a"
+      },
+      "period": {
+        "start": "2024-02-15T16:00:00.000+00:00",
+        "end": "2024-02-15T16:30:00.000+00:00"
+      },
+      "diagnosis": [ {
+        "condition": {
+          "reference": "Condition/major-depressive-disorder-active-dbac"
+        }
+      } ]
+    }
+  }, {
+    "fullUrl": "5c98fd73b848464ed33ea027",
+    "resource": {
+      "resourceType": "Encounter",
+      "id": "5c98fd73b848464ed33ea027",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ]
+      },
+      "status": "finished",
+      "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "AMB",
+        "display": "ambulatory",
+        "userSelected": true
+      },
+      "type": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "185463005"
+        }, {
+          "system": "http://www.ama-assn.org/go/cpt",
+          "code": "99201"
+        } ]
+      } ],
+      "subject": {
+        "reference": "Patient/9e4def14-e745-416d-aea3-690d4e59e53a"
+      },
+      "period": {
+        "start": "2024-05-10T08:00:00.000+00:00",
+        "end": "2024-05-10T08:15:00.000+00:00"
+      }
+    }
+  }, {
+    "fullUrl": "5c98fd73b848464ed33ea028",
+    "resource": {
+      "resourceType": "Procedure",
+      "id": "5c98fd73b848464ed33ea028",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedure" ]
+      },
+      "extension": [ {
+        "url": "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-recorded",
+        "valueDateTime": "2024-02-15T16:00:00.000Z"
+      } ],
+      "status": "completed",
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "225337009"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/9e4def14-e745-416d-aea3-690d4e59e53a"
+      },
+      "performedDateTime": "2024-02-15T16:00:00.000+00:00"
+    }
+  }, {
+    "fullUrl": "5c98fd73b848464ed33ea029",
+    "resource": {
+      "resourceType": "Procedure",
+      "id": "5c98fd73b848464ed33ea029",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedure" ]
+      },
+      "extension": [ {
+        "url": "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-recorded",
+        "valueDateTime": "2024-08-10T08:00:00.000Z"
+      } ],
+      "status": "completed",
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "225337009"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/9e4def14-e745-416d-aea3-690d4e59e53a"
+      },
+      "performedDateTime": "2024-08-10T08:00:00.000+00:00"
+    }
+  }, {
+    "fullUrl": "major-depressive-disorder-active-dbac",
+    "resource": {
+      "resourceType": "Condition",
+      "id": "major-depressive-disorder-active-dbac",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition" ]
+      },
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+          "code": "encounter-diagnosis",
+          "display": "Encounter Diagnosis"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "15193003",
+          "userSelected": true
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/9e4def14-e745-416d-aea3-690d4e59e53a"
+      },
+      "recordedDate": "2024-08-18T08:00:00.000+00:00"
+    }
+  }, {
+    "fullUrl": "http://coverage/1",
+    "resource": {
+      "resourceType": "Coverage",
+      "id": "1",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-coverage" ]
+      },
+      "status": "active",
+      "beneficiary": {
+        "reference": "Patient/9e4def14-e745-416d-aea3-690d4e59e53a"
+      },
+      "payor": [ {
+        "reference": "Organization/123456"
+      } ]
+    }
+  }, {
+    "fullUrl": "http://Organization/123456",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "123456",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-organization" ]
+      },
+      "identifier": [ {
+        "use": "temp",
+        "system": "urn:oid:2.16.840.1.113883.4.4",
+        "value": "21-3259825"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "pay",
+          "display": "Payer"
+        } ]
+      } ],
+      "name": "Blue Cross Blue Shield of Texas",
+      "telecom": [ {
+        "system": "phone",
+        "value": "(+1) 972-766-6900"
+      } ],
+      "address": [ {
+        "use": "billing",
+        "type": "postal",
+        "line": [ "P.O. Box 660044" ],
+        "city": "Dallas",
+        "state": "TX",
+        "postalCode": "75266-0044",
+        "country": "USA"
+      } ]
+    }
+  }, {
+    "fullUrl": "http://Practitioner/123456",
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "practitioner-123456",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-practitioner" ]
+      },
+      "identifier": [ {
+        "system": "http://hl7.org/fhir/sid/us-npi",
+        "value": "123456"
+      } ],
+      "name": [ {
+        "family": "Evil",
+        "prefix": [ "Dr" ]
+      } ]
+    }
+  }, {
+    "fullUrl": "https://madie.cms.gov/MeasureReport/6385047a4ba3d47c885c02c5/9e4def14-e745-416d-aea3-690d4e59e53a",
+    "resource": {
+      "resourceType": "MeasureReport",
+      "id": "9e1409d5-d501-454b-8196-0278e1aac2aa",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/test-case-cqfm" ]
+      },
+      "contained": [ {
+        "resourceType": "Parameters",
+        "id": "TwoEncRiskAssessInitEnc-parameters",
+        "parameter": [ {
+          "name": "subject",
+          "valueString": "9e4def14-e745-416d-aea3-690d4e59e53a"
+        } ]
+      } ],
+      "extension": [ {
+        "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-inputParameters",
+        "valueReference": {
+          "reference": "#TwoEncRiskAssessInitEnc-parameters"
+        }
+      }, {
+        "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-testCaseDescription",
+        "valueMarkdown": "Patient with Encounter Performed: Emergency Department Visit and Office Visit in denominator and one in numerator. Intervention Performed: Suicide Risk Assessment done prior to recurrent episode encounter."
+      } ],
+      "modifierExtension": [ {
+        "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-isTestCase",
+        "valueBoolean": true
+      } ],
+      "status": "complete",
+      "type": "individual",
+      "measure": "http://ecqi.healthit.gov/ecqms/Measure/AdultMajorDepressiveDisorderMDDSuicideRiskAssessmentFHIR",
+      "period": {
+        "start": "2024-01-01",
+        "end": "2024-12-31"
+      },
+      "group": [ {
+        "population": [ {
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+              "code": "initial-population",
+              "display": "Initial Population"
+            } ]
+          },
+          "count": 1
+        }, {
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+              "code": "denominator",
+              "display": "Denominator"
+            } ]
+          },
+          "count": 1
+        }, {
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+              "code": "numerator",
+              "display": "Numerator"
+            } ]
+          },
+          "count": 1
+        } ]
+      } ],
+      "evaluatedResource": [ {
+        "reference": "https://madie.cms.gov/Patient/9e4def14-e745-416d-aea3-690d4e59e53a"
+      }, {
+        "reference": "Encounter/5c98fd73b848464ed33ea026"
+      }, {
+        "reference": "Encounter/5c98fd73b848464ed33ea027"
+      }, {
+        "reference": "Procedure/5c98fd73b848464ed33ea028"
+      }, {
+        "reference": "Procedure/5c98fd73b848464ed33ea029"
+      }, {
+        "reference": "Condition/major-depressive-disorder-active-dbac"
+      }, {
+        "reference": "Coverage/1"
+      }, {
+        "reference": "Organization/123456"
+      }, {
+        "reference": "Practitioner/practitioner-123456"
+      } ]
+    }
+  } ]
+}

@@ -4,18 +4,25 @@
   "meta": {
     "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/quality-program-cqfm" ]
   },
-  "contained": [{
+  "contained": [ {
     "resourceType": "Parameters",
     "id": "expansion-parameters",
-    "parameter": [{
+    "parameter": [ {
       "name": "forceCanonicalVersion",
       "valueCanonical": "http://ecqi.healthit.gov/ecqms/Library/AttributionModel|1.0.0-custom"
-    }]
-  }],
-  "extension": [{
+    } ]
+  } ],
+  "extension": [ {
     "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-expansionParameters",
-    "valueReference": { "reference": "#expansion-parameters" }
-  }],
+    "valueReference": {
+      "reference": "#expansion-parameters"
+    }
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
+    "valueReference": {
+      "reference": "Device/cqf-tooling"
+    }
+  } ],
   "url": "http://ecqi.healthit.gov/ecqms/Library/MPPManifest",
   "name": "MPPManifest",
   "status": "draft",

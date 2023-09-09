@@ -1,0 +1,529 @@
+{
+  "resourceType": "Bundle",
+  "id": "Eleanor",
+  "type": "collection",
+  "entry": [ {
+    "fullUrl": "https://madie.cms.gov/Patient/d9e3ac3a-8428-4a6f-823a-7625ccdc19d2",
+    "resource": {
+      "resourceType": "Patient",
+      "id": "d9e3ac3a-8428-4a6f-823a-7625ccdc19d2",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div class=\"hapiHeaderText\">Eleanor, <b>mo1111d4p100 </b></div><table class=\"hapiPropertyTable\"><tbody><tr><td>Identifier</td><td>Eleanor</td></tr><tr><td>Date of birth</td><td><span>14 May 1950</span></td></tr></tbody></table></div>"
+      },
+      "extension": [ {
+        "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+        "extension": [ {
+          "url": "ombCategory",
+          "valueCoding": {
+            "system": "urn:oid:2.16.840.1.113883.6.238",
+            "code": "2106-3",
+            "display": "White",
+            "userSelected": true
+          }
+        }, {
+          "url": "text",
+          "valueString": "White"
+        } ]
+      }, {
+        "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+        "extension": [ {
+          "url": "ombCategory",
+          "valueCoding": {
+            "system": "urn:oid:2.16.840.1.113883.6.238",
+            "code": "2186-5",
+            "display": "Not Hispanic or Latino",
+            "userSelected": true
+          }
+        }, {
+          "url": "text",
+          "valueString": "Not Hispanic or Latino"
+        } ]
+      } ],
+      "identifier": [ {
+        "type": {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MR"
+          } ]
+        },
+        "system": "https://madie.cms.gov/",
+        "value": "Eleanor"
+      } ],
+      "active": true,
+      "name": [ {
+        "use": "usual",
+        "text": "Eleanor",
+        "family": "mo1111d4p100",
+        "given": [ "HENRYmo1111d4p100" ]
+      } ],
+      "gender": "female",
+      "birthDate": "1949-05-14",
+      "address": [ {
+        "text": "Eleanor, Screened Not at risk Assessed Severely Malnourished Diagnosed Care Plan, ID=Eleanor, DOB: 14 May 1950"
+      } ]
+    }
+  }, {
+    "fullUrl": "https://madie.cms.gov/Encounter/Eleanor-01",
+    "resource": {
+      "resourceType": "Encounter",
+      "id": "Eleanor-01",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ]
+      },
+      "status": "finished",
+      "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "IMP",
+        "display": "inpatient encounter"
+      },
+      "type": [ {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "183452005"
+        } ]
+      } ],
+      "subject": {
+        "reference": "Patient/Eleanor"
+      },
+      "period": {
+        "start": "2021-02-01T08:00:00.000Z",
+        "end": "2021-02-07T08:15:00.000Z"
+      }
+    }
+  }, {
+    "fullUrl": "https://madie.cms.gov/Observation/Eleanor-18",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "Eleanor-18",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observation" ]
+      },
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "survey",
+          "display": "Survey"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "98967-3",
+          "display": "Nutritional Risk Screening 2002 panel",
+          "userSelected": true
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/Eleanor"
+      },
+      "effectiveDateTime": "2021-02-01T09:00:00.000+00:00",
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "129689002",
+          "display": "At risk for nutritional problem (finding)",
+          "userSelected": true
+        } ]
+      }
+    }
+  }, {
+    "fullUrl": "https://madie.cms.gov/Observation/Eleanor-19",
+    "resource": {
+      "resourceType": "Observation",
+      "id": "Eleanor-19",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observation" ]
+      },
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "survey",
+          "display": "Survey"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "75282-4",
+          "display": "Nutrition assessment panel",
+          "userSelected": true
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/Eleanor"
+      },
+      "effectiveDateTime": "2021-02-01T10:00:00.000+00:00",
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "102635008",
+          "display": "Acute nutritional deficiency (finding)",
+          "userSelected": true
+        } ]
+      }
+    }
+  }, {
+    "fullUrl": "https://madie.cms.gov/Procedure/Eleanor-12",
+    "resource": {
+      "resourceType": "Procedure",
+      "id": "Eleanor-12",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedure" ]
+      },
+      "extension": [ {
+        "url": "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-recorded",
+        "valueDateTime": "2021-02-01T11:30:00.000Z"
+      } ],
+      "status": "completed",
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "306165000",
+          "display": "Referral to hospital-based dietetics service (procedure)"
+        } ],
+        "text": "Referral to hospital-based dietetics service (procedure)"
+      },
+      "subject": {
+        "reference": "Patient/Eleanor"
+      },
+      "encounter": {
+        "reference": "Encounter/Eleanor-01"
+      },
+      "performedPeriod": {
+        "start": "2021-02-01T11:30:00.000Z",
+        "end": "2021-02-07T08:15:00.000Z"
+      }
+    }
+  }, {
+    "fullUrl": "https://madie.cms.gov/Procedure/Eleanor-02",
+    "resource": {
+      "resourceType": "Procedure",
+      "id": "Eleanor-02",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedure" ]
+      },
+      "extension": [ {
+        "url": "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-recorded",
+        "valueDateTime": "2021-02-01T11:30:00.000Z"
+      } ],
+      "status": "completed",
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "229912004",
+          "display": "Enteral feeding (regime/therapy)",
+          "userSelected": true
+        } ],
+        "text": "Enteral feeding (regime/therapy)"
+      },
+      "subject": {
+        "reference": "Patient/Eleanor"
+      },
+      "encounter": {
+        "reference": "Encounter/Eleanor-02"
+      },
+      "performedPeriod": {
+        "start": "2021-02-01T11:30:00.000Z",
+        "end": "2021-02-07T08:15:00.000Z"
+      }
+    }
+  }, {
+    "fullUrl": "https://madie.cms.gov/Coverage/Eleanor-61",
+    "resource": {
+      "resourceType": "Coverage",
+      "id": "Eleanor-61",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-coverage" ]
+      },
+      "status": "active",
+      "type": {
+        "coding": [ {
+          "system": "https://nahdo.org/sopt",
+          "version": "9.2",
+          "code": "11",
+          "display": "Medicare Managed Care (Includes Medicare Advantage Plans)"
+        } ]
+      },
+      "beneficiary": {
+        "reference": "Patient/Eleanor"
+      },
+      "period": {
+        "start": "2020-10-01T00:00:00+00:00"
+      },
+      "payor": [ {
+        "reference": "Organization/Eleanor-98"
+      } ]
+    }
+  }, {
+    "fullUrl": "https://madie.cms.gov/Organization/Eleanor-98",
+    "resource": {
+      "resourceType": "Organization",
+      "id": "Eleanor-98",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-organization" ]
+      },
+      "identifier": [ {
+        "use": "temp",
+        "system": "urn:oid:2.16.840.1.113883.4.4",
+        "value": "21-3259825"
+      } ],
+      "active": true,
+      "type": [ {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "pay",
+          "display": "Payer"
+        } ]
+      } ],
+      "name": "Blue Cross Blue Shield of Texas",
+      "telecom": [ {
+        "system": "phone",
+        "value": "(+1) 972-766-6900"
+      } ],
+      "address": [ {
+        "use": "billing",
+        "type": "postal",
+        "line": [ "P.O. Box 660044" ],
+        "city": "Dallas",
+        "state": "TX",
+        "postalCode": "75266-0044",
+        "country": "USA"
+      } ]
+    }
+  }, {
+    "fullUrl": "https://madie.cms.gov/MeasureReport/64e7b2f02ad653247b573b0f/d9e3ac3a-8428-4a6f-823a-7625ccdc19d2",
+    "resource": {
+      "resourceType": "MeasureReport",
+      "id": "ae40cf2b-ddca-4699-909f-8c7fb394edf8",
+      "meta": {
+        "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/test-case-cqfm" ]
+      },
+      "contained": [ {
+        "resourceType": "Parameters",
+        "id": "Eleanor-parameters",
+        "parameter": [ {
+          "name": "subject",
+          "valueString": "d9e3ac3a-8428-4a6f-823a-7625ccdc19d2"
+        } ]
+      } ],
+      "extension": [ {
+        "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-inputParameters",
+        "valueReference": {
+          "reference": "#Eleanor-parameters"
+        }
+      }, {
+        "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-testCaseDescription",
+        "valueMarkdown": "Screened, At Risk, Referral, Assessed, Severe Malnutrition, No Diagnosis, Nutrition Care Plan"
+      } ],
+      "modifierExtension": [ {
+        "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-isTestCase",
+        "valueBoolean": true
+      } ],
+      "status": "complete",
+      "type": "individual",
+      "measure": "http://ecqi.healthit.gov/ecqms/Measure/GMCSAU2024FHIR",
+      "period": {
+        "start": "2021-01-01",
+        "end": "2021-12-31"
+      },
+      "group": [ {
+        "population": [ {
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+              "code": "initial-population",
+              "display": "Initial Population"
+            } ]
+          },
+          "count": 1
+        }, {
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+              "code": "measure-population",
+              "display": "Measure Population"
+            } ]
+          },
+          "count": 1
+        }, {
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+              "code": "measure-population-observation",
+              "display": "Measure Population Observation"
+            } ]
+          },
+          "count": 1
+        } ]
+      }, {
+        "population": [ {
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+              "code": "initial-population",
+              "display": "Initial Population"
+            } ]
+          },
+          "count": 1
+        }, {
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+              "code": "measure-population",
+              "display": "Measure Population"
+            } ]
+          },
+          "count": 1
+        }, {
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+              "code": "measure-population-observation",
+              "display": "Measure Population Observation"
+            } ]
+          },
+          "count": 1
+        } ]
+      }, {
+        "population": [ {
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+              "code": "initial-population",
+              "display": "Initial Population"
+            } ]
+          },
+          "count": 1
+        }, {
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+              "code": "measure-population",
+              "display": "Measure Population"
+            } ]
+          },
+          "count": 1
+        }, {
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+              "code": "measure-population-observation",
+              "display": "Measure Population Observation"
+            } ]
+          },
+          "count": 0
+        } ]
+      }, {
+        "population": [ {
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+              "code": "initial-population",
+              "display": "Initial Population"
+            } ]
+          },
+          "count": 1
+        }, {
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+              "code": "measure-population",
+              "display": "Measure Population"
+            } ]
+          },
+          "count": 1
+        }, {
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+              "code": "measure-population-observation",
+              "display": "Measure Population Observation"
+            } ]
+          },
+          "count": 1
+        } ]
+      }, {
+        "population": [ {
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+              "code": "initial-population",
+              "display": "Initial Population"
+            } ]
+          },
+          "count": 1
+        }, {
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+              "code": "measure-population",
+              "display": "Measure Population"
+            } ]
+          },
+          "count": 1
+        }, {
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+              "code": "measure-population-observation",
+              "display": "Measure Population Observation"
+            } ]
+          },
+          "count": 3
+        } ]
+      }, {
+        "population": [ {
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+              "code": "initial-population",
+              "display": "Initial Population"
+            } ]
+          },
+          "count": 1
+        }, {
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+              "code": "measure-population",
+              "display": "Measure Population"
+            } ]
+          },
+          "count": 1
+        }, {
+          "code": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+              "code": "measure-population-observation",
+              "display": "Measure Population Observation"
+            } ]
+          },
+          "count": 75
+        } ]
+      } ],
+      "evaluatedResource": [ {
+        "reference": "https://madie.cms.gov/Patient/d9e3ac3a-8428-4a6f-823a-7625ccdc19d2"
+      }, {
+        "reference": "https://madie.cms.gov/Encounter/Eleanor-01"
+      }, {
+        "reference": "https://madie.cms.gov/Observation/Eleanor-18"
+      }, {
+        "reference": "https://madie.cms.gov/Observation/Eleanor-19"
+      }, {
+        "reference": "https://madie.cms.gov/Procedure/Eleanor-12"
+      }, {
+        "reference": "https://madie.cms.gov/Procedure/Eleanor-02"
+      }, {
+        "reference": "https://madie.cms.gov/Coverage/Eleanor-61"
+      }, {
+        "reference": "https://madie.cms.gov/Organization/Eleanor-98"
+      } ]
+    }
+  } ]
+}
