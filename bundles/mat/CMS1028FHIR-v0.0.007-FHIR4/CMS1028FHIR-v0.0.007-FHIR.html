@@ -1,0 +1,3788 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+      body {
+        background-color: #ffffff;;
+        margin: 0px;
+        padding: 10px;
+        height: 100%;
+        font-size: 1em;
+      }
+
+      p, li {
+        font-size: 12px;
+        line-height: 1.4em;
+        font-family: verdana;
+        margin: 0 0 20px 0;
+        font-weight: normal;
+      }
+
+      td {
+        font-size: 12px;
+        line-height: 1.4em;
+        font-family: verdana;
+        font-weight: normal;
+        padding: 3px;
+        vertical-align: top;
+      }
+
+      tr {
+        font-size: 12px;
+        line-height: 1.4em;
+        font-family: verdana;
+        font-weight: normal;
+        padding: 3px;
+        vertical-align: top;
+        text-align: left;
+      }
+
+      table.colstu td {
+        border: 1px grey solid;
+        border-spacing: 0;
+        padding: 5px;
+        border-collapse: collapse;
+        background-color: #fff5e6;
+      }
+
+      table.colsd td {
+        border: 1px grey solid;
+        border-spacing: 0;
+        padding: 5px;
+        border-collapse: collapse;
+        background-color: #efefef;
+      }
+
+      table.colsn td {
+        border: 1px grey solid;
+        border-spacing: 0;
+        padding: 5px;
+        border-collapse: collapse;
+        background-color: #e6ffe6;
+      }
+
+      table.colse td {
+        border: 1px grey solid;
+        border-spacing: 0;
+        padding: 5px;
+        border-collapse: collapse;
+        background-color: #e6e6e6;
+      }
+
+      table.colsi td {
+        border: 1px grey solid;
+        border-spacing: 0;
+        padding: 5px;
+        border-collapse: collapse;
+        background-color: #ffffe6;
+      }
+
+      table.list td {
+        border-top: 1px silver solid;
+        border-spacing: 0;
+      }
+
+      table.bare td {
+        border-spacing: 0;
+      }
+
+      ul.dict li {
+        font-size: 11px;
+        line-height: 1.2em;
+        font-family: verdana;
+        font-weight: normal;
+        padding: 3px;
+      }
+
+      table.dict td {
+        padding: 3px 7px 2px 7px;
+        font-size: 11px;
+        line-height: 1.2em;
+        font-family: verdana;
+        font-weight: normal;
+        padding: 3px;
+        vertical-align: top;
+      }
+
+      table.dict p {
+        font-size: 11px;
+      }
+
+      table {
+        margin-bottom: 10px;
+        border-collapse: collapse;
+      }
+
+      table.codes td {
+        border: 1px solid silver;
+        padding: 3px 7px 2px 7px;
+        font-size: 12px;
+        line-height: 1.4em;
+        font-family: verdana;
+        font-weight: normal;
+        padding: 3px;
+        vertical-align: top;
+      }
+
+      table.grid {
+        margin-bottom: 10px;
+        border: 1px black solid;
+        margin-right: auto;
+
+      }
+
+      table.grid th {
+        border: 1px solid silver;
+        padding: 3px 7px 2px 7px;
+        font-size: 12px;
+        line-height: 1.4em;
+        font-family: verdana;
+        font-weight: bold;
+        padding: 3px;
+        vertical-align: top;
+      }
+
+      table.grid td {
+        border: 1px solid silver;
+        padding: 3px 7px 2px 7px;
+        font-size: 12px;
+        line-height: 1.4em;
+        font-family: verdana;
+        font-weight: normal;
+        padding: 3px;
+        vertical-align: top;
+      }
+
+      ul {
+        margin: 10px 0;
+        padding: 0 0 0 25px;
+      }
+
+      .dense li {
+        margin: 0 0 0 0;
+      }
+
+      li {
+        margin: 0 0 5px 0;
+      }
+
+      h1 {
+        font-size: 16px;
+        margin: 0 0 4px 0;
+        font-family: verdana;
+        border-bottom: 1px solid #7e7e7e;
+        padding-bottom: 2px;
+      }
+
+      h2 {
+        font-family: verdana;
+        line-height: 1.2em;
+        font-size: 14px;
+        margin: 0 0 3px 0;
+        margin-top: 15px;
+        border-bottom: 1px solid #dcdcdc;
+        padding-bottom: 2px;
+      }
+
+      h3 {
+        font-family: verdana;
+        line-height: 1.2em;
+        font-size: 12px;
+        margin: 0 0 3px 0;
+        margin-top: 10px;
+      }
+
+      h4 {
+        font-family: verdana;
+        line-height: 1.2em;
+        font-size: 11px;
+        margin: 0 0 3px 0;
+        margin-top: 10px;
+      }
+
+      div.sidebar h2 {
+        border-bottom: 1px solid #dcdcdc;
+        padding-bottom: 2px;
+        padding-top: 0px;
+        margin-top: 0px;
+        font-weight: normal;
+        margin-left: 8px;
+        margin-bottom: 0px;
+        font-size: 12px;
+      }
+
+      div.sidebar p {
+        padding-bottom: 0px;
+        padding-top: 10px;
+        font-weight: normal;
+        margin-left: 8px;
+        font-size: 12px;
+        margin-bottom: 8px;
+      }
+
+      div.sidebar ul {
+        list-style: none;
+        padding: 0px;
+        margin-left: 6px;
+        font-size: 11px;
+        line-height: 2.125em;
+      }
+
+      div.sidebar li {
+        margin: 0px 0px 0px 6px;
+        padding: 0px;
+        font-size: 11px;
+        line-height: 2.125em;
+      }
+
+      a {
+        color: #428bca;
+        text-decoration: none;
+      }
+
+      a.xmltag :visited {
+        color: Navy;
+      }
+
+      a.xmltag :hover {
+        color: Blue;
+      }
+
+      pre {
+        display: block;
+        border: 1px solid #cccccc;
+        border-radius: 4px;
+      }
+
+      pre a {
+        color: darkgreen;
+        text-decoration: none;
+        border: 0;
+
+      }
+
+      /* PrismJS 1.21.0
+      https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript+abap+abnf+actionscript+ada+agda+al+antlr4+apacheconf+apl+applescript+aql+arduino+arff+asciidoc+aspnet+asm6502+autohotkey+autoit+bash+basic+batch+bbcode+birb+bison+bnf+brainfuck+brightscript+bro+bsl+c+csharp+cpp+cil+clojure+cmake+coffeescript+concurnas+csp+crystal+css-extras+cypher+d+dart+dax+dhall+diff+django+dns-zone-file+docker+ebnf+editorconfig+eiffel+ejs+elixir+elm+etlua+erb+erlang+excel-formula+fsharp+factor+firestore-security-rules+flow+fortran+ftl+gml+gcode+gdscript+gedcom+gherkin+git+glsl+go+graphql+groovy+haml+handlebars+haskell+haxe+hcl+hlsl+http+hpkp+hsts+ichigojam+icon+ignore+inform7+ini+io+j+java+javadoc+javadoclike+javastacktrace+jolie+jq+jsdoc+js-extras+json+json5+jsonp+jsstacktrace+js-templates+julia+keyman+kotlin+latex+latte+less+lilypond+liquid+lisp+livescript+llvm+lolcode+lua+makefile+markdown+markup-templating+matlab+mel+mizar+mongodb+monkey+moonscript+n1ql+n4js+nand2tetris-hdl+naniscript+nasm+neon+nginx+nim+nix+nsis+objectivec+ocaml+opencl+oz+parigp+parser+pascal+pascaligo+pcaxis+peoplecode+perl+php+phpdoc+php-extras+plsql+powerquery+powershell+processing+prolog+properties+protobuf+pug+puppet+pure+purebasic+purescript+python+q+qml+qore+r+racket+jsx+tsx+reason+regex+renpy+rest+rip+roboconf+robotframework+ruby+rust+sas+sass+scss+scala+scheme+shell-session+smali+smalltalk+smarty+sml+solidity+solution-file+soy+sparql+splunk-spl+sqf+sql+stan+iecst+stylus+swift+t4-templating+t4-cs+t4-vb+tap+tcl+tt2+textile+toml+turtle+twig+typescript+typoscript+unrealscript+vala+vbnet+velocity+verilog+vhdl+vim+visual-basic+warpscript+wasm+wiki+xeora+xml-doc+xojo+xquery+yaml+yang+zig&plugins=keep-markup */
+      /**
+       * prism.js default theme for JavaScript, CSS and HTML
+       * Based on dabblet (http://dabblet.com)
+       * @author Lea Verou
+       */
+
+      code[class*="language-"],
+      pre[class*="language-"] {
+        color: black;
+        background: none;
+        text-shadow: 0 1px white;
+        font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+        font-size: 0.95em;
+        text-align: left;
+        white-space: pre;
+        word-spacing: normal;
+        word-break: normal;
+        word-wrap: normal;
+        line-height: 1.5;
+
+        -moz-tab-size: 4;
+        -o-tab-size: 4;
+        tab-size: 4;
+
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+      }
+
+      pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+      code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+        text-shadow: none;
+        background: #b3d4fc;
+      }
+
+      pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+      code[class*="language-"]::selection, code[class*="language-"] ::selection {
+        text-shadow: none;
+        background: #b3d4fc;
+      }
+
+      @media print {
+        code[class*="language-"],
+        pre[class*="language-"] {
+          text-shadow: none;
+        }
+      }
+
+      /* Code blocks */
+      pre[class*="language-"] {
+        padding: 1em;
+        margin: .5em 0;
+        overflow: auto;
+      }
+
+      :not(pre) > code[class*="language-"],
+      pre[class*="language-"] {
+        background: #f5f2f0;
+      }
+
+      /* Inline code */
+      :not(pre) > code[class*="language-"] {
+        padding: .1em;
+        border-radius: .3em;
+        white-space: normal;
+      }
+    </style>
+</head>
+<body>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    <table class="grid dict">
+        
+        
+            <tr>
+                <th scope="row"><b>Url: </b></th>
+                <td style="padding-left: 4px;">http://ecqi.healthit.gov/ecqms/Measure/SevereObstetricComplicationsFHIR</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Version: </b></th>
+                <td style="padding-left: 4px;">0.0.007</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Identifier: </b></th>
+                <td style="padding-left: 4px;">
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>type: </b> <span></span>
+                        </p>
+                    
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>value: </b> <span>CMS1028FHIR</span>
+                        </p>
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <th scope="row"><b>Identifier: </b></th>
+                <td style="padding-left: 4px;">
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>type: </b> <span></span>
+                        </p>
+                    
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>value: </b> <span>urn:uuid:6cf03fe2-b962-4f83-ac37-26d7477183c7</span>
+                        </p>
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <th scope="row"><b>Identifier: </b></th>
+                <td style="padding-left: 4px;">
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>type: </b> <span></span>
+                        </p>
+                    
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>value: </b> <span>urn:uuid:2c92808482ead7c5018384daff512547</span>
+                        </p>
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <th scope="row"><b>Identifier: </b></th>
+                <td style="padding-left: 4px;">
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>type: </b> <span></span>
+                        </p>
+                    
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>value: </b> <span>1028FHIR</span>
+                        </p>
+                    
+                </td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Name: </b></th>
+                <td style="padding-left: 4px;">SevereObstetricComplicationsFHIR</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Title: </b></th>
+                <td style="padding-left: 4px;">Severe Obstetric ComplicationsFHIR</td>
+            </tr>
+        
+        
+        
+            <tr>
+                <th scope="row"><b>Status: </b></th>
+                <td style="padding-left: 4px;">draft</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Experimental: </b></th>
+                <td style="padding-left: 4px;">false</td>
+            </tr>
+        
+        
+        
+        
+        
+        
+            <tr>
+                <th scope="row"><b>Date: </b></th>
+                <td style="padding-left: 4px;">2023-08-08T18:35:06+00:00</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Publisher: </b></th>
+                <td style="padding-left: 4px;">The Joint Commission</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Description: </b></th>
+                <td style="padding-left: 4px;">Patients with severe obstetric complications which occur during the inpatient delivery hospitalization</td>
+            </tr>
+        
+        
+        
+        
+            <tr>
+                <th scope="row"><b>Use Context: </b></th>
+                <td style="padding-left: 4px;">
+                    <table class="grid-dict">
+                        <tr><th><b>code</b></th><th><b>value</b></th></tr>
+                        
+                            <tr>
+                                <td>program</td>
+                                <td></td>
+                            </tr>
+                        
+                    </table>
+                </td>
+            </tr>
+        
+        
+        
+        
+            <tr>
+                <th scope="row"><b>Purpose: </b></th>
+                <td style="padding-left: 4px;">UNKNOWN</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Guidance (Usage): </b></th>
+                <td style="padding-left: 4px;">This measure allows for 3 approaches to determine gestational age (GA) in the following order of precedence:
+
+1.  The GA is calculated using the American College of Obstetricians and Gynecologists ReVITALize guidelines.*
+2.  The GA is obtained from a discrete field in the electronic health record.  This option is only used when the calculated GA is not available.
+3.  The GA is based on ICD10 or SNOMED codes indicative of weeks gestation.  This option is only used when results from items #1 and #2 (see above) are not available.
+
+Wherever gestational age is mentioned, relative to the delivery, the intent is to capture the last estimated gestational age prior to or at the time of delivery.  
+ 
+*ACOG ReVITALize Guidelines for Calculating Gestational Age:      
+     
+                                Gestational Age = (280-(Estimated Due Date minus Reference Date))/7
+
+--Estimated Due Date (EDD): The best obstetrical EDD is determined by last menstrual period if confirmed by early ultrasound or no ultrasound performed, or early ultrasound if no known last menstrual period or the ultrasound is not consistent with last menstrual period, or known date of fertilization (e.g., assisted reproductive technology) 
+--Reference Date is the date on which you are trying to determine gestational age. For purposes of this eCQM, Reference Date would be the Date of Delivery.   
+
+Note however the calculation may yield a non-whole number and gestational age should be rounded off to the nearest completed week. For example, an infant born on the 5th day of the 36th week (35 weeks and 5/7 days) is at a gestational age of 35 weeks, not 36 weeks.
+
+Definition:
+For this measure, specifications are modeled after the nationally available and adopted CDC definition for Severe Maternal Morbidity (SMM) with the addition of maternal mortality. At times, we may refer to the CDC indicators of morbidity as SMM, but the outcome of the measure, which includes morbidity and mortality, is referred to as Severe Obstetric Complications (SOC).
+
+This eCQM is an episode-based measure. An episode is defined as each inpatient hospitalization or encounter that ends during the measurement period.
+
+This FHIR-based measure has been derived from the QDM-based measure CMS1028v2.
+
+Please refer to the HL7 QI-Core Implementation Guide (http://hl7.org/fhir/us/qicore/index.html) for more information on QI-Core and mapping recommendations from QDM to QI-Core 4.1.1 (http://hl7.org/fhir/us/qicore/qdm-to-qicore.html).</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Copyright: </b></th>
+                <td style="padding-left: 25px;">Measure specifications are in the Public Domain.
+
+LOINC(R) copyright 2004-2022 Regenstrief Institute, Inc. This material contains SNOMED Clinical Terms(R) (SNOMED CT[R]) copyright 2004-2022 International Health Terminology Standards Development Organisation. ICD-10 copyright 2022 World Health Organization. All Rights Reserved.</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Disclaimer: </b></th>
+                <td style="padding-left: 25px;">These performance measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications. The measures and specifications are provided without warranty.</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Approval Date: </b></th>
+                <td style="padding-left: 4px;">2023-08-21</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Last Review Date: </b></th>
+                <td style="padding-left: 4px;">2023-08-21</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Effective Period: </b></th>
+                <td style="padding-left: 4px;">2024-01-01..2024-12-31</td>
+            </tr>
+        
+        
+            
+                <tr>
+                    <th scope="row"><b>Population Criteria: </b></th>
+                    <td style="padding-left: 4px;">
+                        
+                            <table class="grid-dict">
+                                
+                                    <tr>
+                                        <th><b>638907ab4ba3d47c885c02fd</b></th>
+                                    </tr>
+                                
+                                
+                                    <tr>
+                                        <td>Initial Population: </td>
+                                        <td>Inpatient hospitalizations for patients age greater than or equal to 8 years and less than 65 admitted to the hospital for inpatient acute care who undergo a delivery procedure with a discharge date that ends during the measurement period</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Denominator: </td>
+                                        <td>Inpatient hospitalizations for patients delivering stillborn or live birth with greater than or equal to 20 weeks, 0 days gestation completed</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Denominator Exclusion: </td>
+                                        <td>Inpatient hospitalizations for patients with confirmed diagnosis of COVID with COVID-related respiratory condition or patients with confirmed diagnosis of COVID with COVID-related respiratory procedure</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Numerator: </td>
+                                        <td>Inpatient hospitalizations for patients with severe obstetric complications (not present on admission that occur during the current delivery encounter) including the following: 
+-  Severe maternal morbidity diagnoses (see list below)
+-  Severe maternal morbidity procedures (see list below)
+-  Discharge disposition of expired
+Please note that present on admission codes may be those entered by coding staff, extracted from billing/claims data.
+
+Severe Maternal Morbidity Diagnoses:
+-  Cardiac
+	          Acute heart failure 
+	          Acute myocardial infarction
+	          Aortic aneurysm
+	          Cardiac arrest/ventricular fibrillation
+	          Heart failure/arrest during procedure or surgery
+-  Hemorrhage
+	          Disseminated intravascular coagulation
+	          Shock
+-  Renal
+                  Acute renal failure
+-  Respiratory
+	          Adult respiratory distress syndrome
+	          Pulmonary edema
+-  Sepsis
+-  Other OB
+	          Air and thrombotic embolism
+	          Amniotic fluid embolism
+	          Eclampsia
+	          Severe anesthesia complications
+-  Other Medical
+	          Puerperal cerebrovascular disorder
+	          Sickle cell disease with crisis
+
+
+Severe Maternal Morbidity Procedures:
+-  Blood transfusion
+-  Conversion of cardiac rhythm
+-  Hysterectomy
+-  Temporary tracheostomy
+-  Ventilation</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Numerator Exclusion: </td>
+                                        <td></td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Denominator Exception: </td>
+                                        <td></td>
+                                    </tr>
+                                
+                            </table>
+                        
+                    </td>
+                </tr>
+            
+        
+        
+        
+            <tr>
+                <th scope="row"><b> Supplemental Data Guidance: </b></th>
+                <td style="padding-left: 4px;"> Patient's Ethnicity:
+Hispanic or Latino
+Not Hispanic or Latino Patient's Payer:
+Categories of types of health care payer entities as defined by the US Public Health Data Consortium SOP code system Patient's Race:
+Native Hawaiian or Other Pacific Islander
+Asian
+American Indian or Alaska Native
+Other Race
+White
+Black or African American Patient's Sex:
+Gender identity restricted to only Male and Female used in administrative situations requiring a restriction to these two categories.
+ This definition establishes a variable of CGA (Calculated Gestational Age).  CGA is a supplemental data element to store the calculated gestational age result from the &quot;calculatedGestationalAge&quot; function.  The data element enables the capturing and saving of the CGA for data analysis post data receipt. Hospitals do not need to submit any additional data to comply with this definition. 
+ </td>
+            </tr>
+        
+            <tr>
+                <th scope="row"><b> Risk Adjustment Variable Guidance: </b></th>
+                <td style="padding-left: 4px;"> The Severe Obstetric Complications Risk Adjustment Methodology Report is available on the eCQI Resource Center (https://ecqi.healthit.gov).
+Lab and Physical Exam Results:
+Report the first resulted value 24 hours prior to start of encounter and before time of delivery in UCUM units specified:
+-	Heart rate:  {beats}/min
+-	Systolic blood pressure:  mm[Hg]
+-	White blood cell count:  10*3/uL 
+-   Hematocrit:  %  
+
+ The Severe Obstetric Complications Risk Adjustment Methodology Report is available on the eCQI Resource Center (https://ecqi.healthit.gov).
+Pre-existing conditions and variables must be present on admission:.    Please note that present on admission codes may be those entered by coding staff, extracted from billing/claims data.
+ The Severe Obstetric Complications Risk Adjustment Methodology Report is available on the eCQI Resource Center (https://ecqi.healthit.gov).
+Pre-existing conditions and variables must be present on admission:.    Please note that present on admission codes may be those entered by coding staff, extracted from billing/claims data. The Severe Obstetric Complications Risk Adjustment Methodology Report is available on the eCQI Resource Center (https://ecqi.healthit.gov).
+Pre-existing conditions and variables must be present on admission:.    Please note that present on admission codes may be those entered by coding staff, extracted from billing/claims data. The Severe Obstetric Complications Risk Adjustment Methodology Report is available on the eCQI Resource Center (https://ecqi.healthit.gov).
+Pre-existing conditions and variables must be present on admission:.    Please note that present on admission codes may be those entered by coding staff, extracted from billing/claims data. The Severe Obstetric Complications Risk Adjustment Methodology Report is available on the eCQI Resource Center (https://ecqi.healthit.gov).
+Pre-existing conditions and variables must be present on admission:.    Please note that present on admission codes may be those entered by coding staff, extracted from billing/claims data. The Severe Obstetric Complications Risk Adjustment Methodology Report is available on the eCQI Resource Center (https://ecqi.healthit.gov).
+Pre-existing conditions and variables must be present on admission:.    Please note that present on admission codes may be those entered by coding staff, extracted from billing/claims data. The Severe Obstetric Complications Risk Adjustment Methodology Report is available on the eCQI Resource Center (https://ecqi.healthit.gov).
+Pre-existing conditions and variables must be present on admission:.    Please note that present on admission codes may be those entered by coding staff, extracted from billing/claims data. The Severe Obstetric Complications Risk Adjustment Methodology Report is available on the eCQI Resource Center (https://ecqi.healthit.gov).
+Pre-existing conditions and variables must be present on admission:.    Please note that present on admission codes may be those entered by coding staff, extracted from billing/claims data. The Severe Obstetric Complications Risk Adjustment Methodology Report is available on the eCQI Resource Center (https://ecqi.healthit.gov).
+Pre-existing conditions and variables must be present on admission:.    Please note that present on admission codes may be those entered by coding staff, extracted from billing/claims data. The Severe Obstetric Complications Risk Adjustment Methodology Report is available on the eCQI Resource Center (https://ecqi.healthit.gov).
+Pre-existing conditions and variables must be present on admission:.    Please note that present on admission codes may be those entered by coding staff, extracted from billing/claims data. The Severe Obstetric Complications Risk Adjustment Methodology Report is available on the eCQI Resource Center (https://ecqi.healthit.gov).
+Pre-existing conditions and variables must be present on admission:.    Please note that present on admission codes may be those entered by coding staff, extracted from billing/claims data. The Severe Obstetric Complications Risk Adjustment Methodology Report is available on the eCQI Resource Center (https://ecqi.healthit.gov).
+Pre-existing conditions and variables must be present on admission:.    Please note that present on admission codes may be those entered by coding staff, extracted from billing/claims data. The Severe Obstetric Complications Risk Adjustment Methodology Report is available on the eCQI Resource Center (https://ecqi.healthit.gov).
+Pre-existing conditions and variables must be present on admission:.    Please note that present on admission codes may be those entered by coding staff, extracted from billing/claims data. The Severe Obstetric Complications Risk Adjustment Methodology Report is available on the eCQI Resource Center (https://ecqi.healthit.gov).
+Pre-existing conditions and variables must be present on admission:.    Please note that present on admission codes may be those entered by coding staff, extracted from billing/claims data. The Severe Obstetric Complications Risk Adjustment Methodology Report is available on the eCQI Resource Center (https://ecqi.healthit.gov).
+Pre-existing conditions and variables must be present on admission:.    Please note that present on admission codes may be those entered by coding staff, extracted from billing/claims data. The Severe Obstetric Complications Risk Adjustment Methodology Report is available on the eCQI Resource Center (https://ecqi.healthit.gov).
+Pre-existing conditions and variables must be present on admission:.    Please note that present on admission codes may be those entered by coding staff, extracted from billing/claims data. The Severe Obstetric Complications Risk Adjustment Methodology Report is available on the eCQI Resource Center (https://ecqi.healthit.gov).
+Pre-existing conditions and variables must be present on admission:.    Please note that present on admission codes may be those entered by coding staff, extracted from billing/claims data. The Severe Obstetric Complications Risk Adjustment Methodology Report is available on the eCQI Resource Center (https://ecqi.healthit.gov).
+Pre-existing conditions and variables must be present on admission:.    Please note that present on admission codes may be those entered by coding staff, extracted from billing/claims data. The Severe Obstetric Complications Risk Adjustment Methodology Report is available on the eCQI Resource Center (https://ecqi.healthit.gov).
+Pre-existing conditions and variables must be present on admission:.    Please note that present on admission codes may be those entered by coding staff, extracted from billing/claims data. The Severe Obstetric Complications Risk Adjustment Methodology Report is available on the eCQI Resource Center (https://ecqi.healthit.gov).
+Pre-existing conditions and variables must be present on admission:.    Please note that present on admission codes may be those entered by coding staff, extracted from billing/claims data. The Severe Obstetric Complications Risk Adjustment Methodology Report is available on the eCQI Resource Center (https://ecqi.healthit.gov).
+Pre-existing conditions and variables must be present on admission:.    Please note that present on admission codes may be those entered by coding staff, extracted from billing/claims data. The Severe Obstetric Complications Risk Adjustment Methodology Report is available on the eCQI Resource Center (https://ecqi.healthit.gov).
+Pre-existing conditions and variables must be present on admission:.    Please note that present on admission codes may be those entered by coding staff, extracted from billing/claims data. The Severe Obstetric Complications Risk Adjustment Methodology Report is available on the eCQI Resource Center (https://ecqi.healthit.gov).
+Pre-existing conditions and variables must be present on admission:.    Please note that present on admission codes may be those entered by coding staff, extracted from billing/claims data. The Severe Obstetric Complications Risk Adjustment Methodology Report is available on the eCQI Resource Center (https://ecqi.healthit.gov).
+Pre-existing conditions and variables must be present on admission:.    Please note that present on admission codes may be those entered by coding staff, extracted from billing/claims data. The Severe Obstetric Complications Risk Adjustment Methodology Report is available on the eCQI Resource Center (https://ecqi.healthit.gov).
+Pre-existing conditions and variables must be present on admission:.    Please note that present on admission codes may be those entered by coding staff, extracted from billing/claims data. The Severe Obstetric Complications Risk Adjustment Methodology Report is available on the eCQI Resource Center (https://ecqi.healthit.gov).
+Pre-existing conditions and variables must be present on admission:.    Please note that present on admission codes may be those entered by coding staff, extracted from billing/claims data. The Severe Obstetric Complications Risk Adjustment Methodology Report is available on the eCQI Resource Center (https://ecqi.healthit.gov).
+Pre-existing conditions and variables must be present on admission:.    Please note that present on admission codes may be those entered by coding staff, extracted from billing/claims data. The Severe Obstetric Complications Risk Adjustment Methodology Report is available on the eCQI Resource Center (https://ecqi.healthit.gov).
+Pre-existing conditions and variables must be present on admission:.    Please note that present on admission codes may be those entered by coding staff, extracted from billing/claims data. The Severe Obstetric Complications Risk Adjustment Methodology Report is available on the eCQI Resource Center (https://ecqi.healthit.gov).
+Pre-existing conditions and variables must be present on admission:.    Please note that present on admission codes may be those entered by coding staff, extracted from billing/claims data.     </td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b> Supplemental Data Elements: </b></th>
+                <td style="padding-left: 4px;">
+                    
+                        
+                            
+                                SDE Ethnicity
+                            
+                        
+                    
+                        
+                            
+                                SDE Payer
+                            
+                        
+                    
+                        
+                            
+                                SDE Race
+                            
+                        
+                    
+                        
+                            
+                                SDE Sex
+                            
+                        
+                    
+                        
+                            
+                                Variable Calculated Gestational Age
+                            
+                        
+                    
+                </td>
+            </tr>
+        
+        
+            
+            <tr>
+                <th scope="row"><b> Risk Adjustment Factor: </b></th>
+                <td style="padding-left: 4px;">
+                    <p>
+                        
+                            
+                                Risk Variable Lab and Physical Exam Results
+                            
+                        
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <th scope="row"><b> Risk Adjustment Factor: </b></th>
+                <td style="padding-left: 4px;">
+                    <p>
+                        
+                            
+                                Risk Variable Anemia
+                            
+                        
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <th scope="row"><b> Risk Adjustment Factor: </b></th>
+                <td style="padding-left: 4px;">
+                    <p>
+                        
+                            
+                                Risk Variable Asthma
+                            
+                        
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <th scope="row"><b> Risk Adjustment Factor: </b></th>
+                <td style="padding-left: 4px;">
+                    <p>
+                        
+                            
+                                Risk Variable Autoimmune Disease
+                            
+                        
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <th scope="row"><b> Risk Adjustment Factor: </b></th>
+                <td style="padding-left: 4px;">
+                    <p>
+                        
+                            
+                                Risk Variable Bariatric Surgery
+                            
+                        
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <th scope="row"><b> Risk Adjustment Factor: </b></th>
+                <td style="padding-left: 4px;">
+                    <p>
+                        
+                            
+                                Risk Variable Bleeding Disorder
+                            
+                        
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <th scope="row"><b> Risk Adjustment Factor: </b></th>
+                <td style="padding-left: 4px;">
+                    <p>
+                        
+                            
+                                Risk Variable Morbid Obesity
+                            
+                        
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <th scope="row"><b> Risk Adjustment Factor: </b></th>
+                <td style="padding-left: 4px;">
+                    <p>
+                        
+                            
+                                Risk Variable Cardiac Disease
+                            
+                        
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <th scope="row"><b> Risk Adjustment Factor: </b></th>
+                <td style="padding-left: 4px;">
+                    <p>
+                        
+                            
+                                Risk Variable Economic Housing Instability
+                            
+                        
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <th scope="row"><b> Risk Adjustment Factor: </b></th>
+                <td style="padding-left: 4px;">
+                    <p>
+                        
+                            
+                                Risk Variable Gastrointestinal Disease
+                            
+                        
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <th scope="row"><b> Risk Adjustment Factor: </b></th>
+                <td style="padding-left: 4px;">
+                    <p>
+                        
+                            
+                                Risk Variable Gestational Diabetes
+                            
+                        
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <th scope="row"><b> Risk Adjustment Factor: </b></th>
+                <td style="padding-left: 4px;">
+                    <p>
+                        
+                            
+                                Risk Variable HIV
+                            
+                        
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <th scope="row"><b> Risk Adjustment Factor: </b></th>
+                <td style="padding-left: 4px;">
+                    <p>
+                        
+                            
+                                Risk Variable Hypertension
+                            
+                        
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <th scope="row"><b> Risk Adjustment Factor: </b></th>
+                <td style="padding-left: 4px;">
+                    <p>
+                        
+                            
+                                Risk Variable Long Term Anticoagulant Use
+                            
+                        
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <th scope="row"><b> Risk Adjustment Factor: </b></th>
+                <td style="padding-left: 4px;">
+                    <p>
+                        
+                            
+                                Risk Variable Mental Health Disorder
+                            
+                        
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <th scope="row"><b> Risk Adjustment Factor: </b></th>
+                <td style="padding-left: 4px;">
+                    <p>
+                        
+                            
+                                Risk Variable Multiple Pregnancy
+                            
+                        
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <th scope="row"><b> Risk Adjustment Factor: </b></th>
+                <td style="padding-left: 4px;">
+                    <p>
+                        
+                            
+                                Risk Variable Neuromuscular
+                            
+                        
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <th scope="row"><b> Risk Adjustment Factor: </b></th>
+                <td style="padding-left: 4px;">
+                    <p>
+                        
+                            
+                                Risk Variable Obstetrical VTE
+                            
+                        
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <th scope="row"><b> Risk Adjustment Factor: </b></th>
+                <td style="padding-left: 4px;">
+                    <p>
+                        
+                            
+                                Risk Variable Placenta Previa
+                            
+                        
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <th scope="row"><b> Risk Adjustment Factor: </b></th>
+                <td style="padding-left: 4px;">
+                    <p>
+                        
+                            
+                                Risk Variable Placental Abruption
+                            
+                        
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <th scope="row"><b> Risk Adjustment Factor: </b></th>
+                <td style="padding-left: 4px;">
+                    <p>
+                        
+                            
+                                Risk Variable Placental Accreta Spectrum
+                            
+                        
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <th scope="row"><b> Risk Adjustment Factor: </b></th>
+                <td style="padding-left: 4px;">
+                    <p>
+                        
+                            
+                                Risk Variable Preexisting Diabetes
+                            
+                        
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <th scope="row"><b> Risk Adjustment Factor: </b></th>
+                <td style="padding-left: 4px;">
+                    <p>
+                        
+                            
+                                Risk Variable Previous Cesarean
+                            
+                        
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <th scope="row"><b> Risk Adjustment Factor: </b></th>
+                <td style="padding-left: 4px;">
+                    <p>
+                        
+                            
+                                Risk Variable Pulmonary Hypertension
+                            
+                        
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <th scope="row"><b> Risk Adjustment Factor: </b></th>
+                <td style="padding-left: 4px;">
+                    <p>
+                        
+                            
+                                Risk Variable Renal Disease
+                            
+                        
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <th scope="row"><b> Risk Adjustment Factor: </b></th>
+                <td style="padding-left: 4px;">
+                    <p>
+                        
+                            
+                                Risk Variable Severe Preeclampsia
+                            
+                        
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <th scope="row"><b> Risk Adjustment Factor: </b></th>
+                <td style="padding-left: 4px;">
+                    <p>
+                        
+                            
+                                Risk Variable Substance Abuse
+                            
+                        
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <th scope="row"><b> Risk Adjustment Factor: </b></th>
+                <td style="padding-left: 4px;">
+                    <p>
+                        
+                            
+                                Risk Variable Thyrotoxicosis
+                            
+                        
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <th scope="row"><b> Risk Adjustment Factor: </b></th>
+                <td style="padding-left: 4px;">
+                    <p>
+                        
+                            
+                                Risk Variable Other Preeclampsia
+                            
+                        
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <th scope="row"><b> Risk Adjustment Factor: </b></th>
+                <td style="padding-left: 4px;">
+                    <p>
+                        
+                            
+                                Risk Variable Preterm Birth
+                            
+                        
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <th scope="row"><b> Risk Adjustment Factor: </b></th>
+                <td style="padding-left: 4px;">
+                    <p>
+                        
+                            
+                                Risk Variable First Hematocrit Lab Test
+                            
+                        
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <th scope="row"><b> Risk Adjustment Factor: </b></th>
+                <td style="padding-left: 4px;">
+                    <p>
+                        
+                            
+                                Risk Variable First White Blood Cell Count Lab Test
+                            
+                        
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <th scope="row"><b> Risk Adjustment Factor: </b></th>
+                <td style="padding-left: 4px;">
+                    <p>
+                        
+                            
+                                Risk Variable Heart Rate
+                            
+                        
+                    </p>
+                </td>
+            </tr>
+            
+            <tr>
+                <th scope="row"><b> Risk Adjustment Factor: </b></th>
+                <td style="padding-left: 4px;">
+                    <p>
+                        
+                            
+                                Risk Variable Systolic Blood Pressure
+                            
+                        
+                    </p>
+                </td>
+            </tr>
+            
+        
+        
+            <tr>
+                <th scope="row"><b>Libraries: </b></th>
+                <td style="padding-left: 4px;">
+                    <table class="grid-dict">
+                        
+                            <tr><td>http://ecqi.healthit.gov/ecqms/Library/SevereObstetricComplicationsFHIR</td></tr>
+                        
+                    </table>
+                </td>
+            </tr>
+        
+        
+            
+                <tr>
+                    <th scope="row"><b>Related Artifact Dependencies: </b></th>
+                    <td style="padding-left: 4px;">
+                        
+                            <li>Library/PCMaternal|5.10.000</li>
+                        
+                            <li>Library/FHIRHelpers|4.3.000</li>
+                        
+                            <li>Library/QICoreCommon|1.5.000</li>
+                        
+                            <li>Library/CQMCommon|1.4.000</li>
+                        
+                            <li>Library/QICoreCommon|1.5.000</li>
+                        
+                            <li>Library/FHIRHelpers|4.3.000</li>
+                        
+                            <li>Library/QICoreCommon|1.5.000</li>
+                        
+                            <li>Library/SupplementalDataElements|3.4.000</li>
+                        
+                            <li>Library/FHIRHelpers|4.3.000</li>
+                        
+                            <li>http://loinc.org</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.59</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.143</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.369</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.26</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1110.67</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.271</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1110.63</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.320</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.302</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.308</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.335</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.338</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.332</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.299</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.281</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.296</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.329</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.292</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.305</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.373</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.376</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.379</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.272</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.290</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.275</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.314</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.363</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.311</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.317</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.278</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1110.35</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.269</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.255</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.370</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.256</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.309</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.213</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.287</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.284</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.129</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.114</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.323</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.327</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.341</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.366</li>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><b>Parameters:</b></th>
+                    <td style="padding-left: 4px;">
+                        <table class="grid-dict">
+                            <tr><th><b>name</b></th><th><b>use</b></th><th><b>min</b></th><th><b>max</b></th><th><b>type</b></th></tr>
+                            
+                                <tr>
+                                    <td>Measurement Period</td>
+                                    <td>in</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>Period</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Risk Variable Systolic Blood Pressure</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Risk Variable Asthma</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Risk Variable Substance Abuse</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Risk Variable Placental Accreta Spectrum</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Risk Variable Neuromuscular</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Risk Variable Renal Disease</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Risk Variable Gastrointestinal Disease</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Risk Variable Hypertension</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Risk Variable Preterm Birth</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Risk Variable Pulmonary Hypertension</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Variable Calculated Gestational Age</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>SDE Payer</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Risk Variable Thyrotoxicosis</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Risk Variable Other Preeclampsia</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Initial Population</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Risk Variable Economic Housing Instability</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Risk Variable Placental Abruption</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Denominator Exclusion</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Risk Variable HIV</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Risk Variable Morbid Obesity</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Risk Variable Preexisting Diabetes</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Risk Variable Heart Rate</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Risk Variable Mental Health Disorder</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Risk Variable Obstetrical VTE</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Risk Variable Autoimmune Disease</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Risk Variable Bariatric Surgery</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Risk Variable Previous Cesarean</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>SDE Race</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Risk Variable Placenta Previa</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>SDE Sex</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>Coding</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Risk Variable Gestational Diabetes</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Numerator</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Stratum 1</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Risk Variable Bleeding Disorder</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Risk Variable Multiple Pregnancy</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Risk Variable First White Blood Cell Count Lab Test</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Denominator</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Risk Variable First Hematocrit Lab Test</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>SDE Ethnicity</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Risk Variable Anemia</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Risk Variable Severe Preeclampsia</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Risk Variable Cardiac Disease</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Risk Variable Long Term Anticoagulant Use</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><b>DataRequirements:</b></th>
+                    <td style="padding-left: 4px;">
+                        <table class="grid-dict">
+                            <tr><th><b>Type</b></th><th><b>Must Support</b></th><th><b>Valueset Name</b></th><th><b>Valueset</b></th></tr>
+                            
+                                <tr>
+                                    <td>Patient</td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                            status
+                                        
+                                            status.value
+                                        
+                                            period
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Encounter Inpatient
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                            period
+                                        
+                                            status
+                                        
+                                            status.value
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Observation Services
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.143</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                            period
+                                        
+                                            status
+                                        
+                                            status.value
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 ED Visit and OB Triage
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.369</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                            period
+                                        
+                                            status
+                                        
+                                            status.value
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Observation Services
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.143</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                            period
+                                        
+                                            status
+                                        
+                                            status.value
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 ED Visit and OB Triage
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.369</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Procedure</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                            status
+                                        
+                                            status.value
+                                        
+                                            performed
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Delivery Procedures
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.59</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                            status
+                                        
+                                            status.value
+                                        
+                                            period
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Encounter Inpatient
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Patient</td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Patient</td>
+                                    <td>
+                                        
+                                            birthDate
+                                        
+                                            birthDate.value
+                                        
+                                            gender
+                                        
+                                            gender.value
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Observation</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                            value
+                                        
+                                            status
+                                        
+                                            status.value
+                                        
+                                            effective
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Observation</td>
+                                    <td>
+                                        
+                                            value
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Observation</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                            value
+                                        
+                                            status
+                                        
+                                            status.value
+                                        
+                                            effective
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Observation</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                            value
+                                        
+                                            status
+                                        
+                                            status.value
+                                        
+                                            effective
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Estimated Gestational Age at Delivery
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.26</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Condition</td>
+                                    <td>
+                                        
+                                            id
+                                        
+                                            id.value
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>uri</td>
+                                    <td>
+                                        
+                                            value
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>string</td>
+                                    <td>
+                                        
+                                            value
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Observation</td>
+                                    <td>
+                                        
+                                            effective
+                                        
+                                            status
+                                        
+                                            status.value
+                                        
+                                            component
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        
+                                            value
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Condition</td>
+                                    <td>
+                                        
+                                            id
+                                        
+                                            id.value
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Reference</td>
+                                    <td>
+                                        
+                                            reference
+                                        
+                                            reference.value
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Coverage</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                            period
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Payer Type
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Procedure</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                            status
+                                        
+                                            status.value
+                                        
+                                            performed
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Respiratory Support Procedures Related to COVID 19
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.379</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Observation</td>
+                                    <td>
+                                        
+                                            effective
+                                        
+                                            status
+                                        
+                                            status.value
+                                        
+                                            value
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Patient</td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Patient</td>
+                                    <td>
+                                        
+                                            url
+                                        
+                                            extension
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Patient</td>
+                                    <td>
+                                        
+                                            url
+                                        
+                                            extension
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Procedure</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                            status
+                                        
+                                            status.value
+                                        
+                                            performed
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Severe Maternal Morbidity Procedures
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.256</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Procedure</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                            status
+                                        
+                                            status.value
+                                        
+                                            performed
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Blood Transfusion
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.213</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Observation</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                            issued
+                                        
+                                            issued.value
+                                        
+                                            status
+                                        
+                                            status.value
+                                        
+                                            value
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 White blood cells count lab test
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.129</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Observation</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                            issued
+                                        
+                                            issued.value
+                                        
+                                            status
+                                        
+                                            status.value
+                                        
+                                            value
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Hematocrit lab test
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.114</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Patient</td>
+                                    <td>
+                                        
+                                            url
+                                        
+                                            extension
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Patient</td>
+                                    <td>
+                                        
+                                            url
+                                        
+                                            extension
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Coverage</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                            period
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Payer Type
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Patient</td>
+                                    <td>
+                                        
+                                            url
+                                        
+                                            extension
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Patient</td>
+                                    <td>
+                                        
+                                            url
+                                        
+                                            extension
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                        </table>
+                    </td>
+                </tr>
+                
+                    <tr>
+                        <th scope="row"><b>Direct Reference Codes:</b></th>
+                        <td style="padding-left: 4px;">
+                            <table class="grid-dict">
+                                <tr><th><b>display</b></th><th><b>code</b></th><th><b>system</b></th></tr>
+                                
+                                    <tr>
+                                        <td>Date and time of obstetric delivery</td>
+                                        <td>93857-1</td>
+                                        <td>http://loinc.org</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Delivery date Estimated</td>
+                                        <td>11778-8</td>
+                                        <td>http://loinc.org</td>
+                                    </tr>
+                                
+                            </table>
+                        </td>
+                    </tr>
+                
+                
+                    <tr>
+                        <th scope="row"><b>Logic Definitions:</b></th>
+                        <td style="padding-left: 4px;">
+                            
+                                <table class="grid-dict">
+                                    <tr>
+                                        <th><b>Group</b></th><th><b>Scoring</b></th><th><b>Population Criteria</b></th><th><b>Expression</b></th>
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td> 638907ab4ba3d47c885c02fd </td>
+                                            <td>
+                                                
+                                                    <b>Group scoring:</b>
+                                                    
+                                                    <span>  proportion </span>
+                                                    
+                                                
+                                                
+                                            </td>
+                                            
+                                                <tr>
+                                                    <td/>
+                                                    <td/>
+                                                    <td>Initial Population</td>
+                                                    <td>
+                                                        
+                                                        <pre><code class="language-cql">define &quot;Initial Population&quot;:
+  PCMaternal.&quot;Delivery Encounter with Age Range&quot;</code></pre>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            
+                                                <tr>
+                                                    <td/>
+                                                    <td/>
+                                                    <td>Denominator</td>
+                                                    <td>
+                                                        
+                                                        <pre><code class="language-cql">define &quot;Denominator&quot;:
+  &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot;</code></pre>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            
+                                                <tr>
+                                                    <td/>
+                                                    <td/>
+                                                    <td>Denominator Exclusion</td>
+                                                    <td>
+                                                        
+                                                        <pre><code class="language-cql">define &quot;Denominator Exclusion&quot;:
+  &quot;Delivery Encounters with COVID and Respiratory Condition or Procedure&quot;</code></pre>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            
+                                                <tr>
+                                                    <td/>
+                                                    <td/>
+                                                    <td>Numerator</td>
+                                                    <td>
+                                                        
+                                                        <pre><code class="language-cql">define &quot;Numerator&quot;:
+  &quot;Delivery Encounters with Severe Obstetric Complications&quot;</code></pre>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            
+                                                <tr>
+                                                    <td/>
+                                                    <td/>
+                                                    <td>Numerator Exclusion</td>
+                                                    <td>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            
+                                                <tr>
+                                                    <td/>
+                                                    <td/>
+                                                    <td>Denominator Exception</td>
+                                                    <td>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            
+
+                                    
+                                    </tr>
+                                </table>
+                            
+                            <table class="grid-dict">
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>PCMaternal</td>
+                                        
+                                        
+                                            <td>Encounter with Age Range</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Encounter with Age Range&quot;:
+  [&quot;Encounter&quot;: &quot;Encounter Inpatient&quot;] EncounterInpatient
+                      where EncounterInpatient.status = 'finished'
+                        and AgeInYearsAt(date from start of EncounterInpatient.period) in Interval[ 8, 65 )
+                        and EncounterInpatient.period ends during day of &quot;Measurement Period&quot;</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>PCMaternal</td>
+                                        
+                                        
+                                            <td>Delivery Encounter with Age Range</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Delivery Encounter with Age Range&quot;:
+  &quot;Encounter with Age Range&quot; EncounterWithAge
+                with [&quot;Procedure&quot;: &quot;Delivery Procedures&quot;] DeliveryProcedure
+                such that DeliveryProcedure.status = 'completed'
+                and DeliveryProcedure.performed.toInterval  ( ) starts during day of EncounterWithAge.hospitalizationWithEDOBTriageObservation ()</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Delivery Encounters with Calculated Gestational Age Greater than or Equal to 20 Weeks</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Delivery Encounters with Calculated Gestational Age Greater than or Equal to 20 Weeks&quot;:
+  PCMaternal.&quot;Delivery Encounter with Age Range&quot; DeliveryEncounter
+    where DeliveryEncounter.calculatedGestationalAge ( ) &gt;= 20</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Delivery Encounters with Estimated Gestational Age Assessment Greater than or Equal to 20 Weeks</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Delivery Encounters with Estimated Gestational Age Assessment Greater than or Equal to 20 Weeks&quot;:
+  PCMaternal.&quot;Delivery Encounter with Age Range&quot; DeliveryEncounter
+    where DeliveryEncounter.calculatedGestationalAge ( ) is null
+      and ( DeliveryEncounter.lastEstimatedGestationalAge ( ) &gt;= 20 weeks )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Delivery Encounters with Gestational Age Greater than or Equal to 20 Weeks Based on Coding</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Delivery Encounters with Gestational Age Greater than or Equal to 20 Weeks Based on Coding&quot;:
+  PCMaternal.&quot;Delivery Encounter with Age Range&quot; DeliveryEncounter
+    let CGA: DeliveryEncounter.calculatedGestationalAge ( ),
+    EGA: DeliveryEncounter.lastEstimatedGestationalAge ( )
+    where CGA is null
+      and EGA is null
+      and exists ( ( DeliveryEncounter.encounterDiagnosis ( ) ) EncounterDiagnosis
+          where EncounterDiagnosis.code in &quot;20 to 42 Plus Weeks Gestation&quot;
+      )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Delivery Encounters At Greater than or Equal to 20 Weeks Gestation</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot;:
+  &quot;Delivery Encounters with Calculated Gestational Age Greater than or Equal to 20 Weeks&quot;
+    union &quot;Delivery Encounters with Estimated Gestational Age Assessment Greater than or Equal to 20 Weeks&quot;
+    union &quot;Delivery Encounters with Gestational Age Greater than or Equal to 20 Weeks Based on Coding&quot;</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Risk Variable Systolic Blood Pressure</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">//First resulted value 24 hours prior to start of encounter and before time of delivery
+ //Report systolic blood pressure as mm[Hg]
+
+
+
+define &quot;Risk Variable Systolic Blood Pressure&quot;:
+  First(from
+      &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot; Encounter,
+      [&quot;observation-bp&quot;] BP
+      where BP.effective.earliest() during Interval[start of Encounter.hospitalizationWithEDOBTriageObservation() - 1440 minutes, Encounter.lastTimeOfDelivery())
+        and BP.status in { 'final', 'amended', 'corrected' }
+      return {
+        EncounterId: Encounter.id,
+        FirstResult: BP.SystolicBP.value as Quantity,
+        Timing: BP.effective.earliest()
+      }
+      sort by Timing
+  )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Risk Variable Asthma</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Risk Variable Asthma&quot;:
+  &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot; TwentyWeeksPlusEncounter
+    where exists ( TwentyWeeksPlusEncounter.diagnosis EncounterDiagnoses
+        where EncounterDiagnoses.condition.getCondition ( ).code in &quot;Acute or Persistent Asthma&quot;
+          and ( EncounterDiagnoses.diagnosisPresentOnAdmission in &quot;Present On Admission is Yes or Exempt&quot; )
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Risk Variable Substance Abuse</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Risk Variable Substance Abuse&quot;:
+  &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot; TwentyWeeksPlusEncounter
+    where exists ( TwentyWeeksPlusEncounter.diagnosis EncounterDiagnoses
+        where EncounterDiagnoses.condition.getCondition ( ).code in &quot;Substance Abuse&quot;
+          and ( EncounterDiagnoses.diagnosisPresentOnAdmission in &quot;Present On Admission is Yes or Exempt&quot; )
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Risk Variable Placental Accreta Spectrum</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Risk Variable Placental Accreta Spectrum&quot;:
+  &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot; TwentyWeeksPlusEncounter
+    where exists ( TwentyWeeksPlusEncounter.diagnosis EncounterDiagnoses
+        where EncounterDiagnoses.condition.getCondition ( ).code in &quot;Placental Accreta Spectrum&quot;
+          and ( EncounterDiagnoses.diagnosisPresentOnAdmission in &quot;Present On Admission is Yes or Exempt&quot; )
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Risk Variable Neuromuscular</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Risk Variable Neuromuscular&quot;:
+  &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot; TwentyWeeksPlusEncounter
+    where exists ( TwentyWeeksPlusEncounter.diagnosis EncounterDiagnoses
+        where EncounterDiagnoses.condition.getCondition ( ).code in &quot;Neuromuscular Disease&quot;
+          and ( EncounterDiagnoses.diagnosisPresentOnAdmission in &quot;Present On Admission is Yes or Exempt&quot; )
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Risk Variable Renal Disease</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Risk Variable Renal Disease&quot;:
+  &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot; TwentyWeeksPlusEncounter
+    where exists ( TwentyWeeksPlusEncounter.diagnosis EncounterDiagnoses
+        where EncounterDiagnoses.condition.getCondition ( ).code in &quot;Renal Disease&quot;
+          and ( EncounterDiagnoses.diagnosisPresentOnAdmission in &quot;Present On Admission is Yes or Exempt&quot; )
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Risk Variable Gastrointestinal Disease</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Risk Variable Gastrointestinal Disease&quot;:
+  &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot; TwentyWeeksPlusEncounter
+    where exists ( TwentyWeeksPlusEncounter.diagnosis EncounterDiagnoses
+        where EncounterDiagnoses.condition.getCondition ( ).code in &quot;Gastrointestinal Disease&quot;
+          and ( EncounterDiagnoses.diagnosisPresentOnAdmission in &quot;Present On Admission is Yes or Exempt&quot; )
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Risk Variable Hypertension</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Risk Variable Hypertension&quot;:
+  &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot; TwentyWeeksPlusEncounter
+    where exists ( TwentyWeeksPlusEncounter.diagnosis EncounterDiagnoses
+        where EncounterDiagnoses.condition.getCondition ( ).code in &quot;Hypertension&quot;
+          and ( EncounterDiagnoses.diagnosisPresentOnAdmission in &quot;Present On Admission is Yes or Exempt&quot; )
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Risk Variable Preterm Birth</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Risk Variable Preterm Birth&quot;:
+/*  CGA = Calculated Gestational Age.  EGA = Estimated Gestational Age. */
+  
+  ( PCMaternal.&quot;Delivery Encounter with Age Range&quot; DeliveryEncounter
+      let CGA: DeliveryEncounter.calculatedGestationalAge ( ),
+      EGA: DeliveryEncounter.lastEstimatedGestationalAge ( )
+      where CGA in Interval[20, 36]
+        or ( CGA is null
+            and ( EGA &gt;= 20 weeks
+                and EGA &lt;= 36 weeks
+            )
+        )
+  )
+    union ( PCMaternal.&quot;Delivery Encounter with Age Range&quot; DeliveryEncounter
+        let CGA: DeliveryEncounter.calculatedGestationalAge ( ),
+        EGA: DeliveryEncounter.lastEstimatedGestationalAge ( )
+        where CGA is null
+          and EGA is null
+          and exists ( DeliveryEncounter.diagnosis DeliveryEncounterDiagnoses
+              where DeliveryEncounterDiagnoses.condition.getCondition ( ).code in &quot;Preterm Birth&quot;
+                and ( DeliveryEncounterDiagnoses.diagnosisPresentOnAdmission in &quot;Present On Admission is Yes or Exempt&quot; )
+          )
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Risk Variable Pulmonary Hypertension</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Risk Variable Pulmonary Hypertension&quot;:
+  &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot; TwentyWeeksPlusEncounter
+    where exists ( TwentyWeeksPlusEncounter.diagnosis EncounterDiagnoses
+        where EncounterDiagnoses.condition.getCondition ( ).code in &quot;Pulmonary Hypertension&quot;
+          and ( EncounterDiagnoses.diagnosisPresentOnAdmission in &quot;Present On Admission is Yes or Exempt&quot; )
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>PCMaternal</td>
+                                        
+                                        
+                                            <td>Variable Calculated Gestational Age</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Variable Calculated Gestational Age&quot;:
+  //This definition establishes a variable of CGA (Calculated Gestational Age) for all patients for the sole purpose of displaying the Calculated Gestational Age. This definition is not used in the measure logic.
+  &quot;Delivery Encounter with Age Range&quot; QualifyingEncounter
+    let CGA: QualifyingEncounter.calculatedGestationalAge()
+  //  return { QualifyingEncounter, CGA }
+    return {
+      EncounterID: QualifyingEncounter.id,
+      CalculatedCGA: CGA
+    }</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Variable Calculated Gestational Age</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Variable Calculated Gestational Age&quot;:
+  //This definition establishes a variable of CGA (Calculated Gestational Age).  CGA is a supplemental data element to store the calculated gestational age result from the &quot;CalculatedGestationalAge&quot; function.  The data element enables the capturing and saving of the CGA for data analysis post data receipt. Hospitals do not need to submit any additional data to comply with this definition. 
+  
+  PCMaternal.&quot;Variable Calculated Gestational Age&quot;</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SupplementalDataElements</td>
+                                        
+                                        
+                                            <td>SDE Payer</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;SDE Payer&quot;:
+  [Coverage: type in &quot;Payer Type&quot;] Payer
+    return {
+      code: Payer.type,
+      period: Payer.period
+    }</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>SDE Payer</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;SDE Payer&quot;:
+  SDE.&quot;SDE Payer&quot;</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Risk Variable Thyrotoxicosis</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Risk Variable Thyrotoxicosis&quot;:
+  &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot; TwentyWeeksPlusEncounter
+    where exists ( TwentyWeeksPlusEncounter.diagnosis EncounterDiagnoses
+        where EncounterDiagnoses.condition.getCondition ( ).code in &quot;Thyrotoxicosis&quot;
+          and ( EncounterDiagnoses.diagnosisPresentOnAdmission in &quot;Present On Admission is Yes or Exempt&quot; )
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Risk Variable Other Preeclampsia</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Risk Variable Other Preeclampsia&quot;:
+  &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot; TwentyWeeksPlusEncounter
+    where exists ( TwentyWeeksPlusEncounter.diagnosis EncounterDiagnoses
+        where EncounterDiagnoses.condition.getCondition ( ).code in &quot;Mild or Moderate Preeclampsia&quot;
+          and ( EncounterDiagnoses.diagnosisPresentOnAdmission in &quot;Present On Admission is Yes or Exempt&quot; )
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Initial Population</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Initial Population&quot;:
+  PCMaternal.&quot;Delivery Encounter with Age Range&quot;</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Risk Variable Economic Housing Instability</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Risk Variable Economic Housing Instability&quot;:
+  &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot; TwentyWeeksPlusEncounter
+    where exists ( TwentyWeeksPlusEncounter.diagnosis EncounterDiagnoses
+        where EncounterDiagnoses.condition.getCondition ( ).code in &quot;Economic Housing Instability&quot;
+          and ( EncounterDiagnoses.diagnosisPresentOnAdmission in &quot;Present On Admission is Yes or Exempt&quot; )
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Risk Variable Placental Abruption</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Risk Variable Placental Abruption&quot;:
+  &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot; TwentyWeeksPlusEncounter
+    where exists ( TwentyWeeksPlusEncounter.diagnosis EncounterDiagnoses
+        where EncounterDiagnoses.condition.getCondition ( ).code in &quot;Placental Abruption&quot;
+          and ( EncounterDiagnoses.diagnosisPresentOnAdmission in &quot;Present On Admission is Yes or Exempt&quot; )
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Delivery Encounters with COVID and Respiratory Condition or Procedure</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Delivery Encounters with COVID and Respiratory Condition or Procedure&quot;:
+  &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot; TwentyWeeksPlusEncounter
+    where exists ( ( TwentyWeeksPlusEncounter.encounterDiagnosis ( ) ) EncounterDiagnosis
+        where EncounterDiagnosis.code in &quot;COVID 19 Confirmed&quot;
+    )
+      and ( exists ( ( TwentyWeeksPlusEncounter.encounterDiagnosis ( ) ) EncounterDiagnosis
+            where EncounterDiagnosis.code in &quot;Respiratory Conditions Related to COVID 19&quot;
+        )
+          or exists ( [&quot;Procedure&quot;: &quot;Respiratory Support Procedures Related to COVID 19&quot;] EncounterProcedures
+              where EncounterProcedures.status = 'completed'
+                and EncounterProcedures.performed.toInterval ( ) starts during day of TwentyWeeksPlusEncounter.hospitalizationWithEDOBTriageObservation ( )
+          )
+      )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Denominator Exclusion</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Denominator Exclusion&quot;:
+  &quot;Delivery Encounters with COVID and Respiratory Condition or Procedure&quot;</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Risk Variable HIV</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Risk Variable HIV&quot;:
+  &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot; TwentyWeeksPlusEncounter
+    where exists ( TwentyWeeksPlusEncounter.diagnosis EncounterDiagnoses
+        where EncounterDiagnoses.condition.getCondition ( ).code in &quot;HIV in Pregnancy Childbirth and Puerperium&quot;
+          and ( EncounterDiagnoses.diagnosisPresentOnAdmission in &quot;Present On Admission is Yes or Exempt&quot; )
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Risk Variable Morbid Obesity</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Risk Variable Morbid Obesity&quot;:
+  &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot; TwentyWeeksPlusEncounter
+    where exists ( TwentyWeeksPlusEncounter.diagnosis EncounterDiagnoses
+        where EncounterDiagnoses.condition.getCondition ( ).code in &quot;Morbid or Severe Obesity&quot;
+          and ( EncounterDiagnoses.diagnosisPresentOnAdmission in &quot;Present On Admission is Yes or Exempt&quot; )
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Risk Variable Preexisting Diabetes</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Risk Variable Preexisting Diabetes&quot;:
+  &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot; TwentyWeeksPlusEncounter
+    where exists ( TwentyWeeksPlusEncounter.diagnosis EncounterDiagnoses
+        where EncounterDiagnoses.condition.getCondition ( ).code in &quot;Preexisting Diabetes&quot;
+          and ( EncounterDiagnoses.diagnosisPresentOnAdmission in &quot;Present On Admission is Yes or Exempt&quot; )
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Risk Variable Heart Rate</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">//First resulted value 24 hours prior to start of encounter and before time of delivery
+ //Report heart rate as beats/min
+
+
+
+define &quot;Risk Variable Heart Rate&quot;:
+  First(from
+      &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot; Encounter,
+      [&quot;observation-heartrate&quot;] HeartRate
+      where HeartRate.effective.earliest() during Interval[start of Encounter.hospitalizationWithEDOBTriageObservation() - 1440 minutes, Encounter.lastTimeOfDelivery())
+        and HeartRate.status in { 'final', 'amended', 'corrected' }
+      return {
+        EncounterId: Encounter.id,
+        FirstResult: HeartRate.value as Quantity,
+        Timing: HeartRate.effective.earliest()
+      }
+      sort by Timing
+  )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Risk Variable Mental Health Disorder</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Risk Variable Mental Health Disorder&quot;:
+  &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot; TwentyWeeksPlusEncounter
+    where exists ( TwentyWeeksPlusEncounter.diagnosis EncounterDiagnoses
+        where EncounterDiagnoses.condition.getCondition ( ).code in &quot;Mental Health Disorder&quot;
+          and ( EncounterDiagnoses.diagnosisPresentOnAdmission in &quot;Present On Admission is Yes or Exempt&quot; )
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Risk Variable Obstetrical VTE</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Risk Variable Obstetrical VTE&quot;:
+  &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot; TwentyWeeksPlusEncounter
+    where exists ( TwentyWeeksPlusEncounter.diagnosis EncounterDiagnoses
+        where EncounterDiagnoses.condition.getCondition ( ).code in &quot;Venous Thromboembolism in Pregnancy&quot;
+          and ( EncounterDiagnoses.diagnosisPresentOnAdmission in &quot;Present On Admission is Yes or Exempt&quot; )
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Risk Variable Autoimmune Disease</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Risk Variable Autoimmune Disease&quot;:
+  &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot; TwentyWeeksPlusEncounter
+    where exists ( TwentyWeeksPlusEncounter.diagnosis EncounterDiagnoses
+        where EncounterDiagnoses.condition.getCondition ( ).code in &quot;Autoimmune Disease&quot;
+          and ( EncounterDiagnoses.diagnosisPresentOnAdmission in &quot;Present On Admission is Yes or Exempt&quot; )
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Risk Variable Bariatric Surgery</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Risk Variable Bariatric Surgery&quot;:
+  &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot; TwentyWeeksPlusEncounter
+    where exists ( TwentyWeeksPlusEncounter.diagnosis EncounterDiagnoses
+        where EncounterDiagnoses.condition.getCondition ( ).code in &quot;Bariatric Surgery&quot;
+          and ( EncounterDiagnoses.diagnosisPresentOnAdmission in &quot;Present On Admission is Yes or Exempt&quot; )
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Risk Variable Previous Cesarean</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Risk Variable Previous Cesarean&quot;:
+  &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot; TwentyWeeksPlusEncounter
+    where exists ( TwentyWeeksPlusEncounter.diagnosis EncounterDiagnoses
+        where EncounterDiagnoses.condition.getCondition ( ).code in &quot;Previous Cesarean&quot;
+          and ( EncounterDiagnoses.diagnosisPresentOnAdmission in &quot;Present On Admission is Yes or Exempt&quot; )
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SupplementalDataElements</td>
+                                        
+                                        
+                                            <td>SDE Race</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;SDE Race&quot;:
+  Patient.race R
+    return Tuple {
+      codes: R.ombCategory union R.detailed,
+      display: R.text
+    }</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>SDE Race</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;SDE Race&quot;:
+  SDE.&quot;SDE Race&quot;</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Risk Variable Placenta Previa</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Risk Variable Placenta Previa&quot;:
+  &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot; TwentyWeeksPlusEncounter
+    where exists ( TwentyWeeksPlusEncounter.diagnosis EncounterDiagnoses
+        where EncounterDiagnoses.condition.getCondition ( ).code in &quot;Placenta Previa&quot;
+          and ( EncounterDiagnoses.diagnosisPresentOnAdmission in &quot;Present On Admission is Yes or Exempt&quot; )
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SupplementalDataElements</td>
+                                        
+                                        
+                                            <td>SDE Sex</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;SDE Sex&quot;:
+  case
+      when Patient.gender = 'male' then Code { code: 'M', system: 'http://hl7.org/fhir/v3/AdministrativeGender', display: 'Male' }
+      when Patient.gender = 'female' then Code { code: 'F', system: 'http://hl7.org/fhir/v3/AdministrativeGender', display: 'Female' }
+      else null
+    end</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>SDE Sex</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;SDE Sex&quot;:
+  SDE.&quot;SDE Sex&quot;</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Risk Variable Gestational Diabetes</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Risk Variable Gestational Diabetes&quot;:
+  &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot; TwentyWeeksPlusEncounter
+    where exists ( TwentyWeeksPlusEncounter.diagnosis EncounterDiagnoses
+        where EncounterDiagnoses.condition.getCondition ( ).code in &quot;Gestational Diabetes&quot;
+          and ( EncounterDiagnoses.diagnosisPresentOnAdmission in &quot;Present On Admission is Yes or Exempt&quot; )
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Delivery Encounters with Severe Obstetric Complications Diagnosis or Procedure Excluding Blood Transfusion</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Delivery Encounters with Severe Obstetric Complications Diagnosis or Procedure Excluding Blood Transfusion&quot;:
+  &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot; TwentyWeeksPlusEncounter
+    where exists ( TwentyWeeksPlusEncounter.diagnosis EncounterDiagnoses
+        where EncounterDiagnoses.condition.getCondition ( ).code in &quot;Severe Maternal Morbidity Diagnoses&quot;
+          and EncounterDiagnoses.diagnosisPresentOnAdmission in &quot;Present on Admission is No or Unable To Determine&quot;
+    )
+//EncounterDiagnoses.diagnosisPresentOnAdmission ~ 'N')
+      
+      or exists ( [&quot;Procedure&quot;: &quot;Severe Maternal Morbidity Procedures&quot;] EncounterProcedures
+          where EncounterProcedures.status = 'completed'
+            and EncounterProcedures.performed.toInterval ( ) starts during day of TwentyWeeksPlusEncounter.hospitalizationWithEDOBTriageObservation ( )
+      )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Delivery Encounters with Expiration</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Delivery Encounters with Expiration&quot;:
+  &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot; TwentyWeeksPlusEncounter
+    where TwentyWeeksPlusEncounter.hospitalization.dischargeDisposition in &quot;Patient Expired&quot;</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Delivery Encounters with Blood Transfusion</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Delivery Encounters with Blood Transfusion&quot;:
+  &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot; TwentyWeeksPlusEncounter
+    with [&quot;Procedure&quot;: &quot;Blood Transfusion&quot;] BloodTransfusion
+      such that BloodTransfusion.status = 'completed'
+        and BloodTransfusion.performed.toInterval ( ) starts during day of TwentyWeeksPlusEncounter.hospitalizationWithEDOBTriageObservation ( )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Delivery Encounters with Severe Obstetric Complications</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Delivery Encounters with Severe Obstetric Complications&quot;:
+  &quot;Delivery Encounters with Severe Obstetric Complications Diagnosis or Procedure Excluding Blood Transfusion&quot;
+    union &quot;Delivery Encounters with Expiration&quot;
+    union &quot;Delivery Encounters with Blood Transfusion&quot;</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Numerator</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Numerator&quot;:
+  &quot;Delivery Encounters with Severe Obstetric Complications&quot;</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Stratification Encounter</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Stratification Encounter&quot;:
+  &quot;Numerator&quot;
+    except &quot;Denominator Exclusion&quot;</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Delivery Encounters with Severe Obstetric Complications Excluding Blood Transfusions</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Delivery Encounters with Severe Obstetric Complications Excluding Blood Transfusions&quot;:
+  &quot;Delivery Encounters with Severe Obstetric Complications Diagnosis or Procedure Excluding Blood Transfusion&quot;
+    union &quot;Delivery Encounters with Expiration&quot;</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Stratum 1</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Stratum 1&quot;:
+  //This logic identifies a subset of the numerator population with severe obstetric complications excluding cases where transfusion was the only severe obstetric complication.
+  
+  &quot;Stratification Encounter&quot;
+    intersect &quot;Delivery Encounters with Severe Obstetric Complications Excluding Blood Transfusions&quot;</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Risk Variable Bleeding Disorder</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Risk Variable Bleeding Disorder&quot;:
+  &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot; TwentyWeeksPlusEncounter
+    where exists ( TwentyWeeksPlusEncounter.diagnosis EncounterDiagnoses
+        where EncounterDiagnoses.condition.getCondition ( ).code in &quot;Bleeding Disorder&quot;
+          and ( EncounterDiagnoses.diagnosisPresentOnAdmission in &quot;Present On Admission is Yes or Exempt&quot; )
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Risk Variable Multiple Pregnancy</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Risk Variable Multiple Pregnancy&quot;:
+  &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot; TwentyWeeksPlusEncounter
+    where exists ( TwentyWeeksPlusEncounter.diagnosis EncounterDiagnoses
+        where EncounterDiagnoses.condition.getCondition ( ).code in &quot;Multiple Pregnancy&quot;
+          and ( EncounterDiagnoses.diagnosisPresentOnAdmission in &quot;Present On Admission is Yes or Exempt&quot; )
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Risk Variable First White Blood Cell Count Lab Test</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">//First resulted value 24 hours prior to start of encounter and before time of delivery
+ //Report white blood cell count as 10*3/uL
+
+
+
+define &quot;Risk Variable First White Blood Cell Count Lab Test&quot;:
+  First(from
+      &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot; Encounter,
+      [&quot;USCoreLaboratoryResultObservationProfile&quot;: &quot;White blood cells count lab test&quot;] WBC
+      where WBC.issued during Interval[start of Encounter.hospitalizationWithEDOBTriageObservation() - 1440 minutes, Encounter.lastTimeOfDelivery())
+        and WBC.status in { 'final', 'amended', 'corrected' }
+      return {
+        EncounterId: Encounter.id,
+        FirstResult: WBC.value as Quantity,
+        Timing: WBC.issued
+      }
+      sort by Timing
+  )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Denominator</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Denominator&quot;:
+  &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot;</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Risk Variable First Hematocrit Lab Test</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">//First resulted value 24 hours prior to start of encounter and before time of delivery
+ //Report hematocrit as %
+
+
+
+define &quot;Risk Variable First Hematocrit Lab Test&quot;:
+  First(from
+      &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot; Encounter,
+      [&quot;USCoreLaboratoryResultObservationProfile&quot;: &quot;Hematocrit lab test&quot;] Hematocrit
+      where Hematocrit.issued during Interval[start of Encounter.hospitalizationWithEDOBTriageObservation() - 1440 minutes, Encounter.lastTimeOfDelivery())
+        and Hematocrit.status in { 'final', 'amended', 'corrected' }
+      return {
+        EncounterId: Encounter.id,
+        FirstResult: Hematocrit.value as Quantity,
+        Timing: Hematocrit.issued
+      }
+      sort by Timing
+  )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SupplementalDataElements</td>
+                                        
+                                        
+                                            <td>SDE Ethnicity</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;SDE Ethnicity&quot;:
+  Patient.ethnicity E
+    return Tuple {
+      codes: { E.ombCategory } union E.detailed,
+      display: E.text
+    }</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>SDE Ethnicity</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;SDE Ethnicity&quot;:
+  SDE.&quot;SDE Ethnicity&quot;</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Risk Variable Anemia</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Risk Variable Anemia&quot;:
+  &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot; TwentyWeeksPlusEncounter
+    where exists ( TwentyWeeksPlusEncounter.diagnosis EncounterDiagnoses
+        where EncounterDiagnoses.condition.getCondition ( ).code in &quot;Anemia&quot;
+          and ( EncounterDiagnoses.diagnosisPresentOnAdmission in &quot;Present On Admission is Yes or Exempt&quot; )
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Risk Variable Severe Preeclampsia</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Risk Variable Severe Preeclampsia&quot;:
+  &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot; TwentyWeeksPlusEncounter
+    where exists ( TwentyWeeksPlusEncounter.diagnosis EncounterDiagnoses
+        where EncounterDiagnoses.condition.getCondition ( ).code in &quot;Severe Preeclampsia&quot;
+          and ( EncounterDiagnoses.diagnosisPresentOnAdmission in &quot;Present On Admission is Yes or Exempt&quot; )
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Risk Variable Cardiac Disease</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Risk Variable Cardiac Disease&quot;:
+  &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot; TwentyWeeksPlusEncounter
+    where exists ( TwentyWeeksPlusEncounter.diagnosis EncounterDiagnoses
+        where EncounterDiagnoses.condition.getCondition ( ).code in &quot;Cardiac Disease&quot;
+          and ( EncounterDiagnoses.diagnosisPresentOnAdmission in &quot;Present On Admission is Yes or Exempt&quot; )
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SevereObstetricComplicationsFHIR</td>
+                                        
+                                        
+                                            <td>Risk Variable Long Term Anticoagulant Use</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Risk Variable Long Term Anticoagulant Use&quot;:
+  &quot;Delivery Encounters At Greater than or Equal to 20 Weeks Gestation&quot; TwentyWeeksPlusEncounter
+    where exists ( TwentyWeeksPlusEncounter.diagnosis EncounterDiagnoses
+        where EncounterDiagnoses.condition.getCondition ( ).code in &quot;Long Term Anticoagulant Use&quot;
+          and ( EncounterDiagnoses.diagnosisPresentOnAdmission in &quot;Present On Admission is Yes or Exempt&quot; )
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                            </table>
+                        </td>
+                    </tr>
+                
+            
+        
+    </table>
+</div>
+</body>
+</html>
