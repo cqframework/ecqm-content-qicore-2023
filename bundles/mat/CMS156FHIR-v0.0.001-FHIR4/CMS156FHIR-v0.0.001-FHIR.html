@@ -1,0 +1,3260 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+      body {
+        background-color: #ffffff;;
+        margin: 0px;
+        padding: 10px;
+        height: 100%;
+        font-size: 1em;
+      }
+
+      p, li {
+        font-size: 12px;
+        line-height: 1.4em;
+        font-family: verdana;
+        margin: 0 0 20px 0;
+        font-weight: normal;
+      }
+
+      td {
+        font-size: 12px;
+        line-height: 1.4em;
+        font-family: verdana;
+        font-weight: normal;
+        padding: 3px;
+        vertical-align: top;
+      }
+
+      tr {
+        font-size: 12px;
+        line-height: 1.4em;
+        font-family: verdana;
+        font-weight: normal;
+        padding: 3px;
+        vertical-align: top;
+        text-align: left;
+      }
+
+      table.colstu td {
+        border: 1px grey solid;
+        border-spacing: 0;
+        padding: 5px;
+        border-collapse: collapse;
+        background-color: #fff5e6;
+      }
+
+      table.colsd td {
+        border: 1px grey solid;
+        border-spacing: 0;
+        padding: 5px;
+        border-collapse: collapse;
+        background-color: #efefef;
+      }
+
+      table.colsn td {
+        border: 1px grey solid;
+        border-spacing: 0;
+        padding: 5px;
+        border-collapse: collapse;
+        background-color: #e6ffe6;
+      }
+
+      table.colse td {
+        border: 1px grey solid;
+        border-spacing: 0;
+        padding: 5px;
+        border-collapse: collapse;
+        background-color: #e6e6e6;
+      }
+
+      table.colsi td {
+        border: 1px grey solid;
+        border-spacing: 0;
+        padding: 5px;
+        border-collapse: collapse;
+        background-color: #ffffe6;
+      }
+
+      table.list td {
+        border-top: 1px silver solid;
+        border-spacing: 0;
+      }
+
+      table.bare td {
+        border-spacing: 0;
+      }
+
+      ul.dict li {
+        font-size: 11px;
+        line-height: 1.2em;
+        font-family: verdana;
+        font-weight: normal;
+        padding: 3px;
+      }
+
+      table.dict td {
+        padding: 3px 7px 2px 7px;
+        font-size: 11px;
+        line-height: 1.2em;
+        font-family: verdana;
+        font-weight: normal;
+        padding: 3px;
+        vertical-align: top;
+      }
+
+      table.dict p {
+        font-size: 11px;
+      }
+
+      table {
+        margin-bottom: 10px;
+        border-collapse: collapse;
+      }
+
+      table.codes td {
+        border: 1px solid silver;
+        padding: 3px 7px 2px 7px;
+        font-size: 12px;
+        line-height: 1.4em;
+        font-family: verdana;
+        font-weight: normal;
+        padding: 3px;
+        vertical-align: top;
+      }
+
+      table.grid {
+        margin-bottom: 10px;
+        border: 1px black solid;
+        margin-right: auto;
+
+      }
+
+      table.grid th {
+        border: 1px solid silver;
+        padding: 3px 7px 2px 7px;
+        font-size: 12px;
+        line-height: 1.4em;
+        font-family: verdana;
+        font-weight: bold;
+        padding: 3px;
+        vertical-align: top;
+      }
+
+      table.grid td {
+        border: 1px solid silver;
+        padding: 3px 7px 2px 7px;
+        font-size: 12px;
+        line-height: 1.4em;
+        font-family: verdana;
+        font-weight: normal;
+        padding: 3px;
+        vertical-align: top;
+      }
+
+      ul {
+        margin: 10px 0;
+        padding: 0 0 0 25px;
+      }
+
+      .dense li {
+        margin: 0 0 0 0;
+      }
+
+      li {
+        margin: 0 0 5px 0;
+      }
+
+      h1 {
+        font-size: 16px;
+        margin: 0 0 4px 0;
+        font-family: verdana;
+        border-bottom: 1px solid #7e7e7e;
+        padding-bottom: 2px;
+      }
+
+      h2 {
+        font-family: verdana;
+        line-height: 1.2em;
+        font-size: 14px;
+        margin: 0 0 3px 0;
+        margin-top: 15px;
+        border-bottom: 1px solid #dcdcdc;
+        padding-bottom: 2px;
+      }
+
+      h3 {
+        font-family: verdana;
+        line-height: 1.2em;
+        font-size: 12px;
+        margin: 0 0 3px 0;
+        margin-top: 10px;
+      }
+
+      h4 {
+        font-family: verdana;
+        line-height: 1.2em;
+        font-size: 11px;
+        margin: 0 0 3px 0;
+        margin-top: 10px;
+      }
+
+      div.sidebar h2 {
+        border-bottom: 1px solid #dcdcdc;
+        padding-bottom: 2px;
+        padding-top: 0px;
+        margin-top: 0px;
+        font-weight: normal;
+        margin-left: 8px;
+        margin-bottom: 0px;
+        font-size: 12px;
+      }
+
+      div.sidebar p {
+        padding-bottom: 0px;
+        padding-top: 10px;
+        font-weight: normal;
+        margin-left: 8px;
+        font-size: 12px;
+        margin-bottom: 8px;
+      }
+
+      div.sidebar ul {
+        list-style: none;
+        padding: 0px;
+        margin-left: 6px;
+        font-size: 11px;
+        line-height: 2.125em;
+      }
+
+      div.sidebar li {
+        margin: 0px 0px 0px 6px;
+        padding: 0px;
+        font-size: 11px;
+        line-height: 2.125em;
+      }
+
+      a {
+        color: #428bca;
+        text-decoration: none;
+      }
+
+      a.xmltag :visited {
+        color: Navy;
+      }
+
+      a.xmltag :hover {
+        color: Blue;
+      }
+
+      pre {
+        display: block;
+        border: 1px solid #cccccc;
+        border-radius: 4px;
+      }
+
+      pre a {
+        color: darkgreen;
+        text-decoration: none;
+        border: 0;
+
+      }
+
+      /* PrismJS 1.21.0
+      https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript+abap+abnf+actionscript+ada+agda+al+antlr4+apacheconf+apl+applescript+aql+arduino+arff+asciidoc+aspnet+asm6502+autohotkey+autoit+bash+basic+batch+bbcode+birb+bison+bnf+brainfuck+brightscript+bro+bsl+c+csharp+cpp+cil+clojure+cmake+coffeescript+concurnas+csp+crystal+css-extras+cypher+d+dart+dax+dhall+diff+django+dns-zone-file+docker+ebnf+editorconfig+eiffel+ejs+elixir+elm+etlua+erb+erlang+excel-formula+fsharp+factor+firestore-security-rules+flow+fortran+ftl+gml+gcode+gdscript+gedcom+gherkin+git+glsl+go+graphql+groovy+haml+handlebars+haskell+haxe+hcl+hlsl+http+hpkp+hsts+ichigojam+icon+ignore+inform7+ini+io+j+java+javadoc+javadoclike+javastacktrace+jolie+jq+jsdoc+js-extras+json+json5+jsonp+jsstacktrace+js-templates+julia+keyman+kotlin+latex+latte+less+lilypond+liquid+lisp+livescript+llvm+lolcode+lua+makefile+markdown+markup-templating+matlab+mel+mizar+mongodb+monkey+moonscript+n1ql+n4js+nand2tetris-hdl+naniscript+nasm+neon+nginx+nim+nix+nsis+objectivec+ocaml+opencl+oz+parigp+parser+pascal+pascaligo+pcaxis+peoplecode+perl+php+phpdoc+php-extras+plsql+powerquery+powershell+processing+prolog+properties+protobuf+pug+puppet+pure+purebasic+purescript+python+q+qml+qore+r+racket+jsx+tsx+reason+regex+renpy+rest+rip+roboconf+robotframework+ruby+rust+sas+sass+scss+scala+scheme+shell-session+smali+smalltalk+smarty+sml+solidity+solution-file+soy+sparql+splunk-spl+sqf+sql+stan+iecst+stylus+swift+t4-templating+t4-cs+t4-vb+tap+tcl+tt2+textile+toml+turtle+twig+typescript+typoscript+unrealscript+vala+vbnet+velocity+verilog+vhdl+vim+visual-basic+warpscript+wasm+wiki+xeora+xml-doc+xojo+xquery+yaml+yang+zig&plugins=keep-markup */
+      /**
+       * prism.js default theme for JavaScript, CSS and HTML
+       * Based on dabblet (http://dabblet.com)
+       * @author Lea Verou
+       */
+
+      code[class*="language-"],
+      pre[class*="language-"] {
+        color: black;
+        background: none;
+        text-shadow: 0 1px white;
+        font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+        font-size: 0.95em;
+        text-align: left;
+        white-space: pre;
+        word-spacing: normal;
+        word-break: normal;
+        word-wrap: normal;
+        line-height: 1.5;
+
+        -moz-tab-size: 4;
+        -o-tab-size: 4;
+        tab-size: 4;
+
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+      }
+
+      pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+      code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+        text-shadow: none;
+        background: #b3d4fc;
+      }
+
+      pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+      code[class*="language-"]::selection, code[class*="language-"] ::selection {
+        text-shadow: none;
+        background: #b3d4fc;
+      }
+
+      @media print {
+        code[class*="language-"],
+        pre[class*="language-"] {
+          text-shadow: none;
+        }
+      }
+
+      /* Code blocks */
+      pre[class*="language-"] {
+        padding: 1em;
+        margin: .5em 0;
+        overflow: auto;
+      }
+
+      :not(pre) > code[class*="language-"],
+      pre[class*="language-"] {
+        background: #f5f2f0;
+      }
+
+      /* Inline code */
+      :not(pre) > code[class*="language-"] {
+        padding: .1em;
+        border-radius: .3em;
+        white-space: normal;
+      }
+    </style>
+</head>
+<body>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    <table class="grid dict">
+        
+        
+            <tr>
+                <th scope="row"><b>Url: </b></th>
+                <td style="padding-left: 4px;">http://ecqi.healthit.gov/ecqms/Measure/UseofHighRiskMedicationsintheElderlyFHIR</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Version: </b></th>
+                <td style="padding-left: 4px;">0.0.001</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Identifier: </b></th>
+                <td style="padding-left: 4px;">
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>type: </b> <span></span>
+                        </p>
+                    
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>value: </b> <span>CMS156FHIR</span>
+                        </p>
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <th scope="row"><b>Identifier: </b></th>
+                <td style="padding-left: 4px;">
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>type: </b> <span></span>
+                        </p>
+                    
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>value: </b> <span>urn:uuid:fa08c5d7-5345-4e0b-aa2d-d937099db108</span>
+                        </p>
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <th scope="row"><b>Identifier: </b></th>
+                <td style="padding-left: 4px;">
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>type: </b> <span></span>
+                        </p>
+                    
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>value: </b> <span>urn:uuid:2c928084808a958901809a8b347f0755</span>
+                        </p>
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <th scope="row"><b>Identifier: </b></th>
+                <td style="padding-left: 4px;">
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>type: </b> <span></span>
+                        </p>
+                    
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>value: </b> <span>156FHIR</span>
+                        </p>
+                    
+                </td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Name: </b></th>
+                <td style="padding-left: 4px;">UseofHighRiskMedicationsintheElderlyFHIR</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Title: </b></th>
+                <td style="padding-left: 4px;">Use of High-Risk Medications in Older AdultsFHIR</td>
+            </tr>
+        
+        
+        
+            <tr>
+                <th scope="row"><b>Status: </b></th>
+                <td style="padding-left: 4px;">draft</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Experimental: </b></th>
+                <td style="padding-left: 4px;">false</td>
+            </tr>
+        
+        
+        
+        
+        
+        
+            <tr>
+                <th scope="row"><b>Date: </b></th>
+                <td style="padding-left: 4px;">2023-08-28T20:57:24+00:00</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Publisher: </b></th>
+                <td style="padding-left: 4px;">National Committee for Quality Assurance</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Description: </b></th>
+                <td style="padding-left: 4px;">Percentage of patients 65 years of age and older who were ordered at least two high-risk medications from the same drug class. Three rates are reported. 
+1. Percentage of patients 65 years of age and older who were ordered at least two high-risk medications from the same drug class.
+2. Percentage of patients 65 years of age and older who were ordered at least two high-risk medications from the same drug class, except for appropriate diagnoses.
+3. Total rate (the sum of the two numerators divided by the denominator, deduplicating for patients in both numerators).</td>
+            </tr>
+        
+        
+        
+        
+            <tr>
+                <th scope="row"><b>Use Context: </b></th>
+                <td style="padding-left: 4px;">
+                    <table class="grid-dict">
+                        <tr><th><b>code</b></th><th><b>value</b></th></tr>
+                        
+                            <tr>
+                                <td>program</td>
+                                <td></td>
+                            </tr>
+                        
+                    </table>
+                </td>
+            </tr>
+        
+        
+        
+        
+            <tr>
+                <th scope="row"><b>Purpose: </b></th>
+                <td style="padding-left: 4px;">UNKNOWN</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Guidance (Usage): </b></th>
+                <td style="padding-left: 4px;">The intent of the measure is to assess if the patient has been ordered at least two high-risk medication prescriptions from the same drug class on different days.
+
+The intent of the measure is to assess if the reporting provider ordered the high-risk medication(s). If the patient had a high-risk medication previously prescribed by another provider, they would not be counted towards the numerator unless the reporting provider also ordered a high-risk medication from the same drug class for them.
+
+Calculate average daily dose for each prescription event. To calculate average daily dose, multiply the quantity of pills prescribed by the dose of each pill and divide by the days supply. For example, a prescription for the 30-days supply of digoxin containing 15 pills, 0.25 mg each pill, has an average daily dose of 0.125 mg. To calculate average daily dose for elixirs and concentrates, multiply the volume prescribed by daily dose and divide by the days supply. Do not round when calculating average daily dose.
+
+This eCQM is a patient-based measure.
+
+This FHIR-based measure has been derived from the QDM-based measure:  CMS156v12.
+
+Please refer to the HL7 QI-Core Implementation Guide (http://hl7.org/fhir/us/qicore/index.html) for more information on QI-Core and mapping recommendations from QDM to QI-Core 4.1.1 (http://hl7.org/fhir/us/qicore/qdm-to-qicore.html).</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Copyright: </b></th>
+                <td style="padding-left: 25px;">This Physician Performance Measure (Measure) and related data specifications are owned and stewarded by the Centers for Medicare &amp; Medicaid Services (CMS). CMS contracted (Contract HHSM-500-2011-00079C) with the National Committee for Quality Assurance (NCQA) to develop this electronic measure. NCQA is not responsible for any use of the Measure. NCQA makes no representations, warranties, or endorsement about the quality of any organization or physician that uses or reports performance measures and NCQA has no liability to anyone who relies on such measures or specifications.
+
+Limited proprietary coding is contained in the Measure specifications for user convenience. Users of proprietary code sets should obtain all necessary licenses from the owners of the code sets. NCQA disclaims all liability for use or accuracy of any third party codes contained in the specifications.
+
+CPT(R) codes, descriptions and other data are copyright 2022. American Medical Association. All rights reserved. CPT is a trademark of the American Medical Association. No fee schedules, basic units, relative values or related listings are included in CPT. The AMA assumes no liability for the data contained herein. Applicable FARS/DFARS restrictions apply to government use.
+
+LOINC(R) copyright 2004-2022 Regenstrief Institute, Inc. This material contains SNOMED Clinical Terms(R) (SNOMED CT[R]) copyright 2004-2022 International Health Terminology Standards Development Organisation. 
+
+ICD-10 copyright 2022 World Health Organization. All Rights Reserved.</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Disclaimer: </b></th>
+                <td style="padding-left: 25px;">The performance Measure is not a clinical guideline and does not establish a standard of medical care, and has not been tested for all potential applications. THE MEASURE AND SPECIFICATIONS ARE PROVIDED &quot;AS IS&quot; WITHOUT WARRANTY OF ANY KIND.
+ 
+Due to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM].</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Approval Date: </b></th>
+                <td style="padding-left: 4px;">2023-08-28</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Last Review Date: </b></th>
+                <td style="padding-left: 4px;">2023-08-28</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Effective Period: </b></th>
+                <td style="padding-left: 4px;">2024-01-01..2024-12-31</td>
+            </tr>
+        
+        
+            
+                <tr>
+                    <th scope="row"><b>Population Criteria: </b></th>
+                    <td style="padding-left: 4px;">
+                        
+                            <table class="grid-dict">
+                                
+                                    <tr>
+                                        <th><b>649c8b4a4c79454c026f7495</b></th>
+                                    </tr>
+                                
+                                
+                                    <tr>
+                                        <td>Initial Population: </td>
+                                        <td>Patients 65 years and older at the end of the measurement period who had a visit during the measurement period</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Denominator: </td>
+                                        <td>Equals Initial Population</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Denominator Exclusion: </td>
+                                        <td>Exclude patients who are in hospice care for any part of the measurement period.
+
+Exclude patients receiving palliative care for any part of the measurement period.</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Numerator: </td>
+                                        <td>Rate 1: Patients with at least two orders of high-risk medications from the same drug class on different days.
+a. At least two orders of high-risk medications from the same drug class.
+b. At least two orders of high-risk medications from the same drug class with summed days supply greater than 90 days.
+c. At least two orders of high-risk medications from the same drug class each exceeding average daily dose criteria.</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Numerator Exclusion: </td>
+                                        <td></td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Denominator Exception: </td>
+                                        <td></td>
+                                    </tr>
+                                
+                            </table>
+                        
+                            <table class="grid-dict">
+                                
+                                    <tr>
+                                        <th><b>649c8b4a4c79454c026f7496</b></th>
+                                    </tr>
+                                
+                                
+                                    <tr>
+                                        <td>Initial Population: </td>
+                                        <td>Patients 65 years and older at the end of the measurement period who had a visit during the measurement period</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Denominator: </td>
+                                        <td>Equals Initial Population</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Denominator Exclusion: </td>
+                                        <td>Exclude patients who are in hospice care for any part of the measurement period.
+
+Exclude patients receiving palliative care for any part of the measurement period.</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Numerator: </td>
+                                        <td>Rate 2: Patients with at least two orders of high-risk medications from the same drug class (i.e., antipsychotics and benzodiazepines) on different days except for appropriate diagnoses.
+
+a. Patients with two or more antipsychotic prescriptions ordered on different days, and who did not have a diagnosis of schizophrenia, schizoaffective disorder, or bipolar disorder on or between January 1 of the year prior to the measurement period and the IPSD for antipsychotics. 
+
+b. Patients with two or more benzodiazepine prescriptions ordered on different days, and who did not have a diagnosis of seizure disorders, rapid eye movement sleep behavior disorder, benzodiazepine withdrawal, ethanol withdrawal, or severe generalized anxiety disorder on or between January 1 of the year prior to the measurement period and the IPSD for benzodiazepines.
+</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Numerator Exclusion: </td>
+                                        <td></td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Denominator Exception: </td>
+                                        <td></td>
+                                    </tr>
+                                
+                            </table>
+                        
+                            <table class="grid-dict">
+                                
+                                    <tr>
+                                        <th><b>649c8b4a4c79454c026f7497</b></th>
+                                    </tr>
+                                
+                                
+                                    <tr>
+                                        <td>Initial Population: </td>
+                                        <td>Patients 65 years and older at the end of the measurement period who had a visit during the measurement period</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Denominator: </td>
+                                        <td>Equals Initial Population</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Denominator Exclusion: </td>
+                                        <td>Exclude patients who are in hospice care for any part of the measurement period.
+
+Exclude patients receiving palliative care for any part of the measurement period.</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Numerator: </td>
+                                        <td>Total rate (the sum of the two previous numerators, deduplicated).</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Numerator Exclusion: </td>
+                                        <td></td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Denominator Exception: </td>
+                                        <td></td>
+                                    </tr>
+                                
+                            </table>
+                        
+                    </td>
+                </tr>
+            
+        
+        
+        
+        
+        
+        
+            <tr>
+                <th scope="row"><b>Libraries: </b></th>
+                <td style="padding-left: 4px;">
+                    <table class="grid-dict">
+                        
+                            <tr><td>http://ecqi.healthit.gov/ecqms/Library/UseofHighRiskMedicationsintheElderlyFHIR</td></tr>
+                        
+                    </table>
+                </td>
+            </tr>
+        
+        
+            
+                <tr>
+                    <th scope="row"><b>Related Artifact Dependencies: </b></th>
+                    <td style="padding-left: 4px;">
+                        
+                            <li>Library/Status|1.6.000</li>
+                        
+                            <li>Library/CumulativeMedicationDuration|3.3.000</li>
+                        
+                            <li>Library/FHIRHelpers|4.3.000</li>
+                        
+                            <li>Library/QICoreCommon|1.5.000</li>
+                        
+                            <li>Library/FHIRHelpers|4.3.000</li>
+                        
+                            <li>Library/CQMCommon|1.4.000</li>
+                        
+                            <li>Library/Hospice|6.7.000</li>
+                        
+                            <li>Library/Status|1.6.000</li>
+                        
+                            <li>Library/QICoreCommon|1.5.000</li>
+                        
+                            <li>Library/FHIRHelpers|4.3.000</li>
+                        
+                            <li>Library/PalliativeCare|1.7.000</li>
+                        
+                            <li>http://www.nlm.nih.gov/research/umls/rxnorm</li>
+                        
+                            <li>http://www.ama-assn.org/go/cpt</li>
+                        
+                            <li>http://snomed.info/sct</li>
+                        
+                            <li>http://terminology.hl7.org/CodeSystem/observation-category</li>
+                        
+                            <li>http://loinc.org</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.196.12.1523</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.105.12.1205</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.105.12.1157</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.196.12.1522</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.105.12.1206</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.105.12.1207</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.105.12.1208</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.105.12.1209</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.105.12.1210</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1043</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1049</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1050</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1051</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1052</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1053</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1054</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1055</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1056</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1057</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1058</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1059</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1060</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.196.12.1480</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1062</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1063</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.196.12.1481</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1044</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1065</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1067</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1001</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.11.1206</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1025</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1013</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1012</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1014</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1023</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1240</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1016</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1080</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1089</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1003</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1584</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1165</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1167</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1090</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1135</li>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><b>Parameters:</b></th>
+                    <td style="padding-left: 4px;">
+                        <table class="grid-dict">
+                            <tr><th><b>name</b></th><th><b>use</b></th><th><b>min</b></th><th><b>max</b></th><th><b>type</b></th></tr>
+                            
+                                <tr>
+                                    <td>Measurement Period</td>
+                                    <td>in</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>Period</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>ErrorLevel</td>
+                                    <td>in</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>string</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Numerator 3</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>boolean</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Denominator</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>boolean</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Numerator 1</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>boolean</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Numerator 2</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>boolean</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Initial Population</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>boolean</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Denominator Exclusions</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>boolean</td>
+                                </tr>
+                            
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><b>DataRequirements:</b></th>
+                    <td style="padding-left: 4px;">
+                        <table class="grid-dict">
+                            <tr><th><b>Type</b></th><th><b>Must Support</b></th><th><b>Valueset Name</b></th><th><b>Valueset</b></th></tr>
+                            
+                                <tr>
+                                    <td>Quantity</td>
+                                    <td>
+                                        
+                                            unit
+                                        
+                                            value
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Antipsychotic
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.196.12.1523</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Antipsychotic
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.196.12.1523</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Antipsychotic
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.196.12.1523</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Antipsychotic
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.196.12.1523</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Benzodiazepine
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.196.12.1522</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Benzodiazepine
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.196.12.1522</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Benzodiazepine
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.196.12.1522</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Benzodiazepine
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.196.12.1522</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Condition</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Schizophrenia
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.105.12.1205</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Condition</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Bipolar Disorder
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.105.12.1157</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Condition</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Seizure Disorder
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.105.12.1206</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Condition</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 REM Sleep Behavior Disorder
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.105.12.1207</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Condition</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Benzodiazepine Withdrawal
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.105.12.1208</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Condition</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Alcohol Withdrawal
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.105.12.1209</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Condition</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Generalized Anxiety Disorder
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.105.12.1210</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Anticholinergics, first generation antihistamines
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1043</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Anticholinergics, first generation antihistamines
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1043</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Anticholinergics, anti Parkinson agents
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1049</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Anticholinergics, anti Parkinson agents
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1049</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Antispasmodics
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1050</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Antispasmodics
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1050</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Antithrombotic
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1051</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Antithrombotic
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1051</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Cardiovascular, alpha agonists, central
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1052</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Cardiovascular, alpha agonists, central
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1052</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Cardiovascular, other
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1053</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Cardiovascular, other
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1053</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Central nervous system, antidepressants
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1054</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Central nervous system, antidepressants
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1054</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Central nervous system, barbiturates
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1055</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Central nervous system, barbiturates
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1055</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Central nervous system, vasodilators
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1056</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Central nervous system, vasodilators
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1056</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Central nervous system, other
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1057</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Central nervous system, other
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1057</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Endocrine system, estrogens with or without progestins
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1058</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Endocrine system, estrogens with or without progestins
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1058</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Endocrine system, sulfonylureas, long duration
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1059</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Endocrine system, sulfonylureas, long duration
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1059</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Endocrine system, other
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1060</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Endocrine system, other
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1060</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Nonbenzodiazepine hypnotics
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.196.12.1480</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Nonbenzodiazepine hypnotics
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.196.12.1480</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Pain medications, skeletal muscle relaxants
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1062</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Pain medications, skeletal muscle relaxants
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1062</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Pain medications, other
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1063</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Pain medications, other
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1063</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Anti Infectives, other
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.196.12.1481</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Anti Infectives, other
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.196.12.1481</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Reserpine
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1044</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Reserpine
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1044</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Digoxin
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1065</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Digoxin
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1065</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Doxepin
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1067</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>MedicationRequest</td>
+                                    <td>
+                                        
+                                            medication
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Doxepin
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1067</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Patient</td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Office Visit
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1001</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Ophthalmologic Services
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.11.1206</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Preventive Care Services Established Office Visit, 18 and Up
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1025</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Discharge Services Nursing Facility
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1013</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Nursing Facility Visit
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1012</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Care Services in Long Term Residential Facility
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1014</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Preventive Care Services Initial Office Visit, 18 and Up
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1023</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Annual Wellness Visit
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1240</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Home Healthcare Services
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1016</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Telephone Visits
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1080</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Online Assessments
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1089</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Patient</td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Patient</td>
+                                    <td>
+                                        
+                                            birthDate
+                                        
+                                            birthDate.value
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Encounter Inpatient
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                            hospitalization
+                                        
+                                            hospitalization.dischargeDisposition
+                                        
+                                            period
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Encounter Inpatient
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Hospice Encounter
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1003</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                            period
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Hospice Encounter
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1003</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Observation</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Observation</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                            value
+                                        
+                                            effective
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>ServiceRequest</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Hospice Care Ambulatory
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1584</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>ServiceRequest</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                            authoredOn
+                                        
+                                            authoredOn.value
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Hospice Care Ambulatory
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1584</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Procedure</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Hospice Care Ambulatory
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1584</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Procedure</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                            performed
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Hospice Care Ambulatory
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1584</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Condition</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Hospice Diagnosis
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1165</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Observation</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Observation</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                            effective
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Condition</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Palliative Care Diagnosis
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1167</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Palliative Care Encounter
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1090</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                            period
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Palliative Care Encounter
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1090</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Procedure</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Palliative Care Intervention
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1135</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Procedure</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                            performed
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Palliative Care Intervention
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1135</td>
+                                </tr>
+                            
+                        </table>
+                    </td>
+                </tr>
+                
+                    <tr>
+                        <th scope="row"><b>Direct Reference Codes:</b></th>
+                        <td style="padding-left: 4px;">
+                            <table class="grid-dict">
+                                <tr><th><b>display</b></th><th><b>code</b></th><th><b>system</b></th></tr>
+                                
+                                    <tr>
+                                        <td>reserpine 0.1 MG Oral Tablet</td>
+                                        <td>198196</td>
+                                        <td>http://www.nlm.nih.gov/research/umls/rxnorm</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>reserpine 0.25 MG Oral Tablet</td>
+                                        <td>198197</td>
+                                        <td>http://www.nlm.nih.gov/research/umls/rxnorm</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>digoxin 0.05 MG/ML Oral Solution</td>
+                                        <td>393245</td>
+                                        <td>http://www.nlm.nih.gov/research/umls/rxnorm</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>digoxin 0.0625 MG Oral Tablet</td>
+                                        <td>245273</td>
+                                        <td>http://www.nlm.nih.gov/research/umls/rxnorm</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>1 ML digoxin 0.1 MG/ML Injection</td>
+                                        <td>204504</td>
+                                        <td>http://www.nlm.nih.gov/research/umls/rxnorm</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>digoxin 0.125 MG Oral Tablet</td>
+                                        <td>197604</td>
+                                        <td>http://www.nlm.nih.gov/research/umls/rxnorm</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>digoxin 0.1875 MG Oral Tablet</td>
+                                        <td>1441565</td>
+                                        <td>http://www.nlm.nih.gov/research/umls/rxnorm</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>digoxin 0.25 MG Oral Tablet</td>
+                                        <td>197606</td>
+                                        <td>http://www.nlm.nih.gov/research/umls/rxnorm</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>2 ML digoxin 0.25 MG/ML Injection</td>
+                                        <td>104208</td>
+                                        <td>http://www.nlm.nih.gov/research/umls/rxnorm</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>doxepin 3 MG Oral Tablet</td>
+                                        <td>966787</td>
+                                        <td>http://www.nlm.nih.gov/research/umls/rxnorm</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>doxepin 6 MG Oral Tablet</td>
+                                        <td>966793</td>
+                                        <td>http://www.nlm.nih.gov/research/umls/rxnorm</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>doxepin hydrochloride 10 MG Oral Capsule</td>
+                                        <td>1000048</td>
+                                        <td>http://www.nlm.nih.gov/research/umls/rxnorm</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>doxepin hydrochloride 10 MG/ML Oral Solution</td>
+                                        <td>1000054</td>
+                                        <td>http://www.nlm.nih.gov/research/umls/rxnorm</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>doxepin hydrochloride 25 MG Oral Capsule</td>
+                                        <td>1000070</td>
+                                        <td>http://www.nlm.nih.gov/research/umls/rxnorm</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>doxepin hydrochloride 50 MG Oral Capsule</td>
+                                        <td>1000076</td>
+                                        <td>http://www.nlm.nih.gov/research/umls/rxnorm</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>doxepin hydrochloride 75 MG Oral Capsule</td>
+                                        <td>1000097</td>
+                                        <td>http://www.nlm.nih.gov/research/umls/rxnorm</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>doxepin hydrochloride 100 MG Oral Capsule</td>
+                                        <td>1000058</td>
+                                        <td>http://www.nlm.nih.gov/research/umls/rxnorm</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>doxepin hydrochloride 150 MG Oral Capsule</td>
+                                        <td>1000064</td>
+                                        <td>http://www.nlm.nih.gov/research/umls/rxnorm</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Office or other outpatient visit for the evaluation and management of an established patient, that may not require the presence of a physician or other qualified health care professional. Usually, the presenting problem(s) are minimal.</td>
+                                        <td>99211</td>
+                                        <td>http://www.ama-assn.org/go/cpt</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Discharge to home for hospice care (procedure)</td>
+                                        <td>428361000124107</td>
+                                        <td>http://snomed.info/sct</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Discharge to healthcare facility for hospice care (procedure)</td>
+                                        <td>428371000124100</td>
+                                        <td>http://snomed.info/sct</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>survey</td>
+                                        <td>survey</td>
+                                        <td>http://terminology.hl7.org/CodeSystem/observation-category</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Hospice care [Minimum Data Set]</td>
+                                        <td>45755-6</td>
+                                        <td>http://loinc.org</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Yes (qualifier value)</td>
+                                        <td>373066001</td>
+                                        <td>http://snomed.info/sct</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Functional Assessment of Chronic Illness Therapy - Palliative Care Questionnaire (FACIT-Pal)</td>
+                                        <td>71007-9</td>
+                                        <td>http://loinc.org</td>
+                                    </tr>
+                                
+                            </table>
+                        </td>
+                    </tr>
+                
+                
+                    <tr>
+                        <th scope="row"><b>Logic Definitions:</b></th>
+                        <td style="padding-left: 4px;">
+                            
+                                <table class="grid-dict">
+                                    <tr>
+                                        <th><b>Group</b></th><th><b>Scoring</b></th><th><b>Population Criteria</b></th><th><b>Expression</b></th>
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td> 649c8b4a4c79454c026f7495 </td>
+                                            <td>
+                                                
+                                                    <b>Group scoring:</b>
+                                                    
+                                                    <span>  proportion </span>
+                                                    
+                                                
+                                                
+                                            </td>
+                                            
+                                                <tr>
+                                                    <td/>
+                                                    <td/>
+                                                    <td>Initial Population</td>
+                                                    <td>
+                                                        
+                                                        <pre><code class="language-cql">define &quot;Initial Population&quot;:
+  AgeInYearsAt(date from 
+    end of &quot;Measurement Period&quot;
+  ) &gt;= 65
+    and exists ( &quot;Qualifying Encounters&quot; )</code></pre>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            
+                                                <tr>
+                                                    <td/>
+                                                    <td/>
+                                                    <td>Denominator</td>
+                                                    <td>
+                                                        
+                                                        <pre><code class="language-cql">define &quot;Denominator&quot;:
+  &quot;Initial Population&quot;</code></pre>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            
+                                                <tr>
+                                                    <td/>
+                                                    <td/>
+                                                    <td>Denominator Exclusion</td>
+                                                    <td>
+                                                        
+                                                        <pre><code class="language-cql">define &quot;Denominator Exclusions&quot;:
+  Hospice.&quot;Has Hospice Services&quot;
+    or PalliativeCare.&quot;Has Palliative Care in the Measurement Period&quot;</code></pre>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            
+                                                <tr>
+                                                    <td/>
+                                                    <td/>
+                                                    <td>Numerator</td>
+                                                    <td>
+                                                        
+                                                        <pre><code class="language-cql">define &quot;Numerator 1&quot;:
+  exists ( &quot;Same High Risk Medications Ordered on Different Days&quot; )
+    or ( &quot;Two High Risk Medications with Prolonged Duration&quot; )
+    or ( &quot;High Risk Medications with Average Daily Dose Criteria&quot; )</code></pre>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            
+                                                <tr>
+                                                    <td/>
+                                                    <td/>
+                                                    <td>Numerator Exclusion</td>
+                                                    <td>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            
+                                                <tr>
+                                                    <td/>
+                                                    <td/>
+                                                    <td>Denominator Exception</td>
+                                                    <td>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            
+
+                                    
+                                            <td> 649c8b4a4c79454c026f7496 </td>
+                                            <td>
+                                                
+                                                    <b>Group scoring:</b>
+                                                    
+                                                    <span>  proportion </span>
+                                                    
+                                                
+                                                
+                                            </td>
+                                            
+                                                <tr>
+                                                    <td/>
+                                                    <td/>
+                                                    <td>Initial Population</td>
+                                                    <td>
+                                                        
+                                                        <pre><code class="language-cql">define &quot;Initial Population&quot;:
+  AgeInYearsAt(date from 
+    end of &quot;Measurement Period&quot;
+  ) &gt;= 65
+    and exists ( &quot;Qualifying Encounters&quot; )</code></pre>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            
+                                                <tr>
+                                                    <td/>
+                                                    <td/>
+                                                    <td>Denominator</td>
+                                                    <td>
+                                                        
+                                                        <pre><code class="language-cql">define &quot;Denominator&quot;:
+  &quot;Initial Population&quot;</code></pre>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            
+                                                <tr>
+                                                    <td/>
+                                                    <td/>
+                                                    <td>Denominator Exclusion</td>
+                                                    <td>
+                                                        
+                                                        <pre><code class="language-cql">define &quot;Denominator Exclusions&quot;:
+  Hospice.&quot;Has Hospice Services&quot;
+    or PalliativeCare.&quot;Has Palliative Care in the Measurement Period&quot;</code></pre>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            
+                                                <tr>
+                                                    <td/>
+                                                    <td/>
+                                                    <td>Numerator</td>
+                                                    <td>
+                                                        
+                                                        <pre><code class="language-cql">define &quot;Numerator 2&quot;:
+  ( &quot;More than One Antipsychotic Order&quot;
+      and ( not exists ( ( [Condition: &quot;Schizophrenia&quot;]
+            union [Condition: &quot;Bipolar Disorder&quot;] ) AntipsychoticTreatedDiagnoses
+            where QICoreCommon.&quot;ToPrevalenceInterval&quot; ( AntipsychoticTreatedDiagnoses ) overlaps Interval[start of &quot;Measurement Period&quot; - 1 year, &quot;Antipsychotic Index Prescription Start Date&quot;]
+        )
+      )
+  )
+    or ( &quot;More than One Benzodiazepine Order&quot;
+        and ( not exists ( ( [Condition: &quot;Seizure Disorder&quot;]
+              union [Condition: &quot;REM Sleep Behavior Disorder&quot;]
+              union [Condition: &quot;Benzodiazepine Withdrawal&quot;]
+              union [Condition: &quot;Alcohol Withdrawal&quot;]
+              union [Condition: &quot;Generalized Anxiety Disorder&quot;] ) BenzodiazepineTreatedDiagnoses
+              where QICoreCommon.&quot;ToPrevalenceInterval&quot; ( BenzodiazepineTreatedDiagnoses ) overlaps Interval[start of &quot;Measurement Period&quot; - 1 year, &quot;Benzodiazepine Index Prescription Start Date&quot;]
+          )
+        )
+    )</code></pre>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            
+                                                <tr>
+                                                    <td/>
+                                                    <td/>
+                                                    <td>Numerator Exclusion</td>
+                                                    <td>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            
+                                                <tr>
+                                                    <td/>
+                                                    <td/>
+                                                    <td>Denominator Exception</td>
+                                                    <td>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            
+
+                                    
+                                            <td> 649c8b4a4c79454c026f7497 </td>
+                                            <td>
+                                                
+                                                    <b>Group scoring:</b>
+                                                    
+                                                    <span>  proportion </span>
+                                                    
+                                                
+                                                
+                                            </td>
+                                            
+                                                <tr>
+                                                    <td/>
+                                                    <td/>
+                                                    <td>Initial Population</td>
+                                                    <td>
+                                                        
+                                                        <pre><code class="language-cql">define &quot;Initial Population&quot;:
+  AgeInYearsAt(date from 
+    end of &quot;Measurement Period&quot;
+  ) &gt;= 65
+    and exists ( &quot;Qualifying Encounters&quot; )</code></pre>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            
+                                                <tr>
+                                                    <td/>
+                                                    <td/>
+                                                    <td>Denominator</td>
+                                                    <td>
+                                                        
+                                                        <pre><code class="language-cql">define &quot;Denominator&quot;:
+  &quot;Initial Population&quot;</code></pre>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            
+                                                <tr>
+                                                    <td/>
+                                                    <td/>
+                                                    <td>Denominator Exclusion</td>
+                                                    <td>
+                                                        
+                                                        <pre><code class="language-cql">define &quot;Denominator Exclusions&quot;:
+  Hospice.&quot;Has Hospice Services&quot;
+    or PalliativeCare.&quot;Has Palliative Care in the Measurement Period&quot;</code></pre>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            
+                                                <tr>
+                                                    <td/>
+                                                    <td/>
+                                                    <td>Numerator</td>
+                                                    <td>
+                                                        
+                                                        <pre><code class="language-cql">define &quot;Numerator 3&quot;:
+  &quot;Numerator 2&quot;
+    or ( &quot;Numerator 1&quot;
+        and not &quot;Numerator 2&quot;
+    )</code></pre>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            
+                                                <tr>
+                                                    <td/>
+                                                    <td/>
+                                                    <td>Numerator Exclusion</td>
+                                                    <td>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            
+                                                <tr>
+                                                    <td/>
+                                                    <td/>
+                                                    <td>Denominator Exception</td>
+                                                    <td>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            
+
+                                    
+                                    </tr>
+                                </table>
+                            
+                            <table class="grid-dict">
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>UseofHighRiskMedicationsintheElderlyFHIR</td>
+                                        
+                                        
+                                            <td>More than One Antipsychotic Order</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;More than One Antipsychotic Order&quot;:
+  exists ( &quot;More Than One Order&quot;([MedicationRequest: &quot;Antipsychotic&quot;]) )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>UseofHighRiskMedicationsintheElderlyFHIR</td>
+                                        
+                                        
+                                            <td>Antipsychotic Index Prescription Start Date</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Antipsychotic Index Prescription Start Date&quot;:
+  First((Status.&quot;Active or Completed Medication Request&quot;([MedicationRequest: &quot;Antipsychotic&quot;])) AntipsychoticMedication
+      where AntipsychoticMedication.authoredOn during &quot;Measurement Period&quot;
+      return AntipsychoticMedication.authoredOn
+      sort asc
+  )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>UseofHighRiskMedicationsintheElderlyFHIR</td>
+                                        
+                                        
+                                            <td>More than One Benzodiazepine Order</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;More than One Benzodiazepine Order&quot;:
+  exists ( &quot;More Than One Order&quot;([MedicationRequest: &quot;Benzodiazepine&quot;]) )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>UseofHighRiskMedicationsintheElderlyFHIR</td>
+                                        
+                                        
+                                            <td>Benzodiazepine Index Prescription Start Date</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Benzodiazepine Index Prescription Start Date&quot;:
+  First((Status.&quot;Active or Completed Medication Request&quot;([MedicationRequest: &quot;Benzodiazepine&quot;])) BenzodiazepineMedication
+      where BenzodiazepineMedication.authoredOn during &quot;Measurement Period&quot;
+      return BenzodiazepineMedication.authoredOn
+      sort asc
+  )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>UseofHighRiskMedicationsintheElderlyFHIR</td>
+                                        
+                                        
+                                            <td>Numerator 2</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Numerator 2&quot;:
+  ( &quot;More than One Antipsychotic Order&quot;
+      and ( not exists ( ( [Condition: &quot;Schizophrenia&quot;]
+            union [Condition: &quot;Bipolar Disorder&quot;] ) AntipsychoticTreatedDiagnoses
+            where QICoreCommon.&quot;ToPrevalenceInterval&quot; ( AntipsychoticTreatedDiagnoses ) overlaps Interval[start of &quot;Measurement Period&quot; - 1 year, &quot;Antipsychotic Index Prescription Start Date&quot;]
+        )
+      )
+  )
+    or ( &quot;More than One Benzodiazepine Order&quot;
+        and ( not exists ( ( [Condition: &quot;Seizure Disorder&quot;]
+              union [Condition: &quot;REM Sleep Behavior Disorder&quot;]
+              union [Condition: &quot;Benzodiazepine Withdrawal&quot;]
+              union [Condition: &quot;Alcohol Withdrawal&quot;]
+              union [Condition: &quot;Generalized Anxiety Disorder&quot;] ) BenzodiazepineTreatedDiagnoses
+              where QICoreCommon.&quot;ToPrevalenceInterval&quot; ( BenzodiazepineTreatedDiagnoses ) overlaps Interval[start of &quot;Measurement Period&quot; - 1 year, &quot;Benzodiazepine Index Prescription Start Date&quot;]
+          )
+        )
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>UseofHighRiskMedicationsintheElderlyFHIR</td>
+                                        
+                                        
+                                            <td>Same High Risk Medications Ordered on Different Days</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Same High Risk Medications Ordered on Different Days&quot;:
+  &quot;More Than One Order&quot;([&quot;MedicationRequest&quot;: &quot;Anticholinergics, first generation antihistamines&quot;])
+    union &quot;More Than One Order&quot;([&quot;MedicationRequest&quot;: &quot;Anticholinergics, anti Parkinson agents&quot;])
+    union &quot;More Than One Order&quot;([&quot;MedicationRequest&quot;: &quot;Antispasmodics&quot;])
+    union &quot;More Than One Order&quot;([&quot;MedicationRequest&quot;: &quot;Antithrombotic&quot;])
+    union &quot;More Than One Order&quot;([&quot;MedicationRequest&quot;: &quot;Cardiovascular, alpha agonists, central&quot;])
+    union &quot;More Than One Order&quot;([&quot;MedicationRequest&quot;: &quot;Cardiovascular, other&quot;])
+    union &quot;More Than One Order&quot;([&quot;MedicationRequest&quot;: &quot;Central nervous system, antidepressants&quot;])
+    union &quot;More Than One Order&quot;([&quot;MedicationRequest&quot;: &quot;Central nervous system, barbiturates&quot;])
+    union &quot;More Than One Order&quot;([&quot;MedicationRequest&quot;: &quot;Central nervous system, vasodilators&quot;])
+    union &quot;More Than One Order&quot;([&quot;MedicationRequest&quot;: &quot;Central nervous system, other&quot;])
+    union &quot;More Than One Order&quot;([&quot;MedicationRequest&quot;: &quot;Endocrine system, estrogens with or without progestins&quot;])
+    union &quot;More Than One Order&quot;([&quot;MedicationRequest&quot;: &quot;Endocrine system, sulfonylureas, long duration&quot;])
+    union &quot;More Than One Order&quot;([&quot;MedicationRequest&quot;: &quot;Endocrine system, other&quot;])
+    union &quot;More Than One Order&quot;([&quot;MedicationRequest&quot;: &quot;Nonbenzodiazepine hypnotics&quot;])
+    union &quot;More Than One Order&quot;([&quot;MedicationRequest&quot;: &quot;Pain medications, skeletal muscle relaxants&quot;])
+    union &quot;More Than One Order&quot;([&quot;MedicationRequest&quot;: &quot;Pain medications, other&quot;])</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>UseofHighRiskMedicationsintheElderlyFHIR</td>
+                                        
+                                        
+                                            <td>Two High Risk Medications with Prolonged Duration</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Two High Risk Medications with Prolonged Duration&quot;:
+  Sum((&quot;More Than One Order&quot;([MedicationRequest: &quot;Anti Infectives, other&quot;])) AntiInfectives
+      let DaysSupply: AntiInfectives.MedicationRequestPeriodInDays()
+      return all DaysSupply
+  ) &gt; 90</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>UseofHighRiskMedicationsintheElderlyFHIR</td>
+                                        
+                                        
+                                            <td>High Risk Medications with Average Daily Dose Criteria</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;High Risk Medications with Average Daily Dose Criteria&quot;:
+  exists ( &quot;More Than One Order&quot;([MedicationRequest: &quot;Reserpine&quot;] ReserpineOrdered
+        where &quot;Average Daily Dose&quot;(ReserpineOrdered) &gt; 0.1 'mg/d'
+    )
+  )
+    or exists ( &quot;More Than One Order&quot;([MedicationRequest: &quot;Digoxin&quot;] DigoxinOrdered
+          where &quot;Average Daily Dose&quot;(DigoxinOrdered) &gt; 0.125 'mg/d'
+      )
+    )
+    or exists ( &quot;More Than One Order&quot;([MedicationRequest: &quot;Doxepin&quot;] DoxepinOrdered
+          where &quot;Average Daily Dose&quot;(DoxepinOrdered) &gt; 6 'mg/d'
+      )
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>UseofHighRiskMedicationsintheElderlyFHIR</td>
+                                        
+                                        
+                                            <td>Numerator 1</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Numerator 1&quot;:
+  exists ( &quot;Same High Risk Medications Ordered on Different Days&quot; )
+    or ( &quot;Two High Risk Medications with Prolonged Duration&quot; )
+    or ( &quot;High Risk Medications with Average Daily Dose Criteria&quot; )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>UseofHighRiskMedicationsintheElderlyFHIR</td>
+                                        
+                                        
+                                            <td>Numerator 3</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Numerator 3&quot;:
+  &quot;Numerator 2&quot;
+    or ( &quot;Numerator 1&quot;
+        and not &quot;Numerator 2&quot;
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>UseofHighRiskMedicationsintheElderlyFHIR</td>
+                                        
+                                        
+                                            <td>Qualifying Encounters</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Qualifying Encounters&quot;:
+  ( [&quot;Encounter&quot;: &quot;Office Visit&quot;]
+    union [&quot;Encounter&quot;: &quot;Ophthalmologic Services&quot;]
+    union [&quot;Encounter&quot;: &quot;Preventive Care Services Established Office Visit, 18 and Up&quot;]
+    union [&quot;Encounter&quot;: &quot;Discharge Services Nursing Facility&quot;]
+    union [&quot;Encounter&quot;: &quot;Nursing Facility Visit&quot;]
+    union [&quot;Encounter&quot;: &quot;Care Services in Long Term Residential Facility&quot;]
+    union [&quot;Encounter&quot;: &quot;Preventive Care Services Initial Office Visit, 18 and Up&quot;]
+    union [&quot;Encounter&quot;: &quot;Annual Wellness Visit&quot;]
+    union [&quot;Encounter&quot;: &quot;Home Healthcare Services&quot;]
+    union [&quot;Encounter&quot;: &quot;Telephone Visits&quot;]
+    union [&quot;Encounter&quot;: &quot;Online Assessments&quot;]
+    union ( [Encounter] E
+        where exists ( ( E.type ) T
+            where T ~ &quot;Office or other outpatient visit for the evaluation and management of an established patient, that may not require the presence of a physician or other qualified health care professional. Usually, the presenting problem(s) are minimal.&quot;
+        )
+    ) ) ValidEncounters
+    where ValidEncounters.period during &quot;Measurement Period&quot;</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>UseofHighRiskMedicationsintheElderlyFHIR</td>
+                                        
+                                        
+                                            <td>Initial Population</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Initial Population&quot;:
+  AgeInYearsAt(date from 
+    end of &quot;Measurement Period&quot;
+  ) &gt;= 65
+    and exists ( &quot;Qualifying Encounters&quot; )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>UseofHighRiskMedicationsintheElderlyFHIR</td>
+                                        
+                                        
+                                            <td>Denominator</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Denominator&quot;:
+  &quot;Initial Population&quot;</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>Hospice</td>
+                                        
+                                        
+                                            <td>Has Hospice Services</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Has Hospice Services&quot;:
+  exists ((([Encounter: &quot;Encounter Inpatient&quot;]).isEncounterPerformed()) InpatientEncounter
+      where (InpatientEncounter.hospitalization.dischargeDisposition ~ &quot;Discharge to home for hospice care (procedure)&quot;
+          or InpatientEncounter.hospitalization.dischargeDisposition ~ &quot;Discharge to healthcare facility for hospice care (procedure)&quot;
+      )
+        and InpatientEncounter.period.toInterval() ends during day of &quot;Measurement Period&quot;
+  )
+    or exists ((([Encounter: &quot;Hospice Encounter&quot;]).isEncounterPerformed()) HospiceEncounter
+        where HospiceEncounter.period.toInterval() overlaps day of &quot;Measurement Period&quot;
+    )
+    or exists ((([Observation: &quot;Hospice care [Minimum Data Set]&quot;]).isAssessmentPerformed()) HospiceAssessment
+        where HospiceAssessment.value ~ &quot;Yes (qualifier value)&quot;
+          and HospiceAssessment.effective.toInterval() overlaps day of &quot;Measurement Period&quot;
+    )
+    or exists ((([ServiceRequest: &quot;Hospice Care Ambulatory&quot;]).isInterventionOrder()) HospiceOrder
+        where HospiceOrder.authoredOn.toInterval() during day of &quot;Measurement Period&quot;
+    )
+    or exists ((([Procedure: &quot;Hospice Care Ambulatory&quot;]).isInterventionPerformed()) HospicePerformed
+        where HospicePerformed.performed.toInterval() overlaps day of &quot;Measurement Period&quot;
+    )
+    or exists (([Condition: &quot;Hospice Diagnosis&quot;]) HospiceCareDiagnosis
+        where HospiceCareDiagnosis.prevalenceInterval() overlaps day of &quot;Measurement Period&quot;
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>PalliativeCare</td>
+                                        
+                                        
+                                            <td>Has Palliative Care in the Measurement Period</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Has Palliative Care in the Measurement Period&quot;:
+  exists ((([Observation: &quot;Functional Assessment of Chronic Illness Therapy - Palliative Care Questionnaire (FACIT-Pal)&quot;]).isAssessmentPerformed()) PalliativeAssessment
+      where PalliativeAssessment.effective.toInterval() overlaps day of &quot;Measurement Period&quot;
+  )
+    or exists ([Condition: &quot;Palliative Care Diagnosis&quot;] PalliativeDiagnosis
+        where PalliativeDiagnosis.prevalenceInterval() overlaps day of &quot;Measurement Period&quot;
+    )
+    or exists ((([Encounter: &quot;Palliative Care Encounter&quot;]).isEncounterPerformed()) PalliativeEncounter
+        where PalliativeEncounter.period.toInterval() overlaps day of &quot;Measurement Period&quot;
+    )
+    or exists ((([Procedure: &quot;Palliative Care Intervention&quot;]).isInterventionPerformed()) PalliativeIntervention
+        where PalliativeIntervention.performed.toInterval() overlaps day of &quot;Measurement Period&quot;
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>UseofHighRiskMedicationsintheElderlyFHIR</td>
+                                        
+                                        
+                                            <td>Denominator Exclusions</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Denominator Exclusions&quot;:
+  Hospice.&quot;Has Hospice Services&quot;
+    or PalliativeCare.&quot;Has Palliative Care in the Measurement Period&quot;</code></pre></td>
+                                        
+                                    </tr>
+                                
+                            </table>
+                        </td>
+                    </tr>
+                
+            
+        
+    </table>
+</div>
+</body>
+</html>

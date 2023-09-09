@@ -1,0 +1,2173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+      body {
+        background-color: #ffffff;;
+        margin: 0px;
+        padding: 10px;
+        height: 100%;
+        font-size: 1em;
+      }
+
+      p, li {
+        font-size: 12px;
+        line-height: 1.4em;
+        font-family: verdana;
+        margin: 0 0 20px 0;
+        font-weight: normal;
+      }
+
+      td {
+        font-size: 12px;
+        line-height: 1.4em;
+        font-family: verdana;
+        font-weight: normal;
+        padding: 3px;
+        vertical-align: top;
+      }
+
+      tr {
+        font-size: 12px;
+        line-height: 1.4em;
+        font-family: verdana;
+        font-weight: normal;
+        padding: 3px;
+        vertical-align: top;
+        text-align: left;
+      }
+
+      table.colstu td {
+        border: 1px grey solid;
+        border-spacing: 0;
+        padding: 5px;
+        border-collapse: collapse;
+        background-color: #fff5e6;
+      }
+
+      table.colsd td {
+        border: 1px grey solid;
+        border-spacing: 0;
+        padding: 5px;
+        border-collapse: collapse;
+        background-color: #efefef;
+      }
+
+      table.colsn td {
+        border: 1px grey solid;
+        border-spacing: 0;
+        padding: 5px;
+        border-collapse: collapse;
+        background-color: #e6ffe6;
+      }
+
+      table.colse td {
+        border: 1px grey solid;
+        border-spacing: 0;
+        padding: 5px;
+        border-collapse: collapse;
+        background-color: #e6e6e6;
+      }
+
+      table.colsi td {
+        border: 1px grey solid;
+        border-spacing: 0;
+        padding: 5px;
+        border-collapse: collapse;
+        background-color: #ffffe6;
+      }
+
+      table.list td {
+        border-top: 1px silver solid;
+        border-spacing: 0;
+      }
+
+      table.bare td {
+        border-spacing: 0;
+      }
+
+      ul.dict li {
+        font-size: 11px;
+        line-height: 1.2em;
+        font-family: verdana;
+        font-weight: normal;
+        padding: 3px;
+      }
+
+      table.dict td {
+        padding: 3px 7px 2px 7px;
+        font-size: 11px;
+        line-height: 1.2em;
+        font-family: verdana;
+        font-weight: normal;
+        padding: 3px;
+        vertical-align: top;
+      }
+
+      table.dict p {
+        font-size: 11px;
+      }
+
+      table {
+        margin-bottom: 10px;
+        border-collapse: collapse;
+      }
+
+      table.codes td {
+        border: 1px solid silver;
+        padding: 3px 7px 2px 7px;
+        font-size: 12px;
+        line-height: 1.4em;
+        font-family: verdana;
+        font-weight: normal;
+        padding: 3px;
+        vertical-align: top;
+      }
+
+      table.grid {
+        margin-bottom: 10px;
+        border: 1px black solid;
+        margin-right: auto;
+
+      }
+
+      table.grid th {
+        border: 1px solid silver;
+        padding: 3px 7px 2px 7px;
+        font-size: 12px;
+        line-height: 1.4em;
+        font-family: verdana;
+        font-weight: bold;
+        padding: 3px;
+        vertical-align: top;
+      }
+
+      table.grid td {
+        border: 1px solid silver;
+        padding: 3px 7px 2px 7px;
+        font-size: 12px;
+        line-height: 1.4em;
+        font-family: verdana;
+        font-weight: normal;
+        padding: 3px;
+        vertical-align: top;
+      }
+
+      ul {
+        margin: 10px 0;
+        padding: 0 0 0 25px;
+      }
+
+      .dense li {
+        margin: 0 0 0 0;
+      }
+
+      li {
+        margin: 0 0 5px 0;
+      }
+
+      h1 {
+        font-size: 16px;
+        margin: 0 0 4px 0;
+        font-family: verdana;
+        border-bottom: 1px solid #7e7e7e;
+        padding-bottom: 2px;
+      }
+
+      h2 {
+        font-family: verdana;
+        line-height: 1.2em;
+        font-size: 14px;
+        margin: 0 0 3px 0;
+        margin-top: 15px;
+        border-bottom: 1px solid #dcdcdc;
+        padding-bottom: 2px;
+      }
+
+      h3 {
+        font-family: verdana;
+        line-height: 1.2em;
+        font-size: 12px;
+        margin: 0 0 3px 0;
+        margin-top: 10px;
+      }
+
+      h4 {
+        font-family: verdana;
+        line-height: 1.2em;
+        font-size: 11px;
+        margin: 0 0 3px 0;
+        margin-top: 10px;
+      }
+
+      div.sidebar h2 {
+        border-bottom: 1px solid #dcdcdc;
+        padding-bottom: 2px;
+        padding-top: 0px;
+        margin-top: 0px;
+        font-weight: normal;
+        margin-left: 8px;
+        margin-bottom: 0px;
+        font-size: 12px;
+      }
+
+      div.sidebar p {
+        padding-bottom: 0px;
+        padding-top: 10px;
+        font-weight: normal;
+        margin-left: 8px;
+        font-size: 12px;
+        margin-bottom: 8px;
+      }
+
+      div.sidebar ul {
+        list-style: none;
+        padding: 0px;
+        margin-left: 6px;
+        font-size: 11px;
+        line-height: 2.125em;
+      }
+
+      div.sidebar li {
+        margin: 0px 0px 0px 6px;
+        padding: 0px;
+        font-size: 11px;
+        line-height: 2.125em;
+      }
+
+      a {
+        color: #428bca;
+        text-decoration: none;
+      }
+
+      a.xmltag :visited {
+        color: Navy;
+      }
+
+      a.xmltag :hover {
+        color: Blue;
+      }
+
+      pre {
+        display: block;
+        border: 1px solid #cccccc;
+        border-radius: 4px;
+      }
+
+      pre a {
+        color: darkgreen;
+        text-decoration: none;
+        border: 0;
+
+      }
+
+      /* PrismJS 1.21.0
+      https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript+abap+abnf+actionscript+ada+agda+al+antlr4+apacheconf+apl+applescript+aql+arduino+arff+asciidoc+aspnet+asm6502+autohotkey+autoit+bash+basic+batch+bbcode+birb+bison+bnf+brainfuck+brightscript+bro+bsl+c+csharp+cpp+cil+clojure+cmake+coffeescript+concurnas+csp+crystal+css-extras+cypher+d+dart+dax+dhall+diff+django+dns-zone-file+docker+ebnf+editorconfig+eiffel+ejs+elixir+elm+etlua+erb+erlang+excel-formula+fsharp+factor+firestore-security-rules+flow+fortran+ftl+gml+gcode+gdscript+gedcom+gherkin+git+glsl+go+graphql+groovy+haml+handlebars+haskell+haxe+hcl+hlsl+http+hpkp+hsts+ichigojam+icon+ignore+inform7+ini+io+j+java+javadoc+javadoclike+javastacktrace+jolie+jq+jsdoc+js-extras+json+json5+jsonp+jsstacktrace+js-templates+julia+keyman+kotlin+latex+latte+less+lilypond+liquid+lisp+livescript+llvm+lolcode+lua+makefile+markdown+markup-templating+matlab+mel+mizar+mongodb+monkey+moonscript+n1ql+n4js+nand2tetris-hdl+naniscript+nasm+neon+nginx+nim+nix+nsis+objectivec+ocaml+opencl+oz+parigp+parser+pascal+pascaligo+pcaxis+peoplecode+perl+php+phpdoc+php-extras+plsql+powerquery+powershell+processing+prolog+properties+protobuf+pug+puppet+pure+purebasic+purescript+python+q+qml+qore+r+racket+jsx+tsx+reason+regex+renpy+rest+rip+roboconf+robotframework+ruby+rust+sas+sass+scss+scala+scheme+shell-session+smali+smalltalk+smarty+sml+solidity+solution-file+soy+sparql+splunk-spl+sqf+sql+stan+iecst+stylus+swift+t4-templating+t4-cs+t4-vb+tap+tcl+tt2+textile+toml+turtle+twig+typescript+typoscript+unrealscript+vala+vbnet+velocity+verilog+vhdl+vim+visual-basic+warpscript+wasm+wiki+xeora+xml-doc+xojo+xquery+yaml+yang+zig&plugins=keep-markup */
+      /**
+       * prism.js default theme for JavaScript, CSS and HTML
+       * Based on dabblet (http://dabblet.com)
+       * @author Lea Verou
+       */
+
+      code[class*="language-"],
+      pre[class*="language-"] {
+        color: black;
+        background: none;
+        text-shadow: 0 1px white;
+        font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+        font-size: 0.95em;
+        text-align: left;
+        white-space: pre;
+        word-spacing: normal;
+        word-break: normal;
+        word-wrap: normal;
+        line-height: 1.5;
+
+        -moz-tab-size: 4;
+        -o-tab-size: 4;
+        tab-size: 4;
+
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+      }
+
+      pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+      code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+        text-shadow: none;
+        background: #b3d4fc;
+      }
+
+      pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+      code[class*="language-"]::selection, code[class*="language-"] ::selection {
+        text-shadow: none;
+        background: #b3d4fc;
+      }
+
+      @media print {
+        code[class*="language-"],
+        pre[class*="language-"] {
+          text-shadow: none;
+        }
+      }
+
+      /* Code blocks */
+      pre[class*="language-"] {
+        padding: 1em;
+        margin: .5em 0;
+        overflow: auto;
+      }
+
+      :not(pre) > code[class*="language-"],
+      pre[class*="language-"] {
+        background: #f5f2f0;
+      }
+
+      /* Inline code */
+      :not(pre) > code[class*="language-"] {
+        padding: .1em;
+        border-radius: .3em;
+        white-space: normal;
+      }
+    </style>
+</head>
+<body>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    <table class="grid dict">
+        
+        
+            <tr>
+                <th scope="row"><b>Url: </b></th>
+                <td style="padding-left: 4px;">http://ecqi.healthit.gov/ecqms/Measure/DepressionRemissionatTwelveMonthsFHIR</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Version: </b></th>
+                <td style="padding-left: 4px;">0.0.001</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Identifier: </b></th>
+                <td style="padding-left: 4px;">
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>type: </b> <span></span>
+                        </p>
+                    
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>value: </b> <span>CMS159FHIR</span>
+                        </p>
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <th scope="row"><b>Identifier: </b></th>
+                <td style="padding-left: 4px;">
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>type: </b> <span></span>
+                        </p>
+                    
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>value: </b> <span>urn:uuid:5df972fb-27e0-4b59-b5f8-b041e6ffc947</span>
+                        </p>
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <th scope="row"><b>Identifier: </b></th>
+                <td style="padding-left: 4px;">
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>type: </b> <span></span>
+                        </p>
+                    
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>value: </b> <span>urn:uuid:2c928084808a9589018094b0efb804a6</span>
+                        </p>
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <th scope="row"><b>Identifier: </b></th>
+                <td style="padding-left: 4px;">
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>type: </b> <span></span>
+                        </p>
+                    
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>value: </b> <span>0710e</span>
+                        </p>
+                    
+                </td>
+            </tr>
+        
+            <tr>
+                <th scope="row"><b>Identifier: </b></th>
+                <td style="padding-left: 4px;">
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>type: </b> <span></span>
+                        </p>
+                    
+                    
+                        <p style="margin-bottom: 5px;">
+                            <b>value: </b> <span>159FHIR</span>
+                        </p>
+                    
+                </td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Name: </b></th>
+                <td style="padding-left: 4px;">DepressionRemissionatTwelveMonthsFHIR</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Title: </b></th>
+                <td style="padding-left: 4px;">Depression Remission at Twelve MonthsFHIR</td>
+            </tr>
+        
+        
+        
+            <tr>
+                <th scope="row"><b>Status: </b></th>
+                <td style="padding-left: 4px;">draft</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Experimental: </b></th>
+                <td style="padding-left: 4px;">false</td>
+            </tr>
+        
+        
+        
+        
+        
+        
+            <tr>
+                <th scope="row"><b>Date: </b></th>
+                <td style="padding-left: 4px;">2023-08-28T17:12:47+00:00</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Publisher: </b></th>
+                <td style="padding-left: 4px;">MN Community Measurement</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Description: </b></th>
+                <td style="padding-left: 4px;">The percentage of adolescent patients 12 to 17 years of age and adult patients 18 years of age or older with major depression or dysthymia who reached remission 12 months (+/- 60 days) after an index event</td>
+            </tr>
+        
+        
+        
+        
+            <tr>
+                <th scope="row"><b>Use Context: </b></th>
+                <td style="padding-left: 4px;">
+                    <table class="grid-dict">
+                        <tr><th><b>code</b></th><th><b>value</b></th></tr>
+                        
+                            <tr>
+                                <td>program</td>
+                                <td></td>
+                            </tr>
+                        
+                    </table>
+                </td>
+            </tr>
+        
+        
+        
+        
+            <tr>
+                <th scope="row"><b>Purpose: </b></th>
+                <td style="padding-left: 4px;">UNKNOWN</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Guidance (Usage): </b></th>
+                <td style="padding-left: 4px;">When an index assessment is conducted with PHQ-9M, the follow-up assessment can use either a PHQ-9M or PHQ-9.
+
+This eCQM is a patient-based measure.
+
+This FHIR-based measure has been derived from the QDM-based measure: CMS159v12. 
+
+Please refer to the HL7 QI-Core Implementation Guide (http://hl7.org/fhir/us/qicore/index.html) for more information on QI-Core and mapping recommendations from QDM to QI-Core 4.1.1 (http://hl7.org/fhir/us/qicore/qdm-to-qicore.html).</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Copyright: </b></th>
+                <td style="padding-left: 25px;">Copyright MN Community Measurement, 2023. All rights reserved.
+
+Limited proprietary coding is contained in the Measure specifications for user convenience. Users of proprietary code sets should obtain all necessary licenses from the owners of the code sets. Mathematica disclaims all liability for use or accuracy of any third party codes contained in the specifications.
+
+CPT(R) contained in the Measure specifications is copyright 2004-2022 American Medical Association. LOINC(R) copyright 2004-2022 Regenstrief Institute, Inc. This material contains SNOMED Clinical Terms(R) (SNOMED CT[R]) copyright 2004-2022 International Health Terminology Standards Development Organisation. ICD-10 copyright 2022 World Health Organization. All Rights Reserved.</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Disclaimer: </b></th>
+                <td style="padding-left: 25px;">The performance measure is not a clinical guideline and does not establish a standard of medical care, and has not been tested for all potential applications.
+
+THE MEASURES AND SPECIFICATIONS ARE PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND.
+
+Due to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM].</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Approval Date: </b></th>
+                <td style="padding-left: 4px;">2023-08-28</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Last Review Date: </b></th>
+                <td style="padding-left: 4px;">2023-08-28</td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b>Effective Period: </b></th>
+                <td style="padding-left: 4px;">2024-01-01..2024-12-31</td>
+            </tr>
+        
+        
+            
+                <tr>
+                    <th scope="row"><b>Population Criteria: </b></th>
+                    <td style="padding-left: 4px;">
+                        
+                            <table class="grid-dict">
+                                
+                                    <tr>
+                                        <th><b>638501ed4ba3d47c885c02b0</b></th>
+                                    </tr>
+                                
+                                
+                                    <tr>
+                                        <td>Initial Population: </td>
+                                        <td>Adolescent patients 12 to 17 years of age and adult patients 18 years of age and older with a diagnosis of major depression or dysthymia and an initial PHQ-9 or PHQ-9M score greater than nine during the index event. Patients may be assessed using PHQ-9 or PHQ-9M on the same date or up to 7 days prior to the encounter (index event).</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Denominator: </td>
+                                        <td>Equals Initial Population</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Denominator Exclusion: </td>
+                                        <td>1: Patients who died any time prior to the end of the measure assessment period
+2: Patients who received hospice or palliative care services between the start of the denominator period and the end of the measurement assessment period
+3: Patients with a diagnosis of bipolar disorder any time prior to the end of the measure assessment period
+4: Patients with a diagnosis of personality disorder emotionally labile any time prior to the end of the measure assessment period
+5: Patients with a diagnosis of schizophrenia or psychotic disorder any time prior to the end of the measure assessment period
+6: Patients with a diagnosis of pervasive developmental disorder any time prior to the end of the measure assessment period</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Numerator: </td>
+                                        <td>Adolescent patients 12 to 17 years of age and adult patients 18 years of age and older who achieved remission at twelve months as demonstrated by the most recent twelve month (+/- 60 days) PHQ-9 or PHQ-9M score of less than five</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Numerator Exclusion: </td>
+                                        <td></td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Denominator Exception: </td>
+                                        <td></td>
+                                    </tr>
+                                
+                            </table>
+                        
+                    </td>
+                </tr>
+            
+        
+        
+        
+            <tr>
+                <th scope="row"><b> Supplemental Data Guidance: </b></th>
+                <td style="padding-left: 4px;">  </td>
+            </tr>
+        
+        
+            <tr>
+                <th scope="row"><b> Supplemental Data Elements: </b></th>
+                <td style="padding-left: 4px;">
+                    
+                        
+                            
+                                SDE Ethnicity
+                            
+                        
+                    
+                        
+                            
+                                SDE Payer
+                            
+                        
+                    
+                        
+                            
+                                SDE Race
+                            
+                        
+                    
+                        
+                            
+                                SDE Sex
+                            
+                        
+                    
+                </td>
+            </tr>
+        
+        
+        
+            <tr>
+                <th scope="row"><b>Libraries: </b></th>
+                <td style="padding-left: 4px;">
+                    <table class="grid-dict">
+                        
+                            <tr><td>http://ecqi.healthit.gov/ecqms/Library/DepressionRemissionatTwelveMonthsFHIR</td></tr>
+                        
+                    </table>
+                </td>
+            </tr>
+        
+        
+            
+                <tr>
+                    <th scope="row"><b>Related Artifact Dependencies: </b></th>
+                    <td style="padding-left: 4px;">
+                        
+                            <li>Library/SupplementalDataElements|3.4.000</li>
+                        
+                            <li>Library/FHIRHelpers|4.3.000</li>
+                        
+                            <li>Library/QICoreCommon|1.5.000</li>
+                        
+                            <li>Library/FHIRHelpers|4.3.000</li>
+                        
+                            <li>Library/FHIRHelpers|4.3.000</li>
+                        
+                            <li>http://terminology.hl7.org/CodeSystem/condition-clinical</li>
+                        
+                            <li>http://terminology.hl7.org/CodeSystem/condition-ver-status</li>
+                        
+                            <li>http://snomed.info/sct</li>
+                        
+                            <li>http://loinc.org</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.67.1.101.1.263</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1080.5</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.113883.3.67.1.101.3.2444</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.67.1.101.1.254</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1003</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1584</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1165</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1167</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1090</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1135</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.67.1.101.1.128</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.67.1.101.1.246</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.105.12.1104</li>
+                        
+                            <li>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.105.12.1152</li>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><b>Parameters:</b></th>
+                    <td style="padding-left: 4px;">
+                        <table class="grid-dict">
+                            <tr><th><b>name</b></th><th><b>use</b></th><th><b>min</b></th><th><b>max</b></th><th><b>type</b></th></tr>
+                            
+                                <tr>
+                                    <td>Measurement Period</td>
+                                    <td>in</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>Period</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>SDE Sex</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>Coding</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Numerator</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>boolean</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Stratification 2</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>boolean</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Stratification 1</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>boolean</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Denominator</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>boolean</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>SDE Payer</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>*</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Initial Population</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>boolean</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>SDE Ethnicity</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Denominator Exclusions</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>boolean</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>SDE Race</td>
+                                    <td>out</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>Resource</td>
+                                </tr>
+                            
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><b>DataRequirements:</b></th>
+                    <td style="padding-left: 4px;">
+                        <table class="grid-dict">
+                            <tr><th><b>Type</b></th><th><b>Must Support</b></th><th><b>Valueset Name</b></th><th><b>Valueset</b></th></tr>
+                            
+                                <tr>
+                                    <td>Patient</td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Patient</td>
+                                    <td>
+                                        
+                                            gender
+                                        
+                                            gender.value
+                                        
+                                            birthDate
+                                        
+                                            birthDate.value
+                                        
+                                            deceased
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Patient</td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Observation</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                            value
+                                        
+                                            status
+                                        
+                                            status.value
+                                        
+                                            effective
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 PHQ 9 and PHQ 9M Tools
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.67.1.101.1.263</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Condition</td>
+                                    <td>
+                                        
+                                            clinicalStatus
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Condition</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Major Depression Including Remission
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.113883.3.67.1.101.3.2444</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Condition</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Dysthymia
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.67.1.101.1.254</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                            period
+                                        
+                                            status
+                                        
+                                            status.value
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Contact or Office Visit
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1080.5</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Observation</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                            value
+                                        
+                                            status
+                                        
+                                            status.value
+                                        
+                                            effective
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 PHQ 9 and PHQ 9M Tools
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.67.1.101.1.263</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Observation</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                            effective
+                                        
+                                            status
+                                        
+                                            status.value
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 PHQ 9 and PHQ 9M Tools
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.67.1.101.1.263</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Observation</td>
+                                    <td>
+                                        
+                                            value
+                                        
+                                            effective
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Patient</td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Coverage</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                            period
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Payer Type
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>uri</td>
+                                    <td>
+                                        
+                                            value
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Patient</td>
+                                    <td>
+                                        
+                                            url
+                                        
+                                            extension
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Patient</td>
+                                    <td>
+                                        
+                                            url
+                                        
+                                            extension
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                            hospitalization
+                                        
+                                            hospitalization.dischargeDisposition
+                                        
+                                            period
+                                        
+                                            status
+                                        
+                                            status.value
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Encounter Inpatient
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                            period
+                                        
+                                            status
+                                        
+                                            status.value
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Hospice Encounter
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1003</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Observation</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                            value
+                                        
+                                            effective
+                                        
+                                            status
+                                        
+                                            status.value
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>ServiceRequest</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                            authoredOn
+                                        
+                                            authoredOn.value
+                                        
+                                            status
+                                        
+                                            status.value
+                                        
+                                            intent
+                                        
+                                            intent.value
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Hospice Care Ambulatory
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1584</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Procedure</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                            performed
+                                        
+                                            status
+                                        
+                                            status.value
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Hospice Care Ambulatory
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1584</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Condition</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                            verificationStatus
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Hospice Diagnosis
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1165</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Observation</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                            effective
+                                        
+                                            status
+                                        
+                                            status.value
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Condition</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                            verificationStatus
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Palliative Care Diagnosis
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1167</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Encounter</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                            period
+                                        
+                                            status
+                                        
+                                            status.value
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Palliative Care Encounter
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1090</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Procedure</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                            performed
+                                        
+                                            status
+                                        
+                                            status.value
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Palliative Care Intervention
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1135</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Condition</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Bipolar Disorder
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.67.1.101.1.128</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Condition</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Personality Disorder Emotionally Labile
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.67.1.101.1.246</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Condition</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Schizophrenia or Psychotic Disorder
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.105.12.1104</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Condition</td>
+                                    <td>
+                                        
+                                            code
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Pervasive Developmental Disorder
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.105.12.1152</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Patient</td>
+                                    <td>
+                                        
+                                            url
+                                        
+                                            extension
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Patient</td>
+                                    <td>
+                                        
+                                            url
+                                        
+                                            extension
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Coverage</td>
+                                    <td>
+                                        
+                                            type
+                                        
+                                            period
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                            
+                                                 Payer Type
+                                            
+                                        
+                                    </td>
+                                    <td>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591</td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Patient</td>
+                                    <td>
+                                        
+                                            url
+                                        
+                                            extension
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td>Patient</td>
+                                    <td>
+                                        
+                                            url
+                                        
+                                            extension
+                                        
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            
+                        </table>
+                    </td>
+                </tr>
+                
+                    <tr>
+                        <th scope="row"><b>Direct Reference Codes:</b></th>
+                        <td style="padding-left: 4px;">
+                            <table class="grid-dict">
+                                <tr><th><b>display</b></th><th><b>code</b></th><th><b>system</b></th></tr>
+                                
+                                    <tr>
+                                        <td></td>
+                                        <td>active</td>
+                                        <td>http://terminology.hl7.org/CodeSystem/condition-clinical</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td></td>
+                                        <td>recurrence</td>
+                                        <td>http://terminology.hl7.org/CodeSystem/condition-clinical</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td></td>
+                                        <td>relapse</td>
+                                        <td>http://terminology.hl7.org/CodeSystem/condition-clinical</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td></td>
+                                        <td>unconfirmed</td>
+                                        <td>http://terminology.hl7.org/CodeSystem/condition-ver-status</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td></td>
+                                        <td>refuted</td>
+                                        <td>http://terminology.hl7.org/CodeSystem/condition-ver-status</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td></td>
+                                        <td>entered-in-error</td>
+                                        <td>http://terminology.hl7.org/CodeSystem/condition-ver-status</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Discharge to home for hospice care (procedure)</td>
+                                        <td>428361000124107</td>
+                                        <td>http://snomed.info/sct</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Discharge to healthcare facility for hospice care (procedure)</td>
+                                        <td>428371000124100</td>
+                                        <td>http://snomed.info/sct</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Hospice care [Minimum Data Set]</td>
+                                        <td>45755-6</td>
+                                        <td>http://loinc.org</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Yes (qualifier value)</td>
+                                        <td>373066001</td>
+                                        <td>http://snomed.info/sct</td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Functional Assessment of Chronic Illness Therapy - Palliative Care Questionnaire (FACIT-Pal)</td>
+                                        <td>71007-9</td>
+                                        <td>http://loinc.org</td>
+                                    </tr>
+                                
+                            </table>
+                        </td>
+                    </tr>
+                
+                
+                    <tr>
+                        <th scope="row"><b>Logic Definitions:</b></th>
+                        <td style="padding-left: 4px;">
+                            
+                                <table class="grid-dict">
+                                    <tr>
+                                        <th><b>Group</b></th><th><b>Scoring</b></th><th><b>Population Criteria</b></th><th><b>Expression</b></th>
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td> 638501ed4ba3d47c885c02b0 </td>
+                                            <td>
+                                                
+                                                    <b>Group scoring:</b>
+                                                    
+                                                    <span>  proportion </span>
+                                                    
+                                                
+                                                
+                                            </td>
+                                            
+                                                <tr>
+                                                    <td/>
+                                                    <td/>
+                                                    <td>Initial Population</td>
+                                                    <td>
+                                                        
+                                                        <pre><code class="language-cql">define &quot;Initial Population&quot;:
+  AgeInYearsAt(start of(&quot;Index Depression Assessment&quot;.effective.toInterval())) &gt;= 12</code></pre>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            
+                                                <tr>
+                                                    <td/>
+                                                    <td/>
+                                                    <td>Denominator</td>
+                                                    <td>
+                                                        
+                                                        <pre><code class="language-cql">define &quot;Denominator&quot;:
+  &quot;Initial Population&quot;</code></pre>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            
+                                                <tr>
+                                                    <td/>
+                                                    <td/>
+                                                    <td>Denominator Exclusion</td>
+                                                    <td>
+                                                        
+                                                        <pre><code class="language-cql">define &quot;Denominator Exclusions&quot;:
+  &quot;Has Hospice Services in the Measure Assessment Period&quot;
+    or &quot;Has Palliative Care in the Measure Assessment Period&quot;
+    or &quot;Patient Expired&quot;
+    or &quot;Has Mental Health Disorder Diagnoses&quot;</code></pre>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            
+                                                <tr>
+                                                    <td/>
+                                                    <td/>
+                                                    <td>Numerator</td>
+                                                    <td>
+                                                        
+                                                        <pre><code class="language-cql">define &quot;Numerator&quot;:
+  Last([Observation: &quot;PHQ 9 and PHQ 9M Tools&quot;] DepressionAssessment
+      where ToDate(start of DepressionAssessment.effective.toInterval()) during &quot;Measure Assessment Period&quot;
+        and DepressionAssessment.status in { 'final', 'amended', 'corrected' }
+      sort by start of effective.toInterval()
+  ).value &lt; 5</code></pre>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            
+                                                <tr>
+                                                    <td/>
+                                                    <td/>
+                                                    <td>Numerator Exclusion</td>
+                                                    <td>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            
+                                                <tr>
+                                                    <td/>
+                                                    <td/>
+                                                    <td>Denominator Exception</td>
+                                                    <td>
+                                                        
+                                                    </td>
+                                                </tr>
+                                            
+
+                                    
+                                    </tr>
+                                </table>
+                            
+                            <table class="grid-dict">
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SupplementalDataElements</td>
+                                        
+                                        
+                                            <td>SDE Sex</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;SDE Sex&quot;:
+  case
+      when Patient.gender = 'male' then Code { code: 'M', system: 'http://hl7.org/fhir/v3/AdministrativeGender', display: 'Male' }
+      when Patient.gender = 'female' then Code { code: 'F', system: 'http://hl7.org/fhir/v3/AdministrativeGender', display: 'Female' }
+      else null
+    end</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>DepressionRemissionatTwelveMonthsFHIR</td>
+                                        
+                                        
+                                            <td>SDE Sex</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;SDE Sex&quot;:
+  SDE.&quot;SDE Sex&quot;</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>DepressionRemissionatTwelveMonthsFHIR</td>
+                                        
+                                        
+                                            <td>Depression Assessments Greater than 9</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Depression Assessments Greater than 9&quot;:
+  [Observation: &quot;PHQ 9 and PHQ 9M Tools&quot;] DepressionAssessment
+    where DepressionAssessment.value &gt; 9
+      and DepressionAssessment.status in { 'final', 'amended', 'corrected' }</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>DepressionRemissionatTwelveMonthsFHIR</td>
+                                        
+                                        
+                                            <td>Depression Diagnoses</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Depression Diagnoses&quot;:
+  ( [Condition: &quot;Major Depression Including Remission&quot;]
+    union [Condition: &quot;Dysthymia&quot;] ) Depression
+    where Depression.isActive ( )
+      and not ( Depression.verificationStatus ~ QICoreCommon.&quot;unconfirmed&quot;
+          or Depression.verificationStatus ~ QICoreCommon.&quot;refuted&quot;
+          or Depression.verificationStatus ~ QICoreCommon.&quot;entered-in-error&quot;
+      )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>DepressionRemissionatTwelveMonthsFHIR</td>
+                                        
+                                        
+                                            <td>Denominator Identification Period</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Denominator Identification Period&quot;:
+  Interval[start of &quot;Measurement Period&quot; - 14 months, start of &quot;Measurement Period&quot; - 2 months )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>DepressionRemissionatTwelveMonthsFHIR</td>
+                                        
+                                        
+                                            <td>Depression Encounter</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Depression Encounter&quot;:
+  [Encounter: &quot;Contact or Office Visit&quot;] ValidEncounter
+    with &quot;Depression Diagnoses&quot; Depression
+      such that ValidEncounter.period overlaps Depression.prevalenceInterval ( )
+        and ValidEncounter.period ends during &quot;Denominator Identification Period&quot;
+        and ValidEncounter.status = 'finished'</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>DepressionRemissionatTwelveMonthsFHIR</td>
+                                        
+                                        
+                                            <td>Index Depression Assessment</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Index Depression Assessment&quot;:
+  First(&quot;Depression Assessments Greater than 9&quot; DepressionAssessment
+      with &quot;Depression Encounter&quot; DepressionEncounter
+        such that DepressionAssessment.effective.toInterval() during day of Interval[ToDate((start of DepressionEncounter.period) - 7 days), 
+        end of DepressionEncounter.period]
+      sort by start of effective.toInterval()
+  )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>DepressionRemissionatTwelveMonthsFHIR</td>
+                                        
+                                        
+                                            <td>Measure Assessment Period</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Measure Assessment Period&quot;:
+  &quot;Index Depression Assessment&quot; FirstIndexAssessment
+    let YearAfterIndexAssessment: date from start of FirstIndexAssessment.effective.toInterval ( ) + 12 months
+    return Interval[YearAfterIndexAssessment - 60 days, YearAfterIndexAssessment + 60 days]</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>DepressionRemissionatTwelveMonthsFHIR</td>
+                                        
+                                        
+                                            <td>Numerator</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Numerator&quot;:
+  Last([Observation: &quot;PHQ 9 and PHQ 9M Tools&quot;] DepressionAssessment
+      where ToDate(start of DepressionAssessment.effective.toInterval()) during &quot;Measure Assessment Period&quot;
+        and DepressionAssessment.status in { 'final', 'amended', 'corrected' }
+      sort by start of effective.toInterval()
+  ).value &lt; 5</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>DepressionRemissionatTwelveMonthsFHIR</td>
+                                        
+                                        
+                                            <td>Stratification 2</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Stratification 2&quot;:
+  &quot;Index Depression Assessment&quot; IndexAssessment
+    return AgeInYearsAt(date from start of IndexAssessment.effective.toInterval()) &gt;= 18</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>DepressionRemissionatTwelveMonthsFHIR</td>
+                                        
+                                        
+                                            <td>Stratification 1</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Stratification 1&quot;:
+  &quot;Index Depression Assessment&quot; IndexAssessment
+    return AgeInYearsAt(date from start of IndexAssessment.effective.toInterval()) in Interval[12, 17]</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>DepressionRemissionatTwelveMonthsFHIR</td>
+                                        
+                                        
+                                            <td>Initial Population</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Initial Population&quot;:
+  AgeInYearsAt(start of(&quot;Index Depression Assessment&quot;.effective.toInterval())) &gt;= 12</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>DepressionRemissionatTwelveMonthsFHIR</td>
+                                        
+                                        
+                                            <td>Denominator</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Denominator&quot;:
+  &quot;Initial Population&quot;</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SupplementalDataElements</td>
+                                        
+                                        
+                                            <td>SDE Payer</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;SDE Payer&quot;:
+  [Coverage: type in &quot;Payer Type&quot;] Payer
+    return {
+      code: Payer.type,
+      period: Payer.period
+    }</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>DepressionRemissionatTwelveMonthsFHIR</td>
+                                        
+                                        
+                                            <td>SDE Payer</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;SDE Payer&quot;:
+  SDE.&quot;SDE Payer&quot;</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SupplementalDataElements</td>
+                                        
+                                        
+                                            <td>SDE Ethnicity</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;SDE Ethnicity&quot;:
+  Patient.ethnicity E
+    return Tuple {
+      codes: { E.ombCategory } union E.detailed,
+      display: E.text
+    }</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>DepressionRemissionatTwelveMonthsFHIR</td>
+                                        
+                                        
+                                            <td>SDE Ethnicity</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;SDE Ethnicity&quot;:
+  SDE.&quot;SDE Ethnicity&quot;</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>DepressionRemissionatTwelveMonthsFHIR</td>
+                                        
+                                        
+                                            <td>Has Hospice Services in the Measure Assessment Period</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Has Hospice Services in the Measure Assessment Period&quot;:
+  exists ( [Encounter: &quot;Encounter Inpatient&quot;] InpatientEncounter
+      where ( InpatientEncounter.hospitalization.dischargeDisposition ~ &quot;Discharge to home for hospice care (procedure)&quot;
+          or InpatientEncounter.hospitalization.dischargeDisposition ~ &quot;Discharge to healthcare facility for hospice care (procedure)&quot;
+      )
+        and InpatientEncounter.period ends during day of Interval[start of &quot;Denominator Identification Period&quot;, end of &quot;Measure Assessment Period&quot;]
+        and InpatientEncounter.status = 'finished'
+  )
+    or exists ( [Encounter: &quot;Hospice Encounter&quot;] HospiceEncounter
+        where HospiceEncounter.period overlaps day of Interval[start of &quot;Denominator Identification Period&quot;, end of &quot;Measure Assessment Period&quot;]
+          and not ( HospiceEncounter.status in { 'cancelled', 'entered-in-error', 'unknown' } )
+    )
+    or exists ( [Observation: &quot;Hospice care [Minimum Data Set]&quot;] HospiceAssessment
+        where HospiceAssessment.value ~ &quot;Yes (qualifier value)&quot;
+          and HospiceAssessment.effective.toInterval ( ) overlaps day of Interval[start of &quot;Denominator Identification Period&quot;, end of &quot;Measure Assessment Period&quot;]
+          and HospiceAssessment.status in { 'final', 'amended', 'corrected' }
+    )
+    or exists ( [ServiceRequest: code in &quot;Hospice Care Ambulatory&quot;] HospiceOrder
+        where HospiceOrder.authoredOn during day of Interval[start of &quot;Denominator Identification Period&quot;, end of &quot;Measure Assessment Period&quot;]
+          and HospiceOrder.status in { 'active', 'completed' }
+          and HospiceOrder.intent in { 'order', 'original-order', 'reflex-order', 'filler-order', 'instance-order' }
+    )
+    or exists ( [Procedure: &quot;Hospice Care Ambulatory&quot;] HospicePerformed
+        where HospicePerformed.performed.toInterval ( ) overlaps day of Interval[start of &quot;Denominator Identification Period&quot;, end of &quot;Measure Assessment Period&quot;]
+          and not ( HospicePerformed.status in { 'not-done', 'entered-in-error', 'unknown' } )
+    )
+    or exists ( [Condition: &quot;Hospice Diagnosis&quot;] HospiceCareDiagnosis
+        where HospiceCareDiagnosis.prevalenceInterval ( ) overlaps day of Interval[start of &quot;Denominator Identification Period&quot;, end of &quot;Measure Assessment Period&quot;]
+          and HospiceCareDiagnosis.isActive ( )
+          and not ( HospiceCareDiagnosis.verificationStatus ~ QICoreCommon.&quot;unconfirmed&quot;
+              or HospiceCareDiagnosis.verificationStatus ~ QICoreCommon.&quot;refuted&quot;
+              or HospiceCareDiagnosis.verificationStatus ~ QICoreCommon.&quot;entered-in-error&quot;
+          )
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>DepressionRemissionatTwelveMonthsFHIR</td>
+                                        
+                                        
+                                            <td>Has Palliative Care in the Measure Assessment Period</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Has Palliative Care in the Measure Assessment Period&quot;:
+  exists ( [Observation: &quot;Functional Assessment of Chronic Illness Therapy - Palliative Care Questionnaire (FACIT-Pal)&quot;] PalliativeAssessment
+      where PalliativeAssessment.effective.toInterval ( ) overlaps Interval[start of &quot;Denominator Identification Period&quot;, end of &quot;Measure Assessment Period&quot;]
+        and PalliativeAssessment.status in { 'final', 'amended', 'corrected' }
+  )
+    or exists ( [Condition: &quot;Palliative Care Diagnosis&quot;] PalliativeDiagnosis
+        where PalliativeDiagnosis.prevalenceInterval ( ) overlaps Interval[start of &quot;Denominator Identification Period&quot;, end of &quot;Measure Assessment Period&quot;]
+          and PalliativeDiagnosis.isActive ( )
+          and not ( PalliativeDiagnosis.verificationStatus ~ QICoreCommon.&quot;unconfirmed&quot;
+              or PalliativeDiagnosis.verificationStatus ~ QICoreCommon.&quot;refuted&quot;
+              or PalliativeDiagnosis.verificationStatus ~ QICoreCommon.&quot;entered-in-error&quot;
+          )
+    )
+    or exists ( [Encounter: &quot;Palliative Care Encounter&quot;] PalliativeEncounter
+        where PalliativeEncounter.period overlaps Interval[start of &quot;Denominator Identification Period&quot;, end of &quot;Measure Assessment Period&quot;]
+          and PalliativeEncounter.status = 'finished'
+    )
+    or exists ( [Procedure: &quot;Palliative Care Intervention&quot;] PalliativeIntervention
+        where PalliativeIntervention.performed.toInterval ( ) overlaps Interval[start of &quot;Denominator Identification Period&quot;, end of &quot;Measure Assessment Period&quot;]
+          and not ( PalliativeIntervention.status in { 'not-done', 'entered-in-error', 'unknown' } )
+    )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>DepressionRemissionatTwelveMonthsFHIR</td>
+                                        
+                                        
+                                            <td>Patient Expired</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Patient Expired&quot;:
+  Patient.deceased on or before end of &quot;Measure Assessment Period&quot;</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>DepressionRemissionatTwelveMonthsFHIR</td>
+                                        
+                                        
+                                            <td>Has Mental Health Disorder Diagnoses</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Has Mental Health Disorder Diagnoses&quot;:
+  exists ( ( [Condition: &quot;Bipolar Disorder&quot;]
+      union [Condition: &quot;Personality Disorder Emotionally Labile&quot;]
+      union [Condition: &quot;Schizophrenia or Psychotic Disorder&quot;]
+      union [Condition: &quot;Pervasive Developmental Disorder&quot;] ) MentalHealthDisorderDiagnoses
+      where ToDate(start of MentalHealthDisorderDiagnoses.prevalenceInterval()) on or before end of &quot;Measure Assessment Period&quot;
+        and MentalHealthDisorderDiagnoses.isActive ( )
+        and not ( MentalHealthDisorderDiagnoses.verificationStatus ~ QICoreCommon.&quot;unconfirmed&quot;
+            or MentalHealthDisorderDiagnoses.verificationStatus ~ QICoreCommon.&quot;refuted&quot;
+            or MentalHealthDisorderDiagnoses.verificationStatus ~ QICoreCommon.&quot;entered-in-error&quot;
+        )
+  )</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>DepressionRemissionatTwelveMonthsFHIR</td>
+                                        
+                                        
+                                            <td>Denominator Exclusions</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;Denominator Exclusions&quot;:
+  &quot;Has Hospice Services in the Measure Assessment Period&quot;
+    or &quot;Has Palliative Care in the Measure Assessment Period&quot;
+    or &quot;Patient Expired&quot;
+    or &quot;Has Mental Health Disorder Diagnoses&quot;</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>SupplementalDataElements</td>
+                                        
+                                        
+                                            <td>SDE Race</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;SDE Race&quot;:
+  Patient.race R
+    return Tuple {
+      codes: R.ombCategory union R.detailed,
+      display: R.text
+    }</code></pre></td>
+                                        
+                                    </tr>
+                                
+                                    <tr><th><b>Library Name</b></th><th><b>Name</b></th></tr>
+                                    <tr>
+                                        
+                                            <td>DepressionRemissionatTwelveMonthsFHIR</td>
+                                        
+                                        
+                                            <td>SDE Race</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                            <td></td>
+                                        <td><pre class="highlight language-cql"><code data-lang="cql" class="language-cql">define &quot;SDE Race&quot;:
+  SDE.&quot;SDE Race&quot;</code></pre></td>
+                                        
+                                    </tr>
+                                
+                            </table>
+                        </td>
+                    </tr>
+                
+            
+        
+    </table>
+</div>
+</body>
+</html>
