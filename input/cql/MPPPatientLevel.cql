@@ -39,12 +39,10 @@ define "Has Qualifying Encounter During First 240 Days of Measurement Period":
       union ["Encounter": "Preventive Care Services, Initial Office Visit, 0 to 17"]
       union ["Encounter": "Preventive Care, Established Office Visit, 0 to 17"]
       union ["Encounter": "Telephone Visits"]
-       /* union ["Encounter": "Unlisted preventive medicine service"] */
     ) QualifyingEncounter
       where QualifyingEncounter.period during day of Interval[start of "Measurement Period", start of "Measurement Period" + 240 days]
         and QualifyingEncounter.isAttributable()
   )
-         /*Jira Ticket CQLIT-368 relating to CPT DRC for Unlisted preventive medicine service*/
 
 define "Initial Population":
   "Has Qualifying Encounter During First 240 Days of Measurement Period"

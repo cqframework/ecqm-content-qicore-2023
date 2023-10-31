@@ -17,7 +17,22 @@ context Patient
 
 define PatientName: Patient.name.first().family // + ', ' + Combine(Patient.name.first().given, ' ')
 
+define "Antithrombotic Therapy Medication Request":
+  ["MedicationRequest": "Antithrombotic Therapy for Ischemic Stroke"]
+
+define "Antithrombotic Therapy Medication Request Expanded":
+  ["MedicationRequest": medication in "Antithrombotic Therapy for Ischemic Stroke"]
+   union (
+     [MedicationRequest] MR
+      with [Medication] M
+        such that M.id = Last(Split(MR.medication.reference, '/'))
+          and M.code in "Antithrombotic Therapy for Ischemic Stroke"
+  )
+
 define "Reason for Not Giving Antithrombotic at Discharge":
   ["MedicationNotRequested": "Antithrombotic Therapy for Ischemic Stroke"] NoAntithromboticDischarge
     where NoAntithromboticDischarge.reasonCode in "Medical Reason For Not Providing Treatment"
+
+define "Reason for Not Giving Antithrombotic at Discharge Explicit":
+  ["MedicationNotRequested": medication ~ "Antithrombotic Therapy for Ischemic Stroke"]
 

@@ -24,6 +24,8 @@ parameter "Measurement Period" Interval<DateTime>
 
 context Patient
 
+define PatientName: Patient.name.first().family // + ', ' + Combine(Patient.name.first().given, ' ')
+
 define "Initial Population":
   TJC."Encounter with Principal Diagnosis and Age"
 

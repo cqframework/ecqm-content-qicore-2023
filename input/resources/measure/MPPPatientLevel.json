@@ -17,7 +17,7 @@
         "valueString": "Has Qualifying Encounter During First 240 Days of Measurement Period"
       }, {
         "url": "statement",
-        "valueString": "define \"Has Qualifying Encounter During First 240 Days of Measurement Period\":\n  exists ( ( [\"Encounter\": \"Office Visit\"]\n      union [\"Encounter\": \"Outpatient Consultation\"]\n      union [\"Encounter\": \"Annual Wellness Visit\"]\n      union [\"Encounter\": \"Face-to-Face Interaction\"]\n      union [\"Encounter\": \"Home Healthcare Services\"]\n      union [\"Encounter\": \"Preventive Care Services Established Office Visit, 18 and Up\"]\n      union [\"Encounter\": \"Preventive Care Services Initial Office Visit, 18 and Up\"]\n      union [\"Encounter\": \"Preventive Care Services, Initial Office Visit, 0 to 17\"]\n      union [\"Encounter\": \"Preventive Care, Established Office Visit, 0 to 17\"]\n      union [\"Encounter\": \"Telephone Visits\"]\n       /* union [\"Encounter\": \"Unlisted preventive medicine service\"] */\n    ) QualifyingEncounter\n      where QualifyingEncounter.period during day of Interval[start of \"Measurement Period\", start of \"Measurement Period\" + 240 days]\n        and QualifyingEncounter.isAttributable()\n  )"
+        "valueString": "define \"Has Qualifying Encounter During First 240 Days of Measurement Period\":\n  exists ( ( [\"Encounter\": \"Office Visit\"]\n      union [\"Encounter\": \"Outpatient Consultation\"]\n      union [\"Encounter\": \"Annual Wellness Visit\"]\n      union [\"Encounter\": \"Face-to-Face Interaction\"]\n      union [\"Encounter\": \"Home Healthcare Services\"]\n      union [\"Encounter\": \"Preventive Care Services Established Office Visit, 18 and Up\"]\n      union [\"Encounter\": \"Preventive Care Services Initial Office Visit, 18 and Up\"]\n      union [\"Encounter\": \"Preventive Care Services, Initial Office Visit, 0 to 17\"]\n      union [\"Encounter\": \"Preventive Care, Established Office Visit, 0 to 17\"]\n      union [\"Encounter\": \"Telephone Visits\"]\n    ) QualifyingEncounter\n      where QualifyingEncounter.period during day of Interval[start of \"Measurement Period\", start of \"Measurement Period\" + 240 days]\n        and QualifyingEncounter.isAttributable()\n  )"
       }, {
         "url": "displaySequence",
         "valueInteger": 0
@@ -32,10 +32,25 @@
         "valueString": "Initial Population"
       }, {
         "url": "statement",
-        "valueString": "/*Jira Ticket CQLIT-368 relating to CPT DRC for Unlisted preventive medicine service*/\ndefine \"Initial Population\":\n  \"Has Qualifying Encounter During First 240 Days of Measurement Period\""
+        "valueString": "define \"Initial Population\":\n  \"Has Qualifying Encounter During First 240 Days of Measurement Period\""
       }, {
         "url": "displaySequence",
         "valueInteger": 1
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "AttributionModel"
+      }, {
+        "url": "name",
+        "valueString": "isAttributable"
+      }, {
+        "url": "statement",
+        "valueString": "define fluent function isAttributable(encounter Encounter):\n  encounter.period during \"Measurement Period\"\n    and \"Provider\" is not null implies encounter.serviceProvider.reference.endsWith(\"Provider\")"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 2
       } ]
     } ],
     "status": "active",
@@ -112,6 +127,87 @@
       "min": 0,
       "max": "1",
       "type": "boolean"
+    } ],
+    "dataRequirement": [ {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1001"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1008"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1240"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1048"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1016"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1025"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1023"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1022"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1024"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1080"
+      } ]
     } ]
   } ],
   "extension": [ {
@@ -132,7 +228,7 @@
   "title": "Multi-provider Patient Patient Level Example",
   "status": "draft",
   "experimental": true,
-  "date": "2023-09-09T16:39:12+00:00",
+  "date": "2023-10-27T08:12:32+00:00",
   "description": "Example measure supporting testing of the multi-provider patient scenario for patient-based measures",
   "useContext": [ {
     "code": {

@@ -67,6 +67,51 @@
         "url": "displaySequence",
         "valueInteger": 3
       } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "CQMCommon"
+      }, {
+        "url": "name",
+        "valueString": "principalDiagnosis"
+      }, {
+        "url": "statement",
+        "valueString": "/*\n@description: Returns the condition that is specified as the principal diagnosis for the encounter\n*/\ndefine fluent function principalDiagnosis(Encounter Encounter ):\n\tsingleton from ((Encounter.diagnosis D where D.rank = 1) PD\n      return singleton from ([Condition] C where C.id = PD.condition.reference.getId())\n\t)"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 4
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QICoreCommon"
+      }, {
+        "url": "name",
+        "valueString": "getId"
+      }, {
+        "url": "statement",
+        "valueString": "/*\n@description: Returns the tail of the given uri (i.e. everything after the last slash in the URI).\n@comment: This function can be used to determine the logical id of a given resource. It can be used in\na single-server environment to trace references. However, this function does not attempt to resolve\nor distinguish the base of the given url, and so cannot be used safely in multi-server environments.\n*/\ndefine fluent function getId(uri String):\n  Last(Split(uri, '/'))"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 5
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "AttributionModel"
+      }, {
+        "url": "name",
+        "valueString": "isAttributable"
+      }, {
+        "url": "statement",
+        "valueString": "define fluent function isAttributable(encounter Encounter):\n  encounter.period during \"Measurement Period\"\n    and \"Provider\" is not null implies encounter.serviceProvider.reference.endsWith(\"Provider\")"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 6
+      } ]
     } ],
     "status": "active",
     "type": {
@@ -121,12 +166,12 @@
       "use": "out",
       "min": 0,
       "max": "*",
-      "type": "Any"
+      "type": "Resource"
     } ],
     "dataRequirement": [ {
       "type": "Encounter",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
-      "mustSupport": [ "type", "period" ],
+      "mustSupport": [ "type", "period", "rank", "rank.value", "condition", "condition.reference", "condition.reference.value" ],
       "codeFilter": [ {
         "path": "type",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.424"
@@ -170,7 +215,7 @@
   "title": "Multi-provider Patient Encounter Level Example",
   "status": "draft",
   "experimental": true,
-  "date": "2023-09-09T16:39:12+00:00",
+  "date": "2023-10-27T08:12:32+00:00",
   "description": "Example measure supporting testing of the multi-provider patient scenario for encounter-based measures",
   "useContext": [ {
     "code": {

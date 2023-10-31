@@ -37,19 +37,19 @@
                 <b>
                     {% if identifier.type.coding.exists() %}
                         {% if identifier.type.coding.display.exists() %}
-                            {{identifier.type.coding.display}} 
+                            {{identifier.type.coding.display}}{% if identifier.assigner.display.exists() %} ({{identifier.assigner.display}}){% endif %} Identifier:
                         {% else %}
-                            {{identifier.type.coding}} 
+                            {{identifier.type.coding.code}}{% if identifier.assigner.display.exists() %} ({{identifier.assigner.display}}){% endif %} identifier:
                         {% endif %}
                     {% else %}
-                        {{identifier.use}} 
+                        {{identifier.use}}
                     {% endif %}
                 </b>
             </th>
             <td style="padding-left: 4px;">
                 {% if identifier.value.exists() %}
                 <p style="margin-bottom: 5px;">
-                    <b>value: </b> <span>{{identifier.value}}</span>
+                    <span>{{identifier.value}}</span>
                 </p>
                 {% endif %}
             </td>
@@ -107,7 +107,7 @@
                         {% endif %}
                     {% endfor %}
                 {% endif %}
-                {% if Library.type.coding.exists().not and Library.type.text.exists() %}
+                {% if Library.type.coding.exists().not() and Library.type.text.exists() %}
                     {{Library.type.text}}
                 {% endif %}
             </td>
@@ -138,7 +138,7 @@
                         {% endif %}
                     {% endfor %}
                 {% endif %}
-                {% if Library.subject.coding.exists().not and Library.subject.text.exists() %}
+                {% if Library.subject.coding.exists().not() and Library.subject.text.exists() %}
                     {{Library.subject.text}}
                 {% endif %}
             </td>
@@ -213,13 +213,15 @@
             <th scope="row"><b>Use Context: </b></th>
             <td style="padding-left: 4px;">
                 <table class="grid-dict">
-                    <tr><th><b>code</b></th><th><b>value</b></th><th><b>display</b></th></tr>
+                    <tr>
+                        <th><b>code</b></th>
+                        <th><b>value</b></th>
+                    </tr>
                     {% for useContext in Library.useContext %}
-                      <tr>
-                        <td>{{useContext.code.code}}</td>
-                        <td>{{(useContext.value as CodeableConcept).coding.first().code}}</td>
-                        <td>{{(useContext.value as CodeableConcept).coding.first().display}}</td>
-                      </tr>
+                        <tr>
+                            <td>{{useContext.code.code}}</td>
+                            <td>{{useContext.value.text}}</td>
+                        </tr>
                     {% endfor %}
                 </table>
             </td>
@@ -231,6 +233,13 @@
             <th scope="row"><b>Jurisdiction: </b></th>
             <td style="padding-left: 4px;">{{Library.jurisdiction.first().coding.first().code}}</td>
         </tr>
+        {% endif %}
+
+        {% if Library.topic.exists() %}
+            <tr>
+                <th scope="row"><b>Topic: </b></th>
+                <td style="padding-left: 4px;">{{Library.topic.first().coding.first().code}}</td>
+            </tr>
         {% endif %}
 
         {% if Library.purpose.exists() %}
