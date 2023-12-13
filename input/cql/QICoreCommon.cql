@@ -288,10 +288,11 @@ If the input is a DateTime Interval, the result is the input.
 If the input is a Quantity Interval, the quantities are expected to be calendar-durations interpreted as an Age, and the result
 is a DateTime Interval beginning on the date the patient turned the age given as the start of the quantity interval, and ending
 immediately before one year later than the date the patient turned the age given as the end of the quantity interval.
+If the input is a Timing, an error will be thrown indicating that Timing calculations are not implemented.
 Any other input will reslt in a null DateTime Interval
 @deprecated: This function is deprecated. Use the fluent function `toInterval()` instead
 */
-define function ToInterval(choice Choice<DateTime, Quantity, Interval<DateTime>, Interval<Quantity>>):
+define function ToInterval(choice Choice<DateTime, Quantity, Interval<DateTime>, Interval<Quantity>, Timing>):
   case
 	  when choice is DateTime then
     	Interval[choice as DateTime, choice as DateTime]
@@ -303,8 +304,8 @@ define function ToInterval(choice Choice<DateTime, Quantity, Interval<DateTime>,
 		when choice is Interval<Quantity> then
 		  Interval[Patient.birthDate + (choice.low as Quantity),
 			  Patient.birthDate + (choice.high as Quantity) + 1 year)
-		when choice is QICore.Timing then
-            null as Interval<DateTime>
+		when choice is Timing then
+      Message(null, true, 'NOT_IMPLEMENTED', 'Error', 'Calculation of an interval from a Timing value is not supported') as Interval<DateTime>
 		else
 			null as Interval<DateTime>
 	end
@@ -327,9 +328,10 @@ If the input is a DateTime Interval, the result is the input.
 If the input is a Quantity Interval, the quantities are expected to be calendar-durations interpreted as an Age, and the result
 is a DateTime Interval beginning on the date the patient turned the age given as the start of the quantity interval, and ending
 immediately before one year later than the date the patient turned the age given as the end of the quantity interval.
+If the input is a Timing, an error will be thrown indicating that Timing calculations are not implemented.
 Any other input will reslt in a null DateTime Interval
 */
-define fluent function toInterval(choice Choice<DateTime, Quantity, Interval<DateTime>, Interval<Quantity>>):
+define fluent function toInterval(choice Choice<DateTime, Quantity, Interval<DateTime>, Interval<Quantity>, Timing>):
   case
 	  when choice is DateTime then
     	Interval[choice as DateTime, choice as DateTime]
@@ -341,6 +343,8 @@ define fluent function toInterval(choice Choice<DateTime, Quantity, Interval<Dat
 		when choice is Interval<Quantity> then
 		  Interval[Patient.birthDate + (choice.low as Quantity),
 			  Patient.birthDate + (choice.high as Quantity) + 1 year)
+		when choice is Timing then
+      Message(null, true, 'NOT_IMPLEMENTED', 'Error', 'Calculation of an interval from a Timing value is not supported') as Interval<DateTime>
 		else
 			null as Interval<DateTime>
 	end
@@ -395,8 +399,8 @@ define fluent function abatementInterval(condition Condition):
 /*
 @description: Returns an interval representing the normalized prevalence period of a given Condition.
 @comment: Uses the ToInterval and ToAbatementInterval functions to determine the widest potential interval from
-onset to abatement as specified in the given Condition. If the condition is active, the resulting interval will have
-a closed ending boundary. If the condition is not active, the resulting interval will have an open ending boundary.
+onset to abatement as specified in the given Condition. If the condition is active, or has an abatement date the resulting 
+interval will have a closed ending boundary. Otherwise, the resulting interval will have an open ending boundary.
 @deprecated: This function is deprecated. Use the `prevalenceInterval()` fluent function instead
 */
 define function ToPrevalenceInterval(condition Condition):
@@ -405,13 +409,17 @@ if condition.clinicalStatus ~ "active"
   or condition.clinicalStatus ~ "relapse" then
   Interval[start of ToInterval(condition.onset), end of ToAbatementInterval(condition)]
 else
-  Interval[start of ToInterval(condition.onset), end of ToAbatementInterval(condition))
+  (end of ToAbatementInterval(condition)) abatementDate
+    return if abatementDate is null then
+      Interval[start of ToInterval(condition.onset), abatementDate)
+    else
+      Interval[start of ToInterval(condition.onset), abatementDate]
 
 /*
 @description: Returns an interval representing the normalized prevalence period of a given Condition.
 @comment: Uses the ToInterval and ToAbatementInterval functions to determine the widest potential interval from
-onset to abatement as specified in the given Condition. If the condition is active, the resulting interval will have
-a closed ending boundary. If the condition is not active, the resulting interval will have an open ending boundary.
+onset to abatement as specified in the given Condition. If the condition is active, or has an abatement date the resulting 
+interval will have a closed ending boundary. Otherwise, the resulting interval will have an open ending boundary.
 */
 define fluent function prevalenceInterval(condition Condition):
 if condition.clinicalStatus ~ "active"
@@ -419,7 +427,11 @@ if condition.clinicalStatus ~ "active"
   or condition.clinicalStatus ~ "relapse" then
   Interval[start of condition.onset.toInterval(), end of condition.abatementInterval()]
 else
-  Interval[start of condition.onset.toInterval(), end of condition.abatementInterval())
+  (end of ToAbatementInterval(condition)) abatementDate
+    return if abatementDate is null then
+      Interval[start of ToInterval(condition.onset), abatementDate)
+    else
+      Interval[start of ToInterval(condition.onset), abatementDate]
 
 /*
 @description: Returns the tail of the given uri (i.e. everything after the last slash in the URI).
